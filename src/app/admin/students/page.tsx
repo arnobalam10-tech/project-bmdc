@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import { accessStatus, requireAdmin, type Profile } from "@/lib/access";
 import { fmtDate } from "@/lib/format";
 import { EmptyState, PageHeader, Pill } from "@/components/ui/primitives";
+import { btn } from "@/components/ui/Button";
 
 export const metadata: Metadata = { title: "Students" };
 
@@ -84,13 +85,16 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
                   <th className="px-4 py-3 font-semibold">Status</th>
                   <th className="px-4 py-3 font-semibold">Access until</th>
                   <th className="px-4 py-3 font-semibold">Joined</th>
+                  <th className="px-4 py-3 font-semibold">
+                    <span className="sr-only">Actions</span>
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-b2-divider bg-b2-dark">
                 {rows.map((r) => (
                   <tr key={r.id} className="hover:bg-white/[.03]">
                     <td className="px-4 py-3">
-                      <Link href={`/admin/students/${r.id}`} className="font-medium hover:text-b2-caribbean">
+                      <Link href={`/admin/students/${r.id}`} className="font-medium underline-offset-4 hover:text-b2-meadow hover:underline">
                         {r.full_name || "—"}
                       </Link>
                     </td>
@@ -99,6 +103,11 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
                     <td className="px-4 py-3">{pill(r)}</td>
                     <td className="px-4 py-3 text-b2-pistachio">{r.access_expires_at ? fmtDate(r.access_expires_at) : "—"}</td>
                     <td className="px-4 py-3 text-b2-pistachio">{fmtDate(r.created_at, { year: undefined })}</td>
+                    <td className="px-4 py-3 text-right">
+                      <Link href={`/admin/students/${r.id}`} className={btn("secondary", "sm", "min-h-9 px-4")}>
+                        {accessStatus(r) === "free" ? "Mark paid →" : "Manage →"}
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>
