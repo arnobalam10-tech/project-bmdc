@@ -1,0 +1,87 @@
+{
+  "_source": "TIMELINE FINAL.pdf (Project BMDC Curriculum & Schedule). Part 1 / Part 2 classes are merged into one chapter. 16 weeks x 3 classes = 48 classes.",
+  "subjects": [
+    {
+      "name": "Medicine",
+      "slug": "medicine",
+      "chapters": [
+        { "name": "Hepatology", "slug": "hepatology", "classes": ["W1C1", "W1C2"] },
+        { "name": "Hematology", "slug": "hematology", "classes": ["W1C3", "W2C1"] },
+        { "name": "Cardiology", "slug": "cardiology", "classes": ["W2C2", "W2C3"] },
+        { "name": "Endocrinology", "slug": "endocrinology", "classes": ["W3C1", "W3C2"] },
+        { "name": "Neurology", "slug": "neurology", "classes": ["W3C3", "W4C1"] },
+        { "name": "Nephrology + Body Fluid", "slug": "nephrology-body-fluid", "classes": ["W4C2", "W4C3"] },
+        { "name": "Gastroenterology", "slug": "gastroenterology", "classes": ["W5C1"] },
+        { "name": "Respiratory", "slug": "respiratory", "classes": ["W5C2", "W5C3"] },
+        { "name": "Dermatology, Toxicology & Psych", "slug": "dermatology-toxicology-psych", "classes": ["W6C1", "W6C3"] },
+        { "name": "Rheumatology", "slug": "rheumatology", "classes": ["W6C2", "W6C3"] }
+      ]
+    },
+    {
+      "name": "General Surgery",
+      "slug": "general-surgery",
+      "chapters": [
+        { "name": "Eye", "slug": "eye", "classes": ["W7C1"] },
+        { "name": "Ear", "slug": "ear", "classes": ["W7C2"] },
+        { "name": "Nose", "slug": "nose", "classes": ["W7C3"] },
+        { "name": "Throat", "slug": "throat", "classes": ["W8C1"] },
+        { "name": "Ulcers, Wounds & Soft Tissue", "slug": "ulcers-wounds-soft-tissue", "classes": ["W8C2"] },
+        { "name": "Surgical Infections & Microbes", "slug": "surgical-infections-microbes", "classes": ["W8C3"] },
+        { "name": "Hemorrhage, Shock & Trauma", "slug": "hemorrhage-shock-trauma", "classes": ["W9C1"] },
+        { "name": "Perioperative Care, Sutures & Onco", "slug": "perioperative-sutures-onco", "classes": ["W9C2"] }
+      ]
+    },
+    {
+      "name": "Specialized Surgery",
+      "slug": "specialized-surgery",
+      "chapters": [
+        { "name": "Upper & Lower GI Surgery", "slug": "gi-surgery", "classes": ["W9C3"] },
+        { "name": "Hepatobiliary, Pancreas & Spleen", "slug": "hepatobiliary-pancreas-spleen", "classes": ["W10C1"] },
+        { "name": "Urology, Andrology & Breast", "slug": "urology-andrology-breast", "classes": ["W10C2"] },
+        { "name": "Orthopedics & Neurosurgery", "slug": "orthopedics-neurosurgery", "classes": ["W10C3"] }
+      ]
+    },
+    {
+      "name": "Basic Sciences",
+      "slug": "basic-sciences",
+      "chapters": [
+        { "name": "Pathology & Genetics", "slug": "pathology-genetics", "classes": ["W11C1"] },
+        { "name": "Physio, Vitamins, Forensic & Comm Med", "slug": "physio-vitamins-forensic-comm-med", "classes": ["W11C2"] },
+        { "name": "Biochemistry", "slug": "biochemistry", "classes": ["W11C3"] },
+        { "name": "Pharmacology", "slug": "pharmacology", "classes": ["W12C1"] },
+        { "name": "Immuno & Micro", "slug": "immuno-micro", "classes": ["W12C2", "W12C3"] }
+      ]
+    },
+    {
+      "name": "Pediatrics",
+      "slug": "pediatrics",
+      "chapters": [
+        { "name": "Growth, Development & Neonatology", "slug": "growth-development-neonatology", "classes": ["W13C1"] },
+        { "name": "IMCI, Critical Care & Emergencies", "slug": "imci-critical-care-emergencies", "classes": ["W13C2"] },
+        { "name": "Gastroenterology, Fluids & Pulmonology", "slug": "peds-gastro-fluids-pulmonology", "classes": ["W13C3"] },
+        { "name": "Peds Neuro, Hem-Onc & Infections", "slug": "peds-neuro-hemonc-infections", "classes": ["W14C1"] }
+      ]
+    },
+    {
+      "name": "Gynecology",
+      "slug": "gynecology",
+      "chapters": [
+        { "name": "Reproductive Anatomy & Physiology", "slug": "reproductive-anatomy-physiology", "classes": ["W14C2"] },
+        { "name": "AUB, Ectopic Pregnancy & GTD", "slug": "aub-ectopic-gtd", "classes": ["W14C3"] },
+        { "name": "Abortion, Infections & PID", "slug": "abortion-infections-pid", "classes": ["W15C1"] },
+        { "name": "Endometriosis, Contraception & Gyn Op", "slug": "endometriosis-contraception-gyn-op", "classes": ["W15C2"] }
+      ]
+    },
+    {
+      "name": "Obstetrics",
+      "slug": "obstetrics",
+      "chapters": [
+        { "name": "Placenta, Diagnosis & ANC", "slug": "placenta-diagnosis-anc", "classes": ["W15C3"] },
+        { "name": "Normal Labour, Episiotomy & Induction", "slug": "normal-labour-episiotomy-induction", "classes": ["W16C1"] },
+        { "name": "Preterm Labour, PROM & Hypertension", "slug": "preterm-prom-hypertension", "classes": ["W16C2"] },
+        { "name": "APH, PPH, Obstructed & Operative Obs", "slug": "aph-pph-obstructed-operative", "classes": ["W16C3"] }
+      ]
+    }
+  ],
+  "_notes": "W6C3 'Derma + Rheumatology (Extra)' is an extra class shared by the Dermatology and Rheumatology chapters, not a chapter of its own."
+}

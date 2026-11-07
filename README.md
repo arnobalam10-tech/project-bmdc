@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project BMDC — web platform
 
-## Getting Started
+Landing page + student platform + admin panel for the Project BMDC RQE course.
+**Stack:** Next.js 16 (App Router, Turbopack) · Supabase (Postgres + Auth + Storage) · Tailwind 4 · Vercel.
 
-First, run the development server:
+Specs: [prd.md](prd.md) · [design.md](design.md) · [plan.md](plan.md) · live status: [state.md](state.md) · brand: [docs/brand-kit-logo2.md](docs/brand-kit-logo2.md)
+
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # fill in the keys
+npm run dev                  # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Map of the code
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Area | Where |
+|---|---|
+| Landing page | `src/app/page.tsx`, `src/components/landing/` |
+| Auth (email + Google, reset, onboarding, device-blocked) | `src/app/(auth)/`, `src/app/auth/callback/route.ts` |
+| One-device lock | `src/proxy.ts` (every protected request) + `src/lib/device.ts` (on login) + SQL `claim_device()` |
+| Student platform | `src/app/(student)/` — dashboard, classes, mcq, notes, profile, leaderboard |
+| MCQ engine UI | `src/components/mcq/` (practice + exam runners, T/F question card) |
+| Admin panel | `src/app/admin/` + `src/app/admin/actions.ts` |
+| Brand (logo, film backgrounds, motion) | `src/components/brand/B2.tsx`, `src/app/globals.css` |
+| Database schema | `supabase/migrations/*.sql` (already applied to the Supabase project) |
+| Curriculum + MCQ content | `content/curriculum.json`, `content/mcq/*.json` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Security model (short)
 
-## Learn More
+- Every table has Row Level Security. Students can never read `question_options.is_true` / explanations directly; answers are checked and scored in `security definer` SQL functions (`check_practice_question`, `save_exam_answers`, `submit_attempt`, `get_attempt`).
+- Paid access = `profiles.is_paid` and `access_expires_at` in the future; checked in SQL (`has_paid_access()`), not in the browser.
+- Notes PDFs live in a **private** bucket; storage RLS only signs URLs for entitled users; URLs expire in 2 minutes.
+- Live class Meet links are returned only by `get_live_sessions()`, which hides `paid` links from free accounts.
 
-To learn more about Next.js, take a look at the following resources:
+## Adding MCQs (done by Claude)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Write `content/mcq/<set>.json` (format: see `content/mcq/pyq-2025-may.json`; subject/chapter names must match `content/curriculum.json`).
+2. `node scripts/content-to-import.mjs mcq content/mcq/<set>.json` → prints `select public.import_mcq(...)`.
+3. Run that SQL in Supabase (MCP or SQL editor). It upserts, so re-running is safe, and it rebuilds the topic-wise sets.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## One-time setup checklist (owner)
 
-## Deploy on Vercel
+See **state.md → "Waiting on the owner"** for the live list. In short:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Supabase → Authentication → Sign In / Providers → Email:** turn **OFF** "Confirm email" (signup without verification).
+2. **Supabase → Authentication → URL Configuration:** Site URL = your live URL; add `http://localhost:3000/**` and `https://<your-domain>/**` to Redirect URLs.
+3. **Google login:** Google Cloud Console → OAuth client (Web) → Authorized redirect URI `https://gmmpzehlfeuigtopekoq.supabase.co/auth/v1/callback` → paste the Client ID/Secret into Supabase → Authentication → Providers → Google.
+4. **Make yourself admin:** sign up on the site, then in Supabase SQL editor:
+   `update public.profiles set role = 'admin' where email = '<your email>';`
+5. **GitHub + Vercel:** push this folder to a private GitHub repo, import it in Vercel, add the env vars from `.env.example`, deploy. Set `NEXT_PUBLIC_SITE_URL` to the Vercel URL.
+6. **Workshop link:** Admin → Live sessions → edit "Free workshop…" → paste the Google Meet link.

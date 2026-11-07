@@ -1,0 +1,154 @@
+{
+  "_source": "BMDCPQ.pdf, 'BMDC licence Exam May-09 2025' (the compiler notes that some stems were reconstructed from memory). Spelling cleaned up; meaning unchanged. 10 of the questions in this paper so far.",
+  "set": {
+    "ext_id": "pyq-2025-may",
+    "kind": "pyq",
+    "title": "BMDC RQE — May 2025",
+    "pyq_year": 2025,
+    "pyq_session": "May",
+    "duration_min": 10,
+    "is_free_sample": false
+  },
+  "questions": [
+    {
+      "ext_id": "pyq-2025-may-001",
+      "source_no": 1,
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Antigen-presenting cells (APCs) include:",
+      "options": [
+        { "label": "A", "text": "Macrophage", "is_true": true, "explanation": "Macrophages are professional APCs. They phagocytose antigen and present it on MHC class II to CD4+ T cells." },
+        { "label": "B", "text": "T cell", "is_true": false, "explanation": "T cells recognise antigen that other cells present. They are not professional APCs." },
+        { "label": "C", "text": "B cell", "is_true": true, "explanation": "B cells are professional APCs. They take up antigen through the B-cell receptor and present it on MHC II to helper T cells." },
+        { "label": "D", "text": "NK cell", "is_true": false, "explanation": "NK cells are innate killer lymphocytes. They kill cells that lack MHC I and do not present antigen." }
+      ],
+      "pearl": "The 3 professional APCs: dendritic cells (the most potent), macrophages and B cells."
+    },
+    {
+      "ext_id": "pyq-2025-may-003",
+      "source_no": 3,
+      "subject": "Pediatrics",
+      "chapter": "IMCI, Critical Care & Emergencies",
+      "stem": "Findings in 'some dehydration' (IMCI):",
+      "options": [
+        { "label": "A", "text": "Sunken eyes", "is_true": true, "explanation": "Sunken eyes are one of the IMCI signs. Two of the signs together classify as some dehydration." },
+        { "label": "B", "text": "Skin pinch goes back very slowly", "is_true": false, "explanation": "'Very slowly' (more than 2 seconds) is a sign of severe dehydration. In some dehydration the skin pinch goes back slowly." },
+        { "label": "C", "text": "Thirsty, drinks eagerly", "is_true": true, "explanation": "Drinking eagerly / thirsty is a sign of some dehydration. In severe dehydration the child drinks poorly or is unable to drink." },
+        { "label": "D", "text": "Unconscious", "is_true": false, "explanation": "A lethargic or unconscious child falls under severe dehydration. In some dehydration the child is restless and irritable." }
+      ],
+      "pearl": "Some dehydration = 2 of: restless/irritable, sunken eyes, drinks eagerly, skin pinch goes back slowly. Treat with Plan B (ORS 75 ml/kg over 4 hours)."
+    },
+    {
+      "ext_id": "pyq-2025-may-004",
+      "source_no": 4,
+      "subject": "Medicine",
+      "chapter": "Neurology",
+      "stem": "Characteristics of tuberculous meningitis:",
+      "options": [
+        { "label": "A", "text": "Cobweb coagulum in CSF", "is_true": true, "explanation": "A fine cobweb (pellicle) clot forms when TB CSF is left standing, because of its high protein (fibrinogen)." },
+        { "label": "B", "text": "Increased CSF pressure", "is_true": true, "explanation": "Opening pressure is raised, often because of basal exudates causing communicating hydrocephalus." },
+        { "label": "C", "text": "Decreased CSF protein", "is_true": false, "explanation": "Protein is markedly raised (often 1–5 g/L), and very high in spinal block." },
+        { "label": "D", "text": "Increased CSF glucose", "is_true": false, "explanation": "Glucose is low (CSF:blood ratio below 0.5), as in bacterial meningitis." }
+      ],
+      "pearl": "TB CSF: clear/cobweb, lymphocytes, ↑↑ protein, ↓ glucose, ADA raised. Viral CSF has normal glucose."
+    },
+    {
+      "ext_id": "pyq-2025-may-005",
+      "source_no": 5,
+      "subject": "Specialized Surgery",
+      "chapter": "Orthopedics & Neurosurgery",
+      "stem": "Colles' fracture:",
+      "options": [
+        { "label": "A", "text": "Common in younger age", "is_true": false, "explanation": "It typically occurs in elderly, post-menopausal (osteoporotic) women after a fall on the outstretched hand. Young adults get high-energy distal radius fractures instead." },
+        { "label": "B", "text": "Dinner-fork deformity", "is_true": true, "explanation": "Dorsal displacement of the distal fragment gives the classic dinner-fork deformity on lateral view." },
+        { "label": "C", "text": "Dorsal angulation", "is_true": true, "explanation": "The distal radius fragment is dorsally angulated/tilted, radially deviated and impacted, within 2.5 cm of the wrist." },
+        { "label": "D", "text": "Sudeck's atrophy", "is_true": true, "explanation": "Sudeck's atrophy (complex regional pain syndrome) is a recognised late complication of Colles' fracture." }
+      ],
+      "pearl": "Colles complications: malunion (most common), stiffness, Sudeck's atrophy, carpal tunnel syndrome, delayed rupture of extensor pollicis longus."
+    },
+    {
+      "ext_id": "pyq-2025-may-008",
+      "source_no": 8,
+      "subject": "Obstetrics",
+      "chapter": "Normal Labour, Episiotomy & Induction",
+      "stem": "Uses of the partograph:",
+      "options": [
+        { "label": "A", "text": "Recording cervical dilatation", "is_true": true, "explanation": "Cervical dilatation is plotted against time with the alert and action lines. It is the core of the partograph." },
+        { "label": "B", "text": "Monitoring fetal heart rate", "is_true": true, "explanation": "Fetal condition (FHR, liquor, moulding) is charted, usually every 30 minutes." },
+        { "label": "C", "text": "Monitoring uterine contractions", "is_true": true, "explanation": "Frequency and duration of contractions per 10 minutes are recorded." },
+        { "label": "D", "text": "Early detection of obstructed labour", "is_true": true, "explanation": "Crossing the alert/action line shows prolonged labour early, which helps prevent obstructed labour." }
+      ],
+      "pearl": "WHO partograph starts in the active phase (cervix 4 cm). Action line is 4 hours to the right of the alert line."
+    },
+    {
+      "ext_id": "pyq-2025-may-009",
+      "source_no": 9,
+      "subject": "Medicine",
+      "chapter": "Hepatology",
+      "stem": "Exudative ascites is found in:",
+      "options": [
+        { "label": "A", "text": "Chronic liver disease", "is_true": false, "explanation": "Cirrhosis causes a transudate (low protein, SAAG ≥ 1.1 g/dL) from portal hypertension and hypoalbuminaemia." },
+        { "label": "B", "text": "Congestive cardiac failure", "is_true": false, "explanation": "Classically a transudate (high SAAG). Protein may be mildly raised, but for exams count CCF as transudative." },
+        { "label": "C", "text": "Malignancy", "is_true": true, "explanation": "Peritoneal carcinomatosis gives a protein-rich exudate, often blood-stained, with malignant cells." },
+        { "label": "D", "text": "Tuberculosis", "is_true": true, "explanation": "TB peritonitis gives an exudate: high protein, lymphocytes and raised ADA." }
+      ],
+      "pearl": "Exudate (protein > 25 g/L): malignancy, TB, pancreatitis. Transudate: cirrhosis, CCF, nephrotic syndrome. SAAG ≥ 1.1 g/dL means portal hypertension."
+    },
+    {
+      "ext_id": "pyq-2025-may-013",
+      "source_no": 13,
+      "subject": "General Surgery",
+      "chapter": "Ear",
+      "stem": "Complications of chronic otitis media:",
+      "options": [
+        { "label": "A", "text": "Facial nerve palsy", "is_true": true, "explanation": "Cholesteatoma can erode the fallopian canal and cause lower motor neuron facial palsy (an intratemporal complication)." },
+        { "label": "B", "text": "Cholesteatoma formation", "is_true": true, "explanation": "Attico-antral (unsafe) CSOM is associated with cholesteatoma, which erodes bone." },
+        { "label": "C", "text": "Sensorineural hearing loss", "is_true": true, "explanation": "Toxins spreading through the round window, or labyrinthitis/fistula, can cause SNHL on top of the conductive loss." },
+        { "label": "D", "text": "Cerebral venous sinus thrombosis", "is_true": true, "explanation": "Lateral (sigmoid) sinus thrombosis is a classic intracranial complication of unsafe CSOM." }
+      ],
+      "pearl": "Intracranial complications of CSOM: meningitis (most common), brain abscess (temporal lobe / cerebellum), lateral sinus thrombosis, extradural abscess."
+    },
+    {
+      "ext_id": "pyq-2025-may-014",
+      "source_no": 14,
+      "subject": "Basic Sciences",
+      "chapter": "Pharmacology",
+      "stem": "Drugs causing gynaecomastia:",
+      "options": [
+        { "label": "A", "text": "Isoniazid", "is_true": true, "explanation": "Isoniazid is a recognised (less common) cause of gynaecomastia." },
+        { "label": "B", "text": "Digoxin", "is_true": true, "explanation": "Digoxin has an oestrogen-like structure and can cause gynaecomastia." },
+        { "label": "C", "text": "Spironolactone", "is_true": true, "explanation": "Spironolactone is the classic cause: it blocks androgen receptors and testosterone synthesis. Eplerenone avoids it." },
+        { "label": "D", "text": "Propranolol", "is_true": false, "explanation": "Beta-blockers are not associated with gynaecomastia." }
+      ],
+      "pearl": "Mnemonic 'DISCO': Digoxin, Isoniazid, Spironolactone, Cimetidine, Oestrogens. Add ketoconazole, GnRH analogues and finasteride."
+    },
+    {
+      "ext_id": "pyq-2025-may-016",
+      "source_no": 16,
+      "subject": "Medicine",
+      "chapter": "Endocrinology",
+      "stem": "Secondary hyperthyroidism:",
+      "options": [
+        { "label": "A", "text": "Increased T3", "is_true": true, "explanation": "Excess TSH drives the thyroid, so T3 rises." },
+        { "label": "B", "text": "Increased T4", "is_true": true, "explanation": "T4 also rises because of TSH stimulation." },
+        { "label": "C", "text": "Increased TSH", "is_true": true, "explanation": "The cause is a TSH-secreting pituitary adenoma, so TSH is high or inappropriately normal along with high T3/T4." },
+        { "label": "D", "text": "Pathology lies in the thyroid gland", "is_true": false, "explanation": "The pathology is in the pituitary. Disease of the thyroid gland itself (Graves', toxic nodule) is primary hyperthyroidism, with suppressed TSH." }
+      ],
+      "pearl": "Primary hyperthyroidism: ↑T3/T4, ↓TSH. Secondary: ↑T3/T4 with ↑ or normal TSH."
+    },
+    {
+      "ext_id": "pyq-2025-may-022",
+      "source_no": 22,
+      "subject": "Basic Sciences",
+      "chapter": "Pathology & Genetics",
+      "stem": "Irreversible cell injury:",
+      "options": [
+        { "label": "A", "text": "Apoptosis", "is_true": true, "explanation": "Apoptosis is programmed cell death. Once it starts, the cell is lost, so it is an end point of irreversible injury." },
+        { "label": "B", "text": "Necrosis", "is_true": true, "explanation": "Necrosis is the classic result of irreversible injury: membrane damage, nuclear changes (pyknosis, karyorrhexis, karyolysis) and inflammation." },
+        { "label": "C", "text": "Metaplasia", "is_true": false, "explanation": "Metaplasia is a reversible adaptation in which one adult cell type is replaced by another (e.g. Barrett's oesophagus)." },
+        { "label": "D", "text": "Hyperplasia", "is_true": false, "explanation": "Hyperplasia is a reversible adaptation: an increase in cell number." }
+      ],
+      "pearl": "Hallmarks of irreversibility: inability to reverse mitochondrial dysfunction and severe membrane damage. Reversible signs: cell swelling and fatty change."
+    }
+  ]
+}
