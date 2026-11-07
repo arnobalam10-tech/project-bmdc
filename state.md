@@ -27,6 +27,18 @@
 
 ---
 
+## Live
+
+| What | Where |
+|---|---|
+| **Live site** | **https://projectbmdc.vercel.app** (Vercel project `project-bmdc`, team "arnob's projects", functions in `sin1` Singapore) |
+| GitHub | https://github.com/arnobalam10-tech/project-bmdc (branch `main`; every push redeploys) |
+| Supabase | project `gmmpzehlfeuigtopekoq` (Singapore) |
+| Owner admin login | `admin@bmdc.com` (password given by owner in chat; **change it after first login**; this email has no real inbox, so ask Claude to reset it if forgotten) |
+| Test accounts | `.env.test.local` (student = multi-device on, paid; test admin). Delete before announcing. |
+
+**Live check (2026-11-08):** 25/26 automated checks passed on the live site, and the 26th was a test-script issue (the row is visible). Covered: landing (light default, workshop), student login, dashboard, classes, MCQ hub/PYQ/topic, notes, profile, leaderboard, practice check + explanation, admin blocked for students, admin login and all 9 admin pages.
+
 ## Decisions log
 
 | Date | Decision |
