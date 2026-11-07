@@ -102,7 +102,7 @@ export function Header({ workshopAt }: { workshopAt: string }) {
             <ThemeToggle />
             {signedIn ? (
               <Link href="/dashboard" className={btn("primary", "sm", "md:min-h-11 md:px-5")}>
-                Dashboard
+                My profile
               </Link>
             ) : (
               <>
@@ -144,7 +144,7 @@ export function Header({ workshopAt }: { workshopAt: string }) {
             <div className="mt-8 grid gap-3">
               {signedIn ? (
                 <Link href="/dashboard" className={btn("primary", "lg")}>
-                  Go to dashboard
+                  My profile
                 </Link>
               ) : (
                 <>

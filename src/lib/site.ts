@@ -12,7 +12,7 @@ export type SiteSettings = {
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   price: 10000,
-  offer_price: 8000,
+  offer_price: 7999,
   bkash_number: "01322654646",
   whatsapp_number: "01886688253",
   batch_start: "2026-12-01",

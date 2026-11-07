@@ -333,7 +333,29 @@ select.b2-input {
   animation: b2-pulse-dot 1.8s ease-in-out infinite;
 }
 
-/* FREE outline word */
+/* FREE — solid brand-gradient letters with a soft glow */
+.free-word {
+  background: linear-gradient(180deg, #b6ffd9 0%, #00df81 45%, #2cc295 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 24px rgba(0, 223, 129, 0.45));
+}
+/* small ticket-style tag next to FREE (notched edge) */
+.free-ticket {
+  position: relative;
+  display: inline-block;
+  padding: 8px 14px 8px 18px;
+  border-radius: 12px;
+  background: #00df81;
+  color: #021a17;
+  transform: rotate(-4deg);
+  box-shadow: 0 8px 24px rgba(0, 223, 129, 0.35);
+  -webkit-mask: radial-gradient(circle 6px at 0 50%, transparent 98%, #000) left / 100% 100% no-repeat;
+  mask: radial-gradient(circle 6px at 0 50%, transparent 98%, #000) left / 100% 100% no-repeat;
+}
+
+/* FREE outline word (legacy) */
 .outline-word {
   color: transparent;
   -webkit-text-stroke: 2.5px #00df81;
@@ -440,10 +462,44 @@ select.b2-input {
   color: #f1f7f6;
 }
 /* header bar is always solid white in light mode (no transparent-over-hero) */
+/* iOS-style "liquid glass" floating header capsule (light mode only) */
 [data-theme="light"] .site-header-bar {
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid #d6e3df;
-  backdrop-filter: blur(12px);
+  background: transparent;
+  border: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 10px 12px 0;
+}
+[data-theme="light"] .site-header-bar > nav {
+  position: relative;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.48) 100%);
+  backdrop-filter: blur(24px) saturate(185%);
+  -webkit-backdrop-filter: blur(24px) saturate(185%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(2, 26, 23, 0.05),
+    0 10px 30px rgba(2, 26, 23, 0.14),
+    0 1px 3px rgba(2, 26, 23, 0.08);
+}
+/* soft specular sheen across the top half, like iOS glass */
+[data-theme="light"] .site-header-bar > nav::before {
+  content: "";
+  position: absolute;
+  inset: 1px 1px 50% 1px;
+  border-radius: 999px 999px 40% 40% / 999px 999px 100% 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+[data-theme="light"] .site-header-bar > nav > * {
+  position: relative;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  [data-theme="light"] .site-header-bar > nav {
+    background: rgba(255, 255, 255, 0.94);
+  }
 }
 [data-theme="light"] .b2-input {
   color: #021a17;
@@ -480,4 +536,13 @@ select.b2-input {
 [data-theme="light"] body.b2-grain-page::before {
   mix-blend-mode: multiply;
   opacity: 0.04;
+}
+/* the floating glass capsule adds 10px of top padding, so tuck the hero up under it */
+[data-theme="light"] .landing-main {
+  margin-top: -74px;
+}
+@media (min-width: 900px) {
+  [data-theme="light"] .landing-main {
+    margin-top: -82px;
+  }
 }

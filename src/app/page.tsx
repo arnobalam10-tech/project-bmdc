@@ -5,9 +5,9 @@ import {
   Check,
   ClipboardList,
   FileText,
-  Layers,
   MessageCircle,
   PlayCircle,
+  Quote,
   Sparkles,
   Timer,
   Video,
@@ -18,16 +18,25 @@ import { ButtonLink, btn } from "@/components/ui/Button";
 import { Countdown } from "@/components/ui/client";
 import { SectionTitle } from "@/components/ui/primitives";
 import { EnrollSteps } from "@/components/enroll/Enroll";
-import { CourseOutline, Header, MobileCtaBar } from "@/components/landing/client";
+import { Header, MobileCtaBar } from "@/components/landing/client";
 import { getSettings, waLink } from "@/lib/settings";
 import { fmtDate, fmtTime, isPast, taka } from "@/lib/format";
-import { schedule, subjects } from "@/lib/curriculum";
 
 export const revalidate = 300;
 
 const INSTRUCTORS = [
-  { name: "Dr. Nafisa Alam", initials: "NA" },
-  { name: "Dr. Omar", initials: "O" },
+  {
+    name: "Dr. Nafisa Alam",
+    initials: "NA",
+    quote:
+      "Every doctor who trained abroad deserves a fair shot at practising at home. Helping them pass means better doctors for Bangladesh.",
+  },
+  {
+    name: "Dr. Omar",
+    initials: "O",
+    quote:
+      "When I prepared for this exam, there was no clear guide, so I worked it all out the hard way. I built this so nobody else has to.",
+  },
 ];
 
 const FEATURES = [
@@ -51,7 +60,6 @@ const FAQ = [
 
 export default async function Home() {
   const s = await getSettings();
-  const classes = schedule();
   const workshopOver = isPast(s.workshop_at, 2 * 3600_000);
   const save = s.price - s.offer_price;
 
@@ -59,7 +67,7 @@ export default async function Home() {
     <>
       <Header workshopAt={s.workshop_at} />
 
-      <main className="-mt-16 md:-mt-[72px]">
+      <main className="landing-main -mt-16 md:-mt-[72px]">
         {/* ───────── HERO ───────── */}
         <section id="hero" className="b2-film rounded-b-[32px] px-4 pb-16 pt-28 sm:px-6 md:pb-24 md:pt-40">
           <B2Mark
@@ -130,9 +138,15 @@ export default async function Home() {
                     <span className="live-dot" />
                     <span className="text-sm font-semibold uppercase tracking-[0.16em]">Registration open</span>
                   </div>
-                  <p className="outline-word mt-4 text-[72px] font-bold leading-none tracking-[-0.04em] sm:text-[96px] md:text-[120px]">
-                    FREE
-                  </p>
+                  <div className="mt-4 flex items-end gap-3 sm:gap-4">
+                    <p className="free-word text-[76px] font-bold leading-[0.85] tracking-[-0.05em] sm:text-[104px] md:text-[128px]">
+                      FREE
+                    </p>
+                    <span className="free-ticket mb-2 sm:mb-3">
+                      <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] opacity-75">Live</span>
+                      <span className="block text-sm font-semibold leading-tight sm:text-base">Workshop</span>
+                    </span>
+                  </div>
                   <h2 className="mt-2 text-[30px] font-semibold leading-[1.08] tracking-[-0.03em] md:text-[44px]">
                     Workshop: how to pass the BMDC RQE in{" "}
                     <span className="underline decoration-b2-caribbean decoration-4 underline-offset-[6px]">one attempt.</span>
@@ -193,16 +207,6 @@ export default async function Home() {
                   <p className="mt-2 leading-relaxed text-b2-pistachio">{body}</p>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-16">
-              <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-                <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">16-week course outline</h3>
-                <p className="text-b2-pistachio">
-                  <Layers className="mr-1.5 inline -translate-y-0.5" size={18} />7 subjects · 48 classes
-                </p>
-              </div>
-              <CourseOutline classes={classes} subjects={subjects.map((x) => x.name)} />
             </div>
           </div>
         </section>
@@ -296,19 +300,25 @@ export default async function Home() {
             />
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               {INSTRUCTORS.map((p) => (
-                <div key={p.name} className="flex items-center gap-5 rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
-                  <div className="b2-film spring relative grid size-20 flex-none place-items-center rounded-full text-2xl font-semibold sm:size-24 sm:text-3xl">
-                    <span>{p.initials}</span>
-                    <B2Mark size={26} grain={false} decorative className="!absolute -bottom-1 -right-1" />
+                <figure key={p.name} className="flex flex-col rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
+                  <div className="flex items-center gap-5">
+                    <div className="b2-film spring relative grid size-20 flex-none place-items-center rounded-full text-2xl font-semibold sm:size-24 sm:text-3xl">
+                      <span>{p.initials}</span>
+                      <B2Mark size={26} grain={false} decorative className="!absolute -bottom-1 -right-1" />
+                    </div>
+                    <div>
+                      <h3 className="text-[22px] font-medium tracking-[-0.01em]">{p.name}</h3>
+                      <p className="mt-1 text-b2-pistachio">MBBS, Xiamen University, China</p>
+                      <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-b2-pine px-3 py-1 text-sm font-medium text-b2-caribbean">
+                        <Check size={16} /> Passed the BMDC exam in one attempt
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-[22px] font-medium tracking-[-0.01em]">{p.name}</h3>
-                    <p className="mt-1 text-b2-pistachio">MBBS, Xiamen University, China</p>
-                    <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-b2-pine px-3 py-1 text-sm font-medium text-b2-caribbean">
-                      <Check size={16} /> Passed the BMDC exam in one attempt
-                    </p>
-                  </div>
-                </div>
+                  <blockquote className="relative mt-5 border-t border-b2-divider pt-5">
+                    <Quote size={28} className="absolute -top-3.5 left-0 bg-b2-dark pr-2 text-b2-caribbean" aria-hidden />
+                    <p className="text-[17px] leading-relaxed text-b2-flash/90">{p.quote}</p>
+                  </blockquote>
+                </figure>
               ))}
             </div>
           </div>
