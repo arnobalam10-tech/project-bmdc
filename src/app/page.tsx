@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   BookOpenCheck,
@@ -28,12 +29,14 @@ const INSTRUCTORS = [
   {
     name: "Dr. Nafisa Alam",
     initials: "NA",
+    photo: "/team/dr-nafisa-alam.webp",
     quote:
       "Every doctor who trained abroad deserves a fair shot at practising at home. Helping them pass means better doctors for Bangladesh.",
   },
   {
     name: "Dr. Omar",
     initials: "O",
+    photo: "/team/dr-omar.webp",
     quote:
       "When I prepared for this exam, there was no clear guide, so I worked it all out the hard way. I built this so nobody else has to.",
   },
@@ -302,8 +305,16 @@ export default async function Home() {
               {INSTRUCTORS.map((p) => (
                 <figure key={p.name} className="flex flex-col rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
                   <div className="flex items-center gap-5">
-                    <div className="b2-film spring relative grid size-20 flex-none place-items-center rounded-full text-2xl font-semibold sm:size-24 sm:text-3xl">
-                      <span>{p.initials}</span>
+                    <div className="relative size-20 flex-none sm:size-24">
+                      <div className="b2-film spring size-full overflow-hidden rounded-full p-[3px] shadow-[0_8px_24px_rgba(0,223,129,.25)]">
+                        <Image
+                          src={p.photo}
+                          alt={`Portrait of ${p.name}`}
+                          width={192}
+                          height={192}
+                          className="size-full rounded-full object-cover"
+                        />
+                      </div>
                       <B2Mark size={26} grain={false} decorative className="!absolute -bottom-1 -right-1" />
                     </div>
                     <div>
