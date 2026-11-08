@@ -45,7 +45,7 @@
 May 2025 (86, answers decided by us; no key in source), May 2022 (67), Nov 2022 (82), Oct 2021 (84), Oct 2020 (87), Oct 2019 (99), Apr 2019 (84), Oct 2018 (90), Apr 2018 (88), Oct 2017 (90).
 Source: `BMDCPQ.pdf`. 84 printed answer keys were corrected against standard textbooks (list in the helper reports). Topic-only recall lists (Oct 2023, May 2023, Oct 2022, Oct 2021) were not imported; saved for the owner as `Downloads/BMDC-Recent-Exam-Topics-2021-2023.pdf`.
 Files: `content/mcq/*.json`. Re-import: `node scripts/import-mcq.mjs` (needs `SUPABASE_SERVICE_ROLE_KEY` in `.env.local`; `--wipe` deletes all questions/sets/attempts first). Validate/merge helper output: `node scripts/merge-mcq.mjs <dir>`.
-No set is marked Free yet → free accounts see no MCQs until the owner toggles some in Admin → MCQ sets.
+**Free access (per question, enforced in the database):** free accounts get the first `free_count` questions of every set — 2 for every chapter and paper, 10 for May 2025 (95 distinct questions in total); the rest show blurred with a join message and are never sent to the browser. Change per set in Admin → MCQ sets ("Free Qs"); "Whole set free" opens a whole set.
 
 ## Decisions log
 
