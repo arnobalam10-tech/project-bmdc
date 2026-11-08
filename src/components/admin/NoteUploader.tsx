@@ -34,6 +34,10 @@ export function NoteUploader({ chapters }: { chapters: Ch[] }) {
     if (!file || !file.size || file.type !== "application/pdf") return setMsg({ tone: "error", text: "Choose a PDF file." });
     if (file.size > 25 * 1024 * 1024) return setMsg({ tone: "error", text: "PDF must be 25 MB or smaller. Compress it first." });
     if (!chapter_id || !title) return setMsg({ tone: "error", text: "Add a title and choose a chapter." });
+    if (file.size > 4 * 1024 * 1024 && !confirm(
+      `This PDF is ${(file.size / 1048576).toFixed(1)} MB, so it will open slowly on phones. ` +
+      `Large images are usually the cause; Claude can shrink it without visible quality loss. Upload anyway?`
+    )) return;
 
     setBusy(true);
     setBusyLabel(`Uploading ${(file.size / 1048576).toFixed(1)} MB…`);
@@ -67,7 +71,7 @@ export function NoteUploader({ chapters }: { chapters: Ch[] }) {
   return (
     <form ref={form} onSubmit={onSubmit} className="grid gap-3 sm:grid-cols-2">
       <div className="sm:col-span-2">
-        <label className="b2-label">PDF file (max 25 MB)</label>
+        <label className="b2-label">PDF file (max 25 MB; under 4 MB opens fastest)</label>
         <input
           name="file"
           type="file"

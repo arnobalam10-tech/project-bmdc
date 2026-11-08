@@ -111,6 +111,8 @@ export default function PdfViewer({ url, title }: { url: string; title: string }
     document.querySelector(`[data-page="${n}"]`)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   const file = useMemo(() => ({ url }), [url]);
+  // fetch only the byte ranges the visible pages need first, then the rest in the background
+  const options = useMemo(() => ({ disableStream: true, disableAutoFetch: false }), []);
 
   return (
     <div
@@ -162,6 +164,7 @@ export default function PdfViewer({ url, title }: { url: string; title: string }
         ) : (
           <Document
             file={file}
+            options={options}
             onLoadSuccess={onLoad}
             onLoadError={() => setFailed(true)}
             loading={<B2Loader label="Opening notes" />}
