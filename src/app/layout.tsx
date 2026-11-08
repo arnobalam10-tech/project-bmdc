@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { B2Defs } from "@/components/brand/B2";
 import { NavigationProgress } from "@/components/app/NavigationProgress";
 import { DEFAULT_THEME, themeInitScript } from "@/lib/theme";
+import { navLoadingScript } from "@/lib/navscript";
 import "./globals.css";
 
 const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: navLoadingScript }} />
       </head>
       <body className="b2-grain-page min-h-dvh antialiased">
         <B2Defs />

@@ -559,21 +559,18 @@ select.b2-input {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-.nav-progress {
+/* drawn while <html data-navloading> is set (see src/lib/navscript.ts) */
+html[data-navloading]::after {
+  content: "";
   position: fixed;
   inset: 0 0 auto 0;
   height: 3px;
   z-index: 9999;
   pointer-events: none;
-  animation: nav-progress-in 0.15s ease-out both;
-}
-.nav-progress > span {
-  display: block;
-  height: 100%;
   transform-origin: left;
   background: linear-gradient(90deg, #2cc295, #00df81, #7cf5be);
   box-shadow: 0 0 10px rgba(0, 223, 129, 0.7), 0 0 4px rgba(0, 223, 129, 0.6);
-  animation: nav-progress-grow 6s cubic-bezier(0.1, 0.7, 0.2, 1) forwards;
+  animation: nav-progress-grow 6s cubic-bezier(0.1, 0.7, 0.2, 1) forwards, nav-progress-in 0.15s ease-out both;
 }
 /* pressed feedback for tappable cards / rows */
 .pressable {
@@ -591,7 +588,7 @@ select.b2-input {
   animation: link-pending-pulse 0.9s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .nav-progress > span { animation: none; transform: scaleX(0.6); }
+  html[data-navloading]::after { animation: none; transform: scaleX(0.6); }
   .pressable:active { transform: none; }
   .link-pending { animation: none; opacity: 0.6; }
 }
