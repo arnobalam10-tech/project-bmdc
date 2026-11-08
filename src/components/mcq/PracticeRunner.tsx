@@ -124,7 +124,12 @@ export function PracticeRunner({ data }: { data: AttemptData }) {
             <ChevronLeft size={20} />
           </button>
           {!revealed ? (
-            <button type="button" onClick={check} disabled={busy} className={btn("primary", "md", "flex-1")}>
+            <button
+              type="button"
+              onClick={check}
+              aria-busy={busy || undefined}
+              className={btn("primary", "md", `flex-1 ${busy ? "pointer-events-none" : ""}`)}
+            >
               {busy ? <B2Mark className="is-loading" size={20} grain={false} decorative /> : null}
               Check answer
             </button>
