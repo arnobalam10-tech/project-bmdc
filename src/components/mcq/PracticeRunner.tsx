@@ -13,7 +13,7 @@ import { sourceLine, type AttemptData, type Option, type Question } from "./type
 type Answers = Record<string, boolean | null>;
 
 /** Practice mode: check each question → instant answer + explanation. */
-export function PracticeRunner({ data }: { data: AttemptData }) {
+export function PracticeRunner({ data, locked }: { data: AttemptData; locked?: React.ReactNode }) {
   const router = useRouter();
   const supabase = useMemo(() => createClient(), []);
   const [questions, setQuestions] = useState<Question[]>(data.questions);
@@ -89,7 +89,11 @@ export function PracticeRunner({ data }: { data: AttemptData }) {
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm text-b2-pistachio">Practice · {data.set.title}</p>
           <p className="font-semibold">
-            Question {i + 1} <span className="text-b2-stone">of {questions.length}</span>
+            Question {i + 1}{" "}
+            <span className="text-b2-stone">
+              of {questions.length}
+              {data.locked_count > 0 ? " free" : ""}
+            </span>
           </p>
         </div>
         <span className="tabular flex-none rounded-full bg-b2-pine px-3 py-1 text-xs font-semibold text-b2-meadow">
@@ -109,6 +113,7 @@ export function PracticeRunner({ data }: { data: AttemptData }) {
         onChange={(id, v) => setAnswers((a) => ({ ...a, [id]: v }))}
       />
       <div id="explanation-anchor" className="scroll-mt-24" />
+      {last && locked}
       {error && <p className="mt-3 text-sm text-b2-error">{error}</p>}
 
       {/* sticky action bar */}

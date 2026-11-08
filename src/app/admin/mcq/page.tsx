@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { requireAdmin } from "@/lib/access";
 import { Alert, EmptyState, PageHeader } from "@/components/ui/primitives";
 import { FlagToggle } from "@/components/admin/ConfirmButton";
-import { toggleFlag } from "../actions";
+import { setFreeCount, toggleFlag } from "../actions";
+import { SubmitButton } from "@/components/ui/client";
 
 export const metadata: Metadata = { title: "MCQ sets" };
 
@@ -12,7 +13,7 @@ export default async function McqAdmin() {
   const { supabase } = await requireAdmin();
   const { data } = await supabase
     .from("question_sets")
-    .select("id,title,kind,duration_min,is_free_sample,published,sort,question_set_items(count)")
+    .select("id,title,kind,duration_min,is_free_sample,free_count,published,sort,question_set_items(count)")
     .order("kind")
     .order("sort")
     .order("title");
@@ -24,7 +25,7 @@ export default async function McqAdmin() {
       <PageHeader title="MCQ sets" sub={`${qTotal ?? 0} questions in the bank. Choose which sets free accounts can open.`} />
       <Alert tone="info">
         Questions are added by Claude from your PDFs (content/mcq/*.json → import). Here you only control visibility:
-        <b> Free</b> = free accounts can open it, <b>Published</b> = visible to students.
+        <b> Free Qs</b> = how many questions (from the start) free accounts can open; the rest show blurred. <b>Whole set free</b> = everything in the set is free. <b>Published</b> = visible to students.
       </Alert>
       {sets.length === 0 ? (
         <EmptyState title="No MCQ sets yet." />
@@ -44,13 +45,31 @@ export default async function McqAdmin() {
                         {s.count} questions · {s.duration_min} min exam
                       </span>
                     </span>
+                    <form action={setFreeCount} className="flex items-center gap-1.5">
+                      <input type="hidden" name="id" value={s.id} />
+                      <label className="text-xs text-b2-pistachio" htmlFor={`fc-${s.id}`}>
+                        Free Qs
+                      </label>
+                      <input
+                        id={`fc-${s.id}`}
+                        name="free_count"
+                        type="number"
+                        min={0}
+                        max={s.count}
+                        defaultValue={s.free_count}
+                        className="b2-input !min-h-9 !w-16 !px-2 !py-1 text-center text-sm"
+                      />
+                      <SubmitButton variant="secondary" size="sm" className="!min-h-9 !px-3" pending="Saving">
+                        Save
+                      </SubmitButton>
+                    </form>
                     {(["is_free_sample", "published"] as const).map((field) => (
                       <form key={field} action={toggleFlag}>
                         <input type="hidden" name="table" value="question_sets" />
                         <input type="hidden" name="field" value={field} />
                         <input type="hidden" name="id" value={s.id} />
                         <input type="hidden" name="value" value={String(!s[field])} />
-                        <FlagToggle on={s[field]} label={field === "published" ? "Published" : "Free"} />
+                        <FlagToggle on={s[field]} label={field === "published" ? "Published" : "Whole set free"} />
                       </form>
                     ))}
                   </li>

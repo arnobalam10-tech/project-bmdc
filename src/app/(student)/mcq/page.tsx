@@ -2,15 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck, ClipboardList, Timer } from "lucide-react";
 import { requireUser } from "@/lib/access";
-import { loadSets } from "@/lib/mcq";
+import { freeQuestionCount, loadSets } from "@/lib/mcq";
+import { getSettings } from "@/lib/settings";
+import { FreeNote } from "@/components/mcq/FreeNote";
 import { Alert, PageHeader } from "@/components/ui/primitives";
 
 export const metadata: Metadata = { title: "MCQ" };
 
 export default async function McqHub({ searchParams }: { searchParams: Promise<{ locked?: string }> }) {
   const { locked } = await searchParams;
-  const { supabase } = await requireUser();
+  const { supabase, profile, full } = await requireUser();
   const sets = await loadSets(supabase);
+  const [s, freeQ, { count: totalQ }] = full
+    ? [null, 0, { count: 0 }]
+    : await Promise.all([
+        getSettings(),
+        freeQuestionCount(supabase, sets),
+        supabase.from("questions").select("id", { count: "exact", head: true }),
+      ]);
   const count = (k: string) => sets.filter((s) => s.kind === k);
   const qCount = (k: string) => count(k).reduce((n, s) => n + s.count, 0);
 
@@ -41,6 +50,7 @@ export default async function McqHub({ searchParams }: { searchParams: Promise<{
   return (
     <>
       <PageHeader title="MCQ practice" sub="RQE format: 4 True/False statements per question. +0.25 right, −0.06 wrong, 0 blank." />
+      {!full && s && <FreeNote freeQuestions={freeQ} totalQuestions={totalQ ?? 0} s={s} email={profile.email ?? ""} />}
       {locked && (
         <div className="mb-5">
           <Alert tone="warning">That set is for enrolled students. Join the batch to unlock every MCQ.</Alert>

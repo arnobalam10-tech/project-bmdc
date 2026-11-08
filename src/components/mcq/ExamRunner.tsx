@@ -21,7 +21,7 @@ function fmt(ms: number) {
 }
 
 /** Exam mode: server-anchored countdown, autosave, flag & palette, auto-submit at 0. */
-export function ExamRunner({ data }: { data: AttemptData }) {
+export function ExamRunner({ data, locked }: { data: AttemptData; locked?: React.ReactNode }) {
   const router = useRouter();
   const supabase = useMemo(() => createClient(), []);
   const qs = data.questions;
@@ -171,7 +171,11 @@ export function ExamRunner({ data }: { data: AttemptData }) {
           <div className="min-w-0 flex-1">
             <p className="truncate text-xs text-b2-pistachio sm:text-sm">Exam · {data.set.title}</p>
             <p className="text-sm font-semibold sm:text-base">
-              Question {i + 1} <span className="text-b2-stone">of {qs.length}</span>
+              Question {i + 1}{" "}
+              <span className="text-b2-stone">
+                of {qs.length}
+                {data.locked_count > 0 ? " free" : ""}
+              </span>
               <span className="ml-2 text-xs font-normal text-b2-stone">
                 {saveState === "saving" ? "Saving…" : saveState === "error" ? "Not saved — retrying" : "Saved"}
               </span>
@@ -202,6 +206,7 @@ export function ExamRunner({ data }: { data: AttemptData }) {
               schedule(q.id);
             }}
           />
+          {i === qs.length - 1 && locked}
         </div>
         <aside className="hidden md:block">
           <div className="sticky top-28 rounded-[20px] border border-b2-border bg-b2-dark p-4">

@@ -33,8 +33,10 @@ export type AttemptData = {
     n_wrong: number | null;
     n_blank: number | null;
     server_now: string;
+    free_limit: number | null;
   };
-  set: { id: string; title: string; kind: "pyq" | "model" | "topic"; duration_min: number };
+  set: { id: string; title: string; kind: "pyq" | "model" | "topic"; duration_min: number; total_questions: number };
+  locked_count: number;
   flags: string[];
   questions: Question[];
 };

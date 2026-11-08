@@ -3,7 +3,8 @@ import { BackLink } from "@/components/app/BackLink";
 import { notFound } from "next/navigation";
 import { requireUser } from "@/lib/access";
 import { getSettings } from "@/lib/settings";
-import { loadSets } from "@/lib/mcq";
+import { freeQuestionCount, loadSets } from "@/lib/mcq";
+import { FreeNote } from "@/components/mcq/FreeNote";
 import { SetRow } from "@/components/mcq/SetRow";
 import { EnrollButton } from "@/components/enroll/Enroll";
 import { EmptyState, PageHeader } from "@/components/ui/primitives";
@@ -22,7 +23,13 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
   if (!(section in TITLES)) notFound();
   const kind = section as keyof typeof TITLES;
   const { supabase, profile, full } = await requireUser();
-  const [sets, s] = await Promise.all([loadSets(supabase, kind), getSettings()]);
+  const [sets, s, allSets, { count: totalQ }] = await Promise.all([
+    loadSets(supabase, kind),
+    getSettings(),
+    full ? Promise.resolve([]) : loadSets(supabase),
+    full ? Promise.resolve({ count: 0 }) : supabase.from("questions").select("id", { count: "exact", head: true }),
+  ]);
+  const freeQ = full ? 0 : await freeQuestionCount(supabase, allSets);
   const enroll = <EnrollButton s={s} email={profile.email ?? ""} className={btn("primary", "sm")} />;
 
   let body: React.ReactNode;
@@ -43,7 +50,7 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
             <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-b2-caribbean">{subject}</h2>
             <ul className="space-y-3">
               {list.map((st) => (
-                <SetRow key={st.id} set={st} open={full || st.is_free_sample} showFree={!full} enroll={enroll} />
+                <SetRow key={st.id} set={st} full={full} enroll={enroll} />
               ))}
             </ul>
           </section>
@@ -54,7 +61,7 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
     body = (
       <ul className="space-y-3">
         {sets.map((st) => (
-          <SetRow key={st.id} set={st} open={full || st.is_free_sample} showFree={!full} enroll={enroll} />
+          <SetRow key={st.id} set={st} full={full} enroll={enroll} />
         ))}
       </ul>
     );
@@ -64,6 +71,7 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
     <>
       <BackLink href="/mcq" label="MCQ" />
       <PageHeader title={TITLES[kind][0]} sub={TITLES[kind][1]} />
+      {!full && <FreeNote freeQuestions={freeQ} totalQuestions={totalQ ?? 0} s={s} email={profile.email ?? ""} />}
       {body}
     </>
   );

@@ -133,6 +133,13 @@ export async function toggleFlag(fd: FormData) {
   revalidatePath(`/admin/${table === "question_sets" ? "mcq" : table}`);
 }
 
+export async function setFreeCount(fd: FormData) {
+  const { supabase } = await requireAdmin();
+  const n = Math.max(0, Math.min(500, Math.floor(Number(str(fd, "free_count")) || 0)));
+  await supabase.from("question_sets").update({ free_count: n }).eq("id", str(fd, "id"));
+  revalidatePath("/admin/mcq");
+}
+
 export async function deleteRecording(fd: FormData) {
   const { supabase } = await requireAdmin();
   await supabase.from("recordings").delete().eq("id", str(fd, "id"));

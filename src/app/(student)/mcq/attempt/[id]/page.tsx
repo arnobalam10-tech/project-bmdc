@@ -7,6 +7,8 @@ import { ExamRunner } from "@/components/mcq/ExamRunner";
 import type { AttemptData } from "@/components/mcq/types";
 import { B2Mark } from "@/components/brand/B2";
 import { BackLink } from "@/components/app/BackLink";
+import { LockedQuestions } from "@/components/mcq/LockedQuestions";
+import { getSettings } from "@/lib/settings";
 import { btn } from "@/components/ui/Button";
 import { startAttempt } from "../../actions";
 import { SubmitButton } from "@/components/ui/client";
@@ -15,13 +17,17 @@ export const metadata: Metadata = { title: "MCQ" };
 
 export default async function AttemptPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const { supabase } = await requireUser();
+  const { supabase, profile } = await requireUser();
   const { data, error } = await supabase.rpc("get_attempt", { p_attempt_id: id });
   if (error || !data) notFound();
   const d = data as AttemptData;
 
   if (!d.attempt.submitted_at) {
-    return d.attempt.mode === "exam" ? <ExamRunner data={d} /> : <PracticeRunner data={d} />;
+    const locked =
+      d.locked_count > 0 ? (
+        <LockedQuestions lockedCount={d.locked_count} total={d.set.total_questions} s={await getSettings()} email={profile.email ?? ""} />
+      ) : null;
+    return d.attempt.mode === "exam" ? <ExamRunner data={d} locked={locked} /> : <PracticeRunner data={d} locked={locked} />;
   }
 
   // ───── result ─────
@@ -60,6 +66,16 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
           {a.mode === "exam" && <span className="rounded-full bg-b2-black/50 px-3 py-1.5">{used} min used</span>}
         </div>
       </div>
+
+      {d.locked_count > 0 && (
+        <LockedQuestions
+          compact
+          lockedCount={d.locked_count}
+          total={d.set.total_questions}
+          s={await getSettings()}
+          email={profile.email ?? ""}
+        />
+      )}
 
       {bySubject.size > 0 && (
         <div className="rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
