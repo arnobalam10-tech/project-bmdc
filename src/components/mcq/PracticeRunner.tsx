@@ -129,8 +129,19 @@ export function PracticeRunner({ data }: { data: AttemptData }) {
               Check answer
             </button>
           ) : last ? (
-            <button type="button" onClick={finish} disabled={busy} className={btn("primary", "md", "flex-1")}>
-              Finish practice
+            <button
+              type="button"
+              onClick={finish}
+              aria-busy={busy || undefined}
+              className={btn("primary", "md", `flex-1 ${busy ? "pointer-events-none" : ""}`)}
+            >
+              {busy ? (
+                <>
+                  <B2Mark className="is-loading" size={20} grain={false} decorative /> Finishing…
+                </>
+              ) : (
+                "Finish practice"
+              )}
             </button>
           ) : (
             <button type="button" onClick={() => go(i + 1)} className={btn("primary", "md", "flex-1")}>
