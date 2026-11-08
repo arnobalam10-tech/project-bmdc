@@ -91,10 +91,10 @@ If a window asks you to sign in to GitHub, sign in.
 |---|---|
 | `NEXT_PUBLIC_SUPABASE_URL` | `https://gmmpzehlfeuigtopekoq.supabase.co` |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | (from `.env.local`; starts with `sb_publishable_`) |
-| `NEXT_PUBLIC_SITE_URL` | `https://projectbmdc.vercel.app` (change it in step 7 below if your address is different) |
+| `NEXT_PUBLIC_SITE_URL` | `https://www.projectbmdc.com` (change it in step 7 below if your address is different) |
 
 6. Click **Deploy** and wait about 2 minutes.
-7. Vercel shows your live address, e.g. `https://projectbmdc.vercel.app`. If it's different from what you typed in step 5:
+7. Vercel shows your live address, e.g. `https://www.projectbmdc.com`. If it's different from what you typed in step 5:
    **Settings → Environment Variables** → edit `NEXT_PUBLIC_SITE_URL` to the real address → **Deployments** → the latest one → **⋯ → Redeploy**.
 
 ✅ Check: open the address on your phone. You should see the light landing page with the workshop countdown.
@@ -108,9 +108,9 @@ If a window asks you to sign in to GitHub, sign in.
 Login, Google and password-reset links send people back to this address.
 
 1. Supabase → **Project BMDC** → **Authentication** → **URL Configuration**.
-2. **Site URL**: your live address, e.g. `https://projectbmdc.vercel.app`.
+2. **Site URL**: your live address, e.g. `https://www.projectbmdc.com`.
 3. **Redirect URLs** → **Add URL**, and add both:
-   - `https://projectbmdc.vercel.app/**`
+   - `https://www.projectbmdc.com/**` and `https://projectbmdc.com/**` (plus the old `https://projectbmdc.vercel.app/**`)
    - `http://localhost:3000/**` (for testing on your computer)
 4. Click **Save**.
 
@@ -130,7 +130,7 @@ Login, Google and password-reset links send people back to this address.
 5. **Audience** → click **Publish app** → confirm. Without this, only test users can log in with Google.
 6. **Clients** (or **Credentials**) → **Create client** / **Create credentials → OAuth client ID**.
    - Application type: **Web application**. Name: `Project BMDC web`.
-   - **Authorized JavaScript origins**: `https://projectbmdc.vercel.app` and `http://localhost:3000`
+   - **Authorized JavaScript origins**: `https://www.projectbmdc.com`, `https://projectbmdc.vercel.app` and `http://localhost:3000`
    - **Authorized redirect URIs**: `https://gmmpzehlfeuigtopekoq.supabase.co/auth/v1/callback`
    - Click **Create**, then copy the **Client ID** and **Client secret**.
 

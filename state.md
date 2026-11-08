@@ -31,7 +31,7 @@
 
 | What | Where |
 |---|---|
-| **Live site** | **https://projectbmdc.vercel.app** (Vercel project `project-bmdc`, team "arnob's projects", functions in `sin1` Singapore) |
+| **Live site** | **https://www.projectbmdc.com** (bare projectbmdc.com redirects to www; projectbmdc.vercel.app still works). Domain from Namecheap, DNS: A @ 216.198.79.1, CNAME www → Vercel (Vercel project `project-bmdc`, team "arnob's projects", functions in `sin1` Singapore) |
 | GitHub | https://github.com/arnobalam10-tech/project-bmdc (branch `main`; every push redeploys) |
 | Supabase | project `gmmpzehlfeuigtopekoq` (Singapore) |
 | Owner admin login | `admin@bmdc.com` (password given by owner in chat; **change it after first login**; this email has no real inbox, so ask Claude to reset it if forgotten) |
