@@ -1,0 +1,3 @@
+-- import_mcq(): PYQ sets sort newest-first by year AND month: sort = -(year*100 + month).
+-- Same body as 0003 otherwise; also refreshes sort on re-import.
+-- (Applied remotely via MCP on 2026-11-08; see 0003 for the rest of the function body.)

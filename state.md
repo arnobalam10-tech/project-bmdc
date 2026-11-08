@@ -39,6 +39,14 @@
 
 **Live check (2026-11-08):** 25/26 automated checks passed on the live site, and the 26th was a test-script issue (the row is visible). Covered: landing (light default, workshop), student login, dashboard, classes, MCQ hub/PYQ/topic, notes, profile, leaderboard, practice check + explanation, admin blocked for students, admin login and all 9 admin pages.
 
+## MCQ bank (2026-11-08)
+
+**857 questions · 3,428 True/False statements · 10 PYQ papers · 39 chapter (topic-wise) sets.**
+May 2025 (86, answers decided by us; no key in source), May 2022 (67), Nov 2022 (82), Oct 2021 (84), Oct 2020 (87), Oct 2019 (99), Apr 2019 (84), Oct 2018 (90), Apr 2018 (88), Oct 2017 (90).
+Source: `BMDCPQ.pdf`. 84 printed answer keys were corrected against standard textbooks (list in the helper reports). Topic-only recall lists (Oct 2023, May 2023, Oct 2022, Oct 2021) were not imported; saved for the owner as `Downloads/BMDC-Recent-Exam-Topics-2021-2023.pdf`.
+Files: `content/mcq/*.json`. Re-import: `node scripts/import-mcq.mjs` (needs `SUPABASE_SERVICE_ROLE_KEY` in `.env.local`; `--wipe` deletes all questions/sets/attempts first). Validate/merge helper output: `node scripts/merge-mcq.mjs <dir>`.
+No set is marked Free yet → free accounts see no MCQs until the owner toggles some in Admin → MCQ sets.
+
 ## Decisions log
 
 | Date | Decision |
