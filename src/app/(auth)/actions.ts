@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { claimThisDevice } from "@/lib/device";
+import { normalizeBdPhone, PHONE_ERROR } from "@/lib/phone";
 
 export type FormState = { error?: string; ok?: string } | undefined;
 
@@ -21,12 +22,11 @@ function safeNext(next: FormDataEntryValue | null) {
   return n.startsWith("/") && !n.startsWith("//") ? n : "/dashboard";
 }
 
+// accepts the number with or without the leading 0 (and with +880 / 880)
 const phoneSchema = z
   .string()
-  .trim()
-  .transform((v) => v.replace(/[\s-]/g, ""))
-  .transform((v) => v.replace(/^\+?880/, "0"))
-  .refine((v) => /^01[3-9]\d{8}$/.test(v), "Enter a valid Bangladeshi number, e.g. 01XXXXXXXXX");
+  .transform((v) => normalizeBdPhone(v) ?? "")
+  .refine((v) => v !== "", PHONE_ERROR);
 
 export async function signIn(_: FormState, fd: FormData): Promise<FormState> {
   const email = String(fd.get("email") ?? "").trim();

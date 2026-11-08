@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   BookOpenCheck,
@@ -29,23 +28,21 @@ const INSTRUCTORS = [
   {
     name: "Dr. Nafisa Alam",
     initials: "NA",
-    photo: "/team/dr-nafisa-alam.webp",
     quote:
-      "Every doctor who trained abroad deserves a fair shot at practising at home. Helping them pass means better doctors for Bangladesh.",
+      "Every doctor who studied abroad deserves a fair chance to practise in their home country. At Project BMDC, we’re here to make that journey a little easier by building a system specifically designed for the BMDC exam.",
   },
   {
     name: "Dr. Omar",
     initials: "O",
-    photo: "/team/dr-omar.webp",
     quote:
-      "When I prepared for this exam, there was no clear guide, so I worked it all out the hard way. I built this so nobody else has to.",
+      "When I prepared for this exam, I wished there was someone to show me the way. There wasn’t, so we built what we wish we had — a clear roadmap, the right guidance, and a little more clarity for everyone taking this journey after us.",
   },
 ];
 
 const FEATURES = [
-  { icon: Video, title: "Live classes, 3 a week", body: "48 structured classes over 16 weeks on Google Meet, from Medicine to Obstetrics." },
+  { icon: Video, title: "Live classes, 3 classes a week", body: "48 structured classes over 16 weeks on Google Meet, from Medicine to Obstetrics." },
   { icon: PlayCircle, title: "Every class recorded", body: "Missed one? Rewatch any class, chapter by chapter, any time." },
-  { icon: ClipboardList, title: "All previous BMDC papers", body: "Every previous question paper from 2017 to 2025, with the answer and the reason." },
+  { icon: ClipboardList, title: "All previous BMDC papers", body: "Structured according to the BMDC exam pattern." },
   { icon: BookOpenCheck, title: "Topic-wise MCQ practice", body: "True/False MCQs by chapter. Instant answers and explanations after every question." },
   { icon: Timer, title: "Real timed mock exams", body: "100 questions, 100 minutes, the exact RQE marking. Know your score before exam day." },
   { icon: FileText, title: "Chapter-wise notes", body: "Clean, exam-focused PDF notes for every chapter, inside the platform." },
@@ -305,16 +302,8 @@ export default async function Home() {
               {INSTRUCTORS.map((p) => (
                 <figure key={p.name} className="flex flex-col rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
                   <div className="flex items-center gap-5">
-                    <div className="relative size-20 flex-none sm:size-24">
-                      <div className="b2-film spring size-full overflow-hidden rounded-full p-[3px] shadow-[0_8px_24px_rgba(0,223,129,.25)]">
-                        <Image
-                          src={p.photo}
-                          alt={`Portrait of ${p.name}`}
-                          width={192}
-                          height={192}
-                          className="size-full rounded-full object-cover"
-                        />
-                      </div>
+                    <div className="b2-film spring relative grid size-20 flex-none place-items-center rounded-full text-2xl font-semibold sm:size-24 sm:text-3xl">
+                      <span>{p.initials}</span>
                       <B2Mark size={26} grain={false} decorative className="!absolute -bottom-1 -right-1" />
                     </div>
                     <div>

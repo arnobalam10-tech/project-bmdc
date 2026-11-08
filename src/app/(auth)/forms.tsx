@@ -69,13 +69,13 @@ function PhoneInput({ defaultValue }: { defaultValue?: string }) {
           type="tel"
           inputMode="tel"
           autoComplete="tel-national"
-          placeholder="01XXXXXXXXX"
+          placeholder="1XXXXXXXXX"
           required
           defaultValue={defaultValue}
           className="b2-input !rounded-l-none"
         />
       </div>
-      <p className="mt-1.5 text-xs text-b2-pistachio">We use this to match your bKash payment and WhatsApp.</p>
+      <p className="mt-1.5 text-xs text-b2-pistachio">With or without the first 0. We use it to match your bKash payment and WhatsApp.</p>
     </div>
   );
 }

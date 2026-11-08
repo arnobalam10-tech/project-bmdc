@@ -18,7 +18,7 @@ export default async function McqHub({ searchParams }: { searchParams: Promise<{
     {
       key: "pyq",
       title: "Previous-year questions",
-      body: "Every BMDC paper, newest first. The real thing, with the answer and the reason.",
+      body: "Structured according to the BMDC exam pattern, with the answer and the reason.",
       icon: ClipboardList,
       meta: `${count("pyq").length} papers · ${qCount("pyq")} questions`,
     },

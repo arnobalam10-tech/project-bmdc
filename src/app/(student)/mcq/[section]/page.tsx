@@ -13,7 +13,7 @@ import { btn } from "@/components/ui/Button";
 export const metadata: Metadata = { title: "MCQ sets" };
 
 const TITLES = {
-  pyq: ["Previous-year questions", "Every BMDC paper, newest first."],
+  pyq: ["Previous-year questions", "Structured according to the BMDC exam pattern."],
   model: ["Model tests", "Full mock papers with exact RQE marking."],
   topic: ["Topic-wise", "Chapter by chapter, following the course."],
 } as const;

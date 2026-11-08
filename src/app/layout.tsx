@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Hind_Siliguri } from "next/font/google";
+import { Outfit, Anek_Bangla } from "next/font/google";
 import { B2Defs } from "@/components/brand/B2";
 import { DEFAULT_THEME, themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
 const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
-const hind = Hind_Siliguri({ variable: "--font-hind", subsets: ["bengali", "latin"], weight: ["400", "600", "700"] });
+// Bangla: Anek Bangla (Hind Siliguri, the brand-kit font, renders the ন্স conjunct in "লাইসেন্স" incorrectly)
+const hind = Anek_Bangla({ variable: "--font-hind", subsets: ["bengali", "latin"], weight: ["400", "500", "600"] });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
