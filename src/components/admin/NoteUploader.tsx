@@ -11,10 +11,19 @@ import { ChapterSelect } from "./ChapterSelect";
 
 type Ch = { id: string; name: string; subjects: { name: string } | null };
 
-function countPages(buf: ArrayBuffer) {
-  const text = new TextDecoder("latin1").decode(buf);
-  const m = text.match(/\/Type\s*\/Page(?!s)/g);
-  return m ? m.length : null;
+/** Page count via the real PDF engine (works for compressed/object-stream PDFs); null if it can't tell. */
+async function countPages(buf: ArrayBuffer): Promise<number | null> {
+  try {
+    const { pdfjs } = await import("react-pdf");
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+    const doc = await pdfjs.getDocument({ data: new Uint8Array(buf) }).promise;
+    const n = doc.numPages;
+    await doc.destroy();
+    return n;
+  } catch {
+    const m = new TextDecoder("latin1").decode(buf).match(/\/Type\s*\/Page(?!s)/g);
+    return m ? m.length : null;
+  }
 }
 
 /** Uploads the PDF straight to the private "notes" bucket (admin RLS), then saves the row. */
@@ -54,7 +63,7 @@ export function NoteUploader({ chapters }: { chapters: Ch[] }) {
       title,
       storage_path: path,
       size_bytes: file.size,
-      page_count: countPages(await file.arrayBuffer()),
+      page_count: await countPages(await file.arrayBuffer()),
       is_free_sample: fd.get("is_free_sample") === "on",
       sort: Number(fd.get("sort") || 0),
     });
