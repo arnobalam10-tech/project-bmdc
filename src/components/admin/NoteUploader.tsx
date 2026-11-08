@@ -18,7 +18,6 @@ async function countPages(buf: ArrayBuffer): Promise<number | null> {
     pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
     const doc = await pdfjs.getDocument({ data: new Uint8Array(buf) }).promise;
     const n = doc.numPages;
-    await doc.destroy();
     return n;
   } catch {
     const m = new TextDecoder("latin1").decode(buf).match(/\/Type\s*\/Page(?!s)/g);
