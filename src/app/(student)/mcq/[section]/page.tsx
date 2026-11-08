@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { BackLink } from "@/components/app/BackLink";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
 import { requireUser } from "@/lib/access";
 import { getSettings } from "@/lib/settings";
 import { loadSets } from "@/lib/mcq";
@@ -63,9 +62,7 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
 
   return (
     <>
-      <Link href="/mcq" className="mb-3 inline-flex min-h-10 items-center gap-1 text-b2-meadow hover:underline">
-        <ArrowLeft size={18} /> MCQ
-      </Link>
+      <BackLink href="/mcq" label="MCQ" />
       <PageHeader title={TITLES[kind][0]} sub={TITLES[kind][1]} />
       {body}
     </>

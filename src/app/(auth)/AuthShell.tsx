@@ -1,9 +1,21 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { B2Logo, B2Mark } from "@/components/brand/B2";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 /** Desktop: film panel left + form right. Mobile: compact film header + form. */
-export function AuthShell({ title, sub, children }: { title: ReactNode; sub?: ReactNode; children: ReactNode }) {
+export function AuthShell({
+  title,
+  sub,
+  children,
+  back = { href: "/", label: "Home" },
+}: {
+  title: ReactNode;
+  sub?: ReactNode;
+  children: ReactNode;
+  back?: { href: string; label: string } | null;
+}) {
   return (
     <div className="grid min-h-dvh md:grid-cols-[1fr_minmax(440px,560px)]">
       <aside className="b2-film relative hidden flex-col justify-between p-10 md:flex">
@@ -27,6 +39,14 @@ export function AuthShell({ title, sub, children }: { title: ReactNode; sub?: Re
         </div>
         <ThemeToggle className="absolute right-5 top-5 hidden md:grid" />
         <div className="mx-auto flex w-full max-w-[440px] flex-1 flex-col justify-center px-5 py-10 sm:px-6">
+          {back && (
+            <Link
+              href={back.href}
+              className="pressable mb-6 inline-flex min-h-10 items-center gap-1.5 self-start rounded-full pr-3 font-medium text-b2-meadow hover:underline"
+            >
+              <ArrowLeft size={18} /> {back.label}
+            </Link>
+          )}
           <h1 className="text-[30px] font-semibold tracking-[-0.03em]">{title}</h1>
           {sub && <p className="mt-2 text-b2-pistachio">{sub}</p>}
           <div className="mt-8">{children}</div>

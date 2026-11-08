@@ -2,7 +2,8 @@
 
 import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { btn } from "@/components/ui/Button";
 import { B2Mark } from "@/components/brand/B2";
@@ -78,7 +79,14 @@ export function PracticeRunner({ data }: { data: AttemptData }) {
   return (
     <div ref={top} className="scroll-mt-20">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <div className="min-w-0">
+        <Link
+          href={`/mcq/${data.set.kind}`}
+          aria-label="Exit practice"
+          className="pressable -ml-1 flex min-h-11 flex-none items-center gap-1 rounded-full border border-b2-border px-3 text-sm font-medium text-b2-pistachio hover:text-b2-flash"
+        >
+          <X size={16} /> Exit
+        </Link>
+        <div className="min-w-0 flex-1">
           <p className="truncate text-sm text-b2-pistachio">Practice · {data.set.title}</p>
           <p className="font-semibold">
             Question {i + 1} <span className="text-b2-stone">of {questions.length}</span>

@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Anek_Bangla } from "next/font/google";
+import { Suspense } from "react";
 import { B2Defs } from "@/components/brand/B2";
+import { NavigationProgress } from "@/components/app/NavigationProgress";
 import { DEFAULT_THEME, themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
@@ -54,6 +56,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="b2-grain-page min-h-dvh antialiased">
         <B2Defs />
+        <Suspense fallback={null}>
+          <NavigationProgress />
+        </Suspense>
         {children}
       </body>
     </html>

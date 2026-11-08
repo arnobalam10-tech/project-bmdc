@@ -6,6 +6,7 @@ import { PracticeRunner } from "@/components/mcq/PracticeRunner";
 import { ExamRunner } from "@/components/mcq/ExamRunner";
 import type { AttemptData } from "@/components/mcq/types";
 import { B2Mark } from "@/components/brand/B2";
+import { BackLink } from "@/components/app/BackLink";
 import { btn } from "@/components/ui/Button";
 import { startAttempt } from "../../actions";
 import { SubmitButton } from "@/components/ui/client";
@@ -38,8 +39,10 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
   const started = new Date(a.started_at).getTime();
   const used = Math.max(0, Math.round((new Date(a.submitted_at!).getTime() - started) / 60000));
 
+  const sectionLabel = { pyq: "Previous-year questions", model: "Model tests", topic: "Topic-wise" }[d.set.kind];
   return (
     <div className="space-y-6">
+      <BackLink href={`/mcq/${d.set.kind}`} label={sectionLabel} />
       <div className="b2-film spring rounded-[32px] p-6 text-center sm:p-10">
         <B2Mark className="is-heartbeat mx-auto" size={64} decorative />
         <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em]">
@@ -90,8 +93,8 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
             Try again
           </SubmitButton>
         </form>
-        <Link href="/mcq" className={btn("ghost", "lg", "flex-1")}>
-          Back to MCQ
+        <Link href={`/mcq/${d.set.kind}`} className={btn("ghost", "lg", "flex-1")}>
+          Back to {sectionLabel}
         </Link>
       </div>
     </div>

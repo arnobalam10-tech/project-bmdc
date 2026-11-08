@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, Flag, Grid3x3, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { signalNavStart } from "@/components/app/NavigationProgress";
 import { btn } from "@/components/ui/Button";
 import { B2Mark } from "@/components/brand/B2";
 import { QuestionCard } from "./QuestionCard";
@@ -31,6 +32,8 @@ export function ExamRunner({ data }: { data: AttemptData }) {
   const [flags, setFlags] = useState<Set<string>>(new Set(data.flags));
   const [paletteOpen, setPaletteOpen] = useState(false);
   const [confirm, setConfirm] = useState(false);
+  const [leaveOpen, setLeaveOpen] = useState(false);
+  const [leaving, setLeaving] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [saveState, setSaveState] = useState<"saved" | "saving" | "error">("saved");
   // server clock offset, measured once on mount (lazy initialiser)
@@ -157,7 +160,15 @@ export function ExamRunner({ data }: { data: AttemptData }) {
       {/* sticky exam header */}
       <div className="sticky top-14 z-30 -mx-4 border-b border-b2-border bg-b2-black/95 px-4 pb-3 pt-3 backdrop-blur-md md:top-0 md:mx-0 md:rounded-b-2xl md:px-0">
         <div className="flex items-center justify-between gap-3">
-          <div className="min-w-0">
+          <button
+            type="button"
+            onClick={() => setLeaveOpen(true)}
+            aria-label="Leave exam"
+            className="pressable flex min-h-10 flex-none items-center gap-1 rounded-full border border-b2-border px-3 text-sm font-medium text-b2-pistachio hover:text-b2-flash"
+          >
+            <X size={16} /> Leave
+          </button>
+          <div className="min-w-0 flex-1">
             <p className="truncate text-xs text-b2-pistachio sm:text-sm">Exam · {data.set.title}</p>
             <p className="text-sm font-semibold sm:text-base">
               Question {i + 1} <span className="text-b2-stone">of {qs.length}</span>
@@ -254,6 +265,44 @@ export function ExamRunner({ data }: { data: AttemptData }) {
             <button type="button" onClick={() => { setPaletteOpen(false); setConfirm(true); }} className={btn("primary", "lg", "mt-5 w-full")}>
               Submit exam
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* leave confirm */}
+      {leaveOpen && (
+        <div className="fixed inset-0 z-50 grid place-items-end bg-black/70 sm:place-items-center" role="dialog" aria-modal="true">
+          <div className="safe-bottom w-full rounded-t-[28px] border border-b2-border bg-b2-dark p-6 sm:max-w-md sm:rounded-[28px]">
+            <p className="text-xl font-semibold">Leave the exam?</p>
+            <p className="mt-2 text-b2-pistachio">
+              Your answers are saved. The timer keeps running: open this paper again from the list to continue before
+              time runs out.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <button type="button" onClick={() => setLeaveOpen(false)} className={btn("primary", "md", "flex-1")}>
+                Keep going
+              </button>
+              <button
+                type="button"
+                disabled={leaving}
+                aria-busy={leaving || undefined}
+                onClick={async () => {
+                  setLeaving(true);
+                  await flush();
+                  signalNavStart();
+                  router.push(`/mcq/${data.set.kind}`);
+                }}
+                className={btn("secondary", "md", "flex-1")}
+              >
+                {leaving ? (
+                  <>
+                    <B2Mark className="is-loading" size={18} grain={false} decorative /> Saving…
+                  </>
+                ) : (
+                  "Leave"
+                )}
+              </button>
+            </div>
           </div>
         </div>
       )}

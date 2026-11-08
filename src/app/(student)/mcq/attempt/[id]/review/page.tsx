@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { BackLink } from "@/components/app/BackLink";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
 import { requireUser } from "@/lib/access";
 import { QuestionCard } from "@/components/mcq/QuestionCard";
 import { sourceLine, type AttemptData } from "@/components/mcq/types";
@@ -18,9 +17,7 @@ export default async function ReviewPage({ params }: { params: Promise<{ id: str
 
   return (
     <div>
-      <Link href={`/mcq/attempt/${id}`} className="mb-3 inline-flex min-h-10 items-center gap-1 text-b2-meadow hover:underline">
-        <ArrowLeft size={18} /> Result
-      </Link>
+      <BackLink href={`/mcq/attempt/${id}`} label="Result" />
       <h1 className="text-[26px] font-semibold tracking-tight">Review · {d.set.title}</h1>
       <p className="mt-1 text-b2-pistachio">Every statement with the correct answer and the reason.</p>
       <div className="mt-6 space-y-10">

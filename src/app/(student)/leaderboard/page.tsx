@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Trophy } from "lucide-react";
 import { requireUser } from "@/lib/access";
 import { EmptyState, PageHeader } from "@/components/ui/primitives";
+import { BackLink } from "@/components/app/BackLink";
 
 export const metadata: Metadata = { title: "Leaderboard" };
 
@@ -15,6 +16,7 @@ export default async function LeaderboardPage() {
 
   return (
     <>
+      <BackLink href="/profile" label="Profile" />
       <PageHeader
         title="Leaderboard"
         sub="Average of each enrolled student's best exam score across previous papers and model tests. Only first names are shown."

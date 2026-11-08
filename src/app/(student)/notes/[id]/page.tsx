@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { BackLink } from "@/components/app/BackLink";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import { requireUser } from "@/lib/access";
 import { getSettings } from "@/lib/settings";
 import { EnrollButton } from "@/components/enroll/Enroll";
@@ -22,9 +22,7 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
   if (!full && !note.is_free_sample) {
     return (
       <div>
-        <Link href="/notes" className="mb-4 inline-flex min-h-10 items-center gap-1 text-b2-meadow hover:underline">
-          <ArrowLeft size={18} /> Notes
-        </Link>
+        <BackLink href="/notes" label="Notes" />
         <div className="b2-film deep rounded-[28px] p-8 text-center">
           <Lock className="mx-auto text-b2-pistachio" size={32} />
           <h1 className="mt-3 text-xl font-semibold">{note.title}</h1>

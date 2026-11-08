@@ -24,9 +24,22 @@ export function SubmitButton({
   value?: string;
   formAction?: (fd: FormData) => void | Promise<void>;
 }) {
-  const { pending } = useFormStatus();
+  const status = useFormStatus();
+  // With several submit buttons in one form (e.g. Practice / Exam), only the tapped one shows its spinner.
+  const mine = !rest.name || !status.data || status.data.get(rest.name) === rest.value;
+  const pending = status.pending && mine;
+  const formBusy = status.pending;
   return (
-    <button type="submit" disabled={pending} className={btn(variant, size, className)} {...rest}>
+    <button
+      type="submit"
+      aria-busy={pending || undefined}
+      aria-disabled={formBusy || undefined}
+      onClick={(e) => {
+        if (formBusy) e.preventDefault(); // no double submits; keeps the brand colour while loading
+      }}
+      className={btn(variant, size, `${className} ${formBusy && !pending ? "opacity-50" : ""}`)}
+      {...rest}
+    >
       {pending ? (
         <>
           <B2Mark className="is-loading" size={20} grain={false} decorative /> {pendingLabel}…

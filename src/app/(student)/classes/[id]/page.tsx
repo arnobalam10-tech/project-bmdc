@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BackLink } from "@/components/app/BackLink";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ChevronLeft, ChevronRight, Lock } from "lucide-react";
+import { ChevronLeft, ChevronRight, Lock } from "lucide-react";
 import { requireUser } from "@/lib/access";
 import { getSettings } from "@/lib/settings";
 import { bunnyEmbedUrl } from "@/lib/bunny";
@@ -35,9 +36,7 @@ export default async function RecordingPage({ params }: { params: Promise<{ id: 
 
   return (
     <div>
-      <Link href="/classes?tab=recorded" className="mb-4 inline-flex min-h-10 items-center gap-1 text-b2-meadow hover:underline">
-        <ArrowLeft size={18} /> Recorded classes
-      </Link>
+      <BackLink href="/classes?tab=recorded" label="Recorded classes" />
 
       <div className="sticky top-14 z-20 -mx-4 bg-b2-black md:static md:mx-0">
         {!allowed ? (
