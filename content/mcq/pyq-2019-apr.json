@@ -1,0 +1,2785 @@
+{
+  "set": {
+    "ext_id": "pyq-2019-apr",
+    "kind": "pyq",
+    "title": "BMDC RQE — April 2019",
+    "pyq_year": 2019,
+    "pyq_session": "April",
+    "duration_min": 84,
+    "is_free_sample": false
+  },
+  "questions": [
+    {
+      "ext_id": "pyq-2019-apr-001",
+      "subject": "Pediatrics",
+      "chapter": "Peds Neuro, Hem-Onc & Infections",
+      "stem": "Findings in poliomyelitis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Asymmetrical paralysis",
+          "is_true": true,
+          "explanation": "Anterior horn cell destruction is patchy, giving an asymmetrical, flaccid, predominantly proximal lower motor neuron paralysis."
+        },
+        {
+          "label": "B",
+          "text": "Sensory loss",
+          "is_true": false,
+          "explanation": "Polio affects only motor neurons of the anterior horn; sensation is characteristically preserved, which helps distinguish it from GBS."
+        },
+        {
+          "label": "C",
+          "text": "Bladder dysfunction",
+          "is_true": false,
+          "explanation": "Sphincters are usually spared in poliomyelitis; early bladder involvement points towards transverse myelitis or cord compression."
+        },
+        {
+          "label": "D",
+          "text": "Raised protein",
+          "is_true": false,
+          "explanation": "CSF shows a lymphocytic pleocytosis with normal or only marginally raised protein; marked protein rise with few cells suggests GBS instead."
+        }
+      ],
+      "pearl": "Acute flaccid paralysis: asymmetric, sensation intact, no sphincter loss = polio; symmetric ascending with albuminocytological dissociation = GBS."
+    },
+    {
+      "ext_id": "pyq-2019-apr-002",
+      "subject": "Pediatrics",
+      "chapter": "Peds Neuro, Hem-Onc & Infections",
+      "stem": "Vaccines in the EPI schedule of Bangladesh:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rabies",
+          "is_true": false,
+          "explanation": "Rabies vaccine is given as post-exposure (or high-risk pre-exposure) prophylaxis, not as part of routine childhood EPI."
+        },
+        {
+          "label": "B",
+          "text": "BCG",
+          "is_true": true,
+          "explanation": "BCG is given at birth (or first contact) intradermally over the left deltoid to protect against severe childhood TB."
+        },
+        {
+          "label": "C",
+          "text": "Cholera",
+          "is_true": false,
+          "explanation": "Oral cholera vaccine is used in outbreak or high-risk campaigns but is not in the routine EPI schedule."
+        },
+        {
+          "label": "D",
+          "text": "Hepatitis B",
+          "is_true": true,
+          "explanation": "Hepatitis B is given within the pentavalent vaccine (DPT-HepB-Hib) at 6, 10 and 14 weeks."
+        }
+      ],
+      "pearl": "Bangladesh EPI covers BCG, pentavalent, PCV, OPV/IPV, MR and TT/Td; pentavalent = DPT + Hep B + Hib."
+    },
+    {
+      "ext_id": "pyq-2019-apr-003",
+      "subject": "General Surgery",
+      "chapter": "Ear",
+      "stem": "Causes of referred otalgia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Impacted tooth",
+          "is_true": true,
+          "explanation": "Dental pain, especially an impacted lower third molar, is referred to the ear via the mandibular branch of the trigeminal nerve (auriculotemporal)."
+        },
+        {
+          "label": "B",
+          "text": "Adenoid",
+          "is_true": false,
+          "explanation": "Adenoids cause ear symptoms by Eustachian tube obstruction (otitis media with effusion), a true middle ear problem rather than referred pain."
+        },
+        {
+          "label": "C",
+          "text": "Tonsillitis",
+          "is_true": true,
+          "explanation": "Pain from the tonsil travels via the glossopharyngeal nerve (tympanic branch, Jacobson's nerve), so tonsillitis and post-tonsillectomy pain are referred to the ear."
+        },
+        {
+          "label": "D",
+          "text": "Arthritis of the temporomandibular joint",
+          "is_true": true,
+          "explanation": "TMJ arthritis or dysfunction is a very common cause of otalgia with a normal ear, via the auriculotemporal nerve."
+        }
+      ],
+      "pearl": "Referred otalgia nerves: V, VII, IX, X and C2/C3 — think teeth, TMJ, tonsil, larynx, cervical spine; always examine the larynx in an adult."
+    },
+    {
+      "ext_id": "pyq-2019-apr-004",
+      "subject": "General Surgery",
+      "chapter": "Throat",
+      "stem": "Features of Ludwig's angina:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dysphagia",
+          "is_true": true,
+          "explanation": "Brawny swelling of the floor of the mouth pushes the tongue up and back, causing painful dysphagia and drooling."
+        },
+        {
+          "label": "B",
+          "text": "Stridor",
+          "is_true": true,
+          "explanation": "Spread to the parapharyngeal space and laryngeal oedema can obstruct the airway; stridor signals impending airway compromise requiring urgent control."
+        },
+        {
+          "label": "C",
+          "text": "Trismus",
+          "is_true": true,
+          "explanation": "Involvement of the pterygoid muscles and submandibular space produces trismus."
+        },
+        {
+          "label": "D",
+          "text": "Incision and drainage is the treatment of choice",
+          "is_true": false,
+          "explanation": "First-line treatment is airway protection and high-dose IV antibiotics; surgical decompression is reserved for non-response or abscess formation."
+        }
+      ],
+      "pearl": "Ludwig's angina is a bilateral submandibular space cellulitis, usually from the lower second/third molars; the airway is the main threat."
+    },
+    {
+      "ext_id": "pyq-2019-apr-005",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "Major criteria of rheumatic fever:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Fever",
+          "is_true": false,
+          "explanation": "Fever is a minor Jones criterion."
+        },
+        {
+          "label": "B",
+          "text": "Migratory polyarthritis",
+          "is_true": true,
+          "explanation": "Migratory polyarthritis of large joints is a major criterion and the most common major manifestation."
+        },
+        {
+          "label": "C",
+          "text": "Increased ESR",
+          "is_true": false,
+          "explanation": "Raised ESR or CRP is a minor criterion (acute phase reactant)."
+        },
+        {
+          "label": "D",
+          "text": "Chorea",
+          "is_true": true,
+          "explanation": "Sydenham's chorea is a major criterion and can appear late, even as the sole manifestation."
+        }
+      ],
+      "pearl": "Major Jones criteria (CASES): Carditis, Arthritis, Subcutaneous nodules, Erythema marginatum, Sydenham's chorea."
+    },
+    {
+      "ext_id": "pyq-2019-apr-006",
+      "subject": "Medicine",
+      "chapter": "Respiratory",
+      "stem": "Causes of type 2 respiratory failure:",
+      "options": [
+        {
+          "label": "A",
+          "text": "COPD",
+          "is_true": true,
+          "explanation": "COPD causes ventilation-perfusion mismatch and alveolar hypoventilation, giving hypoxia with hypercapnia (PaCO2 > 6 kPa)."
+        },
+        {
+          "label": "B",
+          "text": "Pneumonia",
+          "is_true": false,
+          "explanation": "Pneumonia typically produces type 1 failure (hypoxia with normal or low PaCO2) through V/Q mismatch and shunting."
+        },
+        {
+          "label": "C",
+          "text": "GBS",
+          "is_true": true,
+          "explanation": "Respiratory muscle weakness in Guillain-Barré syndrome causes pump failure and hypoventilation, giving type 2 failure."
+        },
+        {
+          "label": "D",
+          "text": "Flail chest",
+          "is_true": true,
+          "explanation": "Paradoxical chest wall movement and pain reduce effective ventilation, leading to CO2 retention."
+        }
+      ],
+      "pearl": "Type 2 failure = pump problem (COPD, neuromuscular disease, chest wall deformity, sedative overdose); type 1 = lung parenchyma/V/Q problem."
+    },
+    {
+      "ext_id": "pyq-2019-apr-007",
+      "subject": "Basic Sciences",
+      "chapter": "Pharmacology",
+      "stem": "Side effects of beta blockers:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Depression",
+          "is_true": true,
+          "explanation": "Lipophilic agents such as propranolol cross the blood-brain barrier and can cause depression, nightmares and fatigue."
+        },
+        {
+          "label": "B",
+          "text": "Dyslipidaemia",
+          "is_true": true,
+          "explanation": "Non-selective beta blockers raise triglycerides and lower HDL cholesterol."
+        },
+        {
+          "label": "C",
+          "text": "Sexual dysfunction",
+          "is_true": true,
+          "explanation": "Erectile dysfunction is a recognised adverse effect and a common reason for non-adherence."
+        },
+        {
+          "label": "D",
+          "text": "Bronchodilatation",
+          "is_true": false,
+          "explanation": "Beta-2 blockade causes bronchoconstriction, so non-selective agents are contraindicated in asthma."
+        }
+      ],
+      "pearl": "Beta blocker adverse effects: bradycardia, heart block, bronchospasm, cold peripheries, masked hypoglycaemia, fatigue, nightmares."
+    },
+    {
+      "ext_id": "pyq-2019-apr-008",
+      "subject": "Medicine",
+      "chapter": "Hepatology",
+      "stem": "Flapping tremor (asterixis) is found in:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cirrhosis of liver",
+          "is_true": true,
+          "explanation": "Decompensated cirrhosis with hepatic encephalopathy produces asterixis, a negative myoclonus from a metabolic brain disturbance."
+        },
+        {
+          "label": "B",
+          "text": "Hepatomegaly",
+          "is_true": false,
+          "explanation": "Hepatomegaly alone does not cause asterixis; it needs liver failure with encephalopathy."
+        },
+        {
+          "label": "C",
+          "text": "Renal failure",
+          "is_true": true,
+          "explanation": "Uraemic encephalopathy in advanced renal failure is a classic cause of flapping tremor."
+        },
+        {
+          "label": "D",
+          "text": "Meningitis",
+          "is_true": false,
+          "explanation": "Meningitis causes fever, neck stiffness and altered consciousness but not asterixis."
+        }
+      ],
+      "pearl": "Asterixis causes: hepatic encephalopathy, uraemia, CO2 retention (type 2 respiratory failure) and other metabolic encephalopathies."
+    },
+    {
+      "ext_id": "pyq-2019-apr-009",
+      "subject": "Medicine",
+      "chapter": "Neurology",
+      "stem": "Signs of cerebellar lesion:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Past pointing",
+          "is_true": true,
+          "explanation": "Dysmetria on finger-nose testing (past pointing) is a hallmark of cerebellar incoordination."
+        },
+        {
+          "label": "B",
+          "text": "Athetosis",
+          "is_true": false,
+          "explanation": "Athetosis is a slow writhing movement from basal ganglia (striatal) disease, not the cerebellum."
+        },
+        {
+          "label": "C",
+          "text": "Resting tremor",
+          "is_true": false,
+          "explanation": "Resting tremor is extrapyramidal (Parkinson's); cerebellar disease gives an intention tremor."
+        },
+        {
+          "label": "D",
+          "text": "Dysarthria",
+          "is_true": true,
+          "explanation": "Cerebellar lesions cause scanning (staccato) dysarthria from incoordination of the speech muscles, a classic cerebellar sign."
+        }
+      ],
+      "pearl": "Cerebellar signs (DANISH): Dysdiadochokinesia, Ataxia, Nystagmus, Intention tremor, Scanning dysarthria, Hypotonia."
+    },
+    {
+      "ext_id": "pyq-2019-apr-010",
+      "subject": "Medicine",
+      "chapter": "Nephrology + Body Fluid",
+      "stem": "Causes of metabolic acidosis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Renal failure",
+          "is_true": true,
+          "explanation": "Failure to excrete H+ and regenerate bicarbonate, with retained phosphate and sulphate, produces a high anion gap acidosis."
+        },
+        {
+          "label": "B",
+          "text": "Cushing syndrome",
+          "is_true": false,
+          "explanation": "Cortisol excess has mineralocorticoid effects, causing hypokalaemic metabolic alkalosis."
+        },
+        {
+          "label": "C",
+          "text": "Diarrhoea",
+          "is_true": true,
+          "explanation": "Loss of bicarbonate-rich intestinal fluid causes a normal anion gap (hyperchloraemic) acidosis."
+        },
+        {
+          "label": "D",
+          "text": "Severe malaria",
+          "is_true": true,
+          "explanation": "Severe falciparum malaria causes lactic acidosis from tissue hypoxia and parasite glycolysis; it is a marker of poor prognosis."
+        }
+      ],
+      "pearl": "High anion gap acidosis (MUDPILES): Methanol, Uraemia, DKA, Paraldehyde, Iron/INH, Lactate, Ethylene glycol, Salicylates."
+    },
+    {
+      "ext_id": "pyq-2019-apr-011",
+      "subject": "Medicine",
+      "chapter": "Nephrology + Body Fluid",
+      "stem": "ECG findings in hypokalaemia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Inversion of T wave",
+          "is_true": true,
+          "explanation": "Hypokalaemia flattens and may invert the T wave, with ST depression."
+        },
+        {
+          "label": "B",
+          "text": "Wide QRS",
+          "is_true": false,
+          "explanation": "QRS widening is a feature of severe hyperkalaemia rather than hypokalaemia."
+        },
+        {
+          "label": "C",
+          "text": "Prominent U wave",
+          "is_true": true,
+          "explanation": "A prominent U wave (with apparent long QT, really QU) is the classic sign of hypokalaemia."
+        },
+        {
+          "label": "D",
+          "text": "Absent P wave",
+          "is_true": false,
+          "explanation": "Loss of P waves is seen in hyperkalaemia; hypokalaemia tends to increase P wave amplitude."
+        }
+      ],
+      "pearl": "Hypokalaemia ECG: flat/inverted T, ST depression, prominent U wave, prolonged QU; hyperkalaemia: tall tented T, flat P, wide QRS, sine wave."
+    },
+    {
+      "ext_id": "pyq-2019-apr-012",
+      "subject": "Medicine",
+      "chapter": "Nephrology + Body Fluid",
+      "stem": "Drugs used in hyperkalaemia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Calcium oxalate",
+          "is_true": false,
+          "explanation": "Calcium gluconate (or chloride) is used for membrane stabilisation; calcium oxalate is a kidney stone constituent, not a drug."
+        },
+        {
+          "label": "B",
+          "text": "Glucose with insulin",
+          "is_true": true,
+          "explanation": "Insulin drives K+ into cells via Na+/K+-ATPase; glucose is given with it to prevent hypoglycaemia."
+        },
+        {
+          "label": "C",
+          "text": "Salbutamol",
+          "is_true": true,
+          "explanation": "Nebulised beta-2 agonists shift potassium intracellularly, lowering serum K+ by about 0.5–1 mmol/L."
+        },
+        {
+          "label": "D",
+          "text": "Beta blocker",
+          "is_true": false,
+          "explanation": "Beta blockers impair cellular K+ uptake and can worsen hyperkalaemia."
+        }
+      ],
+      "pearl": "Hyperkalaemia: stabilise (calcium gluconate), shift (insulin-glucose, salbutamol, bicarbonate), remove (resonium, diuretics, dialysis)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-013",
+      "subject": "Obstetrics",
+      "chapter": "APH, PPH, Obstructed & Operative Obs",
+      "stem": "Causes of obstructed labour:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Brow presentation",
+          "is_true": true,
+          "explanation": "A persistent brow presents the mentovertical diameter (13.5 cm), which cannot pass a normal pelvis."
+        },
+        {
+          "label": "B",
+          "text": "Cervical dystocia",
+          "is_true": true,
+          "explanation": "A scarred or rigid cervix fails to dilate despite good contractions, obstructing descent."
+        },
+        {
+          "label": "C",
+          "text": "Gynaecoid pelvis",
+          "is_true": false,
+          "explanation": "The gynaecoid pelvis is the normal, most favourable pelvis for vaginal delivery."
+        },
+        {
+          "label": "D",
+          "text": "Impacted ovarian tumour",
+          "is_true": true,
+          "explanation": "An ovarian tumour impacted in the pouch of Douglas acts as a pelvic tumour obstructing the birth canal."
+        }
+      ],
+      "pearl": "Obstructed labour causes: passage (contracted pelvis, pelvic tumours, cervical dystocia) and passenger (malpresentation, big baby, hydrocephalus)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-014",
+      "subject": "Medicine",
+      "chapter": "Respiratory",
+      "stem": "Causes of clubbing:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Fibrosing alveolitis",
+          "is_true": true,
+          "explanation": "Idiopathic pulmonary fibrosis causes clubbing in about two-thirds of patients."
+        },
+        {
+          "label": "B",
+          "text": "COPD",
+          "is_true": false,
+          "explanation": "COPD does not cause clubbing; its presence in a COPD patient should prompt a search for lung cancer or bronchiectasis."
+        },
+        {
+          "label": "C",
+          "text": "Severe bronchial asthma",
+          "is_true": false,
+          "explanation": "Asthma, however severe, does not cause clubbing."
+        },
+        {
+          "label": "D",
+          "text": "Bronchiectasis",
+          "is_true": true,
+          "explanation": "Chronic suppurative lung disease such as bronchiectasis is a classic cause of clubbing."
+        }
+      ],
+      "pearl": "Respiratory clubbing: lung cancer, suppurative lung disease (bronchiectasis, abscess, empyema, CF), fibrosing alveolitis, asbestosis — never COPD or asthma."
+    },
+    {
+      "ext_id": "pyq-2019-apr-015",
+      "subject": "Pediatrics",
+      "chapter": "Peds Neuro, Hem-Onc & Infections",
+      "stem": "Complications of measles:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Meningitis",
+          "is_true": false,
+          "explanation": "Measles involves the brain parenchyma (encephalitis) rather than causing a meningitis."
+        },
+        {
+          "label": "B",
+          "text": "Encephalitis",
+          "is_true": true,
+          "explanation": "Acute post-infectious encephalitis occurs in about 1 in 1000 cases; SSPE is a late complication."
+        },
+        {
+          "label": "C",
+          "text": "Corneal ulcer",
+          "is_true": true,
+          "explanation": "Measles keratitis, especially with vitamin A deficiency, leads to corneal ulceration and keratomalacia — a major cause of childhood blindness."
+        },
+        {
+          "label": "D",
+          "text": "Acute renal failure",
+          "is_true": true,
+          "explanation": "Severe measles-associated diarrhoea with dehydration can cause prerenal acute kidney injury in malnourished children."
+        }
+      ],
+      "pearl": "Commonest measles complication is pneumonia (commonest cause of death); give vitamin A to all children with measles."
+    },
+    {
+      "ext_id": "pyq-2019-apr-016",
+      "subject": "Medicine",
+      "chapter": "Respiratory",
+      "stem": "Signs of pleural effusion:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Woody dull percussion",
+          "is_true": false,
+          "explanation": "Effusion gives stony dullness; woody dullness is the descriptor for consolidation or fibrosis."
+        },
+        {
+          "label": "B",
+          "text": "Costophrenic angle obliterated",
+          "is_true": true,
+          "explanation": "Blunting of the costophrenic angle on chest X-ray appears once about 200–300 mL of fluid collects."
+        },
+        {
+          "label": "C",
+          "text": "Trachea shifted to opposite side",
+          "is_true": true,
+          "explanation": "A large effusion pushes the mediastinum and trachea away from the affected side."
+        },
+        {
+          "label": "D",
+          "text": "Breath sound diminished on opposite side",
+          "is_true": false,
+          "explanation": "Breath sounds are diminished or absent on the same side as the effusion."
+        }
+      ],
+      "pearl": "Pleural effusion: reduced expansion, stony dull percussion, reduced breath sounds and vocal resonance, trachea away if large."
+    },
+    {
+      "ext_id": "pyq-2019-apr-017",
+      "subject": "Medicine",
+      "chapter": "Gastroenterology",
+      "stem": "Complications of enteric fever:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Intestinal obstruction",
+          "is_true": false,
+          "explanation": "The classic gut complications are perforation and haemorrhage from ulcerated Peyer's patches, not obstruction."
+        },
+        {
+          "label": "B",
+          "text": "Cholelithiasis",
+          "is_true": false,
+          "explanation": "Salmonella can cause acute cholecystitis and chronic carriage in a diseased gallbladder, but gallstones themselves are not a complication."
+        },
+        {
+          "label": "C",
+          "text": "Osteomyelitis",
+          "is_true": true,
+          "explanation": "Salmonella osteomyelitis is a recognised complication, especially in sickle cell disease."
+        },
+        {
+          "label": "D",
+          "text": "Psoas abscess",
+          "is_true": true,
+          "explanation": "Metastatic focal infection, including psoas abscess, can follow typhoid bacteraemia."
+        }
+      ],
+      "pearl": "Typhoid perforation typically occurs in the third week, in the terminal ileum (antimesenteric border over Peyer's patches)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-018",
+      "subject": "General Surgery",
+      "chapter": "Nose",
+      "stem": "Causes of a red mass in the nose:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rhinosporidiosis",
+          "is_true": true,
+          "explanation": "Rhinosporidium seeberi produces a friable, strawberry-like red polypoidal mass studded with white spots that bleeds easily."
+        },
+        {
+          "label": "B",
+          "text": "Hypertrophied inferior turbinate",
+          "is_true": false,
+          "explanation": "A hypertrophied turbinate is a firm, congested mucosal swelling that shrinks with decongestant, not a red mass lesion."
+        },
+        {
+          "label": "C",
+          "text": "DNS",
+          "is_true": false,
+          "explanation": "A deviated nasal septum is a deformity of the septum covered with normal mucosa, not a mass."
+        },
+        {
+          "label": "D",
+          "text": "Nasal polyp",
+          "is_true": true,
+          "explanation": "A bleeding polypus of the septum (capillary haemangioma) presents as a red polypoid mass; ordinary ethmoidal polyps are pale grey."
+        }
+      ],
+      "pearl": "Red nasal masses: rhinosporidiosis, bleeding polypus of septum, angiofibroma (adolescent male); pale masses: ethmoidal and antrochoanal polyps."
+    },
+    {
+      "ext_id": "pyq-2019-apr-019",
+      "subject": "Pediatrics",
+      "chapter": "Peds Neuro, Hem-Onc & Infections",
+      "stem": "Treatment of cerebral malaria in children:",
+      "options": [
+        {
+          "label": "A",
+          "text": "IV quinine",
+          "is_true": true,
+          "explanation": "IV quinine remains an effective alternative when artesunate is unavailable, given with glucose monitoring for hypoglycaemia."
+        },
+        {
+          "label": "B",
+          "text": "Artesunate",
+          "is_true": true,
+          "explanation": "Parenteral artesunate is the drug of choice for severe malaria in children and adults, with lower mortality than quinine."
+        },
+        {
+          "label": "C",
+          "text": "Chloroquine",
+          "is_true": false,
+          "explanation": "Widespread P. falciparum resistance makes chloroquine unsuitable for severe falciparum malaria."
+        },
+        {
+          "label": "D",
+          "text": "Primaquine",
+          "is_true": false,
+          "explanation": "Primaquine is a gametocytocide and hypnozoiticide; it has no role in treating severe malaria."
+        }
+      ],
+      "pearl": "Severe malaria: IV artesunate 2.4 mg/kg at 0, 12, 24 h then daily, followed by a full oral ACT course."
+    },
+    {
+      "ext_id": "pyq-2019-apr-020",
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Parasites that infect by penetrating the skin:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Ancylostoma duodenale",
+          "is_true": true,
+          "explanation": "Filariform larvae of hookworm penetrate intact skin, usually of the feet, causing ground itch."
+        },
+        {
+          "label": "B",
+          "text": "Necator americanus",
+          "is_true": true,
+          "explanation": "The New World hookworm also enters by skin penetration of filariform larvae."
+        },
+        {
+          "label": "C",
+          "text": "Schistosoma",
+          "is_true": true,
+          "explanation": "Cercariae penetrate skin in fresh water, sometimes causing swimmer's itch."
+        },
+        {
+          "label": "D",
+          "text": "Taenia saginata",
+          "is_true": false,
+          "explanation": "Beef tapeworm is acquired by eating undercooked beef containing cysticerci."
+        }
+      ],
+      "pearl": "Skin-penetrating helminths: hookworms, Strongyloides and Schistosoma cercariae."
+    },
+    {
+      "ext_id": "pyq-2019-apr-021",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "Causes of atrial fibrillation:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Thyrotoxicosis",
+          "is_true": true,
+          "explanation": "Thyroid hormone increases atrial automaticity and shortens refractoriness; check TSH in every new AF."
+        },
+        {
+          "label": "B",
+          "text": "MI",
+          "is_true": true,
+          "explanation": "Acute myocardial infarction causes AF through atrial ischaemia, stretch and heart failure."
+        },
+        {
+          "label": "C",
+          "text": "Alcohol",
+          "is_true": true,
+          "explanation": "Binge drinking triggers AF ('holiday heart'), and chronic use causes alcoholic cardiomyopathy."
+        },
+        {
+          "label": "D",
+          "text": "Hypopituitarism",
+          "is_true": false,
+          "explanation": "Hypopituitarism causes secondary hypothyroidism and adrenal insufficiency, which slow rather than provoke AF."
+        }
+      ],
+      "pearl": "Common AF causes: hypertension, IHD, rheumatic mitral valve disease, thyrotoxicosis, alcohol, heart failure, pneumonia, PE."
+    },
+    {
+      "ext_id": "pyq-2019-apr-022",
+      "subject": "Medicine",
+      "chapter": "Respiratory",
+      "stem": "Haemoptysis is found in:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Acute bronchitis",
+          "is_true": true,
+          "explanation": "Inflamed bronchial mucosa may cause blood streaking of sputum; it is the commonest cause of minor haemoptysis."
+        },
+        {
+          "label": "B",
+          "text": "Acute leukaemia",
+          "is_true": true,
+          "explanation": "Thrombocytopenia and leukaemic infiltration or infection can cause pulmonary bleeding and haemoptysis."
+        },
+        {
+          "label": "C",
+          "text": "Lung abscess",
+          "is_true": true,
+          "explanation": "Erosion of vessels in the abscess wall produces haemoptysis with foul purulent sputum."
+        },
+        {
+          "label": "D",
+          "text": "Mitral stenosis",
+          "is_true": true,
+          "explanation": "Raised pulmonary venous pressure ruptures bronchial veins (pulmonary apoplexy) or causes pink frothy sputum in pulmonary oedema."
+        }
+      ],
+      "pearl": "In Bangladesh, always exclude pulmonary tuberculosis in haemoptysis; other big causes are bronchiectasis and bronchogenic carcinoma."
+    },
+    {
+      "ext_id": "pyq-2019-apr-023",
+      "subject": "Pediatrics",
+      "chapter": "Growth, Development & Neonatology",
+      "stem": "Features of severe acute malnutrition (SAM):",
+      "options": [
+        {
+          "label": "A",
+          "text": "MUAC < 115 mm",
+          "is_true": true,
+          "explanation": "A mid-upper arm circumference below 115 mm in a child 6–59 months defines SAM."
+        },
+        {
+          "label": "B",
+          "text": "Severe jaundice",
+          "is_true": false,
+          "explanation": "Jaundice is not a defining feature of SAM."
+        },
+        {
+          "label": "C",
+          "text": "WHZ > -3",
+          "is_true": false,
+          "explanation": "SAM is defined by weight-for-height Z score below -3 SD; above -3 does not meet the criterion."
+        },
+        {
+          "label": "D",
+          "text": "Bipedal oedema",
+          "is_true": true,
+          "explanation": "Bilateral pitting pedal oedema (nutritional oedema/kwashiorkor) defines SAM regardless of anthropometry."
+        }
+      ],
+      "pearl": "WHO SAM criteria (6–59 months): WHZ < -3, MUAC < 115 mm, or bilateral pitting oedema — any one is enough."
+    },
+    {
+      "ext_id": "pyq-2019-apr-024",
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Food poisoning is caused by:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Staph. aureus",
+          "is_true": true,
+          "explanation": "Preformed heat-stable enterotoxin causes vomiting within 1–6 hours of eating contaminated food; it is a classic food poisoning organism."
+        },
+        {
+          "label": "B",
+          "text": "E. coli",
+          "is_true": true,
+          "explanation": "Enterotoxigenic and enterohaemorrhagic E. coli cause food-borne diarrhoeal disease."
+        },
+        {
+          "label": "C",
+          "text": "S. epidermidis",
+          "is_true": false,
+          "explanation": "Staph. epidermidis is a skin commensal causing device-related infections; it does not produce enterotoxin."
+        },
+        {
+          "label": "D",
+          "text": "C. botulinum",
+          "is_true": true,
+          "explanation": "Preformed neurotoxin in canned or preserved food causes botulism, a form of food poisoning with descending paralysis."
+        }
+      ],
+      "pearl": "Short-incubation (1–6 h) vomiting: Staph. aureus and Bacillus cereus toxins; longer incubation: Salmonella, C. perfringens."
+    },
+    {
+      "ext_id": "pyq-2019-apr-025",
+      "subject": "Medicine",
+      "chapter": "Hepatology",
+      "stem": "Features of portal hypertension:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Splenomegaly",
+          "is_true": true,
+          "explanation": "Raised portal pressure causes congestive splenomegaly, often with hypersplenism."
+        },
+        {
+          "label": "B",
+          "text": "Testicular atrophy",
+          "is_true": false,
+          "explanation": "Testicular atrophy is a feature of hepatocellular failure (oestrogen excess), not of portal hypertension itself."
+        },
+        {
+          "label": "C",
+          "text": "Ascites",
+          "is_true": true,
+          "explanation": "Sinusoidal hypertension, with hypoalbuminaemia and sodium retention, drives ascites."
+        },
+        {
+          "label": "D",
+          "text": "Caput medusae",
+          "is_true": true,
+          "explanation": "Recanalised paraumbilical veins form dilated periumbilical collaterals radiating from the umbilicus."
+        }
+      ],
+      "pearl": "Portal hypertension = portal pressure > 10 mmHg; varices bleed when HVPG exceeds 12 mmHg."
+    },
+    {
+      "ext_id": "pyq-2019-apr-026",
+      "subject": "Pediatrics",
+      "chapter": "Gastroenterology, Fluids & Pulmonology",
+      "stem": "IV fluids used in severe dehydration due to diarrhoea:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cholera saline",
+          "is_true": true,
+          "explanation": "Cholera saline (Dhaka solution) replaces sodium, potassium and bicarbonate (as acetate) losses and is the standard IV fluid in Bangladesh."
+        },
+        {
+          "label": "B",
+          "text": "Normal saline",
+          "is_true": false,
+          "explanation": "Normal saline corrects volume but supplies no potassium or base, so acidosis and hypokalaemia persist; it is only a second-line option."
+        },
+        {
+          "label": "C",
+          "text": "Hartmann solution",
+          "is_true": true,
+          "explanation": "Ringer's lactate (Hartmann) is the WHO-recommended IV fluid for plan C when cholera saline is unavailable."
+        },
+        {
+          "label": "D",
+          "text": "Plasmasol",
+          "is_true": false,
+          "explanation": "Plasmasol is a plasma volume expander for haemorrhagic or surgical shock, not the fluid of choice for diarrhoeal dehydration."
+        }
+      ],
+      "pearl": "WHO Plan C: 100 mL/kg Ringer's lactate — infants over 6 h (30 mL/kg in 1 h), older children over 3 h (30 mL/kg in 30 min)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-027",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "JVP rises in:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pericardial constriction",
+          "is_true": true,
+          "explanation": "Constriction impairs right heart filling, giving a raised JVP with Kussmaul's sign and a prominent y descent."
+        },
+        {
+          "label": "B",
+          "text": "Left heart failure",
+          "is_true": false,
+          "explanation": "Isolated left heart failure raises pulmonary venous pressure; the JVP rises only when the right heart fails."
+        },
+        {
+          "label": "C",
+          "text": "Tuberculosis",
+          "is_true": false,
+          "explanation": "Pulmonary tuberculosis itself does not raise the JVP unless complicated by constrictive pericarditis or cor pulmonale."
+        },
+        {
+          "label": "D",
+          "text": "Atrial stenosis",
+          "is_true": false,
+          "explanation": "There is no such lesion; tricuspid stenosis, not 'atrial stenosis', gives a raised JVP with giant a waves."
+        }
+      ],
+      "pearl": "Raised JVP with a non-pulsatile, non-filling column suggests SVC obstruction."
+    },
+    {
+      "ext_id": "pyq-2019-apr-028",
+      "subject": "Basic Sciences",
+      "chapter": "Pathology & Genetics",
+      "stem": "Autosomal dominant diseases:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cystic fibrosis",
+          "is_true": false,
+          "explanation": "Cystic fibrosis (CFTR mutation) is autosomal recessive."
+        },
+        {
+          "label": "B",
+          "text": "Haemophilia A",
+          "is_true": false,
+          "explanation": "Haemophilia A is X-linked recessive."
+        },
+        {
+          "label": "C",
+          "text": "Marfan syndrome",
+          "is_true": true,
+          "explanation": "Marfan syndrome results from autosomal dominant fibrillin-1 mutations."
+        },
+        {
+          "label": "D",
+          "text": "Hereditary spherocytosis",
+          "is_true": true,
+          "explanation": "Most hereditary spherocytosis (ankyrin, spectrin defects) is inherited as autosomal dominant."
+        }
+      ],
+      "pearl": "Autosomal dominant examples: Marfan, ADPKD, hereditary spherocytosis, FAP, NF1, Huntington's, familial hypercholesterolaemia, von Willebrand disease (most types)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-029",
+      "subject": "Medicine",
+      "chapter": "Hematology",
+      "stem": "Causes of haemolysis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Malaria",
+          "is_true": true,
+          "explanation": "Parasitised red cells rupture at schizogony and are removed by the spleen; blackwater fever is massive intravascular haemolysis."
+        },
+        {
+          "label": "B",
+          "text": "Viral hepatitis",
+          "is_true": false,
+          "explanation": "Viral hepatitis causes hepatocellular jaundice, not haemolysis."
+        },
+        {
+          "label": "C",
+          "text": "Thalassaemia",
+          "is_true": true,
+          "explanation": "Ineffective erythropoiesis and haemolysis of abnormal red cells cause chronic haemolytic anaemia."
+        },
+        {
+          "label": "D",
+          "text": "Primary biliary cirrhosis",
+          "is_true": false,
+          "explanation": "Primary biliary cholangitis causes cholestatic jaundice from autoimmune destruction of small bile ducts."
+        }
+      ],
+      "pearl": "Haemolysis: raised unconjugated bilirubin, raised LDH, reticulocytosis, low haptoglobin, urinary urobilinogen but no bilirubinuria."
+    },
+    {
+      "ext_id": "pyq-2019-apr-030",
+      "subject": "Obstetrics",
+      "chapter": "APH, PPH, Obstructed & Operative Obs",
+      "stem": "Complications of obstructed labour:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Metabolic acidosis",
+          "is_true": true,
+          "explanation": "Prolonged labour with exhaustion and dehydration leads to ketoacidosis in the mother."
+        },
+        {
+          "label": "B",
+          "text": "PPH",
+          "is_true": true,
+          "explanation": "An exhausted uterus becomes atonic after delivery, and genital tract trauma adds to bleeding."
+        },
+        {
+          "label": "C",
+          "text": "APH",
+          "is_true": false,
+          "explanation": "Antepartum haemorrhage occurs before labour and is not a consequence of obstruction."
+        },
+        {
+          "label": "D",
+          "text": "Ruptured uterus",
+          "is_true": true,
+          "explanation": "Continued contractions against obstruction thin the lower segment (Bandl's ring) until it ruptures, especially in multiparae."
+        }
+      ],
+      "pearl": "Late maternal sequelae of obstructed labour include vesicovaginal fistula from pressure necrosis of the bladder base."
+    },
+    {
+      "ext_id": "pyq-2019-apr-031",
+      "subject": "Specialized Surgery",
+      "chapter": "Upper & Lower GI Surgery",
+      "stem": "Biochemical changes in gastric outlet obstruction:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hypernatraemia",
+          "is_true": false,
+          "explanation": "Vomiting loses sodium; with water intake the result is hyponatraemia."
+        },
+        {
+          "label": "B",
+          "text": "Hyperkalaemia",
+          "is_true": false,
+          "explanation": "Renal potassium loss from secondary hyperaldosteronism and bicarbonaturia causes hypokalaemia."
+        },
+        {
+          "label": "C",
+          "text": "Metabolic acidosis",
+          "is_true": false,
+          "explanation": "Loss of HCl causes hypochloraemic metabolic alkalosis."
+        },
+        {
+          "label": "D",
+          "text": "Hypercalcaemia",
+          "is_true": false,
+          "explanation": "Alkalosis lowers ionised calcium, which may cause tetany; calcium is not raised."
+        }
+      ],
+      "pearl": "Pyloric stenosis picture: hypochloraemic, hypokalaemic metabolic alkalosis with paradoxical aciduria; correct with 0.9% saline plus KCl."
+    },
+    {
+      "ext_id": "pyq-2019-apr-032",
+      "subject": "Medicine",
+      "chapter": "Hepatology",
+      "stem": "Obstructive (cholestatic) jaundice due to:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Viral hepatitis",
+          "is_true": true,
+          "explanation": "Viral hepatitis, particularly hepatitis A, can run a prolonged cholestatic phase with an obstructive biochemical picture."
+        },
+        {
+          "label": "B",
+          "text": "Primary biliary cirrhosis",
+          "is_true": true,
+          "explanation": "Autoimmune destruction of intrahepatic bile ducts causes intrahepatic cholestasis with itch and raised ALP."
+        },
+        {
+          "label": "C",
+          "text": "Snake venom",
+          "is_true": false,
+          "explanation": "Viperine venom causes haemolysis (prehepatic jaundice), not biliary obstruction."
+        },
+        {
+          "label": "D",
+          "text": "Sickle cell anaemia",
+          "is_true": false,
+          "explanation": "Sickle cell anaemia causes haemolytic jaundice; pigment stones may complicate it but the anaemia itself is prehepatic."
+        }
+      ],
+      "pearl": "Cholestasis pattern: high conjugated bilirubin, ALP and GGT, pale stools, dark urine with bilirubin, pruritus."
+    },
+    {
+      "ext_id": "pyq-2019-apr-033",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Substances synthesised by the kidney:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Erythropoietin",
+          "is_true": true,
+          "explanation": "Peritubular interstitial fibroblasts secrete erythropoietin in response to hypoxia."
+        },
+        {
+          "label": "B",
+          "text": "Prostaglandin",
+          "is_true": true,
+          "explanation": "Renal medulla produces PGE2 and PGI2, which maintain renal blood flow, especially when perfusion falls."
+        },
+        {
+          "label": "C",
+          "text": "ADH",
+          "is_true": false,
+          "explanation": "ADH is synthesised in the hypothalamus (supraoptic and paraventricular nuclei) and released from the posterior pituitary."
+        },
+        {
+          "label": "D",
+          "text": "Epinephrine",
+          "is_true": false,
+          "explanation": "Epinephrine is produced by the adrenal medulla, not the kidney."
+        }
+      ],
+      "pearl": "Kidney endocrine products: erythropoietin, renin, calcitriol (1-alpha hydroxylation), prostaglandins, kinins."
+    },
+    {
+      "ext_id": "pyq-2019-apr-034",
+      "subject": "Medicine",
+      "chapter": "Neurology",
+      "stem": "Signs of upper motor neuron lesion:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Muscle wasting",
+          "is_true": false,
+          "explanation": "Marked wasting is a lower motor neuron sign; UMN lesions give only mild disuse atrophy."
+        },
+        {
+          "label": "B",
+          "text": "Spastic paralysis",
+          "is_true": true,
+          "explanation": "Loss of descending inhibition causes spasticity (clasp-knife) with weakness in a pyramidal pattern."
+        },
+        {
+          "label": "C",
+          "text": "Flexor plantar response",
+          "is_true": false,
+          "explanation": "UMN lesions give an extensor plantar (Babinski) response."
+        },
+        {
+          "label": "D",
+          "text": "Hypotonia",
+          "is_true": false,
+          "explanation": "Tone is increased in established UMN lesions; hypotonia is an LMN or cerebellar sign (or acute spinal shock)."
+        }
+      ],
+      "pearl": "UMN: spasticity, hyperreflexia, clonus, extensor plantar, pyramidal weakness; LMN: wasting, fasciculation, hypotonia, areflexia."
+    },
+    {
+      "ext_id": "pyq-2019-apr-035",
+      "subject": "Medicine",
+      "chapter": "Neurology",
+      "stem": "Features of Bell's palsy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pain behind ear",
+          "is_true": true,
+          "explanation": "Retroauricular pain often precedes or accompanies the onset of facial weakness."
+        },
+        {
+          "label": "B",
+          "text": "Upper motor neuron lesion",
+          "is_true": false,
+          "explanation": "Bell's palsy is an LMN facial nerve palsy, so the forehead is also involved."
+        },
+        {
+          "label": "C",
+          "text": "Altered taste",
+          "is_true": true,
+          "explanation": "Involvement of the nerve proximal to the chorda tympani causes loss of taste on the anterior two-thirds of the tongue."
+        },
+        {
+          "label": "D",
+          "text": "Loss of facial sensation",
+          "is_true": false,
+          "explanation": "Facial sensation is carried by the trigeminal nerve and is preserved; patients may report subjective numbness only."
+        }
+      ],
+      "pearl": "Bell's palsy: prednisolone within 72 hours improves recovery; protect the eye. About 80% recover fully."
+    },
+    {
+      "ext_id": "pyq-2019-apr-036",
+      "subject": "General Surgery",
+      "chapter": "Hemorrhage, Shock & Trauma",
+      "stem": "Indications of blood transfusion in surgical patients:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Haemolytic disease",
+          "is_true": true,
+          "explanation": "Severe haemolysis with symptomatic anaemia or haemolytic disease of the newborn may require transfusion or exchange transfusion."
+        },
+        {
+          "label": "B",
+          "text": "Chronic anaemia",
+          "is_true": true,
+          "explanation": "Symptomatic chronic anaemia before urgent surgery, with no time for correction, is an indication for transfusion."
+        },
+        {
+          "label": "C",
+          "text": "Iron deficiency anaemia",
+          "is_true": true,
+          "explanation": "Severe iron deficiency anaemia needing urgent surgery or with cardiac decompensation may need preoperative transfusion."
+        },
+        {
+          "label": "D",
+          "text": "Polycythaemia",
+          "is_true": false,
+          "explanation": "Polycythaemia needs venesection, not transfusion; adding red cells would worsen hyperviscosity."
+        }
+      ],
+      "pearl": "Restrictive transfusion threshold: Hb 7 g/dL in most stable patients (8 g/dL with cardiovascular disease)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-037",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Factors that increase transmembrane potassium influx into cells:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Beta blocker",
+          "is_true": false,
+          "explanation": "Beta blockade reduces Na+/K+-ATPase stimulation and so impairs cellular K+ uptake; beta-2 agonists increase it."
+        },
+        {
+          "label": "B",
+          "text": "Glucagon",
+          "is_true": false,
+          "explanation": "Glucagon does not promote cellular K+ uptake; it can mildly raise plasma K+ through hepatic release."
+        },
+        {
+          "label": "C",
+          "text": "Insulin",
+          "is_true": true,
+          "explanation": "Insulin stimulates Na+/K+-ATPase, driving K+ into cells — the basis of insulin-glucose therapy in hyperkalaemia."
+        },
+        {
+          "label": "D",
+          "text": "Metabolic acidosis",
+          "is_true": false,
+          "explanation": "In acidosis H+ enters cells in exchange for K+, which moves out and raises plasma potassium; alkalosis does the opposite."
+        }
+      ],
+      "pearl": "Shift of K+ into cells: insulin, beta-2 agonists, alkalosis, aldosterone; out of cells: acidosis, cell lysis, beta blockade, hyperosmolality."
+    },
+    {
+      "ext_id": "pyq-2019-apr-038",
+      "subject": "Basic Sciences",
+      "chapter": "Pharmacology",
+      "stem": "Features of ceftriaxone:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Protein synthesis inhibitor",
+          "is_true": false,
+          "explanation": "Ceftriaxone is a beta-lactam that inhibits cell wall synthesis, not protein synthesis."
+        },
+        {
+          "label": "B",
+          "text": "Inhibits transpeptidase enzyme",
+          "is_true": true,
+          "explanation": "Beta-lactams bind penicillin-binding proteins (transpeptidases), blocking peptidoglycan cross-linking."
+        },
+        {
+          "label": "C",
+          "text": "Less hypersensitivity reaction",
+          "is_true": true,
+          "explanation": "Cross-reactivity with penicillin allergy is low with third-generation cephalosporins, so serious hypersensitivity is less frequent than with penicillins."
+        },
+        {
+          "label": "D",
+          "text": "4th generation cephalosporin",
+          "is_true": false,
+          "explanation": "Ceftriaxone is a third-generation cephalosporin; cefepime is fourth generation."
+        }
+      ],
+      "pearl": "Ceftriaxone: long half-life (once daily), biliary excretion (no renal dose change), may cause biliary sludge; avoid with calcium IV in neonates."
+    },
+    {
+      "ext_id": "pyq-2019-apr-039",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Which of these are produced by the kidney:",
+      "options": [
+        {
+          "label": "A",
+          "text": "ADH",
+          "is_true": false,
+          "explanation": "ADH comes from hypothalamic neurons and is stored in the posterior pituitary; the kidney is its target, not its source."
+        },
+        {
+          "label": "B",
+          "text": "Immunoglobulin",
+          "is_true": false,
+          "explanation": "Immunoglobulins are secreted by plasma cells of the lymphoid system."
+        },
+        {
+          "label": "C",
+          "text": "Prostaglandins",
+          "is_true": true,
+          "explanation": "The kidney synthesises vasodilator prostaglandins that protect renal perfusion; NSAIDs block these."
+        },
+        {
+          "label": "D",
+          "text": "Erythropoietin",
+          "is_true": true,
+          "explanation": "Renal peritubular cells produce about 90% of erythropoietin, so CKD causes normocytic anaemia."
+        }
+      ],
+      "pearl": "NSAIDs can precipitate AKI in volume-depleted patients by blocking renal prostaglandin-mediated afferent arteriolar dilatation."
+    },
+    {
+      "ext_id": "pyq-2019-apr-040",
+      "subject": "Medicine",
+      "chapter": "Endocrinology",
+      "stem": "Features of primary hypothyroidism:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Increased TSH",
+          "is_true": true,
+          "explanation": "Loss of negative feedback from low thyroid hormone raises TSH, the most sensitive test for primary hypothyroidism."
+        },
+        {
+          "label": "B",
+          "text": "Increased FT4",
+          "is_true": false,
+          "explanation": "Free T4 is low in hypothyroidism."
+        },
+        {
+          "label": "C",
+          "text": "Increased FT3",
+          "is_true": false,
+          "explanation": "Free T3 is low or low-normal; it is a poor test for hypothyroidism."
+        },
+        {
+          "label": "D",
+          "text": "Thyroid peroxidase antibody present",
+          "is_true": true,
+          "explanation": "Hashimoto's thyroiditis, the commonest cause in iodine-sufficient areas, is marked by anti-TPO antibodies."
+        }
+      ],
+      "pearl": "Subclinical hypothyroidism: raised TSH with normal FT4; positive TPO antibodies predict progression to overt disease."
+    },
+    {
+      "ext_id": "pyq-2019-apr-041",
+      "subject": "General Surgery",
+      "chapter": "Throat",
+      "stem": "Nerves that can be injured in total thyroidectomy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Recurrent laryngeal",
+          "is_true": true,
+          "explanation": "The recurrent laryngeal nerve lies in the tracheo-oesophageal groove close to the inferior thyroid artery; injury causes hoarseness or bilateral cord palsy."
+        },
+        {
+          "label": "B",
+          "text": "Internal laryngeal",
+          "is_true": false,
+          "explanation": "The internal laryngeal nerve pierces the thyrohyoid membrane well above the thyroid gland and is rarely at risk."
+        },
+        {
+          "label": "C",
+          "text": "External laryngeal",
+          "is_true": true,
+          "explanation": "The external laryngeal nerve runs with the superior thyroid artery and can be injured while ligating the upper pole, weakening the cricothyroid (voice pitch)."
+        },
+        {
+          "label": "D",
+          "text": "Phrenic nerve",
+          "is_true": false,
+          "explanation": "The phrenic nerve lies on scalenus anterior, deep to the prevertebral fascia, outside the field of thyroidectomy."
+        }
+      ],
+      "pearl": "Ligate the superior thyroid artery close to the gland (protects external laryngeal nerve) and the inferior thyroid artery away from it (protects recurrent laryngeal nerve)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-042",
+      "subject": "Obstetrics",
+      "chapter": "Preterm Labour, PROM & Hypertension",
+      "stem": "Features of severe pre-eclampsia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Massive proteinuria",
+          "is_true": true,
+          "explanation": "Heavy proteinuria (5 g or more in 24 hours in older definitions) reflects severe glomerular endotheliosis."
+        },
+        {
+          "label": "B",
+          "text": "Hypotension",
+          "is_true": false,
+          "explanation": "Pre-eclampsia is a hypertensive disorder; severe disease has BP of 160/110 mmHg or more."
+        },
+        {
+          "label": "C",
+          "text": "Seizure",
+          "is_true": false,
+          "explanation": "Onset of seizures defines eclampsia, a separate (more advanced) diagnosis rather than a feature of pre-eclampsia."
+        },
+        {
+          "label": "D",
+          "text": "HELLP syndrome",
+          "is_true": true,
+          "explanation": "Haemolysis, elevated liver enzymes and low platelets is a severe feature of pre-eclampsia."
+        }
+      ],
+      "pearl": "Severe features: BP 160/110 or more, thrombocytopenia, raised transaminases, renal impairment, pulmonary oedema, headache, visual disturbance."
+    },
+    {
+      "ext_id": "pyq-2019-apr-043",
+      "subject": "Gynecology",
+      "chapter": "Endometriosis, Contraception & Gyn Op",
+      "stem": "Postpartum contraceptives:",
+      "options": [
+        {
+          "label": "A",
+          "text": "OCP",
+          "is_true": false,
+          "explanation": "Combined pills suppress lactation and raise the thrombosis risk early postpartum, so they are avoided in breastfeeding women for the first 6 months."
+        },
+        {
+          "label": "B",
+          "text": "IUD",
+          "is_true": true,
+          "explanation": "A copper IUD can be inserted within 48 hours of delivery or after 4–6 weeks and does not affect breastfeeding."
+        },
+        {
+          "label": "C",
+          "text": "Minipill",
+          "is_true": true,
+          "explanation": "The progestogen-only pill does not reduce milk output and is ideal for lactating mothers."
+        },
+        {
+          "label": "D",
+          "text": "Condom",
+          "is_true": true,
+          "explanation": "Condoms are safe at any time postpartum and add STI protection."
+        }
+      ],
+      "pearl": "Lactational amenorrhoea method is reliable only if exclusively breastfeeding, amenorrhoeic and less than 6 months postpartum."
+    },
+    {
+      "ext_id": "pyq-2019-apr-044",
+      "subject": "Medicine",
+      "chapter": "Respiratory",
+      "stem": "Causes of respiratory acidosis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pneumonia",
+          "is_true": false,
+          "explanation": "Hypoxia-driven hyperventilation in pneumonia usually causes respiratory alkalosis, unless the patient is exhausted."
+        },
+        {
+          "label": "B",
+          "text": "Asthma",
+          "is_true": false,
+          "explanation": "Acute asthma typically lowers PaCO2; a normal or rising PaCO2 is a life-threatening sign rather than the usual pattern."
+        },
+        {
+          "label": "C",
+          "text": "COPD",
+          "is_true": true,
+          "explanation": "Chronic alveolar hypoventilation causes CO2 retention, giving respiratory acidosis with renal bicarbonate compensation."
+        },
+        {
+          "label": "D",
+          "text": "Diarrhoea",
+          "is_true": false,
+          "explanation": "Diarrhoea causes metabolic (normal anion gap) acidosis from bicarbonate loss."
+        }
+      ],
+      "pearl": "Respiratory acidosis = hypoventilation: COPD, opioid overdose, neuromuscular weakness, chest wall disease, obesity hypoventilation."
+    },
+    {
+      "ext_id": "pyq-2019-apr-045",
+      "subject": "Gynecology",
+      "chapter": "Endometriosis, Contraception & Gyn Op",
+      "stem": "Contraception suitable for nulliparous women:",
+      "options": [
+        {
+          "label": "A",
+          "text": "OCP",
+          "is_true": true,
+          "explanation": "Combined pills are an ideal reversible method for young nulliparous women without contraindications."
+        },
+        {
+          "label": "B",
+          "text": "IUCD",
+          "is_true": false,
+          "explanation": "Nulliparity is traditionally a relative contraindication to IUCD (higher expulsion, pain and PID concern), so it is not the first choice."
+        },
+        {
+          "label": "C",
+          "text": "Implanon",
+          "is_true": true,
+          "explanation": "The etonogestrel implant has no parity restriction and is one of the most effective reversible methods."
+        },
+        {
+          "label": "D",
+          "text": "Minipill",
+          "is_true": true,
+          "explanation": "Progestogen-only pills can be used by nulliparous women, especially when oestrogen is contraindicated."
+        }
+      ],
+      "pearl": "Ideal contraceptive for a newly married nulliparous woman: combined oral contraceptive pill."
+    },
+    {
+      "ext_id": "pyq-2019-apr-046",
+      "subject": "Gynecology",
+      "chapter": "Abortion, Infections & PID",
+      "stem": "Causes of non-gonococcal urethritis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Neisseria gonorrhoeae",
+          "is_true": false,
+          "explanation": "Gonococcal urethritis is by definition excluded from non-gonococcal urethritis."
+        },
+        {
+          "label": "B",
+          "text": "Chlamydia trachomatis",
+          "is_true": true,
+          "explanation": "Chlamydia (serovars D–K) is the commonest cause of NGU."
+        },
+        {
+          "label": "C",
+          "text": "Staph. aureus",
+          "is_true": false,
+          "explanation": "Staph. aureus is not a recognised cause of sexually transmitted urethritis."
+        },
+        {
+          "label": "D",
+          "text": "Mycoplasma hominis",
+          "is_true": true,
+          "explanation": "Genital mycoplasmas (M. genitalium, M. hominis) and Ureaplasma cause NGU."
+        }
+      ],
+      "pearl": "NGU treatment: doxycycline 100 mg twice daily for 7 days (or single-dose azithromycin); treat partners."
+    },
+    {
+      "ext_id": "pyq-2019-apr-047",
+      "subject": "Basic Sciences",
+      "chapter": "Pharmacology",
+      "stem": "Examples of inhaled corticosteroids:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Prednisone",
+          "is_true": false,
+          "explanation": "Prednisone is an oral prodrug converted to prednisolone in the liver."
+        },
+        {
+          "label": "B",
+          "text": "Hydrocortisone",
+          "is_true": false,
+          "explanation": "Hydrocortisone is used IV in acute severe asthma and adrenal crisis, not by inhalation."
+        },
+        {
+          "label": "C",
+          "text": "Beclomethasone",
+          "is_true": true,
+          "explanation": "Beclomethasone dipropionate is a standard inhaled corticosteroid for asthma prophylaxis."
+        },
+        {
+          "label": "D",
+          "text": "Fluticasone",
+          "is_true": true,
+          "explanation": "Fluticasone is a potent inhaled corticosteroid with high first-pass metabolism."
+        }
+      ],
+      "pearl": "Inhaled steroids: beclomethasone, budesonide, fluticasone, ciclesonide, mometasone; rinse the mouth to prevent oral candidiasis."
+    },
+    {
+      "ext_id": "pyq-2019-apr-048",
+      "subject": "Medicine",
+      "chapter": "Respiratory",
+      "stem": "Sources of pulmonary embolism:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pulmonary vein",
+          "is_true": false,
+          "explanation": "Pulmonary vein thrombi would embolise to the systemic circulation, not to the pulmonary arteries."
+        },
+        {
+          "label": "B",
+          "text": "Calf vein",
+          "is_true": true,
+          "explanation": "Calf vein DVT can propagate proximally and embolise; deep veins of the leg are the main source of PE."
+        },
+        {
+          "label": "C",
+          "text": "Pelvic vein",
+          "is_true": true,
+          "explanation": "Pelvic vein thrombosis (post-partum, pelvic surgery) is an important source of pulmonary emboli."
+        },
+        {
+          "label": "D",
+          "text": "Left heart failure",
+          "is_true": false,
+          "explanation": "Left heart thrombi (e.g. LV aneurysm, AF) cause systemic emboli such as stroke, not PE."
+        }
+      ],
+      "pearl": "Most PEs arise from proximal (iliofemoral) DVT; isolated calf DVT carries a lower risk unless it propagates."
+    },
+    {
+      "ext_id": "pyq-2019-apr-049",
+      "subject": "Pediatrics",
+      "chapter": "Peds Neuro, Hem-Onc & Infections",
+      "stem": "Complications of tetralogy of Fallot:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Polycythaemia",
+          "is_true": true,
+          "explanation": "Chronic hypoxaemia stimulates erythropoietin, causing secondary polycythaemia and risk of cerebral thrombosis."
+        },
+        {
+          "label": "B",
+          "text": "Pneumonia",
+          "is_true": false,
+          "explanation": "Pulmonary blood flow is reduced in TOF, so recurrent chest infection is not a feature (unlike left-to-right shunts)."
+        },
+        {
+          "label": "C",
+          "text": "Arrhythmia",
+          "is_true": true,
+          "explanation": "Ventricular arrhythmias and sudden death occur, particularly after surgical repair."
+        },
+        {
+          "label": "D",
+          "text": "Pulmonary regurgitation",
+          "is_true": true,
+          "explanation": "Pulmonary regurgitation is the commonest long-term complication after repair with transannular patching."
+        }
+      ],
+      "pearl": "Unrepaired TOF complications: hypercyanotic spells, cerebral thrombosis, brain abscess, infective endocarditis, polycythaemia."
+    },
+    {
+      "ext_id": "pyq-2019-apr-050",
+      "subject": "General Surgery",
+      "chapter": "Ulcers, Wounds & Soft Tissue",
+      "stem": "Midline neck swellings:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cystic hygroma",
+          "is_true": false,
+          "explanation": "Cystic hygroma is a lymphatic malformation typically in the posterior triangle, lateral in position."
+        },
+        {
+          "label": "B",
+          "text": "Dermoid cyst",
+          "is_true": true,
+          "explanation": "Sublingual (submental) dermoid cysts arise in the midline from trapped ectoderm."
+        },
+        {
+          "label": "C",
+          "text": "Thyroglossal cyst",
+          "is_true": true,
+          "explanation": "It arises along the thyroglossal tract in the midline and moves upward on protrusion of the tongue."
+        },
+        {
+          "label": "D",
+          "text": "Branchial cyst",
+          "is_true": false,
+          "explanation": "A branchial cyst lies laterally at the anterior border of sternocleidomastoid at the junction of its upper and middle thirds."
+        }
+      ],
+      "pearl": "Midline neck swellings: thyroglossal cyst, isthmus thyroid nodule, submental lymph node, dermoid, subhyoid bursa, plunging ranula."
+    },
+    {
+      "ext_id": "pyq-2019-apr-051",
+      "subject": "Specialized Surgery",
+      "chapter": "Upper & Lower GI Surgery",
+      "stem": "Imperforate anus:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Common condition",
+          "is_true": false,
+          "explanation": "Anorectal malformations are uncommon, about 1 in 4000–5000 live births."
+        },
+        {
+          "label": "B",
+          "text": "Rectal atresia in high abnormalities",
+          "is_true": true,
+          "explanation": "In high (supralevator) lesions the rectum ends above the levator ani, often with a fistula to the urinary tract."
+        },
+        {
+          "label": "C",
+          "text": "Covered anus in low abnormalities",
+          "is_true": true,
+          "explanation": "Low lesions include covered anus, anal stenosis and anocutaneous fistula, with the bowel passing through the levator."
+        },
+        {
+          "label": "D",
+          "text": "Treated by colostomy",
+          "is_true": true,
+          "explanation": "High lesions need an initial colostomy followed by posterior sagittal anorectoplasty; low lesions may need only perineal surgery."
+        }
+      ],
+      "pearl": "Always examine for associated VACTERL anomalies (vertebral, anorectal, cardiac, TOF, renal, limb) in imperforate anus."
+    },
+    {
+      "ext_id": "pyq-2019-apr-052",
+      "subject": "Obstetrics",
+      "chapter": "APH, PPH, Obstructed & Operative Obs",
+      "stem": "Causes of antepartum haemorrhage in multiple pregnancy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Uterine atony",
+          "is_true": false,
+          "explanation": "Atony causes postpartum haemorrhage, not antepartum haemorrhage."
+        },
+        {
+          "label": "B",
+          "text": "Abruptio placentae",
+          "is_true": true,
+          "explanation": "Overdistension, hypertension and sudden decompression after delivery of the first twin increase abruption."
+        },
+        {
+          "label": "C",
+          "text": "Placenta praevia",
+          "is_true": true,
+          "explanation": "The large placental surface area in multiple pregnancy extends into the lower segment more often."
+        },
+        {
+          "label": "D",
+          "text": "Coagulation disorder",
+          "is_true": false,
+          "explanation": "Coagulopathy is not a recognised specific cause of APH in multiple pregnancy."
+        }
+      ],
+      "pearl": "Multiple pregnancy raises the risk of anaemia, pre-eclampsia, polyhydramnios, preterm labour, APH and PPH."
+    },
+    {
+      "ext_id": "pyq-2019-apr-053",
+      "subject": "Medicine",
+      "chapter": "Hematology",
+      "stem": "Features of haemophilia A:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Deficiency of factor VIII",
+          "is_true": true,
+          "explanation": "Haemophilia A is factor VIII deficiency; haemophilia B (Christmas disease) is factor IX deficiency."
+        },
+        {
+          "label": "B",
+          "text": "More common in females",
+          "is_true": false,
+          "explanation": "As an X-linked recessive disorder, it almost exclusively affects males."
+        },
+        {
+          "label": "C",
+          "text": "Men are carriers",
+          "is_true": false,
+          "explanation": "Females are the carriers; affected men pass the gene to all their daughters but none of their sons."
+        },
+        {
+          "label": "D",
+          "text": "X-linked recessive disease",
+          "is_true": true,
+          "explanation": "The factor VIII gene lies on the X chromosome, and inheritance is X-linked recessive."
+        }
+      ],
+      "pearl": "Haemophilia: prolonged APTT with normal PT and bleeding time; presents with haemarthroses and muscle haematomas."
+    },
+    {
+      "ext_id": "pyq-2019-apr-054",
+      "subject": "General Surgery",
+      "chapter": "Ulcers, Wounds & Soft Tissue",
+      "stem": "Examples of midline neck swelling:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cystic hygroma",
+          "is_true": false,
+          "explanation": "Cystic hygroma is a lateral swelling, usually in the posterior triangle, brilliantly transilluminant."
+        },
+        {
+          "label": "B",
+          "text": "Subhyoid bursa",
+          "is_true": true,
+          "explanation": "The subhyoid bursa lies in the midline below the hyoid and can enlarge to present as a midline swelling."
+        },
+        {
+          "label": "C",
+          "text": "Plunging ranula",
+          "is_true": true,
+          "explanation": "A plunging ranula extends through the mylohyoid into the submental region, presenting as a midline swelling in the upper neck."
+        },
+        {
+          "label": "D",
+          "text": "Branchial cyst",
+          "is_true": false,
+          "explanation": "A branchial cyst lies laterally, deep to the anterior border of sternocleidomastoid."
+        }
+      ],
+      "pearl": "A midline swelling that moves on swallowing and with tongue protrusion is a thyroglossal cyst; one that moves only on swallowing is thyroid."
+    },
+    {
+      "ext_id": "pyq-2019-apr-055",
+      "subject": "Medicine",
+      "chapter": "Hematology",
+      "stem": "Leukaemoid reaction:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Splenomegaly",
+          "is_true": false,
+          "explanation": "Splenomegaly is a feature of CML; a leukaemoid reaction usually has no or minimal splenomegaly."
+        },
+        {
+          "label": "B",
+          "text": "Raised WBC",
+          "is_true": true,
+          "explanation": "WBC count exceeds 50,000/µL as a reactive response to infection, haemorrhage or malignancy."
+        },
+        {
+          "label": "C",
+          "text": "Platelet count normal",
+          "is_true": true,
+          "explanation": "Platelets are usually normal, unlike the thrombocytosis or later thrombocytopenia of CML."
+        },
+        {
+          "label": "D",
+          "text": "Toxic granules positive",
+          "is_true": true,
+          "explanation": "Toxic granulation and Döhle bodies in neutrophils reflect reactive (infective) leukocytosis."
+        }
+      ],
+      "pearl": "Leukaemoid reaction has a high neutrophil alkaline phosphatase (NAP) score; CML has a low NAP score and the Philadelphia chromosome."
+    },
+    {
+      "ext_id": "pyq-2019-apr-056",
+      "subject": "Basic Sciences",
+      "chapter": "Pharmacology",
+      "stem": "Sites of antibiotic (drug) metabolism:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Skin",
+          "is_true": true,
+          "explanation": "Skin contains drug-metabolising enzymes (cytochrome P450, conjugating enzymes) and is a minor extrahepatic site of metabolism."
+        },
+        {
+          "label": "B",
+          "text": "Liver",
+          "is_true": true,
+          "explanation": "The liver is the main site of drug metabolism through phase I (CYP450) and phase II (conjugation) reactions."
+        },
+        {
+          "label": "C",
+          "text": "Kidney",
+          "is_true": true,
+          "explanation": "The kidney metabolises some drugs; for example, renal dehydropeptidase breaks down imipenem, hence it is given with cilastatin."
+        },
+        {
+          "label": "D",
+          "text": "Tooth",
+          "is_true": false,
+          "explanation": "Teeth have no metabolic role for drugs, though tetracyclines are deposited in them."
+        }
+      ],
+      "pearl": "Imipenem is co-administered with cilastatin to block renal dehydropeptidase-I and prevent its renal inactivation."
+    },
+    {
+      "ext_id": "pyq-2019-apr-057",
+      "subject": "General Surgery",
+      "chapter": "Ulcers, Wounds & Soft Tissue",
+      "stem": "Signs of deep vein thrombosis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "High fever",
+          "is_true": false,
+          "explanation": "DVT may cause a low-grade fever only; high fever suggests cellulitis or another infection."
+        },
+        {
+          "label": "B",
+          "text": "Impaired sensation",
+          "is_true": false,
+          "explanation": "Sensation is preserved in DVT; sensory loss suggests arterial ischaemia or neuropathy."
+        },
+        {
+          "label": "C",
+          "text": "Leg swelling",
+          "is_true": true,
+          "explanation": "Unilateral calf or whole-leg swelling (calf circumference difference over 3 cm) is the commonest sign."
+        },
+        {
+          "label": "D",
+          "text": "Non-pitting oedema",
+          "is_true": false,
+          "explanation": "Venous obstruction causes pitting oedema (a Wells criterion); non-pitting oedema suggests lymphoedema (filariasis, Milroy disease) or myxoedema."
+        }
+      ],
+      "pearl": "Wells score guides DVT workup: low probability plus negative D-dimer excludes DVT; otherwise do compression ultrasound."
+    },
+    {
+      "ext_id": "pyq-2019-apr-058",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Diseases associated with ageing:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hypertension",
+          "is_true": true,
+          "explanation": "Arterial stiffening with age raises systolic BP; isolated systolic hypertension is common in the elderly."
+        },
+        {
+          "label": "B",
+          "text": "Type 1 DM",
+          "is_true": false,
+          "explanation": "Type 1 diabetes is autoimmune and usually starts in childhood or adolescence."
+        },
+        {
+          "label": "C",
+          "text": "Cataract",
+          "is_true": true,
+          "explanation": "Senile cataract is the commonest cause of reversible blindness and rises steeply with age."
+        },
+        {
+          "label": "D",
+          "text": "BPH",
+          "is_true": true,
+          "explanation": "Benign prostatic hyperplasia is present histologically in most men over 60."
+        }
+      ],
+      "pearl": "Age is the single biggest risk factor for cataract, BPH, osteoarthritis, osteoporosis and most cancers."
+    },
+    {
+      "ext_id": "pyq-2019-apr-059",
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Oncogenic organisms:",
+      "options": [
+        {
+          "label": "A",
+          "text": "EBV",
+          "is_true": true,
+          "explanation": "EBV is linked to Burkitt lymphoma, nasopharyngeal carcinoma and Hodgkin lymphoma."
+        },
+        {
+          "label": "B",
+          "text": "CMV",
+          "is_true": true,
+          "explanation": "Cytomegalovirus is classed among the potentially oncogenic herpesviruses in standard microbiology texts, with transforming ability in vitro."
+        },
+        {
+          "label": "C",
+          "text": "Hepatitis B",
+          "is_true": true,
+          "explanation": "Chronic HBV infection, with viral DNA integration, is a leading cause of hepatocellular carcinoma."
+        },
+        {
+          "label": "D",
+          "text": "HIV",
+          "is_true": false,
+          "explanation": "HIV is not directly oncogenic; AIDS-related cancers arise from immunosuppression and co-infection (HHV-8, EBV, HPV)."
+        }
+      ],
+      "pearl": "Oncogenic viruses: EBV, HPV 16/18, HBV, HCV, HHV-8 (Kaposi sarcoma), HTLV-1 (adult T-cell leukaemia), Merkel cell polyomavirus."
+    },
+    {
+      "ext_id": "pyq-2019-apr-060",
+      "subject": "Specialized Surgery",
+      "chapter": "Urology, Andrology & Breast",
+      "stem": "Most common kidney stone:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Calcium oxalate",
+          "is_true": true,
+          "explanation": "Calcium oxalate (alone or mixed with phosphate) forms about 75–80% of renal stones; they are radio-opaque."
+        },
+        {
+          "label": "B",
+          "text": "Calcium phosphate",
+          "is_true": false,
+          "explanation": "Pure calcium phosphate stones are less common and associated with renal tubular acidosis."
+        },
+        {
+          "label": "C",
+          "text": "Xanthine",
+          "is_true": false,
+          "explanation": "Xanthine stones are rare, seen in xanthine oxidase deficiency or with allopurinol."
+        },
+        {
+          "label": "D",
+          "text": "Uric acid",
+          "is_true": false,
+          "explanation": "Uric acid stones form about 5–10% and are radiolucent."
+        }
+      ],
+      "pearl": "Radiolucent stones: uric acid, xanthine and indinavir; cystine stones are faintly opaque; struvite forms staghorn calculi in urease infections."
+    },
+    {
+      "ext_id": "pyq-2019-apr-061",
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Diseases caused by Staphylococcus:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Food poisoning",
+          "is_true": true,
+          "explanation": "Heat-stable enterotoxins (A–E) cause vomiting 1–6 hours after ingestion."
+        },
+        {
+          "label": "B",
+          "text": "Cellulitis",
+          "is_true": true,
+          "explanation": "Staph. aureus, along with Streptococcus pyogenes, causes skin and soft tissue infection including cellulitis."
+        },
+        {
+          "label": "C",
+          "text": "Pneumonia",
+          "is_true": true,
+          "explanation": "Staphylococcal pneumonia follows influenza and causes cavitation, pneumatoceles and empyema."
+        },
+        {
+          "label": "D",
+          "text": "TEN (staphylococcal scalded skin syndrome)",
+          "is_true": true,
+          "explanation": "Exfoliative toxin causes staphylococcal scalded skin syndrome (Ritter's disease), which resembles toxic epidermal necrolysis."
+        }
+      ],
+      "pearl": "SSSS splits the epidermis at the granular layer (intraepidermal, Nikolsky positive) and spares mucosa; drug-induced TEN splits at the dermo-epidermal junction."
+    },
+    {
+      "ext_id": "pyq-2019-apr-062",
+      "subject": "General Surgery",
+      "chapter": "Perioperative Care, Sutures & Onco",
+      "stem": "Disadvantages of laparoscopy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Loss of tactile feedback",
+          "is_true": true,
+          "explanation": "The surgeon cannot palpate tissues directly, so haptic feedback is lost."
+        },
+        {
+          "label": "B",
+          "text": "More chance of infection",
+          "is_true": false,
+          "explanation": "Smaller wounds mean fewer wound infections than open surgery; this is an advantage."
+        },
+        {
+          "label": "C",
+          "text": "Difficulty with haemostasis",
+          "is_true": true,
+          "explanation": "Controlling major bleeding is harder through ports and may require conversion to open surgery."
+        },
+        {
+          "label": "D",
+          "text": "Easy to extract large specimen",
+          "is_true": false,
+          "explanation": "Large specimens are difficult to remove and need bag extraction, morcellation or a wound extension."
+        }
+      ],
+      "pearl": "Laparoscopy also has a two-dimensional view and pneumoperitoneum effects (raised intra-abdominal pressure, CO2 absorption, gas embolism)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-063",
+      "subject": "Basic Sciences",
+      "chapter": "Pharmacology",
+      "stem": "Routes of drug excretion:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Urine",
+          "is_true": true,
+          "explanation": "The kidney is the main route of drug excretion through glomerular filtration and tubular secretion."
+        },
+        {
+          "label": "B",
+          "text": "Bile",
+          "is_true": true,
+          "explanation": "Large polar molecules and conjugates are excreted in bile and some undergo enterohepatic circulation."
+        },
+        {
+          "label": "C",
+          "text": "Lung",
+          "is_true": true,
+          "explanation": "Volatile anaesthetics and alcohol are excreted in expired air."
+        },
+        {
+          "label": "D",
+          "text": "Liver",
+          "is_true": false,
+          "explanation": "The liver is the principal organ of drug metabolism; it excretes via bile, which is counted as a separate route."
+        }
+      ],
+      "pearl": "Other excretion routes: saliva, sweat, milk (important in lactation) and faeces."
+    },
+    {
+      "ext_id": "pyq-2019-apr-064",
+      "subject": "Basic Sciences",
+      "chapter": "Biochemistry",
+      "stem": "Causes of hypercholesterolaemia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hypothyroidism",
+          "is_true": true,
+          "explanation": "Reduced LDL-receptor expression lowers LDL clearance; check TSH in every patient with raised cholesterol."
+        },
+        {
+          "label": "B",
+          "text": "Pregnancy",
+          "is_true": true,
+          "explanation": "Oestrogen and progesterone raise cholesterol and triglycerides physiologically in pregnancy."
+        },
+        {
+          "label": "C",
+          "text": "Fibrates",
+          "is_true": false,
+          "explanation": "Fibrates are PPAR-alpha agonists used to lower triglycerides; they do not raise cholesterol."
+        },
+        {
+          "label": "D",
+          "text": "Hypoparathyroidism",
+          "is_true": false,
+          "explanation": "Hypoparathyroidism causes hypocalcaemia and is not a recognised cause of hypercholesterolaemia."
+        }
+      ],
+      "pearl": "Secondary hyperlipidaemia: hypothyroidism, nephrotic syndrome, diabetes, cholestasis, obesity, alcohol, thiazides, steroids."
+    },
+    {
+      "ext_id": "pyq-2019-apr-065",
+      "subject": "Pediatrics",
+      "chapter": "Peds Neuro, Hem-Onc & Infections",
+      "stem": "Components of tetralogy of Fallot:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Atrial septal defect",
+          "is_true": false,
+          "explanation": "ASD is not a component; its addition makes 'pentalogy of Fallot'."
+        },
+        {
+          "label": "B",
+          "text": "Ventricular septal defect",
+          "is_true": true,
+          "explanation": "A large malaligned perimembranous VSD is a core component."
+        },
+        {
+          "label": "C",
+          "text": "Overriding of aorta",
+          "is_true": true,
+          "explanation": "The aorta overrides the VSD and receives blood from both ventricles."
+        },
+        {
+          "label": "D",
+          "text": "Pulmonary hypertension",
+          "is_true": false,
+          "explanation": "TOF has pulmonary (infundibular) stenosis with reduced pulmonary flow, not pulmonary hypertension."
+        }
+      ],
+      "pearl": "TOF: VSD, pulmonary stenosis, overriding aorta, right ventricular hypertrophy; CXR shows a boot-shaped heart with oligaemic lungs."
+    },
+    {
+      "ext_id": "pyq-2019-apr-066",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Structures of the visual pathway:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Optic chiasma",
+          "is_true": true,
+          "explanation": "Nasal retinal fibres decussate at the chiasma; compression causes bitemporal hemianopia."
+        },
+        {
+          "label": "B",
+          "text": "Medial geniculate body",
+          "is_true": false,
+          "explanation": "The medial geniculate body relays auditory pathways; vision relays in the lateral geniculate body."
+        },
+        {
+          "label": "C",
+          "text": "Optic radiation",
+          "is_true": true,
+          "explanation": "Optic radiations carry fibres from the lateral geniculate body to the occipital cortex."
+        },
+        {
+          "label": "D",
+          "text": "Oculomotor nerve",
+          "is_true": false,
+          "explanation": "The oculomotor nerve is efferent to eye muscles and pupil; it is not part of the afferent visual pathway."
+        }
+      ],
+      "pearl": "Visual pathway: optic nerve → chiasma → optic tract → lateral geniculate body → optic radiation → visual cortex (area 17)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-067",
+      "subject": "Medicine",
+      "chapter": "Hematology",
+      "stem": "Normal RBC morphology:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Biconvex shape",
+          "is_true": false,
+          "explanation": "Normal red cells are biconcave, which maximises surface area for gas exchange and deformability."
+        },
+        {
+          "label": "B",
+          "text": "Absence of nucleus",
+          "is_true": true,
+          "explanation": "Mature human red cells are anuclear, leaving more room for haemoglobin."
+        },
+        {
+          "label": "C",
+          "text": "Tear drop cells present",
+          "is_true": false,
+          "explanation": "Tear drop cells (dacrocytes) are abnormal and suggest myelofibrosis or marrow infiltration."
+        },
+        {
+          "label": "D",
+          "text": "Disc shape",
+          "is_true": true,
+          "explanation": "Red cells are discs about 7.5 µm in diameter with central pallor occupying about one-third."
+        }
+      ],
+      "pearl": "Spherocytes lose their central pallor and biconcavity; they are seen in hereditary spherocytosis and autoimmune haemolysis."
+    },
+    {
+      "ext_id": "pyq-2019-apr-068",
+      "subject": "Medicine",
+      "chapter": "Nephrology + Body Fluid",
+      "stem": "Treatment of hypokalaemia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Calcium gluconate",
+          "is_true": false,
+          "explanation": "Calcium gluconate stabilises the myocardium in hyperkalaemia; it does not raise potassium."
+        },
+        {
+          "label": "B",
+          "text": "Glucose",
+          "is_true": false,
+          "explanation": "Glucose stimulates insulin release and drives K+ into cells, which would worsen hypokalaemia."
+        },
+        {
+          "label": "C",
+          "text": "Potassium",
+          "is_true": true,
+          "explanation": "Replacement with oral or IV potassium chloride is the treatment; IV rate normally not above 10–20 mmol/h."
+        },
+        {
+          "label": "D",
+          "text": "Resonium powder",
+          "is_true": false,
+          "explanation": "Calcium resonium removes potassium from the gut and is used for hyperkalaemia."
+        }
+      ],
+      "pearl": "Refractory hypokalaemia: check and correct magnesium, as hypomagnesaemia causes renal potassium wasting."
+    },
+    {
+      "ext_id": "pyq-2019-apr-069",
+      "subject": "Medicine",
+      "chapter": "Rheumatology",
+      "stem": "Causes of monoarthritis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Septic arthritis",
+          "is_true": true,
+          "explanation": "Septic arthritis is the most important cause to exclude in an acute hot swollen joint; aspirate before antibiotics."
+        },
+        {
+          "label": "B",
+          "text": "Gout",
+          "is_true": true,
+          "explanation": "Acute gout typically affects a single joint, classically the first metatarsophalangeal joint (podagra)."
+        },
+        {
+          "label": "C",
+          "text": "Tubercular arthritis",
+          "is_true": true,
+          "explanation": "TB causes a chronic monoarthritis of large weight-bearing joints such as hip and knee."
+        },
+        {
+          "label": "D",
+          "text": "Psoriatic arthritis",
+          "is_true": false,
+          "explanation": "Psoriatic arthritis is usually an asymmetrical oligo- or polyarthritis with DIP involvement and dactylitis, rather than a classic monoarthritis."
+        }
+      ],
+      "pearl": "Acute monoarthritis = septic arthritis until proven otherwise; joint aspiration for Gram stain, culture and crystals is mandatory."
+    },
+    {
+      "ext_id": "pyq-2019-apr-070",
+      "subject": "Gynecology",
+      "chapter": "AUB, Ectopic Pregnancy & GTD",
+      "stem": "Causes (risk factors) of ruptured ectopic pregnancy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Damage to fallopian tube",
+          "is_true": true,
+          "explanation": "Tubal damage from PID or prior surgery impairs ovum transport, the main risk factor for tubal pregnancy."
+        },
+        {
+          "label": "B",
+          "text": "Tubal ligation",
+          "is_true": true,
+          "explanation": "Failed sterilisation carries a high proportion of ectopic pregnancies due to recanalisation or fistula."
+        },
+        {
+          "label": "C",
+          "text": "Endometriosis",
+          "is_true": true,
+          "explanation": "Peritubal adhesions and tubal distortion from endometriosis increase ectopic risk."
+        },
+        {
+          "label": "D",
+          "text": "Multipara",
+          "is_true": false,
+          "explanation": "Parity itself is not a risk factor; previous ectopic, PID, IVF and IUCD failure are."
+        }
+      ],
+      "pearl": "Isthmic tubal pregnancies rupture earliest (6–8 weeks); interstitial ones rupture late with catastrophic bleeding."
+    },
+    {
+      "ext_id": "pyq-2019-apr-071",
+      "subject": "General Surgery",
+      "chapter": "Nose",
+      "stem": "Anosmia is found in:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Nasal polyp",
+          "is_true": true,
+          "explanation": "Polyps block odorants from reaching the olfactory cleft, causing conductive anosmia."
+        },
+        {
+          "label": "B",
+          "text": "DNS",
+          "is_true": true,
+          "explanation": "A severe septal deviation obstructs airflow to the olfactory area, causing conductive hyposmia or anosmia."
+        },
+        {
+          "label": "C",
+          "text": "Allergic rhinitis",
+          "is_true": true,
+          "explanation": "Mucosal oedema in allergic rhinitis reduces olfactory airflow."
+        },
+        {
+          "label": "D",
+          "text": "Intracranial lesion",
+          "is_true": true,
+          "explanation": "Olfactory groove meningioma, frontal lobe tumours and head injury cause sensorineural anosmia."
+        }
+      ],
+      "pearl": "Unilateral anosmia with personality change suggests olfactory groove meningioma (Foster Kennedy syndrome if with optic atrophy and papilloedema)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-072",
+      "subject": "Pediatrics",
+      "chapter": "Growth, Development & Neonatology",
+      "stem": "Diagnostic criteria for SAM:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Bipedal oedema",
+          "is_true": true,
+          "explanation": "Bilateral pitting oedema of nutritional origin is diagnostic of SAM by itself."
+        },
+        {
+          "label": "B",
+          "text": "WHZ > -3",
+          "is_true": false,
+          "explanation": "The criterion is a weight-for-height Z score below -3 SD."
+        },
+        {
+          "label": "C",
+          "text": "MUAC < 125 mm",
+          "is_true": false,
+          "explanation": "MUAC below 115 mm defines SAM; 115–124 mm indicates moderate acute malnutrition."
+        },
+        {
+          "label": "D",
+          "text": "Anaemia",
+          "is_true": false,
+          "explanation": "Anaemia is a common complication of SAM but not a diagnostic criterion."
+        }
+      ],
+      "pearl": "SAM with complications (oedema, poor appetite, medical illness) needs inpatient care; uncomplicated SAM can be managed with RUTF in the community."
+    },
+    {
+      "ext_id": "pyq-2019-apr-073",
+      "subject": "Specialized Surgery",
+      "chapter": "Urology, Andrology & Breast",
+      "stem": "Features of ureteric colic:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pain radiates to umbilicus",
+          "is_true": false,
+          "explanation": "Ureteric colic radiates from loin to groin, scrotum or labia, following the T11–L1 dermatomes."
+        },
+        {
+          "label": "B",
+          "text": "Pain is associated with stone size",
+          "is_true": false,
+          "explanation": "Pain severity does not correlate with stone size; small stones causing acute obstruction are often most painful."
+        },
+        {
+          "label": "C",
+          "text": "Association with diet",
+          "is_true": true,
+          "explanation": "Low fluid intake and diets high in animal protein, salt and oxalate increase stone formation."
+        },
+        {
+          "label": "D",
+          "text": "Painless haematuria",
+          "is_true": false,
+          "explanation": "Stones cause painful haematuria; painless haematuria suggests urothelial malignancy until proven otherwise."
+        }
+      ],
+      "pearl": "Stones under 5 mm usually pass spontaneously; tamsulosin aids passage of distal ureteric stones."
+    },
+    {
+      "ext_id": "pyq-2019-apr-074",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Posterior segment structures of the eye:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Vitreous",
+          "is_true": true,
+          "explanation": "The vitreous fills the posterior segment behind the lens."
+        },
+        {
+          "label": "B",
+          "text": "Lens",
+          "is_true": false,
+          "explanation": "The lens lies in the anterior segment, behind the iris, separating the anterior and posterior segments."
+        },
+        {
+          "label": "C",
+          "text": "Choroid",
+          "is_true": true,
+          "explanation": "The choroid is the vascular layer of the posterior uvea between retina and sclera."
+        },
+        {
+          "label": "D",
+          "text": "Retina",
+          "is_true": true,
+          "explanation": "The retina lines the posterior segment as the neurosensory layer."
+        }
+      ],
+      "pearl": "Anterior segment: cornea, anterior and posterior chambers, iris, ciliary body, lens; posterior segment: vitreous, retina, choroid, optic disc."
+    },
+    {
+      "ext_id": "pyq-2019-apr-075",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "Major criteria of acute rheumatic fever:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Arthralgia",
+          "is_true": false,
+          "explanation": "Arthralgia is a minor criterion and cannot be counted if arthritis is used as a major one."
+        },
+        {
+          "label": "B",
+          "text": "Chorea",
+          "is_true": true,
+          "explanation": "Sydenham's chorea is a major criterion."
+        },
+        {
+          "label": "C",
+          "text": "Elevated CRP",
+          "is_true": false,
+          "explanation": "Raised CRP or ESR is a minor criterion."
+        },
+        {
+          "label": "D",
+          "text": "Subcutaneous nodule",
+          "is_true": true,
+          "explanation": "Painless subcutaneous nodules over bony prominences and tendons are a major criterion, usually with carditis."
+        }
+      ],
+      "pearl": "Diagnosis requires evidence of preceding streptococcal infection plus 2 major, or 1 major and 2 minor, criteria."
+    },
+    {
+      "ext_id": "pyq-2019-apr-076",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Causes of gradual dimness of vision:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cataract",
+          "is_true": true,
+          "explanation": "Progressive lens opacity causes gradual painless loss of vision."
+        },
+        {
+          "label": "B",
+          "text": "Presbyopia",
+          "is_true": true,
+          "explanation": "Age-related loss of accommodation gradually impairs near vision after about 40 years."
+        },
+        {
+          "label": "C",
+          "text": "Absolute glaucoma",
+          "is_true": false,
+          "explanation": "Absolute glaucoma is the end stage with no perception of light; there is no remaining vision to dim."
+        },
+        {
+          "label": "D",
+          "text": "Vitamin A deficiency",
+          "is_true": true,
+          "explanation": "Vitamin A deficiency causes progressive night blindness and xerophthalmia."
+        }
+      ],
+      "pearl": "Gradual painless loss: cataract, refractive error, chronic open-angle glaucoma, diabetic retinopathy, ARMD."
+    },
+    {
+      "ext_id": "pyq-2019-apr-077",
+      "subject": "Gynecology",
+      "chapter": "AUB, Ectopic Pregnancy & GTD",
+      "stem": "Causes of menorrhagia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Adenomyosis",
+          "is_true": true,
+          "explanation": "Endometrial glands within the myometrium enlarge the uterus and cause heavy, painful periods."
+        },
+        {
+          "label": "B",
+          "text": "Fibroid uterus",
+          "is_true": true,
+          "explanation": "Submucous and intramural fibroids increase endometrial surface area and impair contraction, causing menorrhagia."
+        },
+        {
+          "label": "C",
+          "text": "Carcinoma cervix",
+          "is_true": false,
+          "explanation": "Carcinoma cervix causes irregular, postcoital or intermenstrual bleeding rather than heavy regular periods."
+        },
+        {
+          "label": "D",
+          "text": "Cervical polyp",
+          "is_true": false,
+          "explanation": "Cervical polyps cause intermenstrual or contact bleeding, not menorrhagia."
+        }
+      ],
+      "pearl": "PALM-COEIN classification of AUB: Polyp, Adenomyosis, Leiomyoma, Malignancy; Coagulopathy, Ovulatory, Endometrial, Iatrogenic, Not classified."
+    },
+    {
+      "ext_id": "pyq-2019-apr-078",
+      "subject": "Medicine",
+      "chapter": "Hematology",
+      "stem": "Causes of generalised lymphadenopathy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "CLL",
+          "is_true": true,
+          "explanation": "Chronic lymphocytic leukaemia causes painless symmetrical generalised lymphadenopathy in the elderly."
+        },
+        {
+          "label": "B",
+          "text": "Tuberculosis",
+          "is_true": true,
+          "explanation": "Disseminated TB can cause generalised lymphadenopathy, though cervical nodes are most commonly involved."
+        },
+        {
+          "label": "C",
+          "text": "Kala-azar",
+          "is_true": false,
+          "explanation": "Indian kala-azar causes massive splenomegaly and hepatomegaly; lymphadenopathy is uncommon (more typical of African disease)."
+        },
+        {
+          "label": "D",
+          "text": "Secondary syphilis",
+          "is_true": true,
+          "explanation": "Secondary syphilis produces generalised, painless, rubbery lymphadenopathy with rash and mucous patches."
+        }
+      ],
+      "pearl": "Generalised lymphadenopathy: infections (HIV, TB, EBV, syphilis), lymphoma, CLL/ALL, SLE, sarcoidosis, drugs (phenytoin)."
+    },
+    {
+      "ext_id": "pyq-2019-apr-079",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Ocular effects of corticosteroids:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Increased intraocular pressure",
+          "is_true": true,
+          "explanation": "Steroids reduce trabecular outflow, causing steroid-induced open-angle glaucoma in susceptible people."
+        },
+        {
+          "label": "B",
+          "text": "Cataract",
+          "is_true": true,
+          "explanation": "Long-term steroids cause posterior subcapsular cataract."
+        },
+        {
+          "label": "C",
+          "text": "Corneal neovascularisation",
+          "is_true": false,
+          "explanation": "Steroids suppress corneal neovascularisation and are used to treat it."
+        },
+        {
+          "label": "D",
+          "text": "Constriction of pupil",
+          "is_true": false,
+          "explanation": "Steroids do not cause miosis; they may cause mild mydriasis and ptosis."
+        }
+      ],
+      "pearl": "Topical steroids are contraindicated in herpes simplex dendritic ulcer — they can cause geographic ulcer and perforation."
+    },
+    {
+      "ext_id": "pyq-2019-apr-080",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Cataract is a frequent complication of:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Leprosy",
+          "is_true": false,
+          "explanation": "Leprosy causes lagophthalmos, corneal anaesthesia and iridocyclitis; cataract is not a frequent direct complication."
+        },
+        {
+          "label": "B",
+          "text": "Dystrophia myotonica",
+          "is_true": true,
+          "explanation": "Myotonic dystrophy classically causes a 'Christmas tree' polychromatic cataract."
+        },
+        {
+          "label": "C",
+          "text": "Tuberculosis",
+          "is_true": false,
+          "explanation": "TB causes uveitis and choroidal tubercles; cataract is not a frequent complication."
+        },
+        {
+          "label": "D",
+          "text": "Angle closure glaucoma",
+          "is_true": false,
+          "explanation": "Acute angle closure may leave small anterior subcapsular opacities (glaukomflecken), but cataract is not a frequent complication."
+        }
+      ],
+      "pearl": "Systemic causes of cataract: diabetes, galactosaemia, hypocalcaemia, Wilson's (sunflower), myotonic dystrophy, Down syndrome, steroids."
+    },
+    {
+      "ext_id": "pyq-2019-apr-081",
+      "subject": "General Surgery",
+      "chapter": "Surgical Infections & Microbes",
+      "stem": "Prophylactic antibiotics are given in which surgeries:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Amputation of ischaemic limb",
+          "is_true": true,
+          "explanation": "Ischaemic tissue risks clostridial gas gangrene, so prophylaxis (e.g. benzylpenicillin or co-amoxiclav) is recommended for lower limb amputation."
+        },
+        {
+          "label": "B",
+          "text": "Clean surgery of humerus fracture",
+          "is_true": false,
+          "explanation": "Routine clean surgery without implant does not need prophylaxis; it is given when a prosthesis or implant is inserted."
+        },
+        {
+          "label": "C",
+          "text": "Clean inguinal hernia repair without mesh",
+          "is_true": false,
+          "explanation": "Clean surgery with no implant and low infection risk does not require prophylaxis."
+        },
+        {
+          "label": "D",
+          "text": "Ruptured appendix surgery",
+          "is_true": true,
+          "explanation": "A ruptured appendix is dirty surgery needing therapeutic antibiotics covering gut aerobes and anaerobes."
+        }
+      ],
+      "pearl": "Prophylaxis is given at induction (within 60 minutes of incision) and usually no more than one dose."
+    },
+    {
+      "ext_id": "pyq-2019-apr-082",
+      "subject": "Obstetrics",
+      "chapter": "Preterm Labour, PROM & Hypertension",
+      "stem": "Complications of gestational diabetes mellitus:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Oligohydramnios",
+          "is_true": false,
+          "explanation": "Fetal hyperglycaemia causes osmotic diuresis and polyhydramnios, not oligohydramnios."
+        },
+        {
+          "label": "B",
+          "text": "Intrauterine fetal death",
+          "is_true": true,
+          "explanation": "Poor glycaemic control is associated with unexplained late stillbirth."
+        },
+        {
+          "label": "C",
+          "text": "Congenital fetal anomaly",
+          "is_true": true,
+          "explanation": "Anomalies arise when hyperglycaemia is present in the first trimester, as in undiagnosed pre-existing diabetes."
+        },
+        {
+          "label": "D",
+          "text": "Fetal macrosomia",
+          "is_true": true,
+          "explanation": "Fetal hyperinsulinaemia (Pedersen hypothesis) drives growth, causing macrosomia and shoulder dystocia."
+        }
+      ],
+      "pearl": "Neonatal problems in GDM: hypoglycaemia, respiratory distress, hypocalcaemia, polycythaemia, jaundice."
+    },
+    {
+      "ext_id": "pyq-2019-apr-083",
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Mosquito-borne viral diseases:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dengue",
+          "is_true": true,
+          "explanation": "Dengue is a flavivirus transmitted by Aedes aegypti, a day-biting mosquito."
+        },
+        {
+          "label": "B",
+          "text": "Yellow fever",
+          "is_true": true,
+          "explanation": "Yellow fever is a flavivirus transmitted by Aedes mosquitoes."
+        },
+        {
+          "label": "C",
+          "text": "Chikungunya",
+          "is_true": true,
+          "explanation": "Chikungunya is an alphavirus spread by Aedes, causing fever with severe arthralgia."
+        },
+        {
+          "label": "D",
+          "text": "Malaria",
+          "is_true": false,
+          "explanation": "Malaria is mosquito-borne (Anopheles) but caused by a protozoan parasite, Plasmodium, not a virus."
+        }
+      ],
+      "pearl": "Aedes transmits dengue, chikungunya, yellow fever and Zika; Culex transmits Japanese encephalitis and filariasis; Anopheles transmits malaria."
+    },
+    {
+      "ext_id": "pyq-2019-apr-084",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Post-operative complications of cataract surgery:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Perforation of the eyeball",
+          "is_true": false,
+          "explanation": "Globe perforation is an anaesthetic or operative (peribulbar needle) complication, not a post-operative one."
+        },
+        {
+          "label": "B",
+          "text": "Anterior uveitis",
+          "is_true": true,
+          "explanation": "Post-operative inflammation (anterior uveitis) is common and treated with topical steroids."
+        },
+        {
+          "label": "C",
+          "text": "Expulsive haemorrhage",
+          "is_true": false,
+          "explanation": "Expulsive suprachoroidal haemorrhage is a rare but devastating intraoperative complication."
+        },
+        {
+          "label": "D",
+          "text": "Secondary glaucoma",
+          "is_true": true,
+          "explanation": "Retained viscoelastic, inflammation or pupillary block can raise IOP after surgery (secondary glaucoma)."
+        }
+      ],
+      "pearl": "Commonest late complication after cataract surgery is posterior capsular opacification, treated with Nd:YAG laser capsulotomy."
+    }
+  ]
+}

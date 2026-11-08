@@ -1,154 +1,2851 @@
 {
-  "_source": "BMDCPQ.pdf, 'BMDC licence Exam May-09 2025' (the compiler notes that some stems were reconstructed from memory). Spelling cleaned up; meaning unchanged. 10 of the questions in this paper so far.",
   "set": {
     "ext_id": "pyq-2025-may",
     "kind": "pyq",
     "title": "BMDC RQE — May 2025",
     "pyq_year": 2025,
     "pyq_session": "May",
-    "duration_min": 10,
+    "duration_min": 86,
     "is_free_sample": false
   },
   "questions": [
     {
       "ext_id": "pyq-2025-may-001",
-      "source_no": 1,
       "subject": "Basic Sciences",
       "chapter": "Immuno & Micro",
-      "stem": "Antigen-presenting cells (APCs) include:",
+      "stem": "Antigen-presenting cells:",
       "options": [
-        { "label": "A", "text": "Macrophage", "is_true": true, "explanation": "Macrophages are professional APCs. They phagocytose antigen and present it on MHC class II to CD4+ T cells." },
-        { "label": "B", "text": "T cell", "is_true": false, "explanation": "T cells recognise antigen that other cells present. They are not professional APCs." },
-        { "label": "C", "text": "B cell", "is_true": true, "explanation": "B cells are professional APCs. They take up antigen through the B-cell receptor and present it on MHC II to helper T cells." },
-        { "label": "D", "text": "NK cell", "is_true": false, "explanation": "NK cells are innate killer lymphocytes. They kill cells that lack MHC I and do not present antigen." }
+        {
+          "label": "A",
+          "text": "Macrophage",
+          "is_true": true,
+          "explanation": "Macrophages express MHC class II and present processed antigen to CD4+ helper T cells."
+        },
+        {
+          "label": "B",
+          "text": "T cell",
+          "is_true": false,
+          "explanation": "T cells recognise antigen presented on MHC; they are not professional antigen-presenting cells."
+        },
+        {
+          "label": "C",
+          "text": "B cell",
+          "is_true": true,
+          "explanation": "B cells capture antigen via surface immunoglobulin and present it on MHC class II to helper T cells."
+        },
+        {
+          "label": "D",
+          "text": "NK cell",
+          "is_true": false,
+          "explanation": "NK cells are innate cytotoxic lymphocytes that kill MHC-I-deficient cells; they do not present antigen."
+        }
       ],
-      "pearl": "The 3 professional APCs: dendritic cells (the most potent), macrophages and B cells."
+      "pearl": "Professional APCs: dendritic cells (most potent), macrophages and B cells, all expressing MHC class II."
+    },
+    {
+      "ext_id": "pyq-2025-may-002",
+      "subject": "Medicine",
+      "chapter": "Neurology",
+      "stem": "Clinical features of upper motor neuron lesion:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Fasciculation",
+          "is_true": false,
+          "explanation": "Fasciculation reflects anterior horn cell or lower motor neuron disease, not UMN lesions."
+        },
+        {
+          "label": "B",
+          "text": "Marked muscle wasting",
+          "is_true": false,
+          "explanation": "UMN lesions cause only mild disuse atrophy; marked wasting is a LMN sign."
+        },
+        {
+          "label": "C",
+          "text": "Contralateral hemiparesis",
+          "is_true": true,
+          "explanation": "Corticospinal fibres decussate in the medulla, so a cerebral UMN lesion weakens the opposite side."
+        },
+        {
+          "label": "D",
+          "text": "Flaccid paralysis",
+          "is_true": false,
+          "explanation": "UMN lesions give spastic paralysis with hyperreflexia; flaccidity occurs only transiently in the shock phase."
+        }
+      ],
+      "pearl": "UMN: spasticity, hyperreflexia, extensor plantar, pyramidal weakness. LMN: wasting, fasciculation, hypotonia, areflexia."
     },
     {
       "ext_id": "pyq-2025-may-003",
-      "source_no": 3,
       "subject": "Pediatrics",
-      "chapter": "IMCI, Critical Care & Emergencies",
-      "stem": "Findings in 'some dehydration' (IMCI):",
+      "chapter": "Gastroenterology, Fluids & Pulmonology",
+      "stem": "Findings in some dehydration (IMCI):",
       "options": [
-        { "label": "A", "text": "Sunken eyes", "is_true": true, "explanation": "Sunken eyes are one of the IMCI signs. Two of the signs together classify as some dehydration." },
-        { "label": "B", "text": "Skin pinch goes back very slowly", "is_true": false, "explanation": "'Very slowly' (more than 2 seconds) is a sign of severe dehydration. In some dehydration the skin pinch goes back slowly." },
-        { "label": "C", "text": "Thirsty, drinks eagerly", "is_true": true, "explanation": "Drinking eagerly / thirsty is a sign of some dehydration. In severe dehydration the child drinks poorly or is unable to drink." },
-        { "label": "D", "text": "Unconscious", "is_true": false, "explanation": "A lethargic or unconscious child falls under severe dehydration. In some dehydration the child is restless and irritable." }
+        {
+          "label": "A",
+          "text": "Sunken eyes",
+          "is_true": true,
+          "explanation": "Sunken eyes are one of the signs used to classify some dehydration in IMCI."
+        },
+        {
+          "label": "B",
+          "text": "Skin pinch goes back very slowly",
+          "is_true": false,
+          "explanation": "Very slow skin pinch (>2 seconds) indicates severe dehydration; in some dehydration it goes back slowly."
+        },
+        {
+          "label": "C",
+          "text": "Thirsty, drinks eagerly",
+          "is_true": true,
+          "explanation": "Restless, irritable and drinking eagerly are classic signs of some dehydration."
+        },
+        {
+          "label": "D",
+          "text": "Unconscious",
+          "is_true": false,
+          "explanation": "Lethargy or unconsciousness indicates severe dehydration."
+        }
       ],
-      "pearl": "Some dehydration = 2 of: restless/irritable, sunken eyes, drinks eagerly, skin pinch goes back slowly. Treat with Plan B (ORS 75 ml/kg over 4 hours)."
+      "pearl": "IMCI some dehydration = two of: restless/irritable, sunken eyes, drinks eagerly, skin pinch goes back slowly; treat with Plan B."
     },
     {
       "ext_id": "pyq-2025-may-004",
-      "source_no": 4,
       "subject": "Medicine",
       "chapter": "Neurology",
-      "stem": "Characteristics of tuberculous meningitis:",
+      "stem": "Characteristics of CSF in tuberculous meningitis:",
       "options": [
-        { "label": "A", "text": "Cobweb coagulum in CSF", "is_true": true, "explanation": "A fine cobweb (pellicle) clot forms when TB CSF is left standing, because of its high protein (fibrinogen)." },
-        { "label": "B", "text": "Increased CSF pressure", "is_true": true, "explanation": "Opening pressure is raised, often because of basal exudates causing communicating hydrocephalus." },
-        { "label": "C", "text": "Decreased CSF protein", "is_true": false, "explanation": "Protein is markedly raised (often 1–5 g/L), and very high in spinal block." },
-        { "label": "D", "text": "Increased CSF glucose", "is_true": false, "explanation": "Glucose is low (CSF:blood ratio below 0.5), as in bacterial meningitis." }
+        {
+          "label": "A",
+          "text": "Cobweb formation on standing",
+          "is_true": true,
+          "explanation": "High fibrinogen content makes TB CSF form a cobweb clot when left standing."
+        },
+        {
+          "label": "B",
+          "text": "Increased CSF pressure",
+          "is_true": true,
+          "explanation": "Opening pressure is usually raised, partly from basal exudate and hydrocephalus."
+        },
+        {
+          "label": "C",
+          "text": "Decreased protein",
+          "is_true": false,
+          "explanation": "Protein is markedly raised (often 1-5 g/L), especially with spinal block."
+        },
+        {
+          "label": "D",
+          "text": "Increased glucose",
+          "is_true": false,
+          "explanation": "Glucose is low (CSF:blood ratio usually <0.5) in TB meningitis."
+        }
       ],
-      "pearl": "TB CSF: clear/cobweb, lymphocytes, ↑↑ protein, ↓ glucose, ADA raised. Viral CSF has normal glucose."
+      "pearl": "TB meningitis CSF: lymphocytes, very high protein, low glucose, cobweb clot, clear or slightly turbid fluid."
     },
     {
       "ext_id": "pyq-2025-may-005",
-      "source_no": 5,
       "subject": "Specialized Surgery",
       "chapter": "Orthopedics & Neurosurgery",
-      "stem": "Colles' fracture:",
+      "stem": "Colles fracture:",
       "options": [
-        { "label": "A", "text": "Common in younger age", "is_true": false, "explanation": "It typically occurs in elderly, post-menopausal (osteoporotic) women after a fall on the outstretched hand. Young adults get high-energy distal radius fractures instead." },
-        { "label": "B", "text": "Dinner-fork deformity", "is_true": true, "explanation": "Dorsal displacement of the distal fragment gives the classic dinner-fork deformity on lateral view." },
-        { "label": "C", "text": "Dorsal angulation", "is_true": true, "explanation": "The distal radius fragment is dorsally angulated/tilted, radially deviated and impacted, within 2.5 cm of the wrist." },
-        { "label": "D", "text": "Sudeck's atrophy", "is_true": true, "explanation": "Sudeck's atrophy (complex regional pain syndrome) is a recognised late complication of Colles' fracture." }
+        {
+          "label": "A",
+          "text": "Common in younger age",
+          "is_true": false,
+          "explanation": "Typical patient is a postmenopausal woman with osteoporosis falling on an outstretched hand."
+        },
+        {
+          "label": "B",
+          "text": "Dinner-fork deformity",
+          "is_true": true,
+          "explanation": "Dorsal displacement of the distal fragment produces the classic dinner-fork deformity."
+        },
+        {
+          "label": "C",
+          "text": "Dorsal angulation",
+          "is_true": true,
+          "explanation": "The distal radial fragment is dorsally angulated and displaced, with radial shift."
+        },
+        {
+          "label": "D",
+          "text": "Sudeck atrophy may occur",
+          "is_true": true,
+          "explanation": "Complex regional pain syndrome (Sudeck osteodystrophy) is a recognised complication."
+        }
       ],
-      "pearl": "Colles complications: malunion (most common), stiffness, Sudeck's atrophy, carpal tunnel syndrome, delayed rupture of extensor pollicis longus."
+      "pearl": "Colles complications: malunion, stiffness, Sudeck atrophy, EPL tendon rupture, median nerve compression."
+    },
+    {
+      "ext_id": "pyq-2025-may-006",
+      "subject": "Pediatrics",
+      "chapter": "Growth, Development & Neonatology",
+      "stem": "Components of good breastfeeding technique:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Holding the baby at a 30 degree angle",
+          "is_true": false,
+          "explanation": "No fixed angle is required; the baby's body should be close, facing the breast, head and body in line."
+        },
+        {
+          "label": "B",
+          "text": "Proper attachment",
+          "is_true": true,
+          "explanation": "Good attachment (latch) is one of the two key components assessed in breastfeeding."
+        },
+        {
+          "label": "C",
+          "text": "Proper positioning",
+          "is_true": true,
+          "explanation": "Correct positioning of mother and baby is the other key component of effective breastfeeding."
+        },
+        {
+          "label": "D",
+          "text": "Baby's mouth covers most of the areola",
+          "is_true": true,
+          "explanation": "In good attachment more areola is visible above than below and the mouth is wide open over the areola."
+        }
+      ],
+      "pearl": "Signs of good attachment: chin touching breast, mouth wide open, lower lip everted, more areola above than below."
+    },
+    {
+      "ext_id": "pyq-2025-may-007",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Location of headquarters of health organisations:",
+      "options": [
+        {
+          "label": "A",
+          "text": "WHO - Geneva",
+          "is_true": true,
+          "explanation": "WHO headquarters is in Geneva, Switzerland, established in 1948."
+        },
+        {
+          "label": "B",
+          "text": "Texas Medical Center - Tokyo",
+          "is_true": false,
+          "explanation": "Texas Medical Center is in Houston, Texas, USA."
+        },
+        {
+          "label": "C",
+          "text": "UNICEF - New York",
+          "is_true": true,
+          "explanation": "UNICEF headquarters is in New York, USA."
+        },
+        {
+          "label": "D",
+          "text": "icddr,b - Dhaka",
+          "is_true": true,
+          "explanation": "The International Centre for Diarrhoeal Disease Research, Bangladesh is headquartered in Dhaka."
+        }
+      ],
+      "pearl": "WHO SEARO regional office is in New Delhi; World Health Day is 7 April."
     },
     {
       "ext_id": "pyq-2025-may-008",
-      "source_no": 8,
       "subject": "Obstetrics",
       "chapter": "Normal Labour, Episiotomy & Induction",
-      "stem": "Uses of the partograph:",
+      "stem": "Uses of partograph:",
       "options": [
-        { "label": "A", "text": "Recording cervical dilatation", "is_true": true, "explanation": "Cervical dilatation is plotted against time with the alert and action lines. It is the core of the partograph." },
-        { "label": "B", "text": "Monitoring fetal heart rate", "is_true": true, "explanation": "Fetal condition (FHR, liquor, moulding) is charted, usually every 30 minutes." },
-        { "label": "C", "text": "Monitoring uterine contractions", "is_true": true, "explanation": "Frequency and duration of contractions per 10 minutes are recorded." },
-        { "label": "D", "text": "Early detection of obstructed labour", "is_true": true, "explanation": "Crossing the alert/action line shows prolonged labour early, which helps prevent obstructed labour." }
+        {
+          "label": "A",
+          "text": "Recording cervical dilatation",
+          "is_true": true,
+          "explanation": "Cervical dilatation is plotted against time with alert and action lines."
+        },
+        {
+          "label": "B",
+          "text": "Recording fetal heart rate",
+          "is_true": true,
+          "explanation": "Fetal heart rate is recorded every 30 minutes in the fetal section."
+        },
+        {
+          "label": "C",
+          "text": "Recording uterine contractions",
+          "is_true": true,
+          "explanation": "Frequency and duration of contractions per 10 minutes are charted."
+        },
+        {
+          "label": "D",
+          "text": "Early detection of obstructed labour",
+          "is_true": true,
+          "explanation": "Crossing the alert and action lines flags prolonged or obstructed labour for timely intervention."
+        }
       ],
-      "pearl": "WHO partograph starts in the active phase (cervix 4 cm). Action line is 4 hours to the right of the alert line."
+      "pearl": "WHO partograph: active phase from 4 cm; the action line lies 4 hours to the right of the alert line."
     },
     {
       "ext_id": "pyq-2025-may-009",
-      "source_no": 9,
       "subject": "Medicine",
       "chapter": "Hepatology",
       "stem": "Exudative ascites is found in:",
       "options": [
-        { "label": "A", "text": "Chronic liver disease", "is_true": false, "explanation": "Cirrhosis causes a transudate (low protein, SAAG ≥ 1.1 g/dL) from portal hypertension and hypoalbuminaemia." },
-        { "label": "B", "text": "Congestive cardiac failure", "is_true": false, "explanation": "Classically a transudate (high SAAG). Protein may be mildly raised, but for exams count CCF as transudative." },
-        { "label": "C", "text": "Malignancy", "is_true": true, "explanation": "Peritoneal carcinomatosis gives a protein-rich exudate, often blood-stained, with malignant cells." },
-        { "label": "D", "text": "Tuberculosis", "is_true": true, "explanation": "TB peritonitis gives an exudate: high protein, lymphocytes and raised ADA." }
+        {
+          "label": "A",
+          "text": "Chronic liver disease",
+          "is_true": false,
+          "explanation": "Cirrhotic ascites is a transudate (SAAG ≥11 g/L, low protein)."
+        },
+        {
+          "label": "B",
+          "text": "Congestive cardiac failure",
+          "is_true": false,
+          "explanation": "Cardiac ascites is a high-SAAG transudate from raised hydrostatic pressure."
+        },
+        {
+          "label": "C",
+          "text": "Malignancy",
+          "is_true": true,
+          "explanation": "Peritoneal carcinomatosis produces a protein-rich exudate."
+        },
+        {
+          "label": "D",
+          "text": "Tuberculous peritonitis",
+          "is_true": true,
+          "explanation": "TB peritonitis gives an exudate with lymphocytes, high protein and raised ADA."
+        }
       ],
-      "pearl": "Exudate (protein > 25 g/L): malignancy, TB, pancreatitis. Transudate: cirrhosis, CCF, nephrotic syndrome. SAAG ≥ 1.1 g/dL means portal hypertension."
+      "pearl": "SAAG ≥11 g/L = portal hypertension; SAAG <11 g/L = peritoneal disease (TB, cancer, pancreatitis)."
+    },
+    {
+      "ext_id": "pyq-2025-may-010",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Refractive errors:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Myopia",
+          "is_true": true,
+          "explanation": "Parallel rays focus in front of the retina; corrected with concave lenses."
+        },
+        {
+          "label": "B",
+          "text": "Presbyopia",
+          "is_true": true,
+          "explanation": "Age-related loss of accommodation, grouped with errors of refraction and corrected with convex reading lenses."
+        },
+        {
+          "label": "C",
+          "text": "Hypermetropia",
+          "is_true": true,
+          "explanation": "Parallel rays focus behind the retina; corrected with convex lenses."
+        },
+        {
+          "label": "D",
+          "text": "Astigmatism",
+          "is_true": true,
+          "explanation": "Unequal refractive power in different meridians; corrected with cylindrical lenses."
+        }
+      ],
+      "pearl": "Myopia: concave lens; hypermetropia and presbyopia: convex lens; astigmatism: cylindrical lens."
+    },
+    {
+      "ext_id": "pyq-2025-may-011",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Causes of ptosis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Horner syndrome",
+          "is_true": true,
+          "explanation": "Loss of sympathetic supply to Müller muscle causes partial ptosis with miosis."
+        },
+        {
+          "label": "B",
+          "text": "Oculomotor nerve palsy",
+          "is_true": true,
+          "explanation": "Paralysis of levator palpebrae superioris causes complete ptosis."
+        },
+        {
+          "label": "C",
+          "text": "Organophosphorus poisoning",
+          "is_true": true,
+          "explanation": "The intermediate syndrome after OP poisoning causes cranial nerve weakness including ptosis."
+        },
+        {
+          "label": "D",
+          "text": "Glaucoma",
+          "is_true": false,
+          "explanation": "Glaucoma raises intraocular pressure and damages the optic nerve; it does not cause ptosis."
+        }
+      ],
+      "pearl": "Ptosis with miosis = Horner; ptosis with dilated pupil and down-and-out eye = third nerve palsy."
+    },
+    {
+      "ext_id": "pyq-2025-may-012",
+      "subject": "Specialized Surgery",
+      "chapter": "Urology, Andrology & Breast",
+      "stem": "Causes of blood-stained nipple discharge:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Carcinoma",
+          "is_true": true,
+          "explanation": "Intraductal carcinoma can present with blood-stained discharge, especially in older women."
+        },
+        {
+          "label": "B",
+          "text": "Mastitis",
+          "is_true": false,
+          "explanation": "Mastitis gives purulent discharge with a tender inflamed breast, not bloody discharge."
+        },
+        {
+          "label": "C",
+          "text": "Duct ectasia",
+          "is_true": true,
+          "explanation": "Discharge is usually cheesy or green, but can be blood-stained."
+        },
+        {
+          "label": "D",
+          "text": "Menstruation",
+          "is_true": false,
+          "explanation": "Cyclical hormonal changes cause breast tenderness, not bloody nipple discharge."
+        }
+      ],
+      "pearl": "Commonest cause of bloody nipple discharge is intraductal papilloma; always exclude carcinoma."
     },
     {
       "ext_id": "pyq-2025-may-013",
-      "source_no": 13,
       "subject": "General Surgery",
       "chapter": "Ear",
       "stem": "Complications of chronic otitis media:",
       "options": [
-        { "label": "A", "text": "Facial nerve palsy", "is_true": true, "explanation": "Cholesteatoma can erode the fallopian canal and cause lower motor neuron facial palsy (an intratemporal complication)." },
-        { "label": "B", "text": "Cholesteatoma formation", "is_true": true, "explanation": "Attico-antral (unsafe) CSOM is associated with cholesteatoma, which erodes bone." },
-        { "label": "C", "text": "Sensorineural hearing loss", "is_true": true, "explanation": "Toxins spreading through the round window, or labyrinthitis/fistula, can cause SNHL on top of the conductive loss." },
-        { "label": "D", "text": "Cerebral venous sinus thrombosis", "is_true": true, "explanation": "Lateral (sigmoid) sinus thrombosis is a classic intracranial complication of unsafe CSOM." }
+        {
+          "label": "A",
+          "text": "Facial nerve palsy",
+          "is_true": true,
+          "explanation": "Cholesteatoma can erode the fallopian canal and cause lower motor neuron facial palsy."
+        },
+        {
+          "label": "B",
+          "text": "Cholesteatoma formation",
+          "is_true": true,
+          "explanation": "Unsafe (atticoantral) CSOM is associated with cholesteatoma, which erodes bone."
+        },
+        {
+          "label": "C",
+          "text": "Sensorineural hearing loss",
+          "is_true": true,
+          "explanation": "Labyrinthitis or toxin spread through the round window can cause SNHL."
+        },
+        {
+          "label": "D",
+          "text": "Cerebral venous sinus thrombosis",
+          "is_true": true,
+          "explanation": "Lateral (sigmoid) sinus thrombosis is a recognised intracranial complication."
+        }
       ],
-      "pearl": "Intracranial complications of CSOM: meningitis (most common), brain abscess (temporal lobe / cerebellum), lateral sinus thrombosis, extradural abscess."
+      "pearl": "Commonest intracranial complication of CSOM is meningitis; commonest extracranial is mastoid abscess."
     },
     {
       "ext_id": "pyq-2025-may-014",
-      "source_no": 14,
       "subject": "Basic Sciences",
       "chapter": "Pharmacology",
       "stem": "Drugs causing gynaecomastia:",
       "options": [
-        { "label": "A", "text": "Isoniazid", "is_true": true, "explanation": "Isoniazid is a recognised (less common) cause of gynaecomastia." },
-        { "label": "B", "text": "Digoxin", "is_true": true, "explanation": "Digoxin has an oestrogen-like structure and can cause gynaecomastia." },
-        { "label": "C", "text": "Spironolactone", "is_true": true, "explanation": "Spironolactone is the classic cause: it blocks androgen receptors and testosterone synthesis. Eplerenone avoids it." },
-        { "label": "D", "text": "Propranolol", "is_true": false, "explanation": "Beta-blockers are not associated with gynaecomastia." }
+        {
+          "label": "A",
+          "text": "Isoniazid",
+          "is_true": true,
+          "explanation": "Isoniazid is a recognised cause of gynaecomastia."
+        },
+        {
+          "label": "B",
+          "text": "Digoxin",
+          "is_true": true,
+          "explanation": "Digoxin has an oestrogen-like steroid structure and causes gynaecomastia."
+        },
+        {
+          "label": "C",
+          "text": "Spironolactone",
+          "is_true": true,
+          "explanation": "Spironolactone blocks androgen receptors and is the classic drug cause."
+        },
+        {
+          "label": "D",
+          "text": "Propranolol",
+          "is_true": false,
+          "explanation": "Propranolol is not associated with gynaecomastia."
+        }
       ],
-      "pearl": "Mnemonic 'DISCO': Digoxin, Isoniazid, Spironolactone, Cimetidine, Oestrogens. Add ketoconazole, GnRH analogues and finasteride."
+      "pearl": "Drug gynaecomastia mnemonic DISCO: Digoxin, Isoniazid, Spironolactone, Cimetidine, Oestrogens."
+    },
+    {
+      "ext_id": "pyq-2025-may-015",
+      "subject": "Pediatrics",
+      "chapter": "Peds Neuro, Hem-Onc & Infections",
+      "stem": "Organisms causing meningitis in school-age children:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Streptococcus pneumoniae",
+          "is_true": true,
+          "explanation": "Pneumococcus is a leading cause of bacterial meningitis beyond the neonatal period."
+        },
+        {
+          "label": "B",
+          "text": "Haemophilus influenzae",
+          "is_true": false,
+          "explanation": "Hib mainly affects children under 5 years and is now rare after vaccination."
+        },
+        {
+          "label": "C",
+          "text": "Neisseria meningitidis",
+          "is_true": true,
+          "explanation": "Meningococcus is a major cause in children and adolescents, often with petechial rash."
+        },
+        {
+          "label": "D",
+          "text": "Escherichia coli",
+          "is_true": false,
+          "explanation": "E. coli is a neonatal pathogen along with group B streptococcus and Listeria."
+        }
+      ],
+      "pearl": "Neonate: GBS, E. coli, Listeria. Older children: pneumococcus and meningococcus."
     },
     {
       "ext_id": "pyq-2025-may-016",
-      "source_no": 16,
       "subject": "Medicine",
       "chapter": "Endocrinology",
       "stem": "Secondary hyperthyroidism:",
       "options": [
-        { "label": "A", "text": "Increased T3", "is_true": true, "explanation": "Excess TSH drives the thyroid, so T3 rises." },
-        { "label": "B", "text": "Increased T4", "is_true": true, "explanation": "T4 also rises because of TSH stimulation." },
-        { "label": "C", "text": "Increased TSH", "is_true": true, "explanation": "The cause is a TSH-secreting pituitary adenoma, so TSH is high or inappropriately normal along with high T3/T4." },
-        { "label": "D", "text": "Pathology lies in the thyroid gland", "is_true": false, "explanation": "The pathology is in the pituitary. Disease of the thyroid gland itself (Graves', toxic nodule) is primary hyperthyroidism, with suppressed TSH." }
+        {
+          "label": "A",
+          "text": "Increased T3",
+          "is_true": true,
+          "explanation": "Excess TSH drives the thyroid to produce more T3."
+        },
+        {
+          "label": "B",
+          "text": "Increased T4",
+          "is_true": true,
+          "explanation": "Free T4 is raised along with T3."
+        },
+        {
+          "label": "C",
+          "text": "Increased TSH",
+          "is_true": true,
+          "explanation": "Inappropriately normal or high TSH from a pituitary adenoma is the defining feature."
+        },
+        {
+          "label": "D",
+          "text": "Pathology lies in the thyroid gland",
+          "is_true": false,
+          "explanation": "The lesion is in the pituitary (TSH-secreting adenoma); the thyroid is normal."
+        }
       ],
-      "pearl": "Primary hyperthyroidism: ↑T3/T4, ↓TSH. Secondary: ↑T3/T4 with ↑ or normal TSH."
+      "pearl": "High T4 with high TSH = TSHoma or thyroid hormone resistance; primary hyperthyroidism has suppressed TSH."
+    },
+    {
+      "ext_id": "pyq-2025-may-017",
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Non-essential structures of bacteria:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Spore",
+          "is_true": true,
+          "explanation": "Spores are survival forms, not required for growth or replication."
+        },
+        {
+          "label": "B",
+          "text": "Plasmid",
+          "is_true": true,
+          "explanation": "Plasmids are extrachromosomal DNA carrying optional genes such as antibiotic resistance."
+        },
+        {
+          "label": "C",
+          "text": "Teichoic acid",
+          "is_true": false,
+          "explanation": "Teichoic acid is an integral cell wall component of Gram-positive bacteria."
+        },
+        {
+          "label": "D",
+          "text": "Flagella",
+          "is_true": true,
+          "explanation": "Flagella provide motility but are not needed for survival."
+        }
+      ],
+      "pearl": "Essential: cell wall, cell membrane, ribosomes, nucleoid. Non-essential: capsule, flagella, pili, plasmids, spores."
+    },
+    {
+      "ext_id": "pyq-2025-may-018",
+      "subject": "Medicine",
+      "chapter": "Hematology",
+      "stem": "Indicators of dengue shock syndrome:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rising platelet count",
+          "is_true": false,
+          "explanation": "Platelets fall progressively in severe dengue; a rising count indicates recovery."
+        },
+        {
+          "label": "B",
+          "text": "Falling haematocrit",
+          "is_true": false,
+          "explanation": "Haematocrit rises (≥20%) due to haemoconcentration from plasma leakage."
+        },
+        {
+          "label": "C",
+          "text": "Gum bleeding",
+          "is_true": false,
+          "explanation": "Mucosal bleeding is a warning sign, but does not define shock."
+        },
+        {
+          "label": "D",
+          "text": "Plasma leakage",
+          "is_true": true,
+          "explanation": "Plasma leakage with narrow pulse pressure or hypotension is the basis of dengue shock syndrome."
+        }
+      ],
+      "pearl": "Dengue shock: pulse pressure ≤20 mmHg, cold extremities, rising haematocrit with falling platelets."
+    },
+    {
+      "ext_id": "pyq-2025-may-019",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "Hypertension is found in:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Anaemia",
+          "is_true": false,
+          "explanation": "Anaemia causes a hyperdynamic circulation with low diastolic pressure, not sustained hypertension."
+        },
+        {
+          "label": "B",
+          "text": "Beta-blocker therapy",
+          "is_true": false,
+          "explanation": "Beta-blockers lower blood pressure; abrupt withdrawal may cause rebound."
+        },
+        {
+          "label": "C",
+          "text": "Addison disease",
+          "is_true": false,
+          "explanation": "Mineralocorticoid deficiency causes hypotension and postural drop."
+        },
+        {
+          "label": "D",
+          "text": "Nephritic syndrome",
+          "is_true": true,
+          "explanation": "Salt and water retention in acute glomerulonephritis causes hypertension."
+        }
+      ],
+      "pearl": "Nephritic syndrome: haematuria, hypertension, oliguria, oedema and mild proteinuria."
+    },
+    {
+      "ext_id": "pyq-2025-may-020",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "Atrial fibrillation:",
+      "options": [
+        {
+          "label": "A",
+          "text": "May be precipitated by pneumonia",
+          "is_true": true,
+          "explanation": "Acute infection, especially pneumonia, is a common trigger of AF."
+        },
+        {
+          "label": "B",
+          "text": "Regular RR interval",
+          "is_true": false,
+          "explanation": "AF is irregularly irregular with no P waves."
+        },
+        {
+          "label": "C",
+          "text": "Digoxin is used for rate control",
+          "is_true": true,
+          "explanation": "Digoxin slows AV conduction, useful in sedentary patients or with heart failure."
+        },
+        {
+          "label": "D",
+          "text": "Need for anticoagulation is assessed by CHA2DS2-VASc score",
+          "is_true": true,
+          "explanation": "Stroke risk in non-valvular AF is stratified by CHA2DS2-VASc."
+        }
+      ],
+      "pearl": "Rate control first line: beta-blocker or rate-limiting calcium channel blocker; digoxin if sedentary or heart failure."
+    },
+    {
+      "ext_id": "pyq-2025-may-021",
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Fungi that infect the skin:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Candida",
+          "is_true": true,
+          "explanation": "Candida causes cutaneous candidiasis in moist skin folds."
+        },
+        {
+          "label": "B",
+          "text": "Staphylococcus aureus",
+          "is_true": false,
+          "explanation": "Staph aureus is a bacterium, not a fungus."
+        },
+        {
+          "label": "C",
+          "text": "Treponema pallidum",
+          "is_true": false,
+          "explanation": "T. pallidum is a spirochaete bacterium that penetrates mucosa or abraded skin."
+        },
+        {
+          "label": "D",
+          "text": "Trichophyton",
+          "is_true": true,
+          "explanation": "Trichophyton is a dermatophyte infecting keratinised skin, hair and nails."
+        }
+      ],
+      "pearl": "Dermatophytes: Trichophyton (skin, hair, nail), Microsporum (skin, hair), Epidermophyton (skin, nail)."
     },
     {
       "ext_id": "pyq-2025-may-022",
-      "source_no": 22,
       "subject": "Basic Sciences",
       "chapter": "Pathology & Genetics",
       "stem": "Irreversible cell injury:",
       "options": [
-        { "label": "A", "text": "Apoptosis", "is_true": true, "explanation": "Apoptosis is programmed cell death. Once it starts, the cell is lost, so it is an end point of irreversible injury." },
-        { "label": "B", "text": "Necrosis", "is_true": true, "explanation": "Necrosis is the classic result of irreversible injury: membrane damage, nuclear changes (pyknosis, karyorrhexis, karyolysis) and inflammation." },
-        { "label": "C", "text": "Metaplasia", "is_true": false, "explanation": "Metaplasia is a reversible adaptation in which one adult cell type is replaced by another (e.g. Barrett's oesophagus)." },
-        { "label": "D", "text": "Hyperplasia", "is_true": false, "explanation": "Hyperplasia is a reversible adaptation: an increase in cell number." }
+        {
+          "label": "A",
+          "text": "Apoptosis",
+          "is_true": true,
+          "explanation": "Apoptosis is programmed cell death, an end-point of irreversible injury."
+        },
+        {
+          "label": "B",
+          "text": "Necrosis",
+          "is_true": true,
+          "explanation": "Necrosis follows irreversible injury with membrane damage and inflammation."
+        },
+        {
+          "label": "C",
+          "text": "Metaplasia",
+          "is_true": false,
+          "explanation": "Metaplasia is a reversible adaptive change of one cell type to another."
+        },
+        {
+          "label": "D",
+          "text": "Hyperplasia",
+          "is_true": false,
+          "explanation": "Hyperplasia is a reversible adaptive increase in cell number."
+        }
       ],
-      "pearl": "Hallmarks of irreversibility: inability to reverse mitochondrial dysfunction and severe membrane damage. Reversible signs: cell swelling and fatty change."
+      "pearl": "Hallmarks of irreversible injury: severe mitochondrial damage and membrane disruption; nuclear pyknosis, karyorrhexis, karyolysis."
+    },
+    {
+      "ext_id": "pyq-2025-may-023",
+      "subject": "Basic Sciences",
+      "chapter": "Pharmacology",
+      "stem": "Anticonvulsant drugs:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sodium valproate",
+          "is_true": true,
+          "explanation": "Broad-spectrum antiepileptic, first choice for generalised epilepsy (avoid in women of childbearing age)."
+        },
+        {
+          "label": "B",
+          "text": "Magnesium sulphate",
+          "is_true": true,
+          "explanation": "Drug of choice for prevention and treatment of eclamptic seizures."
+        },
+        {
+          "label": "C",
+          "text": "Diazepam",
+          "is_true": true,
+          "explanation": "Benzodiazepines are first-line for terminating status epilepticus."
+        },
+        {
+          "label": "D",
+          "text": "Levothyroxine",
+          "is_true": false,
+          "explanation": "Levothyroxine is thyroid hormone replacement; it has no anticonvulsant action."
+        }
+      ],
+      "pearl": "Status epilepticus: benzodiazepine first, then phenytoin, levetiracetam or valproate."
+    },
+    {
+      "ext_id": "pyq-2025-may-024",
+      "subject": "Basic Sciences",
+      "chapter": "Pharmacology",
+      "stem": "Drugs that decrease proteinuria:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Amlodipine",
+          "is_true": false,
+          "explanation": "Dihydropyridine CCBs lower BP but do not specifically reduce proteinuria."
+        },
+        {
+          "label": "B",
+          "text": "Captopril",
+          "is_true": true,
+          "explanation": "ACE inhibitors dilate the efferent arteriole, lowering intraglomerular pressure and proteinuria."
+        },
+        {
+          "label": "C",
+          "text": "Valsartan",
+          "is_true": true,
+          "explanation": "ARBs share the antiproteinuric efferent arteriolar effect of ACE inhibitors."
+        },
+        {
+          "label": "D",
+          "text": "Prazosin",
+          "is_true": false,
+          "explanation": "Alpha-blockers have no specific antiproteinuric effect."
+        }
+      ],
+      "pearl": "ACE inhibitors and ARBs are renoprotective in diabetic nephropathy; SGLT2 inhibitors add further benefit."
+    },
+    {
+      "ext_id": "pyq-2025-may-025",
+      "subject": "Medicine",
+      "chapter": "Nephrology + Body Fluid",
+      "stem": "Treatment of hyperkalaemia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "10% calcium gluconate",
+          "is_true": true,
+          "explanation": "Stabilises the cardiac membrane within minutes; 10 mL of 10% given IV over 5-10 minutes."
+        },
+        {
+          "label": "B",
+          "text": "Insulin with dextrose",
+          "is_true": true,
+          "explanation": "Insulin shifts potassium into cells via Na-K ATPase, lowering it within 30 minutes."
+        },
+        {
+          "label": "C",
+          "text": "Potassium-binding resin",
+          "is_true": true,
+          "explanation": "Calcium resonium removes potassium from the body through the gut."
+        },
+        {
+          "label": "D",
+          "text": "Gastric suction",
+          "is_true": false,
+          "explanation": "Gastric aspiration does not remove significant potassium and is not a treatment."
+        }
+      ],
+      "pearl": "Hyperkalaemia: protect (calcium), shift (insulin-glucose, salbutamol), remove (resins, dialysis)."
+    },
+    {
+      "ext_id": "pyq-2025-may-026",
+      "subject": "Medicine",
+      "chapter": "Dermatology, Toxicology & Psych",
+      "stem": "Drugs used in scabies:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Permethrin",
+          "is_true": true,
+          "explanation": "Permethrin 5% cream is the treatment of choice."
+        },
+        {
+          "label": "B",
+          "text": "Ivermectin",
+          "is_true": true,
+          "explanation": "Oral ivermectin is used for crusted scabies or mass treatment."
+        },
+        {
+          "label": "C",
+          "text": "Antibiotics",
+          "is_true": false,
+          "explanation": "Antibiotics treat secondary bacterial infection only; they do not kill the mite."
+        },
+        {
+          "label": "D",
+          "text": "Silicone gel",
+          "is_true": false,
+          "explanation": "Silicone gel is used for hypertrophic scars and keloids."
+        }
+      ],
+      "pearl": "Treat all close contacts simultaneously; itch may persist 2-4 weeks after successful treatment."
+    },
+    {
+      "ext_id": "pyq-2025-may-027",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Atrioventricular valves:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Mitral valve",
+          "is_true": true,
+          "explanation": "The mitral valve lies between the left atrium and left ventricle."
+        },
+        {
+          "label": "B",
+          "text": "Tricuspid valve",
+          "is_true": true,
+          "explanation": "The tricuspid valve lies between the right atrium and right ventricle."
+        },
+        {
+          "label": "C",
+          "text": "Aortic valve",
+          "is_true": false,
+          "explanation": "The aortic valve is a semilunar valve between left ventricle and aorta."
+        },
+        {
+          "label": "D",
+          "text": "Pulmonary valve",
+          "is_true": false,
+          "explanation": "The pulmonary valve is a semilunar valve between right ventricle and pulmonary trunk."
+        }
+      ],
+      "pearl": "Closure of AV valves produces S1; closure of semilunar valves produces S2."
+    },
+    {
+      "ext_id": "pyq-2025-may-028",
+      "subject": "Pediatrics",
+      "chapter": "Growth, Development & Neonatology",
+      "stem": "Physiological jaundice:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Caused by ABO incompatibility",
+          "is_true": false,
+          "explanation": "ABO incompatibility causes pathological haemolytic jaundice."
+        },
+        {
+          "label": "B",
+          "text": "Increased direct bilirubin",
+          "is_true": false,
+          "explanation": "It is an unconjugated hyperbilirubinaemia; raised direct bilirubin is always pathological."
+        },
+        {
+          "label": "C",
+          "text": "Appears on the first day of life",
+          "is_true": false,
+          "explanation": "Jaundice within 24 hours is pathological; physiological jaundice appears after 24 hours."
+        },
+        {
+          "label": "D",
+          "text": "Due to shorter lifespan of fetal red cells",
+          "is_true": true,
+          "explanation": "Fetal RBCs live about 80-90 days, and the immature liver has low glucuronyl transferase."
+        }
+      ],
+      "pearl": "Physiological jaundice: appears day 2-3, peaks day 3-5, resolves by 2 weeks in term babies."
+    },
+    {
+      "ext_id": "pyq-2025-may-029",
+      "subject": "Medicine",
+      "chapter": "Neurology",
+      "stem": "Components of Glasgow coma scale:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pupillary reflex",
+          "is_true": false,
+          "explanation": "Pupils are assessed separately; they are not part of the GCS."
+        },
+        {
+          "label": "B",
+          "text": "Sensory response",
+          "is_true": false,
+          "explanation": "Sensation is not scored in the GCS."
+        },
+        {
+          "label": "C",
+          "text": "Motor response",
+          "is_true": true,
+          "explanation": "Best motor response is scored 1-6."
+        },
+        {
+          "label": "D",
+          "text": "Verbal response",
+          "is_true": true,
+          "explanation": "Best verbal response is scored 1-5."
+        }
+      ],
+      "pearl": "GCS = eye (4) + verbal (5) + motor (6); range 3-15; GCS ≤8 suggests need for airway protection."
+    },
+    {
+      "ext_id": "pyq-2025-may-030",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Causes of secondary (complicated) cataract:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Glaucoma",
+          "is_true": true,
+          "explanation": "Acute congestive glaucoma causes glaukomflecken, a form of complicated cataract."
+        },
+        {
+          "label": "B",
+          "text": "Retinal disease",
+          "is_true": true,
+          "explanation": "Retinitis pigmentosa and longstanding retinal detachment cause complicated cataract."
+        },
+        {
+          "label": "C",
+          "text": "Diabetes mellitus",
+          "is_true": true,
+          "explanation": "Diabetes causes snowflake and early senile-type metabolic cataract."
+        },
+        {
+          "label": "D",
+          "text": "Hypertension",
+          "is_true": false,
+          "explanation": "Hypertension causes retinopathy, not cataract."
+        }
+      ],
+      "pearl": "Complicated cataract shows a polychromatic lustre and breadcrumb appearance at the posterior pole."
+    },
+    {
+      "ext_id": "pyq-2025-may-031",
+      "subject": "Obstetrics",
+      "chapter": "Normal Labour, Episiotomy & Induction",
+      "stem": "Uses of oxytocin:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Induction of labour",
+          "is_true": true,
+          "explanation": "Oxytocin infusion is used to induce labour once the cervix is favourable."
+        },
+        {
+          "label": "B",
+          "text": "Routine management of the second stage",
+          "is_true": false,
+          "explanation": "Its routine use is in the third stage; in the second stage it is used only for inertia, not routinely."
+        },
+        {
+          "label": "C",
+          "text": "Active management of the third stage of labour",
+          "is_true": true,
+          "explanation": "10 IU IM after delivery of the baby reduces postpartum haemorrhage."
+        },
+        {
+          "label": "D",
+          "text": "Treatment of atonic postpartum haemorrhage",
+          "is_true": true,
+          "explanation": "Oxytocin infusion contracts the atonic uterus and is first-line therapy."
+        }
+      ],
+      "pearl": "Oxytocin has antidiuretic action: prolonged high-dose infusion in dextrose can cause water intoxication."
+    },
+    {
+      "ext_id": "pyq-2025-may-032",
+      "subject": "Medicine",
+      "chapter": "Dermatology, Toxicology & Psych",
+      "stem": "Organophosphorus poisoning:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Pinpoint pupils",
+          "is_true": true,
+          "explanation": "Muscarinic overstimulation of the sphincter pupillae causes miosis."
+        },
+        {
+          "label": "B",
+          "text": "Fasciculation",
+          "is_true": true,
+          "explanation": "Nicotinic stimulation at the neuromuscular junction causes fasciculation."
+        },
+        {
+          "label": "C",
+          "text": "Dry mouth",
+          "is_true": false,
+          "explanation": "Excess salivation and secretions occur; dry mouth suggests anticholinergic poisoning."
+        },
+        {
+          "label": "D",
+          "text": "Constipation",
+          "is_true": false,
+          "explanation": "Muscarinic effects cause diarrhoea and abdominal cramps."
+        }
+      ],
+      "pearl": "Muscarinic features mnemonic DUMBELS: diarrhoea, urination, miosis, bronchorrhoea, emesis, lacrimation, salivation."
+    },
+    {
+      "ext_id": "pyq-2025-may-033",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Oculomotor nerve palsy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Xerosis",
+          "is_true": false,
+          "explanation": "Xerosis is caused by vitamin A deficiency, not third nerve palsy."
+        },
+        {
+          "label": "B",
+          "text": "Ptosis",
+          "is_true": true,
+          "explanation": "Levator palpebrae superioris is supplied by the oculomotor nerve."
+        },
+        {
+          "label": "C",
+          "text": "Loss of ciliospinal reflex",
+          "is_true": false,
+          "explanation": "The ciliospinal reflex is sympathetically mediated, so it is preserved in third nerve palsy."
+        },
+        {
+          "label": "D",
+          "text": "Convergence of the eyeball",
+          "is_true": false,
+          "explanation": "The eye is deviated down and out and convergence is lost due to medial rectus palsy."
+        }
+      ],
+      "pearl": "Painful third nerve palsy with dilated pupil: exclude posterior communicating artery aneurysm."
+    },
+    {
+      "ext_id": "pyq-2025-may-034",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Causes of ptosis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Oculomotor nerve palsy",
+          "is_true": true,
+          "explanation": "Paralysis of levator palpebrae superioris causes complete ptosis."
+        },
+        {
+          "label": "B",
+          "text": "Horner syndrome",
+          "is_true": true,
+          "explanation": "Loss of sympathetic supply to Müller muscle causes mild ptosis."
+        },
+        {
+          "label": "C",
+          "text": "Argyll Robertson pupil",
+          "is_true": false,
+          "explanation": "Argyll Robertson pupil is a pupillary abnormality of neurosyphilis without ptosis."
+        },
+        {
+          "label": "D",
+          "text": "Abducent nerve palsy",
+          "is_true": false,
+          "explanation": "Sixth nerve palsy causes lateral rectus weakness and diplopia, not ptosis."
+        }
+      ],
+      "pearl": "Argyll Robertson pupil: small irregular pupils that accommodate but do not react to light."
+    },
+    {
+      "ext_id": "pyq-2025-may-035",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "Vessels used as grafts in CABG:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Internal mammary artery",
+          "is_true": true,
+          "explanation": "The left internal mammary artery to LAD has the best long-term patency."
+        },
+        {
+          "label": "B",
+          "text": "Radial artery",
+          "is_true": true,
+          "explanation": "The radial artery is a common second arterial conduit."
+        },
+        {
+          "label": "C",
+          "text": "Carotid artery",
+          "is_true": false,
+          "explanation": "The carotid artery supplies the brain and is never harvested as a conduit."
+        },
+        {
+          "label": "D",
+          "text": "Small saphenous vein",
+          "is_true": false,
+          "explanation": "The great saphenous vein is the standard venous conduit; the small saphenous is rarely used."
+        }
+      ],
+      "pearl": "LIMA graft patency exceeds 90% at 10 years versus about 50-60% for saphenous vein grafts."
+    },
+    {
+      "ext_id": "pyq-2025-may-036",
+      "subject": "General Surgery",
+      "chapter": "Ulcers, Wounds & Soft Tissue",
+      "stem": "Midline neck swellings:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cystic hygroma",
+          "is_true": false,
+          "explanation": "Cystic hygroma lies in the posterior triangle at the root of the neck."
+        },
+        {
+          "label": "B",
+          "text": "Branchial cyst",
+          "is_true": false,
+          "explanation": "Branchial cyst lies laterally at the anterior border of sternocleidomastoid."
+        },
+        {
+          "label": "C",
+          "text": "Thyroglossal cyst",
+          "is_true": true,
+          "explanation": "Thyroglossal cyst is midline and moves upwards on tongue protrusion."
+        },
+        {
+          "label": "D",
+          "text": "Thyroid isthmus swelling",
+          "is_true": true,
+          "explanation": "Swelling of the isthmus is midline and moves with swallowing."
+        }
+      ],
+      "pearl": "Midline neck: thyroglossal cyst, dermoid cyst, isthmus swelling, submental lymph node, plunging ranula."
+    },
+    {
+      "ext_id": "pyq-2025-may-037",
+      "subject": "Medicine",
+      "chapter": "Hepatology",
+      "stem": "Causes of fulminant hepatic failure:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Viral hepatitis",
+          "is_true": true,
+          "explanation": "Hepatitis A, B and E (especially in pregnancy) are leading causes."
+        },
+        {
+          "label": "B",
+          "text": "Paracetamol poisoning",
+          "is_true": true,
+          "explanation": "Paracetamol overdose is the commonest cause in the UK."
+        },
+        {
+          "label": "C",
+          "text": "Liver cirrhosis",
+          "is_true": false,
+          "explanation": "By definition fulminant failure occurs without pre-existing liver disease; cirrhosis gives acute-on-chronic failure."
+        },
+        {
+          "label": "D",
+          "text": "Dengue",
+          "is_true": true,
+          "explanation": "Severe dengue can cause acute liver failure."
+        }
+      ],
+      "pearl": "Acute liver failure: encephalopathy and INR ≥1.5 within 26 weeks of illness onset in a previously normal liver."
+    },
+    {
+      "ext_id": "pyq-2025-may-038",
+      "subject": "General Surgery",
+      "chapter": "Hemorrhage, Shock & Trauma",
+      "stem": "Findings in massive blood transfusion:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hypothermia",
+          "is_true": true,
+          "explanation": "Rapid infusion of cold stored blood lowers core temperature."
+        },
+        {
+          "label": "B",
+          "text": "Hypercalcaemia",
+          "is_true": false,
+          "explanation": "Citrate chelates calcium, causing hypocalcaemia."
+        },
+        {
+          "label": "C",
+          "text": "Hyperkalaemia",
+          "is_true": true,
+          "explanation": "Potassium leaks from stored red cells into the plasma."
+        },
+        {
+          "label": "D",
+          "text": "Coagulopathy",
+          "is_true": true,
+          "explanation": "Dilution of platelets and clotting factors causes dilutional coagulopathy."
+        }
+      ],
+      "pearl": "Lethal triad of trauma: hypothermia, acidosis and coagulopathy."
+    },
+    {
+      "ext_id": "pyq-2025-may-039",
+      "subject": "Medicine",
+      "chapter": "Gastroenterology",
+      "stem": "Ulcerative colitis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cobblestone appearance",
+          "is_true": false,
+          "explanation": "Cobblestoning from deep ulcers and fissures is typical of Crohn disease."
+        },
+        {
+          "label": "B",
+          "text": "Pseudopolyps",
+          "is_true": true,
+          "explanation": "Regenerating mucosa between ulcers forms inflammatory pseudopolyps."
+        },
+        {
+          "label": "C",
+          "text": "Lead-pipe colon",
+          "is_true": true,
+          "explanation": "Loss of haustrations in chronic UC gives a lead-pipe colon on barium enema."
+        },
+        {
+          "label": "D",
+          "text": "Caused by smoking",
+          "is_true": false,
+          "explanation": "Smoking is protective in UC (it worsens Crohn disease)."
+        }
+      ],
+      "pearl": "UC: continuous, starts in rectum, mucosal only; Crohn: skip lesions, transmural, granulomas."
+    },
+    {
+      "ext_id": "pyq-2025-may-040",
+      "subject": "Basic Sciences",
+      "chapter": "Pathology & Genetics",
+      "stem": "Tissue histopathology:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Peripheral blood film is a histopathological test",
+          "is_true": false,
+          "explanation": "A blood film is a haematology (cytological) test, not tissue histology."
+        },
+        {
+          "label": "B",
+          "text": "Confirms the diagnosis of cancer",
+          "is_true": true,
+          "explanation": "Histopathology of a biopsy is the gold standard for diagnosing malignancy."
+        },
+        {
+          "label": "C",
+          "text": "Diagnoses tuberculous lymphadenitis",
+          "is_true": true,
+          "explanation": "Caseating granulomas with Langhans giant cells on biopsy are diagnostic."
+        },
+        {
+          "label": "D",
+          "text": "Diagnoses Hirschsprung disease",
+          "is_true": true,
+          "explanation": "Rectal suction biopsy showing absent ganglion cells confirms the diagnosis."
+        }
+      ],
+      "pearl": "Histopathology examines tissue architecture; cytology (FNAC, smears) examines individual cells."
+    },
+    {
+      "ext_id": "pyq-2025-may-041",
+      "subject": "Medicine",
+      "chapter": "Nephrology + Body Fluid",
+      "stem": "Isotonic fluids:",
+      "options": [
+        {
+          "label": "A",
+          "text": "0.9% sodium chloride",
+          "is_true": true,
+          "explanation": "Normal saline has an osmolality of about 308 mOsm/L, roughly isotonic with plasma."
+        },
+        {
+          "label": "B",
+          "text": "3% sodium chloride",
+          "is_true": false,
+          "explanation": "3% saline is hypertonic, used for symptomatic hyponatraemia and raised ICP."
+        },
+        {
+          "label": "C",
+          "text": "5% dextrose in normal saline",
+          "is_true": false,
+          "explanation": "5% DNS is hypertonic in the bag (about 560 mOsm/L)."
+        },
+        {
+          "label": "D",
+          "text": "20% mannitol",
+          "is_true": false,
+          "explanation": "Mannitol 20% is a hypertonic osmotic diuretic."
+        }
+      ],
+      "pearl": "Isotonic crystalloids: 0.9% NaCl, Hartmann's/Ringer's lactate; 5% dextrose is isotonic in the bag but physiologically hypotonic."
+    },
+    {
+      "ext_id": "pyq-2025-may-042",
+      "subject": "Gynecology",
+      "chapter": "Endometriosis, Contraception & Gyn Op",
+      "stem": "Cystocele:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Urinary retention or incomplete emptying",
+          "is_true": true,
+          "explanation": "The bladder base sags below the urethral level, leaving residual urine."
+        },
+        {
+          "label": "B",
+          "text": "Urinary tract infection",
+          "is_true": true,
+          "explanation": "Residual urine predisposes to recurrent UTI."
+        },
+        {
+          "label": "C",
+          "text": "Stress urinary incontinence",
+          "is_true": true,
+          "explanation": "Associated urethrocele and loss of bladder neck support can cause stress incontinence."
+        },
+        {
+          "label": "D",
+          "text": "Due to weakness of the posterior vaginal wall",
+          "is_true": false,
+          "explanation": "Cystocele is an anterior vaginal wall prolapse; posterior wall weakness causes rectocele."
+        }
+      ],
+      "pearl": "Anterior wall: cystocele, urethrocele. Posterior wall: rectocele, enterocele."
+    },
+    {
+      "ext_id": "pyq-2025-may-043",
+      "subject": "General Surgery",
+      "chapter": "Hemorrhage, Shock & Trauma",
+      "stem": "Minimal monitoring in shock:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Blood pressure",
+          "is_true": true,
+          "explanation": "Blood pressure is a basic haemodynamic parameter monitored in all shocked patients."
+        },
+        {
+          "label": "B",
+          "text": "Electroencephalogram",
+          "is_true": false,
+          "explanation": "EEG is not part of shock monitoring."
+        },
+        {
+          "label": "C",
+          "text": "Temperature",
+          "is_true": true,
+          "explanation": "Core temperature is monitored to detect hypothermia and sepsis."
+        },
+        {
+          "label": "D",
+          "text": "Urine output",
+          "is_true": true,
+          "explanation": "Hourly urine output (target >0.5 mL/kg/h) reflects end-organ perfusion."
+        }
+      ],
+      "pearl": "Minimum monitoring in shock: ECG, pulse oximetry, BP, temperature and urine output."
+    },
+    {
+      "ext_id": "pyq-2025-may-044",
+      "subject": "Medicine",
+      "chapter": "Respiratory",
+      "stem": "Causes of clubbing:",
+      "options": [
+        {
+          "label": "A",
+          "text": "COPD",
+          "is_true": false,
+          "explanation": "Uncomplicated COPD does not cause clubbing; its presence suggests bronchial carcinoma or bronchiectasis."
+        },
+        {
+          "label": "B",
+          "text": "Pneumonia",
+          "is_true": false,
+          "explanation": "Acute pneumonia does not cause clubbing; lung abscess and empyema do."
+        },
+        {
+          "label": "C",
+          "text": "Liver cirrhosis",
+          "is_true": true,
+          "explanation": "Cirrhosis, especially biliary cirrhosis, is a recognised GI cause."
+        },
+        {
+          "label": "D",
+          "text": "Bronchial carcinoma",
+          "is_true": true,
+          "explanation": "Bronchial carcinoma (non-small cell) is the commonest cause of clubbing."
+        }
+      ],
+      "pearl": "Clubbing in COPD should prompt a search for lung cancer."
+    },
+    {
+      "ext_id": "pyq-2025-may-045",
+      "subject": "Specialized Surgery",
+      "chapter": "Upper & Lower GI Surgery",
+      "stem": "Features and complications of strangulated hernia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Severe pain over the hernia",
+          "is_true": true,
+          "explanation": "Strangulation produces a tense, tender, irreducible swelling with severe pain."
+        },
+        {
+          "label": "B",
+          "text": "Gangrene of the bowel",
+          "is_true": true,
+          "explanation": "Arterial obstruction leads to ischaemic necrosis of the strangulated loop."
+        },
+        {
+          "label": "C",
+          "text": "Intestinal obstruction",
+          "is_true": true,
+          "explanation": "Strangulated bowel causes obstruction with colicky pain, vomiting and distension."
+        },
+        {
+          "label": "D",
+          "text": "Spontaneous resolution",
+          "is_true": false,
+          "explanation": "Strangulation is a surgical emergency and does not resolve spontaneously."
+        }
+      ],
+      "pearl": "Femoral hernia has the highest risk of strangulation; Richter hernia strangulates without obstruction."
+    },
+    {
+      "ext_id": "pyq-2025-may-046",
+      "subject": "Obstetrics",
+      "chapter": "Normal Labour, Episiotomy & Induction",
+      "stem": "Management of the third stage of labour:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Oxytocin",
+          "is_true": true,
+          "explanation": "10 IU IM oxytocin within one minute of delivery is the uterotonic of choice."
+        },
+        {
+          "label": "B",
+          "text": "Controlled cord traction",
+          "is_true": true,
+          "explanation": "Controlled cord traction with counter-traction is a component of active management."
+        },
+        {
+          "label": "C",
+          "text": "Episiotomy",
+          "is_true": false,
+          "explanation": "Episiotomy is performed in the second stage to enlarge the outlet."
+        },
+        {
+          "label": "D",
+          "text": "Uterine massage after placental delivery",
+          "is_true": true,
+          "explanation": "Fundal massage keeps the uterus contracted and reduces PPH."
+        }
+      ],
+      "pearl": "Active management of third stage: uterotonic, controlled cord traction, uterine massage; reduces PPH by about 60%."
+    },
+    {
+      "ext_id": "pyq-2025-may-047",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Concept of health:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Merely 100% absence of disease",
+          "is_true": false,
+          "explanation": "WHO defines health as complete physical, mental and social well-being, not merely absence of disease."
+        },
+        {
+          "label": "B",
+          "text": "Multidimensional",
+          "is_true": true,
+          "explanation": "Health has physical, mental, social, spiritual, emotional and other dimensions."
+        },
+        {
+          "label": "C",
+          "text": "An integral part of development",
+          "is_true": true,
+          "explanation": "Health is both a means and an end of socioeconomic development."
+        },
+        {
+          "label": "D",
+          "text": "Related to quality of life",
+          "is_true": true,
+          "explanation": "Quality of life and physical quality of life index are used as health indicators."
+        }
+      ],
+      "pearl": "Physical Quality of Life Index combines infant mortality, life expectancy at age 1 and literacy."
+    },
+    {
+      "ext_id": "pyq-2025-may-048",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Mechanisms of haemostasis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Migration of red blood cells",
+          "is_true": false,
+          "explanation": "RBC migration plays no role in haemostasis."
+        },
+        {
+          "label": "B",
+          "text": "Platelet adhesion",
+          "is_true": true,
+          "explanation": "Platelets adhere to exposed collagen via von Willebrand factor to form the primary plug."
+        },
+        {
+          "label": "C",
+          "text": "Vasodilatation",
+          "is_true": false,
+          "explanation": "Vasodilatation would increase bleeding; the injured vessel constricts."
+        },
+        {
+          "label": "D",
+          "text": "Vasospasm",
+          "is_true": true,
+          "explanation": "Immediate vascular spasm reduces blood flow from the damaged vessel."
+        }
+      ],
+      "pearl": "Haemostasis: vascular spasm, platelet plug, coagulation cascade (fibrin), then fibrinolysis."
+    },
+    {
+      "ext_id": "pyq-2025-may-049",
+      "subject": "General Surgery",
+      "chapter": "Nose",
+      "stem": "Arteries forming Little's area (Kiesselbach plexus):",
+      "options": [
+        {
+          "label": "A",
+          "text": "Greater palatine artery",
+          "is_true": true,
+          "explanation": "The greater palatine artery reaches the septum through the incisive canal."
+        },
+        {
+          "label": "B",
+          "text": "Sphenopalatine artery",
+          "is_true": true,
+          "explanation": "The septal branch of the sphenopalatine artery contributes to the plexus."
+        },
+        {
+          "label": "C",
+          "text": "Anterior ethmoidal artery",
+          "is_true": true,
+          "explanation": "The anterior ethmoidal artery is a contributor from the internal carotid system."
+        },
+        {
+          "label": "D",
+          "text": "Superficial temporal artery",
+          "is_true": false,
+          "explanation": "The superficial temporal artery supplies the scalp, not the nasal septum."
+        }
+      ],
+      "pearl": "Little's area: anterior ethmoidal, sphenopalatine, greater palatine and superior labial arteries; commonest site of epistaxis."
+    },
+    {
+      "ext_id": "pyq-2025-may-050",
+      "subject": "Basic Sciences",
+      "chapter": "Biochemistry",
+      "stem": "Components of a routine lipid profile:",
+      "options": [
+        {
+          "label": "A",
+          "text": "VLDL",
+          "is_true": true,
+          "explanation": "VLDL cholesterol is reported, usually calculated as triglyceride/5 (mg/dL)."
+        },
+        {
+          "label": "B",
+          "text": "Chylomicron",
+          "is_true": false,
+          "explanation": "Chylomicrons are not measured routinely; fasting sample is chylomicron-free."
+        },
+        {
+          "label": "C",
+          "text": "HDL",
+          "is_true": true,
+          "explanation": "HDL cholesterol is measured directly in every lipid profile."
+        },
+        {
+          "label": "D",
+          "text": "LDL",
+          "is_true": true,
+          "explanation": "LDL is usually calculated by the Friedewald equation."
+        }
+      ],
+      "pearl": "Friedewald: LDL = TC − HDL − TG/5 (mg/dL); invalid when TG >400 mg/dL."
+    },
+    {
+      "ext_id": "pyq-2025-may-051",
+      "subject": "Medicine",
+      "chapter": "Gastroenterology",
+      "stem": "Causes of epigastric pain:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Myocardial infarction",
+          "is_true": true,
+          "explanation": "Inferior MI often presents with epigastric pain mimicking dyspepsia."
+        },
+        {
+          "label": "B",
+          "text": "Gastritis",
+          "is_true": true,
+          "explanation": "Gastritis causes burning epigastric pain."
+        },
+        {
+          "label": "C",
+          "text": "Pancreatitis",
+          "is_true": true,
+          "explanation": "Pancreatitis causes severe epigastric pain radiating to the back."
+        },
+        {
+          "label": "D",
+          "text": "Acute hepatitis",
+          "is_true": true,
+          "explanation": "Liver capsule stretch causes right upper quadrant and epigastric discomfort."
+        }
+      ],
+      "pearl": "Always do an ECG in older patients with epigastric pain to exclude inferior MI."
+    },
+    {
+      "ext_id": "pyq-2025-may-052",
+      "subject": "General Surgery",
+      "chapter": "Ulcers, Wounds & Soft Tissue",
+      "stem": "Untidy wound:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Minimal loss of tissue",
+          "is_true": false,
+          "explanation": "Untidy wounds have tissue loss and devitalised tissue."
+        },
+        {
+          "label": "B",
+          "text": "Managed by primary intention",
+          "is_true": false,
+          "explanation": "They need debridement and delayed primary closure or healing by secondary intention."
+        },
+        {
+          "label": "C",
+          "text": "Irregular margins",
+          "is_true": true,
+          "explanation": "Untidy wounds have ragged, irregular edges."
+        },
+        {
+          "label": "D",
+          "text": "Caused by crush injury",
+          "is_true": true,
+          "explanation": "Crushing, tearing and avulsion produce untidy wounds."
+        }
+      ],
+      "pearl": "Tidy wound: clean incised, minimal tissue loss, primary repair. Untidy: crushed, contaminated, debride first."
+    },
+    {
+      "ext_id": "pyq-2025-may-053",
+      "subject": "Specialized Surgery",
+      "chapter": "Orthopedics & Neurosurgery",
+      "stem": "Common sites of avascular necrosis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Lunate",
+          "is_true": true,
+          "explanation": "Avascular necrosis of the lunate is Kienböck disease."
+        },
+        {
+          "label": "B",
+          "text": "Neck of femur",
+          "is_true": true,
+          "explanation": "Intracapsular femoral neck fracture disrupts retinacular vessels, causing femoral head AVN."
+        },
+        {
+          "label": "C",
+          "text": "Scaphoid",
+          "is_true": true,
+          "explanation": "Retrograde blood supply makes the proximal pole of the scaphoid vulnerable."
+        },
+        {
+          "label": "D",
+          "text": "Ribs",
+          "is_true": false,
+          "explanation": "Ribs have a rich blood supply and are not a classic AVN site."
+        }
+      ],
+      "pearl": "AVN sites: femoral head, scaphoid proximal pole, talus body, lunate."
+    },
+    {
+      "ext_id": "pyq-2025-may-054",
+      "subject": "Specialized Surgery",
+      "chapter": "Orthopedics & Neurosurgery",
+      "stem": "Causes of non-union of fracture:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Open fracture",
+          "is_true": true,
+          "explanation": "Soft tissue stripping and infection impair healing."
+        },
+        {
+          "label": "B",
+          "text": "Greenstick fracture",
+          "is_true": false,
+          "explanation": "Greenstick fractures occur in children and heal rapidly."
+        },
+        {
+          "label": "C",
+          "text": "Poor blood supply",
+          "is_true": true,
+          "explanation": "Avascular fragments, as in scaphoid or femoral neck, are prone to non-union."
+        },
+        {
+          "label": "D",
+          "text": "Soft tissue interposition",
+          "is_true": true,
+          "explanation": "Interposed muscle or periosteum prevents fragment contact."
+        }
+      ],
+      "pearl": "Non-union causes: poor blood supply, infection, excessive movement, interposition, distraction, pathological bone."
+    },
+    {
+      "ext_id": "pyq-2025-may-055",
+      "subject": "Medicine",
+      "chapter": "Nephrology + Body Fluid",
+      "stem": "In nephrotic syndrome:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hypoproteinaemia",
+          "is_true": true,
+          "explanation": "Proteinuria >3.5 g/day causes hypoalbuminaemia."
+        },
+        {
+          "label": "B",
+          "text": "Anaemia",
+          "is_true": false,
+          "explanation": "Anaemia is not a defining feature of nephrotic syndrome."
+        },
+        {
+          "label": "C",
+          "text": "Haematuria",
+          "is_true": false,
+          "explanation": "Haematuria is typical of nephritic, not nephrotic, syndrome."
+        },
+        {
+          "label": "D",
+          "text": "Moon face",
+          "is_true": false,
+          "explanation": "Facial puffiness is due to oedema; moon face is a Cushingoid steroid effect."
+        }
+      ],
+      "pearl": "Nephrotic syndrome: heavy proteinuria, hypoalbuminaemia, oedema, hyperlipidaemia and hypercoagulability."
+    },
+    {
+      "ext_id": "pyq-2025-may-056",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "Features of unstable angina:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Levine sign",
+          "is_true": true,
+          "explanation": "A clenched fist over the sternum describes ischaemic chest pain."
+        },
+        {
+          "label": "B",
+          "text": "Pain relieved by rest",
+          "is_true": false,
+          "explanation": "Unstable angina occurs at rest or with minimal exertion; relief by rest is stable angina."
+        },
+        {
+          "label": "C",
+          "text": "Central chest pain",
+          "is_true": true,
+          "explanation": "Retrosternal, crushing or tight pain is typical."
+        },
+        {
+          "label": "D",
+          "text": "Rise in troponin",
+          "is_true": false,
+          "explanation": "A troponin rise indicates myocardial necrosis, i.e. NSTEMI."
+        }
+      ],
+      "pearl": "Unstable angina: new-onset, crescendo or rest angina with normal troponin."
+    },
+    {
+      "ext_id": "pyq-2025-may-057",
+      "subject": "Medicine",
+      "chapter": "Respiratory",
+      "stem": "Criteria of life-threatening asthma:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cannot complete a sentence in one breath",
+          "is_true": false,
+          "explanation": "This is a feature of acute severe asthma."
+        },
+        {
+          "label": "B",
+          "text": "PEF 33-50% of best or predicted",
+          "is_true": false,
+          "explanation": "PEF 33-50% is acute severe; life-threatening is PEF <33%."
+        },
+        {
+          "label": "C",
+          "text": "Silent chest",
+          "is_true": true,
+          "explanation": "Silent chest indicates very poor air entry and impending respiratory failure."
+        },
+        {
+          "label": "D",
+          "text": "Increased respiratory rate",
+          "is_true": false,
+          "explanation": "RR ≥25/min is acute severe; exhaustion and bradycardia are life-threatening."
+        }
+      ],
+      "pearl": "Life-threatening asthma: PEF <33%, SpO2 <92%, silent chest, cyanosis, exhaustion, arrhythmia, hypotension, normal PaCO2."
+    },
+    {
+      "ext_id": "pyq-2025-may-058",
+      "subject": "Medicine",
+      "chapter": "Hepatology",
+      "stem": "Complications of portal hypertension:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Splenomegaly",
+          "is_true": true,
+          "explanation": "Congestive splenomegaly with hypersplenism is common."
+        },
+        {
+          "label": "B",
+          "text": "Ascites",
+          "is_true": true,
+          "explanation": "Raised sinusoidal pressure contributes to ascites formation."
+        },
+        {
+          "label": "C",
+          "text": "Intestinal obstruction",
+          "is_true": false,
+          "explanation": "Portal hypertension does not cause mechanical bowel obstruction."
+        },
+        {
+          "label": "D",
+          "text": "Liver failure",
+          "is_true": false,
+          "explanation": "Portal hypertension is a consequence of liver disease; it does not itself cause liver failure."
+        }
+      ],
+      "pearl": "Portal hypertension: HVPG >5 mmHg; varices form above 10 and bleed above 12 mmHg."
+    },
+    {
+      "ext_id": "pyq-2025-may-059",
+      "subject": "Medicine",
+      "chapter": "Hepatology",
+      "stem": "Causes of leukonychia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hypoalbuminaemia",
+          "is_true": true,
+          "explanation": "Hypoalbuminaemia from cirrhosis or nephrotic syndrome causes white nails."
+        },
+        {
+          "label": "B",
+          "text": "Haemophilia",
+          "is_true": false,
+          "explanation": "Haemophilia causes haemarthrosis and muscle bleeds, not nail changes."
+        },
+        {
+          "label": "C",
+          "text": "Immune thrombocytopenic purpura",
+          "is_true": false,
+          "explanation": "ITP causes petechiae and purpura, not leukonychia."
+        },
+        {
+          "label": "D",
+          "text": "Multiple myeloma",
+          "is_true": false,
+          "explanation": "Myeloma is not a recognised cause of leukonychia."
+        }
+      ],
+      "pearl": "Muehrcke lines (paired white bands) indicate hypoalbuminaemia; Terry nails are seen in cirrhosis."
+    },
+    {
+      "ext_id": "pyq-2025-may-060",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Clinical features of thiamine deficiency:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Xerosis",
+          "is_true": false,
+          "explanation": "Xerosis of the conjunctiva and skin is due to vitamin A deficiency."
+        },
+        {
+          "label": "B",
+          "text": "Peripheral neuropathy",
+          "is_true": true,
+          "explanation": "Dry beriberi causes symmetrical sensorimotor peripheral neuropathy."
+        },
+        {
+          "label": "C",
+          "text": "Thick skin",
+          "is_true": false,
+          "explanation": "Thickened, pigmented skin is a feature of pellagra (niacin deficiency)."
+        },
+        {
+          "label": "D",
+          "text": "Oedema",
+          "is_true": true,
+          "explanation": "Wet beriberi causes high-output heart failure with oedema."
+        }
+      ],
+      "pearl": "Thiamine deficiency: dry beriberi, wet beriberi, Wernicke encephalopathy (confusion, ataxia, ophthalmoplegia)."
+    },
+    {
+      "ext_id": "pyq-2025-may-061",
+      "subject": "Medicine",
+      "chapter": "Neurology",
+      "stem": "Extrapyramidal features:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Extensor plantar response",
+          "is_true": false,
+          "explanation": "Extensor plantar is a pyramidal (UMN) sign."
+        },
+        {
+          "label": "B",
+          "text": "Nystagmus",
+          "is_true": false,
+          "explanation": "Nystagmus is a cerebellar or vestibular sign."
+        },
+        {
+          "label": "C",
+          "text": "Intention tremor",
+          "is_true": false,
+          "explanation": "Intention tremor is cerebellar; extrapyramidal tremor is a resting tremor."
+        },
+        {
+          "label": "D",
+          "text": "Akinesia",
+          "is_true": true,
+          "explanation": "Akinesia and bradykinesia are cardinal features of parkinsonism."
+        }
+      ],
+      "pearl": "Parkinsonism: resting tremor, rigidity (cogwheel), bradykinesia, postural instability."
+    },
+    {
+      "ext_id": "pyq-2025-may-062",
+      "subject": "Medicine",
+      "chapter": "Gastroenterology",
+      "stem": "Alarm features in dyspepsia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Anaemia",
+          "is_true": true,
+          "explanation": "Iron deficiency anaemia suggests GI blood loss or malignancy."
+        },
+        {
+          "label": "B",
+          "text": "Dysphagia",
+          "is_true": true,
+          "explanation": "Dysphagia suggests oesophageal cancer or stricture and needs urgent endoscopy."
+        },
+        {
+          "label": "C",
+          "text": "Older age",
+          "is_true": true,
+          "explanation": "New-onset dyspepsia above 55 years warrants endoscopy."
+        },
+        {
+          "label": "D",
+          "text": "Diarrhoea",
+          "is_true": false,
+          "explanation": "Diarrhoea is not an alarm feature of dyspepsia."
+        }
+      ],
+      "pearl": "Alarm features: weight loss, anaemia, dysphagia, persistent vomiting, GI bleeding, mass, age >55 with new symptoms."
+    },
+    {
+      "ext_id": "pyq-2025-may-063",
+      "subject": "Basic Sciences",
+      "chapter": "Immuno & Micro",
+      "stem": "Mycobacterium tuberculosis complex includes:",
+      "options": [
+        {
+          "label": "A",
+          "text": "M. tuberculosis",
+          "is_true": true,
+          "explanation": "The principal human pathogen of the complex."
+        },
+        {
+          "label": "B",
+          "text": "M. bovis",
+          "is_true": true,
+          "explanation": "Causes bovine TB, transmitted by unpasteurised milk; BCG is derived from it."
+        },
+        {
+          "label": "C",
+          "text": "M. kansasii",
+          "is_true": false,
+          "explanation": "M. kansasii is a non-tuberculous (atypical) photochromogen."
+        },
+        {
+          "label": "D",
+          "text": "M. africanum",
+          "is_true": true,
+          "explanation": "A member of the complex causing human TB in West Africa."
+        }
+      ],
+      "pearl": "MTB complex: M. tuberculosis, bovis, africanum, microti, canetti; all others are NTM."
+    },
+    {
+      "ext_id": "pyq-2025-may-064",
+      "subject": "Medicine",
+      "chapter": "Hematology",
+      "stem": "Microcytic anaemia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Iron deficiency anaemia",
+          "is_true": true,
+          "explanation": "Commonest cause of microcytic hypochromic anaemia."
+        },
+        {
+          "label": "B",
+          "text": "Vitamin B12 deficiency",
+          "is_true": false,
+          "explanation": "B12 deficiency causes megaloblastic macrocytic anaemia."
+        },
+        {
+          "label": "C",
+          "text": "Folate deficiency",
+          "is_true": false,
+          "explanation": "Folate deficiency causes megaloblastic macrocytic anaemia."
+        },
+        {
+          "label": "D",
+          "text": "Methotrexate therapy",
+          "is_true": false,
+          "explanation": "Methotrexate inhibits dihydrofolate reductase, causing macrocytosis."
+        }
+      ],
+      "pearl": "Microcytic causes mnemonic TAILS: thalassaemia, anaemia of chronic disease, iron deficiency, lead, sideroblastic."
+    },
+    {
+      "ext_id": "pyq-2025-may-065",
+      "subject": "Medicine",
+      "chapter": "Nephrology + Body Fluid",
+      "stem": "Causes of metabolic acidosis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Renal tubular acidosis",
+          "is_true": true,
+          "explanation": "RTA causes normal anion gap (hyperchloraemic) metabolic acidosis."
+        },
+        {
+          "label": "B",
+          "text": "Vomiting",
+          "is_true": false,
+          "explanation": "Loss of gastric HCl causes metabolic alkalosis."
+        },
+        {
+          "label": "C",
+          "text": "Diarrhoea",
+          "is_true": true,
+          "explanation": "Loss of bicarbonate in stool causes normal anion gap acidosis."
+        },
+        {
+          "label": "D",
+          "text": "Haemolysis",
+          "is_true": false,
+          "explanation": "Haemolysis releases potassium but is not a recognised cause of metabolic acidosis."
+        }
+      ],
+      "pearl": "High anion gap acidosis mnemonic MUDPILES; normal anion gap: diarrhoea, RTA, ureteric diversion, acetazolamide."
+    },
+    {
+      "ext_id": "pyq-2025-may-066",
+      "subject": "General Surgery",
+      "chapter": "Hemorrhage, Shock & Trauma",
+      "stem": "Crystalloid fluids:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Dextran",
+          "is_true": false,
+          "explanation": "Dextran is a synthetic colloid."
+        },
+        {
+          "label": "B",
+          "text": "Dextrose in normal saline",
+          "is_true": true,
+          "explanation": "DNS is a crystalloid solution of dextrose and sodium chloride."
+        },
+        {
+          "label": "C",
+          "text": "Sodium chloride 0.9%",
+          "is_true": true,
+          "explanation": "Normal saline is the commonest crystalloid."
+        },
+        {
+          "label": "D",
+          "text": "Albumin",
+          "is_true": false,
+          "explanation": "Albumin is a natural colloid."
+        }
+      ],
+      "pearl": "Colloids: albumin, dextran, gelatin, hydroxyethyl starch; crystalloids: saline, Hartmann's, dextrose solutions."
+    },
+    {
+      "ext_id": "pyq-2025-may-067",
+      "subject": "Specialized Surgery",
+      "chapter": "Upper & Lower GI Surgery",
+      "stem": "Causes of painful bleeding per rectum:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Internal haemorrhoids",
+          "is_true": false,
+          "explanation": "Internal haemorrhoids bleed painlessly as they arise above the dentate line."
+        },
+        {
+          "label": "B",
+          "text": "Anal fissure",
+          "is_true": true,
+          "explanation": "Fissure causes severe pain on defecation with fresh blood streaking the stool."
+        },
+        {
+          "label": "C",
+          "text": "Intussusception",
+          "is_true": true,
+          "explanation": "Colicky abdominal pain with redcurrant jelly stool is classic in infants."
+        },
+        {
+          "label": "D",
+          "text": "Inflammatory bowel disease",
+          "is_true": true,
+          "explanation": "Bloody diarrhoea with cramping pain and tenesmus is typical of colitis."
+        }
+      ],
+      "pearl": "Painless fresh bleeding: haemorrhoids, polyps, diverticular disease, angiodysplasia."
+    },
+    {
+      "ext_id": "pyq-2025-may-068",
+      "subject": "Gynecology",
+      "chapter": "Reproductive Anatomy & Physiology",
+      "stem": "Structures seen by colposcopy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cervix",
+          "is_true": true,
+          "explanation": "Colposcopy magnifies the cervix to assess the transformation zone."
+        },
+        {
+          "label": "B",
+          "text": "Vagina",
+          "is_true": true,
+          "explanation": "Vaginal walls can be examined for VAIN."
+        },
+        {
+          "label": "C",
+          "text": "Ovary",
+          "is_true": false,
+          "explanation": "Ovaries are intra-abdominal and need laparoscopy or ultrasound."
+        },
+        {
+          "label": "D",
+          "text": "Fallopian tube",
+          "is_true": false,
+          "explanation": "Tubes are assessed by laparoscopy or HSG."
+        }
+      ],
+      "pearl": "Colposcopy uses 3-5% acetic acid (acetowhite areas) and Lugol's iodine (Schiller test)."
+    },
+    {
+      "ext_id": "pyq-2025-may-069",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Causes of raised intraocular pressure:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Atropine",
+          "is_true": true,
+          "explanation": "Mydriasis can precipitate angle-closure glaucoma in eyes with narrow angles."
+        },
+        {
+          "label": "B",
+          "text": "Glaucoma",
+          "is_true": true,
+          "explanation": "Raised IOP is the main risk factor and feature of glaucoma."
+        },
+        {
+          "label": "C",
+          "text": "Cataract",
+          "is_true": false,
+          "explanation": "Uncomplicated cataract does not raise IOP; only intumescent or hypermature lenses cause secondary glaucoma."
+        },
+        {
+          "label": "D",
+          "text": "Oculomotor nerve palsy",
+          "is_true": false,
+          "explanation": "Third nerve palsy causes ptosis and mydriasis but does not raise IOP."
+        }
+      ],
+      "pearl": "Normal IOP is 10-21 mmHg; avoid mydriatics in shallow anterior chambers."
+    },
+    {
+      "ext_id": "pyq-2025-may-070",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Hormones regulating calcium homeostasis:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Parathyroid hormone",
+          "is_true": true,
+          "explanation": "PTH raises serum calcium via bone resorption, renal reabsorption and calcitriol synthesis."
+        },
+        {
+          "label": "B",
+          "text": "Androgen",
+          "is_true": false,
+          "explanation": "Androgens affect bone mass but are not regulators of serum calcium."
+        },
+        {
+          "label": "C",
+          "text": "Insulin",
+          "is_true": false,
+          "explanation": "Insulin regulates glucose and potassium, not calcium."
+        },
+        {
+          "label": "D",
+          "text": "Calcitriol",
+          "is_true": true,
+          "explanation": "1,25-dihydroxyvitamin D increases intestinal calcium and phosphate absorption."
+        }
+      ],
+      "pearl": "Calcium regulators: PTH, calcitriol (both raise calcium) and calcitonin (lowers calcium)."
+    },
+    {
+      "ext_id": "pyq-2025-may-071",
+      "subject": "Basic Sciences",
+      "chapter": "Pathology & Genetics",
+      "stem": "Malignant tumours:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sarcoma",
+          "is_true": true,
+          "explanation": "Sarcomas are malignant tumours of mesenchymal origin."
+        },
+        {
+          "label": "B",
+          "text": "Seminoma",
+          "is_true": true,
+          "explanation": "Seminoma is a malignant germ cell tumour despite its -oma suffix."
+        },
+        {
+          "label": "C",
+          "text": "Teratoma",
+          "is_true": false,
+          "explanation": "Teratoma can be benign, e.g. mature cystic teratoma (dermoid) of the ovary."
+        },
+        {
+          "label": "D",
+          "text": "Synovioma",
+          "is_true": true,
+          "explanation": "Synovioma (synovial sarcoma) is malignant."
+        }
+      ],
+      "pearl": "Malignant despite -oma: lymphoma, melanoma, seminoma, mesothelioma, hepatoma."
+    },
+    {
+      "ext_id": "pyq-2025-may-072",
+      "subject": "Medicine",
+      "chapter": "Hematology",
+      "stem": "Prothrombin time is prolonged in:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Vitamin K deficiency",
+          "is_true": true,
+          "explanation": "Factors II, VII, IX and X fall; factor VII has the shortest half-life, so PT prolongs first."
+        },
+        {
+          "label": "B",
+          "text": "Haemophilia",
+          "is_true": false,
+          "explanation": "Haemophilia (factor VIII or IX deficiency) prolongs APTT with normal PT."
+        },
+        {
+          "label": "C",
+          "text": "DIC",
+          "is_true": true,
+          "explanation": "Consumption of clotting factors prolongs both PT and APTT."
+        },
+        {
+          "label": "D",
+          "text": "Hepatitis",
+          "is_true": true,
+          "explanation": "Impaired hepatic synthesis of clotting factors prolongs PT."
+        }
+      ],
+      "pearl": "PT tests extrinsic pathway (factor VII); APTT tests intrinsic pathway (VIII, IX, XI, XII)."
+    },
+    {
+      "ext_id": "pyq-2025-may-073",
+      "subject": "Obstetrics",
+      "chapter": "APH, PPH, Obstructed & Operative Obs",
+      "stem": "Causes of rupture of the uterus:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Cornual (interstitial) ectopic pregnancy",
+          "is_true": true,
+          "explanation": "Interstitial pregnancy ruptures through the myometrium, effectively a uterine rupture."
+        },
+        {
+          "label": "B",
+          "text": "Invasive molar pregnancy",
+          "is_true": true,
+          "explanation": "Invasive mole can penetrate the myometrium and perforate the uterus."
+        },
+        {
+          "label": "C",
+          "text": "IUCD",
+          "is_true": false,
+          "explanation": "IUCD can perforate the uterus at insertion but is not a cause of uterine rupture in pregnancy."
+        },
+        {
+          "label": "D",
+          "text": "Müllerian duct defect",
+          "is_true": true,
+          "explanation": "Pregnancy in a rudimentary horn commonly ruptures in the second trimester."
+        }
+      ],
+      "pearl": "Commonest cause of uterine rupture: previous caesarean scar; in developing countries, obstructed labour."
+    },
+    {
+      "ext_id": "pyq-2025-may-074",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Avascular structures of the eye:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Vitreous humour",
+          "is_true": true,
+          "explanation": "The vitreous is avascular gel nourished by diffusion."
+        },
+        {
+          "label": "B",
+          "text": "Retina",
+          "is_true": false,
+          "explanation": "The retina has a dual supply: central retinal artery and choroid."
+        },
+        {
+          "label": "C",
+          "text": "Conjunctiva",
+          "is_true": false,
+          "explanation": "The conjunctiva is vascular, as seen in conjunctival injection."
+        },
+        {
+          "label": "D",
+          "text": "Cornea",
+          "is_true": true,
+          "explanation": "The cornea is avascular, which aids transparency and graft success."
+        }
+      ],
+      "pearl": "Avascular ocular structures: cornea, lens, vitreous; cornea gets oxygen mainly from tear film and air."
+    },
+    {
+      "ext_id": "pyq-2025-may-075",
+      "subject": "Gynecology",
+      "chapter": "Abortion, Infections & PID",
+      "stem": "Causes of puerperal pyrexia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Gastroenteritis",
+          "is_true": true,
+          "explanation": "Puerperal pyrexia includes fever from any cause within 10 days of delivery."
+        },
+        {
+          "label": "B",
+          "text": "Unhygienic delivery",
+          "is_true": true,
+          "explanation": "Poor asepsis leads to genital tract sepsis, the commonest cause."
+        },
+        {
+          "label": "C",
+          "text": "Urinary tract infection",
+          "is_true": true,
+          "explanation": "UTI is a common cause, especially after catheterisation."
+        },
+        {
+          "label": "D",
+          "text": "Infected episiotomy wound",
+          "is_true": true,
+          "explanation": "Wound infection of the perineum causes local pain and fever."
+        }
+      ],
+      "pearl": "Puerperal pyrexia: temperature ≥38°C on any two of the first 10 days postpartum, excluding the first 24 hours."
+    },
+    {
+      "ext_id": "pyq-2025-may-076",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Refractive structures of the eye:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Retina",
+          "is_true": false,
+          "explanation": "The retina is the light-sensitive layer where images form; it does not refract."
+        },
+        {
+          "label": "B",
+          "text": "Conjunctiva",
+          "is_true": false,
+          "explanation": "The conjunctiva is a mucous membrane with no refractive role."
+        },
+        {
+          "label": "C",
+          "text": "Cornea",
+          "is_true": true,
+          "explanation": "The cornea provides about two-thirds (around 43 D) of total refractive power."
+        },
+        {
+          "label": "D",
+          "text": "Lens",
+          "is_true": true,
+          "explanation": "The lens provides about 15-20 D and allows accommodation."
+        }
+      ],
+      "pearl": "Refractive media: tear film, cornea, aqueous, lens, vitreous; total power about 60 D."
+    },
+    {
+      "ext_id": "pyq-2025-may-077",
+      "subject": "Obstetrics",
+      "chapter": "APH, PPH, Obstructed & Operative Obs",
+      "stem": "Complications in the first stage of labour:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Prolonged labour",
+          "is_true": true,
+          "explanation": "Slow progress of cervical dilatation crossing the action line indicates prolonged first stage."
+        },
+        {
+          "label": "B",
+          "text": "Inadequate cervical dilatation",
+          "is_true": true,
+          "explanation": "Cervical dystocia from inertia or disproportion is a first-stage problem."
+        },
+        {
+          "label": "C",
+          "text": "Air embolism",
+          "is_true": false,
+          "explanation": "Air embolism is a rare event linked to placental separation or procedures, not a first-stage complication."
+        },
+        {
+          "label": "D",
+          "text": "Postpartum haemorrhage",
+          "is_true": false,
+          "explanation": "PPH occurs after delivery of the baby, in the third stage or puerperium."
+        }
+      ],
+      "pearl": "First stage: onset of true labour to full cervical dilatation; active phase from 4 cm (WHO 2018: 5 cm)."
+    },
+    {
+      "ext_id": "pyq-2025-may-078",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "ST elevation is found in:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Old myocardial infarction",
+          "is_true": false,
+          "explanation": "Old MI shows Q waves; persistent ST elevation suggests ventricular aneurysm."
+        },
+        {
+          "label": "B",
+          "text": "Hyperkalaemia",
+          "is_true": true,
+          "explanation": "Severe hyperkalaemia can cause ST elevation (pseudo-infarction) along with peaked T waves."
+        },
+        {
+          "label": "C",
+          "text": "Pericarditis",
+          "is_true": true,
+          "explanation": "Diffuse saddle-shaped ST elevation with PR depression is typical."
+        },
+        {
+          "label": "D",
+          "text": "Heart failure",
+          "is_true": false,
+          "explanation": "Heart failure itself does not cause ST elevation."
+        }
+      ],
+      "pearl": "ST elevation causes: STEMI, pericarditis, LV aneurysm, Prinzmetal angina, Brugada, LBBB, early repolarisation."
+    },
+    {
+      "ext_id": "pyq-2025-may-079",
+      "subject": "Medicine",
+      "chapter": "Cardiology",
+      "stem": "Clinical features of right heart failure:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Tender hepatomegaly",
+          "is_true": true,
+          "explanation": "Hepatic venous congestion stretches the liver capsule."
+        },
+        {
+          "label": "B",
+          "text": "Raised JVP",
+          "is_true": true,
+          "explanation": "Raised systemic venous pressure elevates the JVP."
+        },
+        {
+          "label": "C",
+          "text": "Basal crepitations",
+          "is_true": false,
+          "explanation": "Crepitations reflect pulmonary congestion of left heart failure."
+        },
+        {
+          "label": "D",
+          "text": "Gallop rhythm",
+          "is_true": false,
+          "explanation": "An S3 gallop is classically a sign of left ventricular failure."
+        }
+      ],
+      "pearl": "Right heart failure: raised JVP, tender hepatomegaly, ascites, dependent pitting oedema."
+    },
+    {
+      "ext_id": "pyq-2025-may-080",
+      "subject": "Basic Sciences",
+      "chapter": "Physio, Vitamins, Forensic & Comm Med",
+      "stem": "Erythropoietin:",
+      "options": [
+        {
+          "label": "A",
+          "text": "It is an enzyme",
+          "is_true": false,
+          "explanation": "EPO is a glycoprotein hormone, not an enzyme."
+        },
+        {
+          "label": "B",
+          "text": "Secreted mainly by the liver",
+          "is_true": false,
+          "explanation": "About 90% is produced by renal peritubular interstitial cells; the liver is the main source only in the fetus."
+        },
+        {
+          "label": "C",
+          "text": "Essential for platelet synthesis",
+          "is_true": false,
+          "explanation": "Platelet production is driven by thrombopoietin."
+        },
+        {
+          "label": "D",
+          "text": "Stimulates bone marrow for RBC production",
+          "is_true": true,
+          "explanation": "EPO stimulates erythroid progenitors in response to hypoxia."
+        }
+      ],
+      "pearl": "Anaemia of CKD is due to EPO deficiency; EPO is raised in secondary polycythaemia."
+    },
+    {
+      "ext_id": "pyq-2025-may-081",
+      "subject": "Basic Sciences",
+      "chapter": "Pathology & Genetics",
+      "stem": "Klinefelter syndrome:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Karyotype 47,XXY",
+          "is_true": true,
+          "explanation": "An extra X chromosome from meiotic non-disjunction."
+        },
+        {
+          "label": "B",
+          "text": "Tall stature",
+          "is_true": true,
+          "explanation": "Long legs and eunuchoid proportions give tall stature."
+        },
+        {
+          "label": "C",
+          "text": "Small breasts",
+          "is_true": false,
+          "explanation": "Gynaecomastia is characteristic."
+        },
+        {
+          "label": "D",
+          "text": "Small testes",
+          "is_true": true,
+          "explanation": "Small firm testes with azoospermia and hypergonadotrophic hypogonadism."
+        }
+      ],
+      "pearl": "Klinefelter: commonest cause of male hypogonadism; high FSH and LH, low testosterone, increased breast cancer risk."
+    },
+    {
+      "ext_id": "pyq-2025-may-082",
+      "subject": "Obstetrics",
+      "chapter": "APH, PPH, Obstructed & Operative Obs",
+      "stem": "Causes and risk factors of placenta praevia:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Multiple pregnancy",
+          "is_true": true,
+          "explanation": "The larger placental area is more likely to encroach on the lower segment."
+        },
+        {
+          "label": "B",
+          "text": "Previous caesarean section",
+          "is_true": true,
+          "explanation": "A lower segment scar increases implantation in the lower segment."
+        },
+        {
+          "label": "C",
+          "text": "Genetic predisposition",
+          "is_true": false,
+          "explanation": "Placenta praevia is not a genetic condition."
+        },
+        {
+          "label": "D",
+          "text": "Multiparity and advanced maternal age",
+          "is_true": true,
+          "explanation": "Both are recognised risk factors."
+        }
+      ],
+      "pearl": "Placenta praevia: painless, recurrent, causeless bright red APH; never do a PV examination before excluding it."
+    },
+    {
+      "ext_id": "pyq-2025-may-083",
+      "subject": "Medicine",
+      "chapter": "Endocrinology",
+      "stem": "Hormones secreted from the posterior pituitary:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Prolactin",
+          "is_true": false,
+          "explanation": "Prolactin is secreted by lactotrophs of the anterior pituitary."
+        },
+        {
+          "label": "B",
+          "text": "Vasopressin (ADH)",
+          "is_true": true,
+          "explanation": "Synthesised in supraoptic nuclei and released from the posterior pituitary."
+        },
+        {
+          "label": "C",
+          "text": "Oxytocin",
+          "is_true": true,
+          "explanation": "Synthesised in paraventricular nuclei and released from the posterior pituitary."
+        },
+        {
+          "label": "D",
+          "text": "TSH",
+          "is_true": false,
+          "explanation": "TSH is an anterior pituitary hormone."
+        }
+      ],
+      "pearl": "Posterior pituitary stores hormones made in the hypothalamus; it synthesises none itself."
+    },
+    {
+      "ext_id": "pyq-2025-may-084",
+      "subject": "General Surgery",
+      "chapter": "Eye",
+      "stem": "Fundoscopic findings of diabetic retinopathy:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Hard exudates",
+          "is_true": true,
+          "explanation": "Lipid deposits from leaky vessels, typical of background diabetic retinopathy."
+        },
+        {
+          "label": "B",
+          "text": "Flame-shaped haemorrhages",
+          "is_true": false,
+          "explanation": "Flame haemorrhages lie in the nerve fibre layer and are typical of hypertensive retinopathy; DR has dot-blot haemorrhages."
+        },
+        {
+          "label": "C",
+          "text": "Macular star",
+          "is_true": false,
+          "explanation": "Macular star is seen in malignant hypertension and neuroretinitis."
+        },
+        {
+          "label": "D",
+          "text": "Cotton wool spots",
+          "is_true": true,
+          "explanation": "Nerve fibre layer infarcts seen in pre-proliferative diabetic retinopathy."
+        }
+      ],
+      "pearl": "Earliest sign of diabetic retinopathy is microaneurysms; neovascularisation defines proliferative DR."
+    },
+    {
+      "ext_id": "pyq-2025-may-085",
+      "subject": "Obstetrics",
+      "chapter": "APH, PPH, Obstructed & Operative Obs",
+      "stem": "Complications of obstructed labour:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rupture of the uterus",
+          "is_true": true,
+          "explanation": "A thinned, overstretched lower segment ruptures if obstruction is not relieved."
+        },
+        {
+          "label": "B",
+          "text": "Antepartum haemorrhage",
+          "is_true": false,
+          "explanation": "APH occurs before labour; obstruction causes PPH rather than APH."
+        },
+        {
+          "label": "C",
+          "text": "Fetal death",
+          "is_true": true,
+          "explanation": "Prolonged hypoxia and sepsis cause intrapartum fetal death."
+        },
+        {
+          "label": "D",
+          "text": "Vesicovaginal fistula",
+          "is_true": true,
+          "explanation": "Pressure necrosis of the bladder base leads to VVF."
+        }
+      ],
+      "pearl": "Bandl's ring (pathological retraction ring) is a sign of impending uterine rupture in obstructed labour."
+    },
+    {
+      "ext_id": "pyq-2025-may-086",
+      "subject": "Medicine",
+      "chapter": "Dermatology, Toxicology & Psych",
+      "stem": "Characteristics of depression:",
+      "options": [
+        {
+          "label": "A",
+          "text": "Increased heart rate",
+          "is_true": false,
+          "explanation": "Tachycardia is an autonomic feature of anxiety, not depression."
+        },
+        {
+          "label": "B",
+          "text": "Suicidal tendency",
+          "is_true": true,
+          "explanation": "Suicidal ideation is a key feature and must always be assessed."
+        },
+        {
+          "label": "C",
+          "text": "Hopelessness",
+          "is_true": true,
+          "explanation": "Hopelessness about the future is a core cognitive feature."
+        },
+        {
+          "label": "D",
+          "text": "Fear",
+          "is_true": false,
+          "explanation": "Fear and apprehension are features of anxiety disorders."
+        }
+      ],
+      "pearl": "Core depressive symptoms (≥2 weeks): low mood, anhedonia, fatigue; screen with PHQ-9."
     }
   ]
 }
