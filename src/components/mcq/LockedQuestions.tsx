@@ -40,7 +40,7 @@ export function LockedQuestions({
           </div>
         ))}
       </div>
-      <div className="absolute inset-0 grid place-items-center bg-gradient-to-b from-b2-black/30 via-b2-black/70 to-b2-black/90 p-5">
+      <div className="absolute inset-0 grid items-start justify-items-center bg-gradient-to-b from-b2-black/60 via-b2-black/75 to-b2-black/90 p-5 pt-8">
         <div className="max-w-sm text-center">
           <span className="mx-auto grid size-12 place-items-center rounded-full bg-b2-caribbean text-b2-ink shadow-[0_8px_24px_rgba(0,223,129,.35)]">
             <Lock size={22} />
