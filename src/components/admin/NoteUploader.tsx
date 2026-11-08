@@ -22,6 +22,7 @@ export function NoteUploader({ chapters }: { chapters: Ch[] }) {
   const router = useRouter();
   const form = useRef<HTMLFormElement>(null);
   const [busy, setBusy] = useState(false);
+  const [busyLabel, setBusyLabel] = useState("Uploading…");
   const [msg, setMsg] = useState<{ tone: "ok" | "error"; text: string } | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -35,6 +36,7 @@ export function NoteUploader({ chapters }: { chapters: Ch[] }) {
     if (!chapter_id || !title) return setMsg({ tone: "error", text: "Add a title and choose a chapter." });
 
     setBusy(true);
+    setBusyLabel(`Uploading ${(file.size / 1048576).toFixed(1)} MB…`);
     setMsg(null);
     const path = `${chapter_id}/${crypto.randomUUID()}.pdf`;
     const supabase = createClient();
@@ -58,7 +60,7 @@ export function NoteUploader({ chapters }: { chapters: Ch[] }) {
       return setMsg({ tone: "error", text: res.error });
     }
     form.current?.reset();
-    setMsg({ tone: "ok", text: "Uploaded. Students can see it now." });
+    setMsg({ tone: "ok", text: `Uploaded “${title}”. Students can read it now in Notes.` });
     router.refresh();
   }
 
@@ -92,7 +94,7 @@ export function NoteUploader({ chapters }: { chapters: Ch[] }) {
       <div className="flex flex-wrap items-center gap-3 sm:col-span-2">
         <button type="submit" disabled={busy} className={btn("primary", "md")}>
           {busy ? <B2Mark className="is-loading" size={20} grain={false} decorative /> : <Upload size={18} />}
-          {busy ? "Uploading…" : "Upload note"}
+          {busy ? busyLabel : "Upload note"}
         </button>
         {msg && <span className={`text-sm ${msg.tone === "ok" ? "text-b2-caribbean" : "text-b2-error"}`}>{msg.text}</span>}
       </div>

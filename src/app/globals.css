@@ -592,3 +592,19 @@ html[data-navloading]::after {
   .pressable:active { transform: none; }
   .link-pending { animation: none; opacity: 0.6; }
 }
+
+/* View-only notes: printing produces a blank page with a short message */
+@media print {
+  .pdf-protected { display: none !important; }
+  body::after {
+    content: "Project BMDC notes are view-only and can't be printed.";
+    display: block;
+    padding: 40px;
+    font: 16px sans-serif;
+    color: #000;
+  }
+}
+.pdf-protected canvas {
+  -webkit-user-drag: none;
+  user-select: none;
+}

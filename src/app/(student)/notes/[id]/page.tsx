@@ -35,8 +35,8 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
     );
   }
 
-  // Storage RLS re-checks entitlement; the URL expires in 2 minutes.
-  const { data: signed } = await supabase.storage.from("notes").createSignedUrl(note.storage_path, 120);
+  // Storage RLS re-checks entitlement; the URL expires in 1 hour (long enough for the viewer to fetch pages on demand).
+  const { data: signed } = await supabase.storage.from("notes").createSignedUrl(note.storage_path, 3600);
   await supabase.from("note_views").upsert({ user_id: user.id, note_id: note.id, last_viewed_at: new Date().toISOString() });
   if (!signed?.signedUrl) notFound();
 
