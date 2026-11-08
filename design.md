@@ -34,7 +34,7 @@
 Balance: Black/Dark ~60% · film ~20% · Flash ~12% · Caribbean/Meadow ~8%.
 
 ### Type
-- **Outfit** 300–700 (UI + headings), **Hind Siliguri** 400/600/700 for Bangla (`lang="bn"`). Load both via `next/font/google`.
+- **Outfit** 300–700 (UI + headings), **Anek Bangla** 400/500/600 for Bangla (`lang="bn"`). Load both via `next/font/google`. *(Changed from the brand kit's Hind Siliguri on 2026-11-08: Hind Siliguri renders the ন্স conjunct in "লাইসেন্স" incorrectly.)*
 - Display 72/42 px (desktop/mobile), H2 44/30, H3 22/20, body 16–18 (line-height 1.6), eyebrow 13 px uppercase in Caribbean with 0.16em tracking.
 - Numbers in timers/scores use `font-variant-numeric: tabular-nums`.
 
