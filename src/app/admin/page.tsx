@@ -17,9 +17,10 @@ type Overview = {
 
 export default async function AdminOverview() {
   const { supabase } = await requireAdmin();
-  const [{ data }, { data: recent }] = await Promise.all([
+  const [{ data }, { data: recent }, { count: toVerify }] = await Promise.all([
     supabase.rpc("admin_overview"),
     supabase.from("profiles").select("id,full_name,email,is_paid,created_at").eq("role", "student").order("created_at", { ascending: false }).limit(8),
+    supabase.from("orders").select("id", { count: "exact", head: true }).eq("status", "pending"),
   ]);
   const o = (data ?? {}) as Overview;
   const days = o.signups_by_day ?? [];
@@ -28,6 +29,17 @@ export default async function AdminOverview() {
   return (
     <div className="space-y-6">
       <PageHeader title="Overview" sub="Students, enrolments and revenue at a glance." />
+      {(toVerify ?? 0) > 0 && (
+        <Link
+          href="/admin/orders"
+          className="flex items-center justify-between gap-3 rounded-[20px] border border-b2-warning/40 bg-b2-warning/5 px-5 py-4 hover:border-b2-warning"
+        >
+          <span className="font-semibold">
+            {toVerify} new {toVerify === 1 ? "order" : "orders"} to verify
+          </span>
+          <span className="text-b2-warning">Open orders →</span>
+        </Link>
+      )}
       <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
         <StatTile label="Total signups" value={o.total ?? 0} />
         <StatTile label="Paid (active)" value={o.paid ?? 0} />

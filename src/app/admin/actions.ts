@@ -28,8 +28,45 @@ export async function markPaid(fd: FormData) {
     .from("profiles")
     .update({ is_paid: true, access_expires_at: end ? endOfDhakaDay(end) : null })
     .eq("id", id);
+  // a manual unlock also closes the student's open order
+  await supabase
+    .from("orders")
+    .update({ status: "approved", reviewed_at: new Date().toISOString(), reviewed_by: user.id })
+    .eq("user_id", id)
+    .eq("status", "pending");
   revalidatePath(`/admin/students/${id}`);
   revalidatePath("/admin");
+  revalidatePath("/admin/orders");
+}
+
+/* ───────── orders ───────── */
+
+export async function approveOrder(fd: FormData) {
+  const { supabase } = await requireAdmin();
+  const end = str(fd, "access_end");
+  const { error } = await supabase.rpc("approve_order", { p_order_id: str(fd, "id"), p_access_end: end || null });
+  if (error) throw new Error("Couldn't approve this order. Refresh and try again.");
+  revalidatePath("/admin/orders");
+  revalidatePath("/admin/payments");
+  revalidatePath("/admin");
+  const uid = str(fd, "user_id");
+  if (uid) revalidatePath(`/admin/students/${uid}`);
+}
+
+export async function rejectOrder(fd: FormData) {
+  const { supabase, user } = await requireAdmin();
+  await supabase
+    .from("orders")
+    .update({ status: "rejected", admin_note: str(fd, "admin_note") || null, reviewed_at: new Date().toISOString(), reviewed_by: user.id })
+    .eq("id", str(fd, "id"))
+    .eq("status", "pending");
+  revalidatePath("/admin/orders");
+}
+
+export async function reopenOrder(fd: FormData) {
+  const { supabase } = await requireAdmin();
+  await supabase.from("orders").update({ status: "pending", admin_note: null, reviewed_at: null, reviewed_by: null }).eq("id", str(fd, "id")).eq("status", "rejected");
+  revalidatePath("/admin/orders");
 }
 
 export async function setAccessEnd(fd: FormData) {

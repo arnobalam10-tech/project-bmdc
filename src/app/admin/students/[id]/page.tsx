@@ -68,7 +68,7 @@ export default async function StudentDetail({ params }: { params: Promise<{ id: 
       <div className="grid gap-4 lg:grid-cols-2">
         <Card>
           <p className="font-semibold">{status === "free" ? "Mark as paid" : "Record another payment"}</p>
-          <p className="mt-1 text-sm text-b2-pistachio">After you verify the bKash TrxID on WhatsApp.</p>
+          <p className="mt-1 text-sm text-b2-pistachio">After you find the payment in your bKash app. Orders placed on the site are approved under Orders.</p>
           <form action={markPaid} className="mt-4 grid gap-3 sm:grid-cols-2">
             <input type="hidden" name="user_id" value={p.id} />
             <div>
@@ -76,7 +76,7 @@ export default async function StudentDetail({ params }: { params: Promise<{ id: 
               <input id="amount" name="amount" type="number" min={0} defaultValue={s.offer_price} className="b2-input" required />
             </div>
             <div>
-              <label className="b2-label" htmlFor="trx_id">bKash TrxID</label>
+              <label className="b2-label" htmlFor="trx_id">bKash TrxID (optional)</label>
               <input id="trx_id" name="trx_id" className="b2-input" placeholder="e.g. 9K7A1B2C3D" />
             </div>
             <div>
@@ -159,7 +159,7 @@ export default async function StudentDetail({ params }: { params: Promise<{ id: 
             <ul className="divide-y divide-b2-divider text-sm">
               {payments.map((x) => (
                 <li key={x.id} className="flex justify-between gap-3 py-2.5">
-                  <span>{fmtDate(x.paid_on)} · <span className="tabular">{x.trx_id ?? "no TrxID"}</span></span>
+                  <span>{fmtDate(x.paid_on)} · <span className="tabular">{x.sender_number ? `bKash ${x.sender_number}` : x.trx_id ?? "no TrxID"}</span></span>
                   <span className="tabular font-semibold">{taka(x.amount)}</span>
                 </li>
               ))}

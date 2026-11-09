@@ -12,7 +12,7 @@ export default async function PaymentsPage() {
   const { supabase } = await requireAdmin();
   const { data } = await supabase
     .from("payments")
-    .select("id,amount,trx_id,paid_on,user_id,profiles!payments_user_id_fkey(full_name,email)")
+    .select("id,amount,trx_id,sender_number,paid_on,user_id,profiles!payments_user_id_fkey(full_name,email)")
     .order("paid_on", { ascending: false })
     .limit(500);
   const rows = data ?? [];
@@ -32,7 +32,7 @@ export default async function PaymentsPage() {
                 <Link href={`/admin/students/${r.user_id}`} className="min-w-0 flex-1 hover:text-b2-caribbean">
                   <span className="block truncate font-medium">{who?.full_name || who?.email}</span>
                   <span className="tabular block text-xs text-b2-pistachio">
-                    {fmtDate(r.paid_on)} · TrxID {r.trx_id ?? "—"}
+                    {fmtDate(r.paid_on)} · {r.sender_number ? `bKash ${r.sender_number}` : `TrxID ${r.trx_id ?? "—"}`}
                   </span>
                 </Link>
                 <span className="tabular font-semibold">{taka(r.amount)}</span>

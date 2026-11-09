@@ -23,7 +23,7 @@ function Messages({ state }: { state: FormState }) {
   return null;
 }
 
-function PasswordInput({ name = "password", autoComplete, label = "Password" }: { name?: string; autoComplete: string; label?: string }) {
+export function PasswordInput({ name = "password", autoComplete, label = "Password" }: { name?: string; autoComplete: string; label?: string }) {
   const [show, setShow] = useState(false);
   return (
     <div>
@@ -53,7 +53,7 @@ function PasswordInput({ name = "password", autoComplete, label = "Password" }: 
   );
 }
 
-function PhoneInput({ defaultValue }: { defaultValue?: string }) {
+export function PhoneInput({ defaultValue }: { defaultValue?: string }) {
   return (
     <div>
       <label className="b2-label" htmlFor="phone">
@@ -91,7 +91,7 @@ export function GoogleButton({ next, label = "Continue with Google" }: { next?: 
   );
 }
 
-function Divider() {
+export function Divider() {
   return (
     <div className="my-6 flex items-center gap-4 text-sm text-b2-stone">
       <span className="h-px flex-1 bg-b2-divider" /> or with email <span className="h-px flex-1 bg-b2-divider" />

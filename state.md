@@ -75,6 +75,7 @@ Files: `content/mcq/*.json`. Re-import: `node scripts/import-mcq.mjs` (needs `SU
 | 2026-11-08 | **Light mode is the default theme** (dark still available via the sun/moon toggle). Set in `src/lib/theme.ts`. |
 | 2026-11-08 | Launch steps written in **LAUNCH.md** (owner's step-by-step guide). |
 | 2026-11-08 | Workshop: **20 Nov 2026, 11:00 PM** (Asia/Dhaka). Meet link = placeholder until the owner sends it. |
+| 2026-11-09 | **Orders / checkout**: `/enroll` page. Student sends ৳7,999 by bKash, then places an order with only the **bKash sender number** (no TrxID). Visitors create their account on the same form. Admin → **Orders** → Approve & unlock (payment recorded, access until 1 May 2027) or Reject with a reason. Every "Join the batch" button goes to `/enroll`. Migration `0010_orders` applied. Orders keep `_fbp`/`_fbc`/utm/`event_id` for a later Meta Conversions API Purchase. |
 | 2026-11-09 | Workshop moved to **20 Nov 2026, 8:00 PM** (Asia/Dhaka). The header banner now reads the time from the `workshop_at` setting. |
 | 2026-11-08 | Paid access ends **1 May 2027** (default end date; editable per student). |
 | 2026-11-08 | Free samples are toggled by the owner in admin (`is_free_sample`); nothing is free by default. |

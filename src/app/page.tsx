@@ -51,7 +51,7 @@ const FEATURES = [
 const FAQ = [
   ["Can I study from abroad?", "Yes. Classes are live on Google Meet and every class is recorded, so you can study from China, Russia, India, Nepal or anywhere, on phone or laptop."],
   ["What if I miss a live class?", "Every class is recorded and added to your dashboard chapter-wise. Rewatch it whenever you like."],
-  ["How do I pay?", "bKash Send Money to our personal number, then send the TrxID and a screenshot on WhatsApp. We verify it and unlock your account."],
+  ["How do I pay?", "bKash Send Money to our personal number, then place your order on this website with the bKash number you sent it from. We verify the payment and unlock your account."],
   ["Can I share my account?", "No. Each account works on one device only, to keep the course fair for everyone. If you change your phone or laptop, message us on WhatsApp and we'll move your account."],
   ["How long do I keep access?", "Until 1 May 2027, which covers the full course and your revision time before the exam."],
   ["Is a pass guaranteed?", "No honest course can guarantee a pass. The course is built to help you pass in one attempt: every topic, every previous paper, and mocks with the real marking."],
@@ -89,7 +89,7 @@ export default async function Home() {
               in one attempt. Batch starts <strong className="font-semibold text-b2-flash">{fmtDate(s.batch_start, { year: undefined })}</strong>.
             </p>
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-              <ButtonLink href="#pricing" size="lg">
+              <ButtonLink href="/enroll" size="lg">
                 Join the batch →
               </ButtonLink>
               {!workshopOver && (
@@ -126,7 +126,7 @@ export default async function Home() {
                   The batch starts {fmtDate(s.batch_start, { year: undefined })}. Your seat is waiting.
                 </h2>
                 <div className="mt-8">
-                  <ButtonLink href="#pricing" variant="white" size="lg">
+                  <ButtonLink href="/enroll" variant="white" size="lg">
                     Join the batch →
                   </ButtonLink>
                 </div>
@@ -362,6 +362,9 @@ export default async function Home() {
                     </li>
                   ))}
                 </ul>
+                <ButtonLink href="/enroll" variant="white" size="lg" className="mt-7 w-full">
+                  Join the batch · {taka(s.offer_price)}
+                </ButtonLink>
               </div>
               <div>
                 <h3 className="mb-4 text-2xl font-semibold tracking-tight">How to enroll with bKash</h3>
@@ -400,7 +403,7 @@ export default async function Home() {
               প্রথমবারেই পাস করার লক্ষ্যে, আমরা আছি আপনার পাশে।
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <ButtonLink href="#pricing" size="lg">
+              <ButtonLink href="/enroll" size="lg">
                 Join the batch
               </ButtonLink>
               <ButtonLink href={waLink(s.whatsapp_number, "Hi, I have a question about Project BMDC.")} external variant="secondary" size="lg">

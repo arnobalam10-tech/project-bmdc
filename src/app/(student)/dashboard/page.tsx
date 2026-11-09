@@ -24,7 +24,7 @@ type Stats = {
 export default async function DashboardPage({ searchParams }: { searchParams: Promise<{ welcome?: string }> }) {
   const { welcome } = await searchParams;
   const { supabase, profile, status, full } = await requireUser();
-  const [s, sessionsRes, statsRes, lastAttemptRes, lastWatchRes] = await Promise.all([
+  const [s, sessionsRes, statsRes, lastAttemptRes, lastWatchRes, pendingRes] = await Promise.all([
     getSettings(),
     supabase.rpc("get_live_sessions", { p_include_past: false }),
     supabase.rpc("get_my_stats"),
@@ -40,7 +40,11 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       .order("updated_at", { ascending: false })
       .limit(1)
       .maybeSingle(),
+    full
+      ? Promise.resolve({ data: null })
+      : supabase.from("orders").select("number,bkash_number").eq("status", "pending").limit(1).maybeSingle(),
   ]);
+  const pendingOrder = pendingRes.data as { number: number; bkash_number: string } | null;
 
   const sessions = (sessionsRes.data ?? []) as LiveSession[];
   const next = sessions[0];
@@ -66,7 +70,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         </Alert>
       )}
 
-      <StatusBanner status={status} expires={profile.access_expires_at} s={s} email={profile.email ?? ""} />
+      <StatusBanner status={status} expires={profile.access_expires_at} s={s} email={profile.email ?? ""} pendingOrder={pendingOrder} />
 
       {next ? (
         <LiveSessionCard s={next} lockedCta={<EnrollButton s={s} email={profile.email ?? ""} />} />

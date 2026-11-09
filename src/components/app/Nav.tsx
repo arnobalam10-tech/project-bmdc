@@ -18,6 +18,7 @@ import {
   CreditCard,
   CalendarClock,
   Users,
+  ShoppingBag,
   type LucideIcon,
 } from "lucide-react";
 import { B2Logo } from "@/components/brand/B2";
@@ -36,6 +37,7 @@ export const STUDENT_NAV: Item[] = [
 
 export const ADMIN_NAV: Item[] = [
   { href: "/admin", label: "Overview", icon: LayoutDashboard },
+  { href: "/admin/orders", label: "Orders", icon: ShoppingBag },
   { href: "/admin/students", label: "Students", icon: Users },
   { href: "/admin/payments", label: "Payments", icon: CreditCard },
   { href: "/admin/live", label: "Live sessions", icon: CalendarClock },

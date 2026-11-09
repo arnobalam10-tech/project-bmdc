@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import type { AccessStatus } from "@/lib/access";
 import type { SiteSettings } from "@/lib/settings";
@@ -11,13 +12,30 @@ export function StatusBanner({
   expires,
   s,
   email,
+  pendingOrder,
 }: {
   status: AccessStatus;
   expires: string | null;
   s: SiteSettings;
   email: string;
+  pendingOrder?: { number: number; bkash_number: string } | null;
 }) {
   if (status === "admin") return null;
+  if (status !== "paid" && pendingOrder) {
+    return (
+      <div className="flex flex-col gap-3 rounded-[20px] border border-b2-warning/40 bg-b2-warning/5 p-4 sm:flex-row sm:items-center sm:p-5">
+        <div className="flex-1">
+          <p className="font-semibold">Order #{pendingOrder.number} received. We&apos;re verifying your payment.</p>
+          <p className="mt-0.5 text-[15px] text-b2-pistachio">
+            bKash from {pendingOrder.bkash_number}. Everything unlocks as soon as it&apos;s confirmed.
+          </p>
+        </div>
+        <Link href="/enroll" className={btn("secondary", "sm")}>
+          View order
+        </Link>
+      </div>
+    );
+  }
   if (status === "paid") {
     return (
       <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-b2-border bg-b2-dark px-4 py-3 text-sm">
