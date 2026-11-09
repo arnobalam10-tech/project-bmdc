@@ -22,14 +22,16 @@ const TABS = [
 type Row = {
   id: string;
   number: number;
-  user_id: string;
+  user_id: string | null;
+  full_name: string | null;
+  email: string | null;
+  phone: string | null;
   amount: number;
   bkash_number: string;
   status: "pending" | "approved" | "rejected";
   admin_note: string | null;
   created_at: string;
   reviewed_at: string | null;
-  profiles: { full_name: string; email: string | null; phone: string | null } | null;
 };
 
 export default async function OrdersPage({ searchParams }: { searchParams: Promise<{ s?: string }> }) {
@@ -38,7 +40,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
   const settings = await getSettings();
   let q = supabase
     .from("orders")
-    .select("id,number,user_id,amount,bkash_number,status,admin_note,created_at,reviewed_at,profiles!orders_user_id_fkey(full_name,email,phone)")
+    .select("id,number,user_id,full_name,email,phone,amount,bkash_number,status,admin_note,created_at,reviewed_at")
     .order("created_at", { ascending: tab === "pending" })
     .limit(300);
   if (tab !== "all") q = q.eq("status", tab);
@@ -52,7 +54,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
     <>
       <PageHeader
         title="Orders"
-        sub="Check each sender number in your bKash app, then approve to unlock the student."
+        sub="Find each sender number in your bKash app, then approve. No account yet? It unlocks when they sign up with that email."
       />
       <nav className="-mx-1 mb-5 flex gap-2 overflow-x-auto px-1">
         {TABS.map(([key, label]) => (
@@ -64,16 +66,15 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
       </nav>
 
       {error ? (
-        <EmptyState title="Orders aren't set up yet." sub="The orders table is missing in the database. Apply migration 0010_orders.sql." />
+        <EmptyState title="Orders aren't set up yet." sub="Apply migrations 0010_orders.sql and 0011_guest_orders.sql." />
       ) : rows.length === 0 ? (
         <EmptyState
           title={tab === "pending" ? "Nothing to verify." : "No orders here yet."}
-          sub={tab === "pending" ? "New orders from the Join the batch page show up here." : undefined}
+          sub={tab === "pending" ? "New orders from the checkout page show up here." : undefined}
         />
       ) : (
         <ul className="space-y-3">
           {rows.map((o) => {
-            const who = o.profiles;
             return (
               <li key={o.id} className="rounded-[20px] border border-b2-border bg-b2-dark p-4 sm:p-5">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
@@ -89,13 +90,22 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
                       )}
                       <span className="text-xs text-b2-pistachio">{fmtDateTime(o.created_at)}</span>
                     </div>
-                    <Link href={`/admin/students/${o.user_id}`} className="mt-2 block hover:text-b2-caribbean">
-                      <span className="block truncate font-medium">{who?.full_name || "—"}</span>
+                    <div className="mt-2">
+                      <span className="block truncate font-medium">{o.full_name || "—"}</span>
                       <span className="block truncate text-sm text-b2-pistachio">
-                        {who?.email}
-                        {who?.phone ? ` · ${who.phone}` : ""}
+                        {o.email}
+                        {o.phone ? ` · ${o.phone}` : ""}
                       </span>
-                    </Link>
+                      {o.user_id ? (
+                        <Link href={`/admin/students/${o.user_id}`} className="mt-1 inline-block text-sm text-b2-meadow hover:underline">
+                          Has an account → view
+                        </Link>
+                      ) : (
+                        <span className="mt-1 inline-block text-sm text-b2-warning">
+                          No account yet{o.status === "approved" ? " · unlocks when they sign up with this email" : ""}
+                        </span>
+                      )}
+                    </div>
                   </div>
                   <div className="rounded-2xl bg-b2-black/40 px-4 py-3 sm:bg-transparent sm:p-0 sm:text-right">
                     <p className="text-xs uppercase tracking-[0.12em] text-b2-pistachio">bKash from</p>
@@ -113,7 +123,7 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
                   <div className="mt-4 grid gap-3 border-t border-b2-divider pt-4 lg:grid-cols-[1fr_auto]">
                     <form action={approveOrder} className="flex flex-wrap items-end gap-3">
                       <input type="hidden" name="id" value={o.id} />
-                      <input type="hidden" name="user_id" value={o.user_id} />
+                      <input type="hidden" name="user_id" value={o.user_id ?? ""} />
                       <div>
                         <label className="b2-label" htmlFor={`end-${o.id}`}>Access until</label>
                         <input id={`end-${o.id}`} name="access_end" type="date" defaultValue={settings.default_access_end} className="b2-input" />
@@ -121,9 +131,14 @@ export default async function OrdersPage({ searchParams }: { searchParams: Promi
                       <SubmitButton pending="Unlocking">Approve & unlock</SubmitButton>
                     </form>
                     <div className="flex flex-wrap items-end gap-3">
-                      {who?.phone && (
+                      {o.phone && (
                         <a
-                          href={waLink(who.phone, `Assalamu alaikum, this is Project BMDC about your order #${o.number}.`)}
+                          href={waLink(
+                            o.phone,
+                            o.user_id
+                              ? `Assalamu alaikum, this is Project BMDC about your order #${o.number}.`
+                              : `Assalamu alaikum, this is Project BMDC about your order #${o.number}. Please create your free account at https://www.projectbmdc.com/signup with ${o.email ?? "your email"}, and your course unlocks on it.`
+                          )}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={btn("secondary", "sm")}

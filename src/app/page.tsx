@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  ArrowRight,
   BookOpenCheck,
   CalendarDays,
   Check,
@@ -8,6 +9,7 @@ import {
   MessageCircle,
   PlayCircle,
   Quote,
+  ShieldCheck,
   Sparkles,
   Timer,
   Video,
@@ -17,7 +19,8 @@ import { B2Logo, B2Mark } from "@/components/brand/B2";
 import { ButtonLink, btn } from "@/components/ui/Button";
 import { Countdown } from "@/components/ui/client";
 import { SectionTitle } from "@/components/ui/primitives";
-import { EnrollSteps } from "@/components/enroll/Enroll";
+import { PixelEvent } from "@/components/app/MetaPixel";
+import { COURSE } from "@/lib/pixel";
 import { Header, MobileCtaBar } from "@/components/landing/client";
 import { getSettings, waLink } from "@/lib/settings";
 import { fmtDate, fmtTime, isPast, taka } from "@/lib/format";
@@ -66,6 +69,7 @@ export default async function Home() {
   return (
     <>
       <Header workshopAt={s.workshop_at} />
+      <PixelEvent event="ViewContent" params={{ ...COURSE, value: s.offer_price }} />
 
       <main className="landing-main -mt-16 md:-mt-[72px]">
         {/* ───────── HERO ───────── */}
@@ -336,40 +340,57 @@ export default async function Home() {
                 </>
               }
             />
-            <div className="mt-10 grid gap-6 lg:grid-cols-[400px_1fr]">
-              <div className="b2-film spring rounded-[32px] p-6 sm:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.14em]">Full 4-month course</p>
-                <div className="mt-4 flex items-end gap-3">
-                  <span className="tabular text-6xl font-semibold tracking-[-0.03em]">{taka(s.offer_price)}</span>
-                  <span className="tabular mb-2 text-xl text-b2-flash/70 line-through">{taka(s.price)}</span>
+            <div className="mx-auto mt-10 max-w-[620px]">
+              <div className="b2-film spring relative overflow-hidden rounded-[32px] p-6 sm:p-9">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em]">Full 4-month course</p>
+                  <span className="flex-none whitespace-nowrap rounded-full bg-b2-flash px-3 py-1 text-xs font-bold text-b2-ink">Save {taka(save)}</span>
                 </div>
-                <p className="mt-2 inline-block rounded-full bg-b2-black/40 px-3 py-1 text-sm">
-                  Offer price · save {taka(save)}
+                <div className="mt-5 flex items-end gap-3">
+                  <span className="tabular text-[56px] font-semibold leading-none tracking-[-0.03em] sm:text-7xl">{taka(s.offer_price)}</span>
+                  <span className="tabular mb-1.5 text-xl text-b2-flash/70 line-through">{taka(s.price)}</span>
+                </div>
+                <p className="mt-3 text-b2-flash/85">
+                  One payment · less than {taka(Math.ceil(s.offer_price / 120))} a day for the whole course
                 </p>
-                <ul className="mt-6 space-y-3">
+                <ul className="mt-7 grid gap-x-6 gap-y-3 sm:grid-cols-2">
                   {[
                     "48 live classes on Google Meet",
                     "Every class recorded",
                     "All previous papers 2017–2025",
                     "Topic-wise MCQs with explanations",
-                    "Timed mock exams with RQE marking",
+                    "Timed mock exams, RQE marking",
                     "Chapter-wise notes",
-                    "Access until 1 May 2027",
+                    `Access until ${fmtDate(s.default_access_end)}`,
+                    "Mentors who passed in one attempt",
                   ].map((t) => (
-                    <li key={t} className="flex gap-3">
-                      <Check className="mt-0.5 flex-none" size={20} strokeWidth={2.5} />
+                    <li key={t} className="flex gap-3 text-[15px]">
+                      <span className="mt-0.5 grid size-5 flex-none place-items-center rounded-full bg-b2-flash/90 text-b2-ink">
+                        <Check size={13} strokeWidth={3} />
+                      </span>
                       {t}
                     </li>
                   ))}
                 </ul>
-                <ButtonLink href="/enroll" variant="white" size="lg" className="mt-7 w-full">
-                  Join the batch · {taka(s.offer_price)}
+                <ButtonLink href="/enroll" variant="white" size="lg" className="mt-8 w-full !min-h-14 !text-[18px]">
+                  Order now <ArrowRight size={20} />
                 </ButtonLink>
+                <p className="mt-3 text-center text-sm text-b2-flash/80">Pay with bKash · no account needed to order</p>
               </div>
-              <div>
-                <h3 className="mb-4 text-2xl font-semibold tracking-tight">How to enroll with bKash</h3>
-                <EnrollSteps s={s} compact />
-              </div>
+              <ul className="mt-5 grid grid-cols-3 gap-2 text-center text-xs text-b2-pistachio sm:text-sm">
+                <li className="flex flex-col items-center gap-1.5 rounded-2xl border border-b2-border bg-b2-dark px-2 py-3">
+                  <span className="grid size-8 place-items-center rounded-full bg-[#E2136E] text-[11px] font-bold text-white">bK</span>
+                  Pay with bKash
+                </li>
+                <li className="flex flex-col items-center gap-1.5 rounded-2xl border border-b2-border bg-b2-dark px-2 py-3">
+                  <ShieldCheck size={22} className="text-b2-meadow" />
+                  Verified &amp; unlocked fast
+                </li>
+                <li className="flex flex-col items-center gap-1.5 rounded-2xl border border-b2-border bg-b2-dark px-2 py-3">
+                  <MessageCircle size={22} className="text-b2-meadow" />
+                  WhatsApp support
+                </li>
+              </ul>
             </div>
           </div>
         </section>

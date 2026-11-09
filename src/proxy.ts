@@ -51,6 +51,22 @@ export async function proxy(request: NextRequest) {
   const finish = (res: NextResponse) => {
     // carry refreshed auth cookies + device id onto whatever response we return
     response.cookies.getAll().forEach((c) => res.cookies.set(c));
+    // remember which ad/campaign brought this visitor (saved on their order)
+    const sp = request.nextUrl.searchParams;
+    const utm: Record<string, string> = {};
+    for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"]) {
+      const v = sp.get(k);
+      if (v) utm[k] = v.slice(0, 200);
+    }
+    if (Object.keys(utm).length) {
+      res.cookies.set("bmdc_utm", JSON.stringify({ ...utm, landing: path, at: new Date().toISOString() }), {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        path: "/",
+        maxAge: 60 * 60 * 24 * 30,
+      });
+    }
     if (isNewDevice) {
       res.cookies.set(DEVICE_COOKIE, deviceId!, {
         httpOnly: true,

@@ -3,6 +3,7 @@ import { Outfit, Anek_Bangla } from "next/font/google";
 import { Suspense } from "react";
 import { B2Defs } from "@/components/brand/B2";
 import { NavigationProgress } from "@/components/app/NavigationProgress";
+import { MetaPixel } from "@/components/app/MetaPixel";
 import { DEFAULT_THEME, themeInitScript } from "@/lib/theme";
 import { navLoadingScript } from "@/lib/navscript";
 import "./globals.css";
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <NavigationProgress />
         </Suspense>
         {children}
+        <MetaPixel />
       </body>
     </html>
   );

@@ -206,7 +206,7 @@ export function MobileCtaBar({ price, whatsapp }: { price: number; whatsapp: str
           <p className="text-xs text-b2-pistachio">Batch starts 1 Dec</p>
         </div>
         <Link href="/enroll" className={btn("primary", "md", "ml-auto flex-1")}>
-          Join the batch
+          Order now
         </Link>
         <a
           href={`https://wa.me/88${whatsapp.replace(/\D/g, "")}`}

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ClipboardList, Flame, PlayCircle, Sparkles } from "lucide-react";
+import { cookies, headers } from "next/headers";
+import { after } from "next/server";
 import { requireUser } from "@/lib/access";
+import { requestMeta, sendMetaEvent } from "@/lib/meta";
+import { PixelEvent } from "@/components/app/MetaPixel";
 import { getSettings } from "@/lib/settings";
 import { firstName, greeting, hours } from "@/lib/format";
 import { StatusBanner } from "@/components/app/StatusBanner";
@@ -23,7 +27,22 @@ type Stats = {
 
 export default async function DashboardPage({ searchParams }: { searchParams: Promise<{ welcome?: string }> }) {
   const { welcome } = await searchParams;
-  const { supabase, profile, status, full } = await requireUser();
+  const { supabase, user, profile, status, full } = await requireUser();
+  // new account (email or Google): CompleteRegistration, sent from the browser and the server with one event id
+  const regId = `reg-${user.id}`;
+  if (welcome) {
+    const jar = await cookies();
+    const { ip, ua } = requestMeta(await headers());
+    after(() =>
+      sendMetaEvent({
+        name: "CompleteRegistration",
+        eventId: regId,
+        path: "/dashboard",
+        user: { email: profile.email, phone: profile.phone, name: profile.full_name, externalId: user.id, fbp: jar.get("_fbp")?.value, fbc: jar.get("_fbc")?.value, ip, ua },
+        extra: { content_name: welcome === "workshop" ? "Free workshop" : "Free account", status: true },
+      })
+    );
+  }
   const [s, sessionsRes, statsRes, lastAttemptRes, lastWatchRes, pendingRes] = await Promise.all([
     getSettings(),
     supabase.rpc("get_live_sessions", { p_include_past: false }),
@@ -64,6 +83,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
         <h1 className="text-[28px] font-semibold tracking-[-0.02em] md:text-[34px]">Dr. {firstName(profile.full_name)}</h1>
       </div>
 
+      {welcome && <PixelEvent event="CompleteRegistration" params={{ content_name: welcome === "workshop" ? "Free workshop" : "Free account", status: true }} eventId={regId} />}
       {welcome === "workshop" && (
         <Alert tone="success">
           You&apos;re registered for the free workshop. The Google Meet link appears on the card below before it starts.

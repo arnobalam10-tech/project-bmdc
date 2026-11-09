@@ -141,7 +141,7 @@ export function LoginForm({ next, error }: { next?: string; error?: string }) {
   );
 }
 
-export function SignupForm({ from }: { from?: string }) {
+export function SignupForm({ from, email }: { from?: string; email?: string }) {
   const [state, action] = useActionState(signUp, undefined);
   return (
     <>
@@ -159,7 +159,7 @@ export function SignupForm({ from }: { from?: string }) {
           <label className="b2-label" htmlFor="email">
             Email
           </label>
-          <input id="email" name="email" type="email" autoComplete="email" required className="b2-input" />
+          <input id="email" name="email" type="email" autoComplete="email" required defaultValue={email} className="b2-input" />
         </div>
         <PhoneInput />
         <PasswordInput autoComplete="new-password" />

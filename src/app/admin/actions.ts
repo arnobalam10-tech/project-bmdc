@@ -3,7 +3,9 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/access";
+import { after } from "next/server";
 import { endOfDhakaDay } from "@/lib/format";
+import { sendMetaEvent } from "@/lib/meta";
 
 const str = (fd: FormData, k: string) => String(fd.get(k) ?? "").trim();
 const bool = (fd: FormData, k: string) => fd.get(k) === "on" || fd.get(k) === "true";
@@ -44,8 +46,26 @@ export async function markPaid(fd: FormData) {
 export async function approveOrder(fd: FormData) {
   const { supabase } = await requireAdmin();
   const end = str(fd, "access_end");
-  const { error } = await supabase.rpc("approve_order", { p_order_id: str(fd, "id"), p_access_end: end || null });
+  const id = str(fd, "id");
+  const { error } = await supabase.rpc("approve_order", { p_order_id: id, p_access_end: end || null });
   if (error) throw new Error("Couldn't approve this order. Refresh and try again.");
+  // the real sale → Meta "Purchase" (server-side; matched to the ad by email/phone/fbp/fbc)
+  const { data: o } = await supabase
+    .from("orders")
+    .select("number,amount,email,phone,full_name,user_id,fbp,fbc,client_ip,user_agent,event_id")
+    .eq("id", id)
+    .single();
+  if (o)
+    after(() =>
+      sendMetaEvent({
+        name: "Purchase",
+        eventId: `purchase-${o.event_id}`,
+        value: o.amount,
+        path: "/enroll",
+        user: { email: o.email, phone: o.phone, name: o.full_name, externalId: o.user_id, fbp: o.fbp, fbc: o.fbc, ip: o.client_ip, ua: o.user_agent },
+        extra: { order_number: o.number, num_items: 1 },
+      })
+    );
   revalidatePath("/admin/orders");
   revalidatePath("/admin/payments");
   revalidatePath("/admin");
