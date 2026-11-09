@@ -8,14 +8,14 @@ import { createNote } from "@/app/admin/actions";
 import { btn } from "@/components/ui/Button";
 import { B2Mark } from "@/components/brand/B2";
 import { ChapterSelect } from "./ChapterSelect";
+import { loadPdfjs } from "@/lib/pdfjs";
 
 type Ch = { id: string; name: string; subjects: { name: string } | null };
 
 /** Page count via the real PDF engine (works for compressed/object-stream PDFs); null if it can't tell. */
 async function countPages(buf: ArrayBuffer): Promise<number | null> {
   try {
-    const { pdfjs } = await import("react-pdf");
-    pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+    const pdfjs = await loadPdfjs();
     const doc = await pdfjs.getDocument({ data: new Uint8Array(buf) }).promise;
     const n = doc.numPages;
     return n;

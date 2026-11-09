@@ -1,43 +1,123 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Document, Page, pdfjs } from "react-pdf";
-import type { PDFDocumentProxy } from "pdfjs-dist";
-import { ArrowLeft, EyeOff, Maximize2, Minus, Plus } from "lucide-react";
+import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist/legacy/build/pdf.mjs";
+import { ArrowLeft, EyeOff, Maximize2, Minus, Plus, RotateCw } from "lucide-react";
 import { B2Loader } from "@/components/brand/B2";
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
+import { loadPdfjs } from "@/lib/pdfjs";
 
 const MAX_WIDTH = 860; // comfortable reading width on desktop
 const KEEP_AROUND = 2; // pages kept rendered around the visible one (memory on phones)
 
+/** One page drawn to a canvas, only while it is near the screen. */
+function PageCanvas({ doc, n, width, height, active }: { doc: PDFDocumentProxy; n: number; width: number; height: number; active: boolean }) {
+  const canvas = useRef<HTMLCanvasElement>(null);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (!active || !width) return;
+    let task: RenderTask | null = null;
+    let cancelled = false;
+    (async () => {
+      try {
+        const page = await doc.getPage(n);
+        if (cancelled || !canvas.current) return;
+        const base = page.getViewport({ scale: 1 });
+        const dpr = Math.min(window.devicePixelRatio || 1, 2); // sharp but not huge on phones
+        const viewport = page.getViewport({ scale: (width / base.width) * dpr });
+        const c = canvas.current;
+        c.width = Math.floor(viewport.width);
+        c.height = Math.floor(viewport.height);
+        task = page.render({ canvas: c, viewport });
+        await task.promise;
+        if (!cancelled) setReady(true);
+      } catch {
+        /* cancelled or a broken page: keep the placeholder */
+      }
+    })();
+    return () => {
+      cancelled = true;
+      task?.cancel();
+      setReady(false);
+    };
+  }, [doc, n, width, active]);
+
+  return (
+    <div
+      data-page={n}
+      className="relative overflow-hidden bg-white shadow-[0_8px_30px_rgba(2,26,23,.12)] md:rounded-lg"
+      style={{ width, height }}
+    >
+      {active && <canvas ref={canvas} className="pointer-events-none block size-full select-none" />}
+      {!ready && (
+        <div className="absolute inset-0 grid place-items-center text-sm text-b2-stone">
+          {active ? <div className="skeleton size-full !rounded-none" /> : `Page ${n}`}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /**
  * View-only notes:
  *  - no download / print / copy / right-click / drag / long-press; no text layer
- *  - content blacks out whenever the tab or window loses focus or Print Screen is pressed (desktop
- *    snipping tools and screen recorders), and prints come out blank
+ *  - content blacks out whenever the tab or window loses focus or Print Screen is pressed, and prints come out blank
  *  - pages render lazily, sized to the screen width (edge-to-edge on phones)
  * A website cannot stop a phone's own system screenshot; this deters everything a browser can see.
  */
 export default function PdfViewer({ url, title }: { url: string; title: string }) {
-  const [pages, setPages] = useState(0);
+  const [doc, setDoc] = useState<PDFDocumentProxy | null>(null);
   const [ratio, setRatio] = useState(842 / 595); // A4 until the real size is known
   const [current, setCurrent] = useState(1);
   const [zoom, setZoom] = useState(1);
   const [width, setWidth] = useState(0);
   const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const [shield, setShield] = useState(false);
   const box = useRef<HTMLDivElement>(null);
+  // the signed URL can change if the page re-renders on the server; load the document only once per note
+  const urlRef = useRef(url);
+  const pages = doc?.numPages ?? 0;
 
   const pageWidth = Math.round(Math.min(width, MAX_WIDTH) * zoom);
   const pageHeight = Math.round(pageWidth * ratio);
 
-  // container width
+  // load the PDF (only byte ranges for the visible pages first, the rest in the background)
+  useEffect(() => {
+    let cancelled = false;
+    let loaded: PDFDocumentProxy | null = null;
+    (async () => {
+      try {
+        const pdfjs = await loadPdfjs();
+        const task = pdfjs.getDocument({ url: urlRef.current, disableStream: true, disableAutoFetch: false });
+        loaded = await task.promise;
+        if (cancelled) return;
+        try {
+          const first = await loaded.getPage(1);
+          const vp = first.getViewport({ scale: 1 });
+          if (!cancelled) setRatio(vp.height / vp.width);
+        } catch {}
+        if (!cancelled) setDoc(loaded);
+      } catch (err) {
+        console.error("Notes viewer", err);
+        if (!cancelled) setFailed(true);
+      }
+    })();
+    return () => {
+      cancelled = true;
+      loaded?.loadingTask.destroy().catch(() => {});
+    };
+  }, [attempt]);
+
+  // container width (ignore sub-pixel jitter so pages don't keep re-rendering)
   useEffect(() => {
     const el = box.current;
     if (!el) return;
-    const ro = new ResizeObserver(([e]) => setWidth(e.contentRect.width));
+    const ro = new ResizeObserver(([e]) => {
+      const w = Math.round(e.contentRect.width);
+      setWidth((prev) => (Math.abs(prev - w) > 2 ? w : prev));
+    });
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
@@ -96,23 +176,14 @@ export default function PdfViewer({ url, title }: { url: string; title: string }
     return () => io.disconnect();
   }, [pages, pageWidth]);
 
-  const onLoad = useCallback(async (pdf: PDFDocumentProxy) => {
-    setPages(pdf.numPages);
-    try {
-      const first = await pdf.getPage(1);
-      const vp = first.getViewport({ scale: 1 });
-      setRatio(vp.height / vp.width);
-    } catch {
-      /* keep A4 */
-    }
-  }, []);
+  // keep the same page in view when zooming
+  const zoomTo = (z: number) => {
+    const keep = current;
+    setZoom(z);
+    requestAnimationFrame(() => document.querySelector(`[data-page="${keep}"]`)?.scrollIntoView({ block: "start" }));
+  };
 
-  const goTo = (n: number) =>
-    document.querySelector(`[data-page="${n}"]`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-
-  const file = useMemo(() => ({ url }), [url]);
-  // fetch only the byte ranges the visible pages need first, then the rest in the background
-  const options = useMemo(() => ({ disableStream: true, disableAutoFetch: false }), []);
+  const goTo = (n: number) => document.querySelector(`[data-page="${n}"]`)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
     <div
@@ -143,16 +214,16 @@ export default function PdfViewer({ url, title }: { url: string; title: string }
             </select>
           </label>
         )}
-        <button type="button" aria-label="Zoom out" onClick={() => setZoom((z) => Math.max(0.6, +(z - 0.2).toFixed(1)))} className="pressable grid size-10 place-items-center rounded-full hover:bg-white/5">
+        <button type="button" aria-label="Zoom out" onClick={() => zoomTo(Math.max(0.6, +(zoom - 0.2).toFixed(1)))} className="pressable grid size-10 place-items-center rounded-full hover:bg-white/5">
           <Minus size={18} />
         </button>
-        <button type="button" aria-label="Fit to width" onClick={() => setZoom(1)} className="tabular hidden h-9 min-w-12 rounded-full px-1 text-sm hover:bg-white/5 sm:block">
+        <button type="button" aria-label="Fit to width" onClick={() => zoomTo(1)} className="tabular hidden h-9 min-w-12 rounded-full px-1 text-sm hover:bg-white/5 sm:block">
           {Math.round(zoom * 100)}%
         </button>
-        <button type="button" aria-label="Zoom in" onClick={() => setZoom((z) => Math.min(2.4, +(z + 0.2).toFixed(1)))} className="pressable grid size-10 place-items-center rounded-full hover:bg-white/5">
+        <button type="button" aria-label="Zoom in" onClick={() => zoomTo(Math.min(2.4, +(zoom + 0.2).toFixed(1)))} className="pressable grid size-10 place-items-center rounded-full hover:bg-white/5">
           <Plus size={18} />
         </button>
-        <button type="button" aria-label="Fit to width" onClick={() => setZoom(1)} className="pressable grid size-10 place-items-center rounded-full hover:bg-white/5 sm:hidden">
+        <button type="button" aria-label="Fit to width" onClick={() => zoomTo(1)} className="pressable grid size-10 place-items-center rounded-full hover:bg-white/5 sm:hidden">
           <Maximize2 size={16} />
         </button>
       </div>
@@ -160,42 +231,34 @@ export default function PdfViewer({ url, title }: { url: string; title: string }
       {/* pages: edge-to-edge on phones */}
       <div ref={box} className="relative -mx-4 mt-3 overflow-x-auto md:mx-0 md:mt-5">
         {failed ? (
-          <p className="p-8 text-center text-b2-pistachio">That didn&apos;t load. Check your connection and reopen the note.</p>
+          <div className="p-8 text-center">
+            <p className="text-b2-pistachio">The notes didn&apos;t load. Check your connection and try again.</p>
+            <button
+              type="button"
+              onClick={() => {
+                setFailed(false);
+                setAttempt((a) => a + 1);
+              }}
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-b2-meadow px-5 py-2.5 font-medium text-b2-meadow"
+            >
+              <RotateCw size={16} /> Try again
+            </button>
+          </div>
+        ) : !doc || !pageWidth ? (
+          <B2Loader label="Opening notes" />
         ) : (
-          <Document
-            file={file}
-            options={options}
-            onLoadSuccess={onLoad}
-            onLoadError={() => setFailed(true)}
-            loading={<B2Loader label="Opening notes" />}
-            className="flex flex-col items-center gap-3 md:gap-5"
-          >
-            {pageWidth > 0 &&
-              Array.from({ length: pages }, (_, n) => {
-                const near = Math.abs(n + 1 - current) <= KEEP_AROUND;
-                return (
-                  <div
-                    key={n}
-                    data-page={n + 1}
-                    className="relative overflow-hidden bg-white shadow-[0_8px_30px_rgba(2,26,23,.12)] md:rounded-lg"
-                    style={{ width: pageWidth, height: pageHeight }}
-                  >
-                    {near ? (
-                      <Page
-                        pageNumber={n + 1}
-                        width={pageWidth}
-                        renderTextLayer={false}
-                        renderAnnotationLayer={false}
-                        loading={<div className="skeleton size-full !rounded-none" />}
-                        className="pointer-events-none"
-                      />
-                    ) : (
-                      <div className="grid size-full place-items-center text-sm text-b2-stone">Page {n + 1}</div>
-                    )}
-                  </div>
-                );
-              })}
-          </Document>
+          <div className="flex flex-col items-center gap-3 md:gap-5">
+            {Array.from({ length: pages }, (_, i) => (
+              <PageCanvas
+                key={i}
+                doc={doc}
+                n={i + 1}
+                width={pageWidth}
+                height={pageHeight}
+                active={Math.abs(i + 1 - current) <= KEEP_AROUND}
+              />
+            ))}
+          </div>
         )}
 
         {shield && (
