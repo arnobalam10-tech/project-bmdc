@@ -8,7 +8,7 @@
 ## Current status
 
 **Phase:** All phases are built in code; **not deployed yet**. Waiting on the owner's one-time setup (below) before launch.
-**Next milestone:** **M1 — Workshop launch, by 15 Nov 2026** (workshop is 20 Nov, 11 PM).
+**Next milestone:** **M1 — Workshop launch, by 15 Nov 2026** (workshop is 20 Nov, 8 PM).
 **Code:** Next.js 16 app at the repo root (`D:\BMDC`). Local git repo exists (create-next-app's initial commit); **this work is not committed yet**.
 **Supabase project:** "Project BMDC" · ref `gmmpzehlfeuigtopekoq` · Singapore · free plan. Migrations 0001–0005 applied; curriculum (7 subjects, 39 chapters) and 10 PYQs (May 2025) imported. The workshop session exists with no Meet link yet.
 
@@ -75,6 +75,7 @@ Files: `content/mcq/*.json`. Re-import: `node scripts/import-mcq.mjs` (needs `SU
 | 2026-11-08 | **Light mode is the default theme** (dark still available via the sun/moon toggle). Set in `src/lib/theme.ts`. |
 | 2026-11-08 | Launch steps written in **LAUNCH.md** (owner's step-by-step guide). |
 | 2026-11-08 | Workshop: **20 Nov 2026, 11:00 PM** (Asia/Dhaka). Meet link = placeholder until the owner sends it. |
+| 2026-11-09 | Workshop moved to **20 Nov 2026, 8:00 PM** (Asia/Dhaka). The header banner now reads the time from the `workshop_at` setting. |
 | 2026-11-08 | Paid access ends **1 May 2027** (default end date; editable per student). |
 | 2026-11-08 | Free samples are toggled by the owner in admin (`is_free_sample`); nothing is free by default. |
 | 2026-11-08 | Curriculum from `TIMELINE FINAL.pdf` → `content/curriculum.json`: 7 subjects, 39 chapters, 48 classes over 16 weeks. Part 1/Part 2 = one chapter. W6C3 “Derma + Rheum (Extra)” belongs to both chapters. |
@@ -98,7 +99,7 @@ Files: `content/mcq/*.json`. Re-import: `node scripts/import-mcq.mjs` (needs `SU
 - [x] Course chapter list → `content/curriculum.json`
 - [ ] Owner review of the 10 sample PYQs (`content/mcq/pyq-2025-may.preview.md`)
 - [ ] Rest of the PYQs (convert after the website is built) + any model tests
-- [x] Workshop time → 20 Nov, 11 PM · [ ] **Google Meet link**
+- [x] Workshop time → 20 Nov, 8 PM · [ ] **Google Meet link**
 - [x] Access length → 1 May 2027
 - [x] Free samples → owner manages in admin
 - [ ] Domain name (optional)

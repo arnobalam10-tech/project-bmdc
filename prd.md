@@ -31,7 +31,7 @@ The product is **one Next.js web app with three parts**:
 | Payment method | bKash **Send Money** to **01322654646** (Personal number) |
 | Payment verification | WhatsApp **01886688253** (send TrxID + screenshot) |
 | Next batch starts | **1 December 2026** |
-| **Free workshop** | **20 November 2026, 11:00 PM (Bangladesh time)** · free with signup · *must be presented very prominently* · Google Meet link: **placeholder** (owner will send) |
+| **Free workshop** | **20 November 2026, 8:00 PM (Bangladesh time)** · free with signup · *must be presented very prominently* · Google Meet link: **placeholder** (owner will send) |
 | **Paid access ends** | **1 May 2027** for everyone paying for this batch (default end date when the admin marks someone paid; still editable per student) |
 | Curriculum | 16 weeks × 3 classes = 48 classes, Medicine → Obstetrics. Source: `TIMELINE FINAL.pdf` → [content/curriculum.json](content/curriculum.json). Classes split into “Part 1/Part 2” count as **one chapter** (e.g. Hepatology). |
 | Previous-year papers | `BMDCPQ.pdf`: BMDC papers Oct 2017 → May 2025 (Oct 2017, Apr & Oct 2018, Apr & Oct 2019, Oct 2020, Oct 2021, Oct 2022, May & Oct 2023, May 2025). All are PYQ. |
@@ -231,7 +231,7 @@ Automated payment gateway · native mobile apps · multiple courses/batches · P
 
 1. ~~Chapter list~~ — done (`content/curriculum.json`).
 2. MCQ content — 10 sample PYQs with explanations done (`content/mcq/pyq-2025-may.json`); the rest of `BMDCPQ.pdf` is imported after the website is built.
-3. Workshop Google Meet link (time is set: 20 Nov, 11:00 PM BD).
+3. Workshop Google Meet link (time is set: 20 Nov, 8:00 PM BD).
 4. ~~Access length~~ — 1 May 2027.
 5. ~~Free samples~~ — owner toggles them in admin.
 6. Domain name.

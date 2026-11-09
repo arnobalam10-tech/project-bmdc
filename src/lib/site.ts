@@ -16,7 +16,7 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   bkash_number: "01322654646",
   whatsapp_number: "01886688253",
   batch_start: "2026-12-01",
-  workshop_at: "2026-11-20T23:00:00+06:00",
+  workshop_at: "2026-11-20T20:00:00+06:00",
   default_access_end: "2027-05-01",
   facebook_url: "https://www.facebook.com/profile.php?id=61596008175287",
 };

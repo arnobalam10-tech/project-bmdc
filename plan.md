@@ -98,7 +98,7 @@ devices(user_id uuid pk → profiles, device_id uuid not null, user_agent text, 
 payments(id, user_id, amount int, trx_id text, method text default 'bkash', paid_on date, recorded_by uuid, created_at)
 
 settings(key text pk, value jsonb)   -- price 10000, offer_price 8000, bkash_number, whatsapp_number, batch_start 2026-12-01,
-                                     -- workshop_at 2026-11-20T23:00+06:00, workshop_meet_url (placeholder), default_access_end 2027-05-01, facebook_url
+                                     -- workshop_at 2026-11-20T20:00+06:00, workshop_meet_url (placeholder), default_access_end 2027-05-01, facebook_url
 
 -- hierarchy (generic until chapter list arrives)
 subjects(id, name, slug, sort)

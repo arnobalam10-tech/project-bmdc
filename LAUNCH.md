@@ -1,6 +1,6 @@
 # Project BMDC — Launch guide (step by step)
 
-> Goal: site live **by 15 November 2026**, so you have 5 days to promote the **free workshop on 20 November, 11 PM**.
+> Goal: site live **by 15 November 2026**, so you have 5 days to promote the **free workshop on 20 November, 8 PM**.
 > Everything here is free except an optional domain (~৳1,200–1,500 a year).
 > Where a step says **"or tell Claude"**, I can do it for you if you say so in chat.
 
@@ -167,7 +167,7 @@ Tell Claude **"delete the test accounts"**. This removes `student.test@…` and 
 
 ## 8. Add the workshop Google Meet link
 
-1. Open **Google Calendar** → create an event on **20 November, 11:00 PM–12:30 AM** → **Add Google Meet video conferencing** → Save → copy the `meet.google.com/...` link.
+1. Open **Google Calendar** → create an event on **20 November, 8:00 PM–9:30 PM** → **Add Google Meet video conferencing** → Save → copy the `meet.google.com/...` link.
 2. Live site → **Admin → Live sessions** → tap **"Free workshop: How to pass the BMDC RQE…"**.
 3. Paste the link into **Google Meet link** → **Save changes**.
 

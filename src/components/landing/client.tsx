@@ -19,6 +19,16 @@ const NAV = [
   ["FAQ", "#faq"],
 ] as const;
 
+/** "20 Nov, 8 PM" (or "20 Nov, 8:30 PM") in Bangladesh time, from the workshop setting */
+function barWhen(iso: string) {
+  const d = new Date(iso);
+  const day = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Dhaka", day: "numeric", month: "short" }).format(d);
+  const parts = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Dhaka", hour: "numeric", minute: "2-digit", hour12: true }).formatToParts(d);
+  const get = (t: string) => parts.find((p) => p.type === t)?.value ?? "";
+  const min = get("minute");
+  return `${day}, ${get("hour")}${min === "00" ? "" : `:${min}`} ${get("dayPeriod").toUpperCase()}`;
+}
+
 /** Sticky header: transparent over the hero, solid after scrolling. Full-screen menu on mobile. */
 export function Header({ workshopAt }: { workshopAt: string }) {
   const [solid, setSolid] = useState(false);
@@ -64,7 +74,7 @@ export function Header({ workshopAt }: { workshopAt: string }) {
           <div className="mx-auto flex max-w-[1200px] items-center justify-center gap-3 px-4 py-2">
             <span className="live-dot hidden flex-none sm:block" />
             <a href="#workshop" className="font-medium">
-              <span className="font-semibold">Free workshop</span> · 20 Nov, 11 PM ·{" "}
+              <span className="font-semibold">Free workshop</span> · {barWhen(workshopAt)} ·{" "}
               <span className="underline underline-offset-4">Register free →</span>
             </a>
             <button
