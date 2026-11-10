@@ -48,9 +48,9 @@ export function SectionTitle({
 }) {
   return (
     <div className={`${center ? "mx-auto text-center" : ""} max-w-[680px] ${className}`}>
-      {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
-      <h2 className="text-[30px] font-semibold leading-[1.08] tracking-[-0.03em] md:text-[44px]">{title}</h2>
-      {sub && <div className="mt-4 text-[17px] leading-relaxed text-b2-pistachio">{sub}</div>}
+      {eyebrow && <p className="eyebrow mb-2 sm:mb-3">{eyebrow}</p>}
+      <h2 className="text-[25px] font-semibold leading-[1.1] tracking-[-0.03em] sm:text-[30px] md:text-[44px]">{title}</h2>
+      {sub && <div className="mt-3 text-[15px] leading-relaxed text-b2-pistachio sm:mt-4 sm:text-[17px]">{sub}</div>}
     </div>
   );
 }

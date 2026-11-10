@@ -74,36 +74,35 @@ export default async function Home() {
 
       <main className="landing-main -mt-16 md:-mt-[72px]">
         {/* ───────── HERO ───────── */}
-        <section id="hero" className="b2-film rounded-b-[32px] px-4 pb-16 pt-28 sm:px-6 md:pb-24 md:pt-40">
+        <section id="hero" className="b2-film rounded-b-[32px] px-4 pb-8 pt-24 sm:px-6 sm:pb-16 sm:pt-28 md:pb-24 md:pt-40">
           <B2Mark
             className="is-wave pointer-events-none !absolute -right-24 top-24 hidden opacity-20 md:block"
             size={520}
             decorative
           />
-          <div className="mx-auto max-w-[960px] text-center">
-            <B2Mark className="is-intro mx-auto mb-7" size={96} />
-            <p className="eyebrow">Online course · BMDC Licensing Exam</p>
-            <p className="mx-auto mt-3 inline-flex items-center gap-2 rounded-full border border-b2-caribbean/50 bg-b2-pine/60 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-b2-caribbean">
-              <span className="live-dot" /> April 2027 Batch
-            </p>
-            <h1 className="mt-3 text-[42px] font-semibold leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-[72px]">
-              Your gateway to <em className="hl">BMDC licence.</em>
+          <div className="mx-auto max-w-[820px] text-center">
+            <div className="hidden sm:block">
+              <B2Mark className="is-intro mx-auto mb-7" size={96} />
+            </div>
+            <div className="flex flex-wrap justify-center gap-1.5 text-[11.5px] font-semibold uppercase tracking-[0.1em] sm:gap-2 sm:text-[13px]">
+              <span className="rounded-full bg-b2-caribbean px-2.5 py-1 text-b2-ink sm:px-3.5 sm:py-1.5">April 2027 batch</span>
+              <span className="rounded-full border border-b2-flash/25 px-2.5 py-1 text-b2-flash/90 sm:px-3.5 sm:py-1.5">100% online</span>
+            </div>
+            <h1 className="mt-4 text-[40px] font-semibold leading-[1] tracking-[-0.04em] sm:mt-5 sm:text-6xl md:text-[76px]">
+              Pass the BMDC RQE <br />
+              <em className="hl">in one attempt.</em>
             </h1>
-            <p lang="bn" className="mt-4 font-bangla text-xl text-b2-pistachio">
-              বিদেশে MBBS, দেশে লাইসেন্স।
-            </p>
-            <p className="mx-auto mt-5 max-w-[620px] text-[17px] leading-relaxed text-b2-flash/85 md:text-lg">
-              A structured <strong className="font-semibold text-b2-flash">online course</strong> for doctors who finished their
-              MBBS abroad, taught by doctors who passed the BMDC exam in one attempt. The April 2027 batch starts{" "}
+            <p className="mx-auto mt-3 max-w-[640px] text-[15px] leading-relaxed text-b2-flash/80 sm:mt-5 sm:text-[17px] md:text-lg">
+              A 4-month online course for doctors who studied MBBS abroad. Starts{" "}
               <strong className="font-semibold text-b2-flash">{fmtDate(s.batch_start, { year: undefined })}</strong>.
             </p>
-            <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <div className="mx-auto mt-5 grid max-w-[420px] gap-2.5 sm:mt-8 sm:flex sm:max-w-none sm:justify-center sm:gap-3">
               <ButtonLink href="/enroll" size="lg">
-                Join the batch →
+                Join the batch · {taka(s.offer_price)} <ArrowRight size={18} />
               </ButtonLink>
               {!workshopOver && (
-                <ButtonLink href="/signup?from=workshop" variant="secondary" size="lg" className="!border-b2-flash/40 !text-b2-flash">
-                  Register for the free workshop
+                <ButtonLink href="/signup?from=workshop" variant="secondary" size="lg" className="!border-b2-flash/35 !text-b2-flash">
+                  Free workshop · {fmtDate(s.workshop_at, { year: undefined, month: "short" })}
                 </ButtonLink>
               )}
             </div>
@@ -111,25 +110,30 @@ export default async function Home() {
               href={waLink(s.whatsapp_number, "Hi, I have a question about the Project BMDC online course.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-[15px] text-b2-flash/90 hover:text-b2-flash"
+              className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-[14px] text-b2-flash/85 hover:text-b2-flash sm:mt-4 sm:text-[15px]"
             >
-              <MessageCircle size={18} className="text-b2-caribbean" />
-              Questions? WhatsApp us: <span className="font-semibold underline decoration-b2-caribbean underline-offset-4">{s.whatsapp_number}</span>
+              <MessageCircle size={17} className="text-b2-caribbean" />
+              WhatsApp us · <span className="font-semibold">{s.whatsapp_number}</span>
             </a>
-            <ul className="mt-8 flex flex-wrap justify-center gap-2 text-sm">
-              {["100% online", "April 2027 batch", "4 months · 48 classes", "Recorded classes", "Previous papers 2017–2025", "Timed mock exams"].map((t) => (
-                <li key={t} className="rounded-full border border-b2-flash/15 bg-b2-black/30 px-3.5 py-1.5 text-b2-flash/90">
-                  {t}
-                </li>
+            <div className="mx-auto mt-3 grid max-w-[420px] grid-cols-3 divide-x divide-b2-flash/15 rounded-2xl border border-b2-flash/15 bg-b2-black/30 py-3 sm:mt-6 sm:max-w-[560px] sm:py-4">
+              {[
+                ["48", "live classes"],
+                ["2017–25", "past papers"],
+                [fmtDate(s.default_access_end, { year: undefined, month: "short" }), "access till"],
+              ].map(([n, l]) => (
+                <div key={l}>
+                  <p className="tabular text-[19px] font-semibold text-b2-caribbean sm:text-2xl">{n}</p>
+                  <p className="text-[11.5px] text-b2-pistachio sm:text-sm">{l}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
 
         {/* ───────── FREE WORKSHOP ───────── */}
-        <section id="workshop" className="px-4 py-16 sm:px-6 md:py-24">
+        <section id="workshop" className="px-4 py-8 sm:px-6 sm:py-16 md:py-24">
           <div
-            className="b2-film spring mx-auto max-w-[1200px] rounded-[32px] p-6 shadow-[0_12px_60px_rgba(0,223,129,.18)] sm:p-10 md:p-14"
+            className="b2-film spring mx-auto max-w-[1200px] rounded-[32px] p-6 shadow-[0_12px_60px_rgba(0,223,129,.18)] !p-5 sm:!p-10 md:!p-14"
             style={{
               // spring film mirrored: glow bottom-right, so the copy (top-left) sits on the dark side (brand kit §2)
               backgroundImage:
@@ -140,7 +144,7 @@ export default async function Home() {
             {workshopOver ? (
               <div className="max-w-[640px]">
                 <p className="eyebrow !text-b2-flash">Missed the workshop?</p>
-                <h2 className="mt-3 text-[34px] font-semibold leading-tight tracking-[-0.03em] md:text-5xl">
+                <h2 className="mt-3 text-[26px] font-semibold leading-tight tracking-[-0.03em] sm:text-[34px] md:text-5xl">
                   The batch starts {fmtDate(s.batch_start, { year: undefined })}. Your seat is waiting.
                 </h2>
                 <div className="mt-8">
@@ -150,58 +154,58 @@ export default async function Home() {
                 </div>
               </div>
             ) : (
-              <div className="grid items-center gap-10 md:grid-cols-[1.1fr_1fr] [&>*]:min-w-0">
+              <div className="grid items-center gap-5 sm:gap-10 md:grid-cols-[1.1fr_1fr] [&>*]:min-w-0">
                 <div>
                   <div className="flex items-center gap-3">
                     <span className="live-dot" />
                     <span className="text-sm font-semibold uppercase tracking-[0.16em]">Registration open</span>
                   </div>
-                  <div className="mt-4 flex items-end gap-3 sm:gap-4">
-                    <p className="free-word text-[76px] font-bold leading-[0.85] tracking-[-0.05em] sm:text-[104px] md:text-[128px]">
+                  <div className="mt-3 flex items-end gap-3 sm:mt-4 sm:gap-4">
+                    <p className="free-word text-[58px] font-bold leading-[0.85] tracking-[-0.05em] sm:text-[104px] md:text-[128px]">
                       FREE
                     </p>
-                    <span className="free-ticket mb-2 sm:mb-3">
+                    <span className="free-ticket mb-1 sm:mb-3">
                       <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] opacity-75">Live</span>
                       <span className="block text-sm font-semibold leading-tight sm:text-base">Workshop</span>
                     </span>
                   </div>
-                  <h2 className="mt-2 text-[30px] font-semibold leading-[1.08] tracking-[-0.03em] md:text-[44px]">
+                  <h2 className="mt-2 text-[23px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[30px] md:text-[44px]">
                     Workshop: how to pass the BMDC RQE in{" "}
                     <span className="underline decoration-b2-caribbean decoration-4 underline-offset-[6px]">one attempt.</span>
                   </h2>
-                  <p className="mt-4 text-lg text-b2-flash/90">
-                    <CalendarDays className="mr-1.5 inline -translate-y-0.5" size={20} />
+                  <p className="mt-3 text-[15px] text-b2-flash/90 sm:mt-4 sm:text-lg">
+                    <CalendarDays className="mr-1.5 inline -translate-y-0.5" size={18} />
                     {fmtDate(s.workshop_at, { weekday: "long" })} · {fmtTime(s.workshop_at)} (Bangladesh time) · Google Meet
                   </p>
-                  <ul className="mt-6 space-y-3 text-[16px]">
+                  <ul className="mt-4 space-y-2 text-[14.5px] sm:mt-6 sm:space-y-3 sm:text-[16px]">
                     {[
                       "How the RQE is set and marked, and how to beat the negative marking",
                       "The 4-month plan: what to study, in what order",
                       "Live Q&A with Dr. Nafisa Alam and Dr. Omar",
                     ].map((t) => (
                       <li key={t} className="flex gap-3">
-                        <Check className="mt-0.5 flex-none text-b2-caribbean" size={20} strokeWidth={2.5} />
+                        <Check className="mt-0.5 flex-none text-b2-caribbean" size={18} strokeWidth={2.5} />
                         <span>{t}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-[28px] border border-b2-flash/15 bg-b2-black/55 p-5 backdrop-blur-sm sm:p-8">
+                <div className="rounded-[24px] border border-b2-flash/15 bg-b2-black/55 p-4 backdrop-blur-sm sm:rounded-[28px] sm:p-8">
                   <p className="text-sm font-medium uppercase tracking-[0.14em] text-b2-pistachio">Starts in</p>
-                  <div className="mt-4">
+                  <div className="mt-3 sm:mt-4">
                     <Countdown to={s.workshop_at} size="lg" doneLabel="Workshop is live" />
                   </div>
-                  <Link href="/signup?from=workshop" className={btn("primary", "lg", "mt-8 w-full")}>
+                  <Link href="/signup?from=workshop" className={btn("primary", "lg", "mt-5 w-full sm:mt-8")}>
                     Sign up free & get the workshop link
                   </Link>
-                  <p className="mt-3 text-center text-sm text-b2-pistachio">
+                  <p className="mt-2 text-center text-[13px] text-b2-pistachio sm:mt-3 sm:text-sm">
                     The Meet link appears on your dashboard. No payment needed.
                   </p>
                   <a
                     href={waLink(s.whatsapp_number, "Hi, I want to join the free BMDC workshop.")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={btn("secondary", "md", "mt-4 w-full !border-b2-flash/30 !text-b2-flash")}
+                    className={btn("secondary", "md", "mt-3 w-full !border-b2-flash/30 !text-b2-flash sm:mt-4")}
                   >
                     <MessageCircle size={18} /> Ask on WhatsApp · {s.whatsapp_number}
                   </a>
@@ -212,7 +216,7 @@ export default async function Home() {
         </section>
 
         {/* ───────── COURSE DETAILS ───────── */}
-        <section id="course" className="px-4 py-16 sm:px-6 md:py-24">
+        <section id="course" className="px-4 py-8 sm:px-6 sm:py-16 md:py-24">
           <div className="mx-auto max-w-[1200px]">
             <SectionTitle
               eyebrow="The 4-month online course · April 2027 batch"
@@ -223,14 +227,16 @@ export default async function Home() {
               }
               sub="You've already done the hard part. Here's the plan for the last step: clear classes, every previous paper, and practice that feels like exam day."
             />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-5 grid gap-2 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
               {FEATURES.map(({ icon: Icon, title, body }) => (
-                <div key={title} className="rounded-[20px] border border-b2-border bg-b2-dark p-6">
-                  <span className="grid size-12 place-items-center rounded-2xl bg-b2-pine text-b2-meadow">
-                    <Icon size={24} strokeWidth={1.75} />
+                <div key={title} className="flex gap-3 rounded-[18px] border border-b2-border bg-b2-dark p-3.5 sm:block sm:rounded-[20px] sm:p-6">
+                  <span className="grid size-10 flex-none place-items-center rounded-xl bg-b2-pine text-b2-meadow sm:size-12 sm:rounded-2xl">
+                    <Icon size={22} strokeWidth={1.75} />
                   </span>
-                  <h3 className="mt-5 text-[20px] font-medium tracking-[-0.01em] md:text-[22px]">{title}</h3>
-                  <p className="mt-2 leading-relaxed text-b2-pistachio">{body}</p>
+                  <div className="min-w-0">
+                    <h3 className="text-[16px] font-medium leading-snug tracking-[-0.01em] sm:mt-5 sm:text-[20px] md:text-[22px]">{title}</h3>
+                    <p className="mt-0.5 text-[14px] leading-snug text-b2-pistachio sm:mt-2 sm:text-base sm:leading-relaxed">{body}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -238,8 +244,8 @@ export default async function Home() {
         </section>
 
         {/* ───────── RQE MARKING ───────── */}
-        <section className="px-4 py-16 sm:px-6 md:py-24">
-          <div className="mx-auto grid max-w-[1200px] items-center gap-10 md:grid-cols-2">
+        <section className="px-4 py-8 sm:px-6 sm:py-16 md:py-24">
+          <div className="mx-auto grid max-w-[1200px] items-center gap-5 sm:gap-10 md:grid-cols-2">
             <SectionTitle
               eyebrow="Know the exam"
               title={
@@ -257,19 +263,19 @@ export default async function Home() {
                 </>
               }
             />
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-4 gap-2 sm:grid-cols-2 sm:gap-3">
               {[
                 ["100", "questions"],
                 ["400", "True/False statements"],
                 ["100", "minutes"],
                 ["100", "total marks"],
               ].map(([n, l]) => (
-                <div key={l} className="rounded-[20px] border border-b2-border bg-b2-dark p-5">
-                  <p className="tabular text-4xl font-semibold tracking-tight text-b2-caribbean">{n}</p>
-                  <p className="mt-1 text-b2-pistachio">{l}</p>
+                <div key={l} className="rounded-[16px] border border-b2-border bg-b2-dark p-2.5 text-center sm:rounded-[20px] sm:p-5 sm:text-left">
+                  <p className="tabular text-[22px] font-semibold tracking-tight text-b2-caribbean sm:text-4xl">{n}</p>
+                  <p className="mt-0.5 text-[11px] leading-tight text-b2-pistachio sm:mt-1 sm:text-base">{l}</p>
                 </div>
               ))}
-              <div className="col-span-2 grid grid-cols-3 overflow-hidden rounded-[20px] border border-b2-border text-center">
+              <div className="col-span-4 grid grid-cols-3 overflow-hidden rounded-[16px] sm:col-span-2 sm:rounded-[20px] border border-b2-border text-center">
                 <div className="bg-b2-dark p-4">
                   <p className="tabular text-2xl font-semibold text-b2-caribbean">+0.25</p>
                   <p className="text-sm text-b2-pistachio">correct</p>
@@ -288,21 +294,21 @@ export default async function Home() {
         </section>
 
         {/* ───────── PLATFORM PREVIEW ───────── */}
-        <section className="px-4 py-16 sm:px-6 md:py-24">
-          <div className="b2-film deep mx-auto grid max-w-[1200px] items-center gap-10 rounded-[32px] p-6 sm:p-10 md:grid-cols-2 md:p-14">
+        <section className="px-4 py-8 sm:px-6 sm:py-16 md:py-24">
+          <div className="b2-film deep mx-auto grid max-w-[1200px] items-center gap-6 rounded-[28px] p-5 sm:gap-10 sm:rounded-[32px] sm:p-10 md:grid-cols-2 md:p-14">
             <div>
               <p className="eyebrow">Practise it on our website</p>
-              <h2 className="mt-3 text-[30px] font-semibold leading-[1.08] tracking-[-0.03em] md:text-[44px]">
+              <h2 className="mt-2 text-[25px] font-semibold leading-[1.1] tracking-[-0.03em] sm:mt-3 sm:text-[30px] md:text-[44px]">
                 Wrong answer? Know <em className="hl">exactly why.</em>
               </h2>
-              <p className="mt-4 text-[17px] leading-relaxed text-b2-pistachio">
+              <p className="mt-3 text-[15px] leading-relaxed text-b2-pistachio sm:mt-4 sm:text-[17px]">
                 Every statement comes with its answer and the reason, plus an exam pearl. A wrong answer becomes a lesson,
                 not a lost mark.
               </p>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-4 space-y-2 text-[14.5px] sm:mt-6 sm:space-y-3 sm:text-base">
                 {["Practice mode: instant answer + explanation", "Exam mode: timed, flag & review, RQE marking", "Track your accuracy subject by subject"].map((t) => (
                   <li key={t} className="flex gap-3">
-                    <Sparkles className="mt-0.5 flex-none text-b2-caribbean" size={20} />
+                    <Sparkles className="mt-0.5 flex-none text-b2-caribbean" size={18} />
                     {t}
                   </li>
                 ))}
@@ -313,7 +319,7 @@ export default async function Home() {
         </section>
 
         {/* ───────── INSTRUCTORS ───────── */}
-        <section id="instructors" className="px-4 py-16 sm:px-6 md:py-24">
+        <section id="instructors" className="px-4 py-8 sm:px-6 sm:py-16 md:py-24">
           <div className="mx-auto max-w-[1200px]">
             <SectionTitle
               eyebrow="Your mentors"
@@ -324,25 +330,25 @@ export default async function Home() {
               }
               sub="They sat the same exam after studying abroad, and passed in one attempt. Now they teach the way they wish they'd been taught."
             />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="mt-5 grid gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4">
               {INSTRUCTORS.map((p) => (
-                <figure key={p.name} className="flex flex-col rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
-                  <div className="flex items-center gap-5">
-                    <div className="b2-film spring relative grid size-20 flex-none place-items-center rounded-full text-2xl font-semibold sm:size-24 sm:text-3xl">
+                <figure key={p.name} className="flex flex-col rounded-[20px] border border-b2-border bg-b2-dark p-4 sm:p-6">
+                  <div className="flex items-center gap-3.5 sm:gap-5">
+                    <div className="b2-film spring relative grid size-14 flex-none place-items-center rounded-full text-lg font-semibold sm:size-24 sm:text-3xl">
                       <span>{p.initials}</span>
                       <B2Mark size={26} grain={false} decorative className="!absolute -bottom-1 -right-1" />
                     </div>
                     <div>
-                      <h3 className="text-[22px] font-medium tracking-[-0.01em]">{p.name}</h3>
-                      <p className="mt-1 text-b2-pistachio">MBBS, Xiamen University, China</p>
-                      <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-b2-pine px-3 py-1 text-sm font-medium text-b2-caribbean">
-                        <Check size={16} /> Passed the BMDC exam in one attempt
+                      <h3 className="text-[18px] font-medium tracking-[-0.01em] sm:text-[22px]">{p.name}</h3>
+                      <p className="mt-0.5 text-[13px] text-b2-pistachio sm:mt-1 sm:text-base">MBBS, Xiamen University, China</p>
+                      <p className="mt-1.5 inline-flex items-center gap-1 rounded-full bg-b2-pine px-2.5 py-0.5 text-[11.5px] font-medium text-b2-caribbean sm:mt-3 sm:gap-1.5 sm:px-3 sm:py-1 sm:text-sm">
+                        <Check size={14} /> Passed the BMDC exam in one attempt
                       </p>
                     </div>
                   </div>
-                  <blockquote className="relative mt-5 border-t border-b2-divider pt-5">
+                  <blockquote className="relative mt-4 border-t border-b2-divider pt-4 sm:mt-5 sm:pt-5">
                     <Quote size={28} className="absolute -top-3.5 left-0 bg-b2-dark pr-2 text-b2-caribbean" aria-hidden />
-                    <p className="text-[17px] leading-relaxed text-b2-flash/90">{p.quote}</p>
+                    <p className="text-[14.5px] leading-relaxed text-b2-flash/90 sm:text-[17px]">{p.quote}</p>
                   </blockquote>
                 </figure>
               ))}
@@ -351,7 +357,7 @@ export default async function Home() {
         </section>
 
         {/* ───────── PRICING + ENROLL ───────── */}
-        <section id="pricing" className="px-4 py-16 sm:px-6 md:py-24">
+        <section id="pricing" className="px-4 py-8 sm:px-6 sm:py-16 md:py-24">
           <div className="mx-auto max-w-[1200px]">
             <SectionTitle
               center
@@ -362,20 +368,20 @@ export default async function Home() {
                 </>
               }
             />
-            <div className="mx-auto mt-10 max-w-[620px]">
-              <div className="b2-film spring relative overflow-hidden rounded-[32px] p-6 sm:p-9">
+            <div className="mx-auto mt-5 max-w-[620px] sm:mt-10">
+              <div className="b2-film spring relative overflow-hidden rounded-[28px] p-5 sm:rounded-[32px] sm:p-9">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em]">Full 4-month online course · April 2027 batch</p>
+                  <p className="text-[12px] font-semibold uppercase leading-snug tracking-[0.12em] sm:text-sm sm:tracking-[0.14em]">Full 4-month online course · April 2027 batch</p>
                   <span className="flex-none whitespace-nowrap rounded-full bg-b2-flash px-3 py-1 text-xs font-bold text-b2-ink">Save {taka(save)}</span>
                 </div>
-                <div className="mt-5 flex items-end gap-3">
-                  <span className="tabular text-[56px] font-semibold leading-none tracking-[-0.03em] sm:text-7xl">{taka(s.offer_price)}</span>
+                <div className="mt-3 flex items-end gap-3 sm:mt-5">
+                  <span className="tabular text-[46px] font-semibold leading-none tracking-[-0.03em] sm:text-7xl">{taka(s.offer_price)}</span>
                   <span className="tabular mb-1.5 text-xl text-b2-flash/70 line-through">{taka(s.price)}</span>
                 </div>
-                <p className="mt-3 text-b2-flash/85">
+                <p className="mt-2 text-[14px] text-b2-flash/85 sm:mt-3 sm:text-base">
                   One payment · less than {taka(Math.ceil(s.offer_price / 120))} a day for the whole course
                 </p>
-                <ul className="mt-7 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                <ul className="mt-5 grid grid-cols-2 gap-x-3 gap-y-2.5 sm:mt-7 sm:gap-x-6 sm:gap-y-3">
                   {[
                     "48 live classes on Google Meet",
                     "Every class recorded",
@@ -386,20 +392,20 @@ export default async function Home() {
                     `Access until ${fmtDate(s.default_access_end)}`,
                     "Mentors who passed in one attempt",
                   ].map((t) => (
-                    <li key={t} className="flex gap-3 text-[15px]">
-                      <span className="mt-0.5 grid size-5 flex-none place-items-center rounded-full bg-b2-flash/90 text-b2-ink">
+                    <li key={t} className="flex gap-2 text-[13px] leading-snug sm:gap-3 sm:text-[15px]">
+                      <span className="mt-0.5 grid size-4 flex-none sm:size-5 place-items-center rounded-full bg-b2-flash/90 text-b2-ink">
                         <Check size={13} strokeWidth={3} />
                       </span>
                       {t}
                     </li>
                   ))}
                 </ul>
-                <ButtonLink href="/enroll" variant="white" size="lg" className="mt-8 w-full !min-h-14 !text-[18px]">
+                <ButtonLink href="/enroll" variant="white" size="lg" className="mt-6 w-full !min-h-14 !text-[18px] sm:mt-8">
                   Join now <ArrowRight size={20} />
                 </ButtonLink>
                 <p className="mt-3 text-center text-sm text-b2-flash/80">Pay with bKash · no account needed to order</p>
               </div>
-              <ul className="mt-5 grid grid-cols-3 gap-2 text-center text-xs text-b2-pistachio sm:text-sm">
+              <ul className="mt-3 grid grid-cols-3 gap-2 text-center text-xs sm:mt-5 text-b2-pistachio sm:text-sm">
                 <li className="flex flex-col items-center gap-1.5 rounded-2xl border border-b2-border bg-b2-dark px-2 py-3">
                   <span className="grid size-8 place-items-center rounded-full bg-[#E2136E] text-[11px] font-bold text-white">bK</span>
                   Pay with bKash
@@ -418,17 +424,17 @@ export default async function Home() {
         </section>
 
         {/* ───────── FAQ ───────── */}
-        <section id="faq" className="px-4 py-16 sm:px-6 md:py-24">
+        <section id="faq" className="px-4 py-8 sm:px-6 sm:py-16 md:py-24">
           <div className="mx-auto max-w-[800px]">
             <SectionTitle center eyebrow="Questions" title="Frequently asked" />
-            <div className="mt-10 divide-y divide-b2-divider rounded-[20px] border border-b2-border bg-b2-dark">
+            <div className="mt-5 divide-y divide-b2-divider rounded-[20px] sm:mt-10 border border-b2-border bg-b2-dark">
               {FAQ.map(([q, a]) => (
-                <details key={q} className="group px-5 sm:px-6">
-                  <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-[17px] font-medium [&::-webkit-details-marker]:hidden">
+                <details key={q} className="group px-4 sm:px-6">
+                  <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 py-3 text-[15px] font-medium sm:min-h-14 sm:py-4 sm:text-[17px] [&::-webkit-details-marker]:hidden">
                     {q}
                     <X size={18} className="flex-none rotate-45 text-b2-meadow transition-transform group-open:rotate-0" />
                   </summary>
-                  <p className="pb-5 leading-relaxed text-b2-pistachio">{a}</p>
+                  <p className="pb-4 text-[14.5px] leading-relaxed text-b2-pistachio sm:pb-5 sm:text-base">{a}</p>
                 </details>
               ))}
             </div>
@@ -436,16 +442,16 @@ export default async function Home() {
         </section>
 
         {/* ───────── FINAL CTA ───────── */}
-        <section className="px-4 pb-16 sm:px-6 md:pb-24">
-          <div className="b2-film mx-auto max-w-[1200px] rounded-[32px] px-6 py-14 text-center sm:px-10 md:py-20">
-            <B2Mark className="is-heartbeat mx-auto" size={80} />
-            <h2 className="mt-6 text-[34px] font-semibold leading-[1.05] tracking-[-0.03em] md:text-[56px]">
+        <section className="px-4 pb-8 sm:px-6 sm:pb-16 md:pb-24">
+          <div className="b2-film mx-auto max-w-[1200px] rounded-[28px] px-5 py-9 text-center sm:rounded-[32px] sm:px-10 sm:py-14 md:py-20">
+            <B2Mark className="is-heartbeat mx-auto" size={64} />
+            <h2 className="mt-4 text-[27px] font-semibold leading-[1.08] tracking-[-0.03em] sm:mt-6 sm:text-[34px] md:text-[56px]">
               We reserved <em className="hl">a seat for you.</em>
             </h2>
-            <p lang="bn" className="mt-3 font-bangla text-lg text-b2-pistachio">
+            <p lang="bn" className="mt-2 font-bangla text-base text-b2-pistachio sm:mt-3 sm:text-lg">
               প্রথমবারেই পাস করার লক্ষ্যে, আমরা আছি আপনার পাশে।
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <div className="mt-6 flex flex-col justify-center gap-2.5 sm:mt-8 sm:flex-row sm:gap-3">
               <ButtonLink href="/enroll" size="lg">
                 Join the batch
               </ButtonLink>
@@ -458,11 +464,11 @@ export default async function Home() {
       </main>
 
       {/* ───────── FOOTER ───────── */}
-      <footer className="b2-film deep rounded-t-[32px] px-4 pb-28 pt-14 sm:px-6 md:pb-14">
-        <div className="mx-auto grid max-w-[1200px] gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
-          <div>
+      <footer className="b2-film deep rounded-t-[28px] px-5 pb-28 pt-9 sm:rounded-t-[32px] sm:px-6 sm:pt-14 md:pb-14">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-[1.4fr_1fr_1fr] md:gap-10">
+          <div className="col-span-2 md:col-span-1">
             <B2Logo />
-            <p className="mt-4 max-w-sm text-b2-pistachio">Your gateway to BMDC licence. A 4-month online course for doctors who finished their MBBS abroad. April 2027 batch.</p>
+            <p className="mt-3 max-w-sm text-[14px] text-b2-pistachio sm:mt-4 sm:text-base">Your gateway to BMDC licence. A 4-month online course for doctors who finished their MBBS abroad. April 2027 batch.</p>
           </div>
           <div>
             <p className="font-semibold">Contact</p>
@@ -489,7 +495,7 @@ export default async function Home() {
             </ul>
           </div>
         </div>
-        <p className="mx-auto mt-10 max-w-[1200px] border-t border-b2-divider pt-6 text-sm text-b2-stone">
+        <p className="mx-auto mt-7 max-w-[1200px] border-t border-b2-divider pt-5 text-[13px] sm:mt-10 sm:pt-6 sm:text-sm text-b2-stone">
           © {new Date().getFullYear()} Project BMDC. Built to help you pass in one attempt. No guarantees, just a good plan.
         </p>
       </footer>
@@ -508,8 +514,8 @@ function PhoneMock() {
     { l: "D", t: "Hypoglycemia", you: "T", ok: false },
   ];
   return (
-    <div className="mx-auto w-full max-w-[380px] rounded-[40px] border-[6px] border-b2-black bg-b2-black p-3 shadow-[0_12px_60px_rgba(0,223,129,.18)]">
-      <div className="rounded-[30px] bg-b2-dark p-4">
+    <div className="mx-auto w-full max-w-[320px] rounded-[34px] border-[5px] border-b2-black bg-b2-black p-2.5 sm:max-w-[380px] sm:rounded-[40px] sm:border-[6px] sm:p-3 shadow-[0_12px_60px_rgba(0,223,129,.18)]">
+      <div className="rounded-[26px] bg-b2-dark p-3 text-[13px] sm:rounded-[30px] sm:p-4 sm:text-base">
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs text-b2-pistachio">Previous year · Pharmacology</p>
