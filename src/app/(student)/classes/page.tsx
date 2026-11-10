@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CheckCircle2, Lock, PlayCircle } from "lucide-react";
 import { requireUser } from "@/lib/access";
 import { getSettings } from "@/lib/settings";
+import { numberedSchedule } from "@/lib/schedule";
 import { fmtDateTime } from "@/lib/format";
 import { LiveSessionCard, type LiveSession } from "@/components/app/LiveSessionCard";
 import { EnrollButton } from "@/components/enroll/Enroll";
@@ -24,6 +25,7 @@ export default async function ClassesPage({ searchParams }: { searchParams: Prom
         {[
           ["next", "Next class"],
           ["recorded", "Recorded classes"],
+          ["schedule", "Schedule"],
         ].map(([key, label]) => (
           <Link
             key={key}
@@ -38,6 +40,42 @@ export default async function ClassesPage({ searchParams }: { searchParams: Prom
       </div>
     </div>
   );
+
+  if (tab === "schedule") {
+    const groups = numberedSchedule();
+    return (
+      <>
+        <PageHeader
+          title="Course schedule"
+          sub="48 live online classes over 16 weeks, 3 a week on Google Meet. April 2027 batch, starting 1 December."
+        />
+        {tabs}
+        <div className="space-y-6">
+          {groups.map((g) => (
+            <section key={g.subject}>
+              <h2 className="mb-3 flex items-baseline justify-between text-sm font-semibold uppercase tracking-[0.14em] text-b2-caribbean">
+                {g.subject}
+                <span className="text-xs font-medium normal-case tracking-normal text-b2-pistachio">{g.classes.length} classes</span>
+              </h2>
+              <ol className="divide-y divide-b2-divider overflow-hidden rounded-[20px] border border-b2-border bg-b2-dark">
+                {g.classes.map((c) => (
+                  <li key={c.n} className="flex min-h-14 items-center gap-4 px-5 py-3">
+                    <span className="tabular grid size-10 flex-none place-items-center rounded-full bg-b2-pine text-sm font-semibold text-b2-caribbean">
+                      {c.n}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block">{c.topic}</span>
+                      <span className="text-xs text-b2-pistachio">Week {c.week} · Class {c.n}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))}
+        </div>
+      </>
+    );
+  }
 
   if (tab !== "recorded") {
     const { data } = await supabase.rpc("get_live_sessions", { p_include_past: false });

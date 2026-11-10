@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     template: "%s · Project BMDC",
   },
   description:
-    "A 4-month BMDC RQE prep course for doctors who completed their MBBS abroad. Taught by doctors who passed the BMDC exam in one attempt. Recorded classes, previous papers, MCQ practice and timed mock exams.",
+    "A 4-month online BMDC RQE prep course (April 2027 batch) for doctors who completed their MBBS abroad. Taught by doctors who passed the BMDC exam in one attempt. Recorded classes, previous papers, MCQ practice and timed mock exams.",
   openGraph: {
     title: "Project BMDC — Your gateway to BMDC licence",
-    description: "বিদেশে MBBS, দেশে লাইসেন্স। 4-month BMDC licensing exam course. Free workshop 20 November.",
+    description: "বিদেশে MBBS, দেশে লাইসেন্স। 4-month online BMDC licensing exam course, April 2027 batch. Free workshop 20 November.",
     images: ["/brand/og.jpg"],
     type: "website",
   },

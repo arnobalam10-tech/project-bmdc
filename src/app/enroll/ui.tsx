@@ -44,7 +44,7 @@ export function Summary({ s, compact = false }: { s: SiteSettings; compact?: boo
       <div className="b2-film spring flex items-center gap-4 rounded-[24px] p-4">
         <B2Mark size={48} decorative />
         <div className="min-w-0 flex-1">
-          <p className="truncate font-semibold">BMDC RQE · 4-month course</p>
+          <p className="truncate font-semibold">BMDC RQE · Online course · April 2027 batch</p>
           <p className="text-xs text-b2-flash/80">Starts {fmtDate(s.batch_start, { year: undefined })} · access until {fmtDate(s.default_access_end, { year: undefined })}</p>
         </div>
         <div className="text-right">
@@ -58,7 +58,7 @@ export function Summary({ s, compact = false }: { s: SiteSettings; compact?: boo
     <div className="b2-film spring rounded-[28px] p-6 sm:p-7">
       <div className="flex items-center gap-3">
         <B2Mark size={44} decorative />
-        <p className="text-sm font-semibold uppercase tracking-[0.14em]">Full 4-month course</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.14em]">Full 4-month online course · April 2027 batch</p>
       </div>
       <div className="mt-5 flex items-end gap-3">
         <span className="tabular text-5xl font-semibold tracking-[-0.03em]">{taka(s.offer_price)}</span>

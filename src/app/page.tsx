@@ -52,6 +52,7 @@ const FEATURES = [
 ];
 
 const FAQ = [
+  ["Is this an online course?", "Yes, it's 100% online. Live classes are on Google Meet, and recordings, MCQs, mock exams and notes are all on this website. This batch prepares you for the April 2027 BMDC exam."],
   ["Can I study from abroad?", "Yes. Classes are live on Google Meet and every class is recorded, so you can study from China, Russia, India, Nepal or anywhere, on phone or laptop."],
   ["What if I miss a live class?", "Every class is recorded and added to your dashboard chapter-wise. Rewatch it whenever you like."],
   ["How do I pay?", "bKash Send Money to our personal number, then place your order on this website with the bKash number you sent it from. We verify the payment and unlock your account."],
@@ -81,7 +82,10 @@ export default async function Home() {
           />
           <div className="mx-auto max-w-[960px] text-center">
             <B2Mark className="is-intro mx-auto mb-7" size={96} />
-            <p className="eyebrow">BMDC Licensing Exam · 4-Month Course</p>
+            <p className="eyebrow">Online course · BMDC Licensing Exam</p>
+            <p className="mx-auto mt-3 inline-flex items-center gap-2 rounded-full border border-b2-caribbean/50 bg-b2-pine/60 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.12em] text-b2-caribbean">
+              <span className="live-dot" /> April 2027 Batch
+            </p>
             <h1 className="mt-3 text-[42px] font-semibold leading-[1.02] tracking-[-0.03em] sm:text-6xl md:text-[72px]">
               Your gateway to <em className="hl">BMDC licence.</em>
             </h1>
@@ -89,8 +93,9 @@ export default async function Home() {
               বিদেশে MBBS, দেশে লাইসেন্স।
             </p>
             <p className="mx-auto mt-5 max-w-[620px] text-[17px] leading-relaxed text-b2-flash/85 md:text-lg">
-              A structured course for doctors who finished their MBBS abroad, taught by doctors who passed the BMDC exam
-              in one attempt. Batch starts <strong className="font-semibold text-b2-flash">{fmtDate(s.batch_start, { year: undefined })}</strong>.
+              A structured <strong className="font-semibold text-b2-flash">online course</strong> for doctors who finished their
+              MBBS abroad, taught by doctors who passed the BMDC exam in one attempt. The April 2027 batch starts{" "}
+              <strong className="font-semibold text-b2-flash">{fmtDate(s.batch_start, { year: undefined })}</strong>.
             </p>
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <ButtonLink href="/enroll" size="lg">
@@ -102,8 +107,17 @@ export default async function Home() {
                 </ButtonLink>
               )}
             </div>
-            <ul className="mt-10 flex flex-wrap justify-center gap-2 text-sm">
-              {["4 months · 48 classes", "Recorded classes", "Previous papers 2017–2025", "Timed mock exams"].map((t) => (
+            <a
+              href={waLink(s.whatsapp_number, "Hi, I have a question about the Project BMDC online course.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-[15px] text-b2-flash/90 hover:text-b2-flash"
+            >
+              <MessageCircle size={18} className="text-b2-caribbean" />
+              Questions? WhatsApp us: <span className="font-semibold underline decoration-b2-caribbean underline-offset-4">{s.whatsapp_number}</span>
+            </a>
+            <ul className="mt-8 flex flex-wrap justify-center gap-2 text-sm">
+              {["100% online", "April 2027 batch", "4 months · 48 classes", "Recorded classes", "Previous papers 2017–2025", "Timed mock exams"].map((t) => (
                 <li key={t} className="rounded-full border border-b2-flash/15 bg-b2-black/30 px-3.5 py-1.5 text-b2-flash/90">
                   {t}
                 </li>
@@ -183,6 +197,14 @@ export default async function Home() {
                   <p className="mt-3 text-center text-sm text-b2-pistachio">
                     The Meet link appears on your dashboard. No payment needed.
                   </p>
+                  <a
+                    href={waLink(s.whatsapp_number, "Hi, I want to join the free BMDC workshop.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={btn("secondary", "md", "mt-4 w-full !border-b2-flash/30 !text-b2-flash")}
+                  >
+                    <MessageCircle size={18} /> Ask on WhatsApp · {s.whatsapp_number}
+                  </a>
                 </div>
               </div>
             )}
@@ -193,7 +215,7 @@ export default async function Home() {
         <section id="course" className="px-4 py-16 sm:px-6 md:py-24">
           <div className="mx-auto max-w-[1200px]">
             <SectionTitle
-              eyebrow="The 4-month course"
+              eyebrow="The 4-month online course · April 2027 batch"
               title={
                 <>
                   Everything you need to pass, <em className="hl">in one place.</em>
@@ -336,14 +358,14 @@ export default async function Home() {
               eyebrow="One course, one price"
               title={
                 <>
-                  Join the batch. <em className="hl">Starts {fmtDate(s.batch_start, { year: undefined })}.</em>
+                  Join the April 2027 batch. <em className="hl">Starts {fmtDate(s.batch_start, { year: undefined })}.</em>
                 </>
               }
             />
             <div className="mx-auto mt-10 max-w-[620px]">
               <div className="b2-film spring relative overflow-hidden rounded-[32px] p-6 sm:p-9">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em]">Full 4-month course</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em]">Full 4-month online course · April 2027 batch</p>
                   <span className="flex-none whitespace-nowrap rounded-full bg-b2-flash px-3 py-1 text-xs font-bold text-b2-ink">Save {taka(save)}</span>
                 </div>
                 <div className="mt-5 flex items-end gap-3">
@@ -373,7 +395,7 @@ export default async function Home() {
                   ))}
                 </ul>
                 <ButtonLink href="/enroll" variant="white" size="lg" className="mt-8 w-full !min-h-14 !text-[18px]">
-                  Order now <ArrowRight size={20} />
+                  Join now <ArrowRight size={20} />
                 </ButtonLink>
                 <p className="mt-3 text-center text-sm text-b2-flash/80">Pay with bKash · no account needed to order</p>
               </div>
@@ -440,7 +462,7 @@ export default async function Home() {
         <div className="mx-auto grid max-w-[1200px] gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <B2Logo />
-            <p className="mt-4 max-w-sm text-b2-pistachio">Your gateway to BMDC licence. A 4-month course for doctors who finished their MBBS abroad.</p>
+            <p className="mt-4 max-w-sm text-b2-pistachio">Your gateway to BMDC licence. A 4-month online course for doctors who finished their MBBS abroad. April 2027 batch.</p>
           </div>
           <div>
             <p className="font-semibold">Contact</p>

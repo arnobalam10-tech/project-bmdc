@@ -41,7 +41,7 @@ export default async function McqHub({ searchParams }: { searchParams: Promise<{
     {
       key: "topic",
       title: "Topic-wise",
-      body: "Practise chapter by chapter, from Hepatology to Obstetrics.",
+      body: "Chapter-by-chapter practice, structured according to the BMDC RQE examination pattern.",
       icon: BookOpenCheck,
       meta: `${count("topic").length} chapters`,
     },

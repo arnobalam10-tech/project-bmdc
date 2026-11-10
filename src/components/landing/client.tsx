@@ -203,10 +203,10 @@ export function MobileCtaBar({ price, whatsapp }: { price: number; whatsapp: str
       <div className="flex items-center gap-3 px-4 py-3">
         <div className="leading-tight">
           <p className="text-lg font-semibold">{taka(price)}</p>
-          <p className="text-xs text-b2-pistachio">Batch starts 1 Dec</p>
+          <p className="text-xs text-b2-pistachio">Online · April 2027 batch</p>
         </div>
         <Link href="/enroll" className={btn("primary", "md", "ml-auto flex-1")}>
-          Order now
+          Join now
         </Link>
         <a
           href={`https://wa.me/88${whatsapp.replace(/\D/g, "")}`}
