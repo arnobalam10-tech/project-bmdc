@@ -22,6 +22,8 @@ import { SectionTitle } from "@/components/ui/primitives";
 import { PixelEvent } from "@/components/app/MetaPixel";
 import { COURSE } from "@/lib/pixel";
 import { Header, MobileCtaBar } from "@/components/landing/client";
+import { CourseOutline } from "@/components/landing/CourseOutline";
+import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 import { getSettings, waLink } from "@/lib/settings";
 import { fmtDate, fmtTime, isPast, taka } from "@/lib/format";
 
@@ -100,22 +102,16 @@ export default async function Home() {
               <ButtonLink href="/enroll" size="lg">
                 Join the batch · {taka(s.offer_price)} <ArrowRight size={18} />
               </ButtonLink>
-              {!workshopOver && (
-                <ButtonLink href="/signup?from=workshop" variant="secondary" size="lg" className="!border-b2-flash/35 !text-b2-flash">
-                  Free workshop · {fmtDate(s.workshop_at, { year: undefined, month: "short" })}
-                </ButtonLink>
-              )}
+              <a
+                href={waLink(s.whatsapp_number, "Hi, I have a question about the Project BMDC online course.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={btn("secondary", "lg", "!border-[#25D366] !bg-[#25D366] !text-white hover:!bg-[#1ebe5b]")}
+              >
+                <WhatsAppIcon size={22} /> WhatsApp us · {s.whatsapp_number}
+              </a>
             </div>
-            <a
-              href={waLink(s.whatsapp_number, "Hi, I have a question about the Project BMDC online course.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-[14px] text-b2-flash/85 hover:text-b2-flash sm:mt-4 sm:text-[15px]"
-            >
-              <MessageCircle size={17} className="text-b2-caribbean" />
-              WhatsApp us · <span className="font-semibold">{s.whatsapp_number}</span>
-            </a>
-            <div className="mx-auto mt-3 grid max-w-[420px] grid-cols-3 divide-x divide-b2-flash/15 rounded-2xl border border-b2-flash/15 bg-b2-black/30 py-3 sm:mt-6 sm:max-w-[560px] sm:py-4">
+            <div className="mx-auto mt-5 grid max-w-[420px] grid-cols-3 divide-x divide-b2-flash/15 rounded-2xl border border-b2-flash/15 bg-b2-black/30 py-3 sm:mt-6 sm:max-w-[560px] sm:py-4">
               {[
                 ["48", "live classes"],
                 ["2017–25", "past papers"],
@@ -290,6 +286,22 @@ export default async function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ───────── COURSE OUTLINE ───────── */}
+        <section id="outline" className="px-4 py-8 sm:px-6 sm:py-16 md:py-24">
+          <div className="mx-auto max-w-[1200px]">
+            <SectionTitle
+              eyebrow="Course outline"
+              title={
+                <>
+                  Week by week, <em className="hl">start to finish.</em>
+                </>
+              }
+              sub={`Medicine first, then Surgery, Basic Sciences, Pediatrics, Gynae and Obs. Every class live on Google Meet and recorded. Starts ${fmtDate(s.batch_start, { year: undefined })}.`}
+            />
+            <CourseOutline />
           </div>
         </section>
 
