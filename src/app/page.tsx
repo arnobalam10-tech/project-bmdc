@@ -99,19 +99,25 @@ export default async function Home() {
               <strong className="font-semibold text-b2-flash">{fmtDate(s.batch_start, { year: undefined })}</strong>.
             </p>
             <div className="mx-auto mt-5 grid max-w-[420px] gap-2.5 sm:mt-8 sm:flex sm:max-w-none sm:justify-center sm:gap-3">
-              <ButtonLink href="/enroll" size="lg">
+              <ButtonLink href="/enroll" variant="white" size="lg">
                 Join the batch · {taka(s.offer_price)} <ArrowRight size={18} />
               </ButtonLink>
               <a
-                href={waLink(s.whatsapp_number, "Hi, I have a question about the Project BMDC online course.")}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/group"
                 className={btn("secondary", "lg", "!border-[#25D366] !bg-[#25D366] !text-white hover:!bg-[#1ebe5b]")}
               >
-                <WhatsAppIcon size={22} /> WhatsApp us · {s.whatsapp_number}
+                <WhatsAppIcon size={22} /> Join our free WhatsApp group
               </a>
             </div>
-            <div className="mx-auto mt-5 grid max-w-[420px] grid-cols-3 divide-x divide-b2-flash/15 rounded-2xl border border-b2-flash/15 bg-b2-black/30 py-3 sm:mt-6 sm:max-w-[560px] sm:py-4">
+            <a
+              href={waLink(s.whatsapp_number, "Hi, I have a question about the Project BMDC online course.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-flex min-h-10 items-center gap-1.5 text-[14px] text-b2-flash/80 hover:text-b2-flash sm:mt-3"
+            >
+              Questions? Message us · <span className="font-semibold">{s.whatsapp_number}</span>
+            </a>
+            <div className="mx-auto mt-3 grid max-w-[420px] grid-cols-3 divide-x divide-b2-flash/15 rounded-2xl border border-b2-flash/15 bg-b2-black/30 py-3 sm:mt-6 sm:max-w-[560px] sm:py-4">
               {[
                 ["48", "live classes"],
                 ["2017–25", "past papers"],
@@ -191,11 +197,11 @@ export default async function Home() {
                   <div className="mt-3 sm:mt-4">
                     <Countdown to={s.workshop_at} size="lg" doneLabel="Workshop is live" />
                   </div>
-                  <Link href="/signup?from=workshop" className={btn("primary", "lg", "mt-5 w-full sm:mt-8")}>
-                    Sign up free & get the workshop link
-                  </Link>
+                  <a href="/group" className={btn("secondary", "lg", "mt-5 w-full !border-[#25D366] !bg-[#25D366] !text-white hover:!bg-[#1ebe5b] sm:mt-8")}>
+                    <WhatsAppIcon size={22} /> Join our WhatsApp group
+                  </a>
                   <p className="mt-2 text-center text-[13px] text-b2-pistachio sm:mt-3 sm:text-sm">
-                    The Meet link appears on your dashboard. No payment needed.
+                    The Google Meet link is shared in the group. No payment needed.
                   </p>
                   <a
                     href={waLink(s.whatsapp_number, "Hi, I want to join the free BMDC workshop.")}
@@ -467,6 +473,9 @@ export default async function Home() {
               <ButtonLink href="/enroll" size="lg">
                 Join the batch
               </ButtonLink>
+              <a href="/group" className={btn("secondary", "lg", "!border-[#25D366] !bg-[#25D366] !text-white hover:!bg-[#1ebe5b]")}>
+                <WhatsAppIcon size={20} /> Join our WhatsApp group
+              </a>
               <ButtonLink href={waLink(s.whatsapp_number, "Hi, I have a question about Project BMDC.")} external variant="secondary" size="lg">
                 <MessageCircle size={18} /> Ask on WhatsApp
               </ButtonLink>

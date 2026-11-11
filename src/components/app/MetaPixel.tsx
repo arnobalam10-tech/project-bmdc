@@ -19,6 +19,12 @@ export function track(event: string, params?: Record<string, unknown>, eventId?:
   window.fbq("track", event, params ?? {}, eventId ? { eventID: eventId } : undefined);
 }
 
+/** Fire a custom pixel event (e.g. JoinWhatsAppGroup). Safe to call when the pixel is off. */
+export function trackCustom(event: string, params?: Record<string, unknown>) {
+  if (!PIXEL_ID || typeof window === "undefined" || !window.fbq) return;
+  window.fbq("trackCustom", event, params ?? {});
+}
+
 /** Loads the Meta pixel once, sends PageView on every route change and Contact on WhatsApp taps. */
 export function MetaPixel() {
   const path = usePathname();

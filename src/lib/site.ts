@@ -30,3 +30,6 @@ export function waNumber(local: string) {
 export function waLink(local: string, text?: string) {
   return `https://wa.me/${waNumber(local)}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 }
+
+/** Free WhatsApp community group. Link to /group (not this URL) so the pixel records the join tap. */
+export const WA_GROUP_URL = "https://chat.whatsapp.com/HH20ciIYwm86Iaz6FU2h8b";
