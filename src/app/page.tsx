@@ -49,7 +49,7 @@ const FEATURES = [
   { icon: PlayCircle, title: "Every class recorded", body: "Missed one? Rewatch any class, chapter by chapter, any time." },
   { icon: ClipboardList, title: "All previous BMDC papers", body: "Structured according to the BMDC exam pattern." },
   { icon: BookOpenCheck, title: "Topic-wise MCQ practice", body: "True/False MCQs by chapter. Instant answers and explanations after every question." },
-  { icon: Timer, title: "Real timed mock exams", body: "100 questions, 100 minutes, the exact RQE marking. Know your score before exam day." },
+  { icon: Timer, title: "Real timed mock exams", body: "100 questions, 100 minutes, the exact BMDC exam marking. Know your score before exam day." },
   { icon: FileText, title: "Chapter-wise notes", body: "Clean, exam-focused PDF notes for every chapter, inside the platform." },
 ];
 
@@ -91,7 +91,7 @@ export default async function Home() {
               <span className="rounded-full border border-b2-flash/25 px-2.5 py-1 text-b2-flash/90 sm:px-3.5 sm:py-1.5">100% online</span>
             </div>
             <h1 className="mt-4 text-[40px] font-semibold leading-[1] tracking-[-0.04em] sm:mt-5 sm:text-6xl md:text-[76px]">
-              Pass the BMDC RQE <br />
+              Pass the BMDC <br className="sm:hidden" />Licensing Exam <br />
               <em className="hl">in one attempt.</em>
             </h1>
             <p className="mx-auto mt-3 max-w-[640px] text-[15px] leading-relaxed text-b2-flash/80 sm:mt-5 sm:text-[17px] md:text-lg">
@@ -172,7 +172,7 @@ export default async function Home() {
                     </span>
                   </div>
                   <h2 className="mt-2 text-[23px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[30px] md:text-[44px]">
-                    Workshop: how to pass the BMDC RQE in{" "}
+                    Workshop: how to pass the BMDC Licensing Exam in{" "}
                     <span className="underline decoration-b2-caribbean decoration-4 underline-offset-[6px]">one attempt.</span>
                   </h2>
                   <p className="mt-3 text-[15px] text-b2-flash/90 sm:mt-4 sm:text-lg">
@@ -181,7 +181,7 @@ export default async function Home() {
                   </p>
                   <ul className="mt-4 space-y-2 text-[14.5px] sm:mt-6 sm:space-y-3 sm:text-[16px]">
                     {[
-                      "How the RQE is set and marked, and how to beat the negative marking",
+                      "How the BMDC licensing exam is set and marked, and how to beat the negative marking",
                       "The 4-month plan: what to study, in what order",
                       "Live Q&A with Dr. Nafisa Alam and Dr. Omar",
                     ].map((t) => (
@@ -252,7 +252,7 @@ export default async function Home() {
               eyebrow="Know the exam"
               title={
                 <>
-                  How the BMDC RQE is <em className="hl">marked.</em>
+                  How the BMDC licensing exam is <em className="hl">marked.</em>
                 </>
               }
               sub={
@@ -324,7 +324,7 @@ export default async function Home() {
                 not a lost mark.
               </p>
               <ul className="mt-4 space-y-2 text-[14.5px] sm:mt-6 sm:space-y-3 sm:text-base">
-                {["Practice mode: instant answer + explanation", "Exam mode: timed, flag & review, RQE marking", "Track your accuracy subject by subject"].map((t) => (
+                {["Practice mode: instant answer + explanation", "Exam mode: timed, flag & review, real exam marking", "Track your accuracy subject by subject"].map((t) => (
                   <li key={t} className="flex gap-3">
                     <Sparkles className="mt-0.5 flex-none text-b2-caribbean" size={18} />
                     {t}
@@ -405,7 +405,7 @@ export default async function Home() {
                     "Every class recorded",
                     "All previous papers 2017–2025",
                     "Topic-wise MCQs with explanations",
-                    "Timed mock exams, RQE marking",
+                    "Timed mock exams, real exam marking",
                     "Chapter-wise notes",
                     `Access until ${fmtDate(s.default_access_end)}`,
                     "Mentors who passed in one attempt",

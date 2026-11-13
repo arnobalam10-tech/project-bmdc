@@ -28,7 +28,7 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 type Item = { href: string; label: string; icon: LucideIcon };
 
 export const STUDENT_NAV: Item[] = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/dashboard", label: "Home", icon: LayoutDashboard },
   { href: "/classes", label: "Classes", icon: Video },
   { href: "/mcq", label: "MCQ", icon: ClipboardList },
   { href: "/notes", label: "Notes", icon: FileText },
