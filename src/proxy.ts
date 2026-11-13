@@ -12,6 +12,7 @@ const AUTH_PAGES = /^\/(login|signup)(\/|$)/;
  *  2. gives every browser a long-lived device id
  *  3. guards /dashboard… and /admin… (must be signed in)
  *  4. enforces the one-device lock via the claim_device() database function
+ *  5. sends signed-in visitors from / (and /login, /signup) to /dashboard
  */
 export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -100,7 +101,8 @@ export async function proxy(request: NextRequest) {
     }
   }
 
-  if (user && AUTH_PAGES.test(path)) {
+  // signed-in visitors skip the landing page and go straight to their portal
+  if (user && (path === "/" || AUTH_PAGES.test(path))) {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
     url.search = "";
