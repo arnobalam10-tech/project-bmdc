@@ -14,7 +14,7 @@ export default async function DeckPage({ params }: { params: Promise<{ slug: str
   const { supabase, profile, full } = await requireUser();
   const { data: chapter } = await supabase.from("chapters").select("id").eq("slug", slug).maybeSingle();
   if (!chapter) notFound();
-  const { data, error } = await supabase.rpc("get_flashcards", { p_chapter_id: chapter.id });
+  const { data, error } = await supabase.rpc("get_topic_cards",{ p_chapter_id: chapter.id });
   if (error || !data) notFound();
   const d = data as { deck: { chapter: string; subject: string; total: number }; cards: Card[] };
   const locked = d.deck.total - d.cards.length;

@@ -11,7 +11,7 @@ type Deck = { chapter_id: string; chapter: string; slug: string; subject: string
 
 export default async function FlashcardsPage() {
   const { supabase, full } = await requireUser();
-  const { data } = await supabase.rpc("get_flashcard_decks");
+  const { data } = await supabase.rpc("get_topic_decks");
   const decks = (data ?? []) as Deck[];
   const groups = new Map<string, Deck[]>();
   for (const d of decks) groups.set(d.subject, [...(groups.get(d.subject) ?? []), d]);
@@ -22,7 +22,7 @@ export default async function FlashcardsPage() {
       <BackLink href="/dashboard" label="Home" />
       <PageHeader
         title="Flashcards"
-        sub={`${totalCards.toLocaleString()} cards made from our MCQs, one deck per topic. Tap a card to see the answer.`}
+        sub={`${totalCards.toLocaleString()} quick-revision cards built from every BMDC question. See a topic, recall the points, flip to check.`}
       />
       {decks.length === 0 ? (
         <EmptyState title="No decks yet." sub="Flashcards appear as MCQs are added." />

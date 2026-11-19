@@ -2,17 +2,17 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Check, Lightbulb, RotateCcw, Shuffle, Undo2, X } from "lucide-react";
+import { Check, Lightbulb, RotateCcw, Shuffle, Undo2 } from "lucide-react";
 import { btn } from "@/components/ui/Button";
 import { B2Mark } from "@/components/brand/B2";
 
+/** A topic revision card: the points to recall and a few extra notes (no MCQ options). */
 export type Card = {
   id: string;
-  stem: string;
-  pearl: string | null;
-  pyq_year: number | null;
-  pyq_session: string | null;
-  options: { label: string; text: string; is_true: boolean }[];
+  title: string;
+  points: string[];
+  notes: string[];
+  years: number[];
 };
 
 function shuffled<T>(a: T[]) {
@@ -25,7 +25,7 @@ function shuffled<T>(a: T[]) {
 }
 
 /**
- * Topic flashcards: front = the MCQ stem, back = which statements are true/false + the pearl.
+ * Topic flashcards: front = a topic ("Causes of exudative ascites"), back = the points to know + extra notes.
  * "Got it" removes the card from this round; "Again" sends it to the back of the pile.
  * Tap / Space flips; on the back, swipe right or → = got it, swipe left or ← = again.
  */
@@ -129,7 +129,8 @@ export function FlashcardDeck({
     );
   }
 
-  const when = card.pyq_year ? `${card.pyq_session ?? ""} ${card.pyq_year}`.trim() : null;
+  const asked = card.years.length ? `Asked in BMDC ${card.years.join(", ")}` : null;
+  const n = card.points.length;
   const done = total - queue.length;
 
   return (
@@ -189,40 +190,43 @@ export function FlashcardDeck({
           {/* front */}
           <div className="col-start-1 row-start-1 flex min-h-[340px] flex-col rounded-[28px] border border-b2-border bg-b2-dark p-6 shadow-xl [backface-visibility:hidden] sm:min-h-[380px] sm:p-8">
             <div className="flex items-center justify-between gap-2 text-xs text-b2-pistachio">
-              <span className="rounded-full bg-[#7C9CFF]/15 px-2.5 py-1 font-semibold text-[#5B7BE0]">Question</span>
-              {when && <span>BMDC {when}</span>}
+              <span className="rounded-full bg-[#7C9CFF]/15 px-2.5 py-1 font-semibold text-[#5B7BE0]">Topic</span>
+              {asked && <span className="text-right">{asked}</span>}
             </div>
-            <p className="my-auto py-6 text-center text-[24px] font-semibold leading-snug tracking-[-0.01em] sm:text-[28px]">{card.stem}</p>
-            <p className="text-center text-sm text-b2-stone">Tap to see the answer</p>
+            <p className="my-auto py-6 text-center text-[26px] font-semibold leading-snug tracking-[-0.01em] sm:text-[30px]">{card.title}</p>
+            <p className="text-center text-sm text-b2-stone">
+              {n > 0 ? `Recall ${n} key point${n > 1 ? "s" : ""}, then tap` : "Recall what you know, then tap"}
+            </p>
           </div>
 
           {/* back */}
           <div className="col-start-1 row-start-1 flex min-h-[340px] flex-col rounded-[28px] border border-b2-caribbean/40 bg-b2-dark p-5 shadow-xl [backface-visibility:hidden] [transform:rotateY(180deg)] sm:min-h-[380px] sm:p-7">
-            <p className="text-[15px] font-semibold leading-snug text-b2-pistachio">{card.stem}</p>
-            <ul className="mt-3 space-y-2">
-              {card.options.map((o) => (
-                <li
-                  key={o.label}
-                  className={`flex items-start gap-3 rounded-2xl border px-3 py-2.5 ${
-                    o.is_true ? "border-b2-caribbean/40 bg-b2-caribbean/10" : "border-b2-border bg-b2-black/30"
-                  }`}
-                >
-                  <span
-                    className={`mt-0.5 grid size-6 flex-none place-items-center rounded-full ${
-                      o.is_true ? "bg-b2-caribbean text-b2-ink" : "bg-[#FF6B6B]/20 text-[#E5484D]"
-                    }`}
-                  >
-                    {o.is_true ? <Check size={15} strokeWidth={3} /> : <X size={15} strokeWidth={3} />}
-                  </span>
-                  <span className="flex-1 text-[15px] leading-snug">{o.text}</span>
-                  <span className={`text-xs font-bold ${o.is_true ? "text-b2-caribbean" : "text-[#E5484D]"}`}>{o.is_true ? "T" : "F"}</span>
-                </li>
-              ))}
-            </ul>
-            {card.pearl && (
-              <div className="mt-3 flex gap-2.5 rounded-2xl bg-[#F5B13D]/10 p-3 text-[14px] leading-snug">
-                <Lightbulb size={18} className="mt-0.5 flex-none text-[#F5B13D]" />
-                <span>{card.pearl}</span>
+            <p className="text-[17px] font-semibold leading-snug">{card.title}</p>
+            {n > 0 && (
+              <ul className="mt-3 space-y-1.5">
+                {card.points.map((p, k) => (
+                  <li key={k} className="flex items-start gap-2.5 text-[15.5px] leading-snug">
+                    <span className="mt-0.5 grid size-5 flex-none place-items-center rounded-full bg-b2-caribbean text-b2-ink">
+                      <Check size={13} strokeWidth={3} />
+                    </span>
+                    <span className="flex-1">{p}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {card.notes.length > 0 && (
+              <div className="mt-4 rounded-2xl bg-[#F5B13D]/10 p-3.5">
+                <p className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#C98A12]">
+                  <Lightbulb size={14} /> Also remember
+                </p>
+                <ul className="space-y-1.5 text-[14px] leading-snug">
+                  {card.notes.map((t, k) => (
+                    <li key={k} className="flex gap-2">
+                      <span className="mt-[7px] size-1.5 flex-none rounded-full bg-[#F5B13D]" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
           </div>
