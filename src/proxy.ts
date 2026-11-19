@@ -2,7 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 export const DEVICE_COOKIE = "bmdc_did";
-const STUDENT = /^\/(dashboard|classes|mcq|notes|profile|leaderboard|onboarding)(\/|$)/;
+const STUDENT = /^\/(dashboard|classes|mcq|notes|profile|leaderboard|onboarding|mistakes|flashcards)(\/|$)/;
 const ADMIN = /^\/admin(\/|$)/;
 const AUTH_PAGES = /^\/(login|signup)(\/|$)/;
 

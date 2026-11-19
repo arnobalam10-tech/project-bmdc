@@ -62,6 +62,8 @@ export function parentOf(path: string): { href: string; label: string } | null {
   if (seg[0] === "mcq" && seg[1]) return { href: "/mcq", label: "MCQ" };
   if (seg[0] === "notes" && seg[1]) return { href: "/notes", label: "Notes" };
   if (seg[0] === "leaderboard") return { href: "/profile", label: "Profile" };
+  if (seg[0] === "flashcards" && seg[1]) return { href: "/flashcards", label: "Flashcards" };
+  if (seg[0] === "flashcards" || seg[0] === "mistakes") return { href: "/dashboard", label: "Home" };
   if (seg[0] === "admin" && seg[1] === "students" && seg[2]) return { href: "/admin/students", label: "Students" };
   return null;
 }

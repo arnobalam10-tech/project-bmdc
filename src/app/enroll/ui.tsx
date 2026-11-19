@@ -10,7 +10,7 @@ import { fmtDate, fmtDateTime, taka } from "@/lib/format";
 export const INCLUDED = [
   "48 live classes on Google Meet",
   "Every class recorded",
-  "All previous papers 2017–2025",
+  "All previous papers 2017–2026",
   "Topic-wise MCQs with explanations",
   "Timed mock exams with RQE marking",
   "Chapter-wise notes",

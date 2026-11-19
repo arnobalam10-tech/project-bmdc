@@ -403,7 +403,7 @@ export default async function Home() {
                   {[
                     "48 live classes on Google Meet",
                     "Every class recorded",
-                    "All previous papers 2017–2025",
+                    "All previous papers 2017–2026",
                     "Topic-wise MCQs with explanations",
                     "Timed mock exams, real exam marking",
                     "Chapter-wise notes",

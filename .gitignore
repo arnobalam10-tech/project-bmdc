@@ -44,3 +44,4 @@ next-env.d.ts
 LOGO/
 SOCIAL/
 !.env.example
+.demo-student.local

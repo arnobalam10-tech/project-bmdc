@@ -21,9 +21,11 @@ type Tile = { href: string; title: string; sub: string; icon: string; tone: stri
 
 /** Microsoft Fluent Emoji 3D (MIT, github.com/microsoft/fluentui-emoji), one soft tint per tile. */
 const TILES: Tile[] = [
-  { href: "/mcq/pyq", title: "Past papers", sub: "BMDC questions 2017–2025", icon: "clipboard", tone: "bg-[#2CC295]/12" },
+  { href: "/mcq/pyq", title: "Past papers", sub: "BMDC questions 2017–2026", icon: "clipboard", tone: "bg-[#2CC295]/12" },
   { href: "/mcq/topic", title: "Topic-wise MCQs", sub: "Practise chapter by chapter", icon: "open_book", tone: "bg-[#5B9BFF]/12" },
   { href: "/mcq/model", title: "Mock exams", sub: "100 questions · 100 minutes", icon: "stopwatch", tone: "bg-[#F5B13D]/14" },
+  { href: "/mistakes", title: "My mistakes", sub: "Re-try what you got wrong", icon: "bullseye", tone: "bg-[#FF6B6B]/12" },
+  { href: "/flashcards", title: "Flashcards", sub: "Quick revision by topic", icon: "card_index", tone: "bg-[#7C9CFF]/12" },
   { href: "/classes?tab=recorded", title: "Recorded classes", sub: "Rewatch any class", icon: "clapper_board", tone: "bg-[#FF7A90]/12" },
   { href: "/notes", title: "Notes", sub: "Chapter-wise PDF notes", icon: "memo", tone: "bg-[#A98BFF]/12" },
   { href: "/classes", title: "Live classes", sub: "Google Meet links", icon: "video_camera", tone: "bg-[#00DF81]/12" },
@@ -54,7 +56,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       })
     );
   }
-  const [s, sessionsRes, lastAttemptRes, lastWatchRes, pendingRes] = await Promise.all([
+  const [s, sessionsRes, lastAttemptRes, lastWatchRes, pendingRes, mistakesRes] = await Promise.all([
     getSettings(),
     supabase.rpc("get_live_sessions", { p_include_past: false }),
     supabase
@@ -72,7 +74,9 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
     full
       ? Promise.resolve({ data: null })
       : supabase.from("orders").select("number,bkash_number").eq("status", "pending").limit(1).maybeSingle(),
+    supabase.from("mistakes").select("question_id", { count: "exact", head: true }).eq("user_id", user.id).is("resolved_at", null),
   ]);
+  const openMistakes = mistakesRes.count ?? 0;
   const pendingOrder = pendingRes.data as { number: number; bkash_number: string } | null;
   const next = ((sessionsRes.data ?? []) as LiveSession[])[0];
   const lastAttempt = lastAttemptRes.data as { id: string; mode: string; submitted_at: string | null; question_sets: { title: string } | null } | null;
@@ -108,8 +112,13 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
             <Link
               key={href}
               href={href}
-              className="group flex flex-col gap-3 rounded-[20px] border border-b2-border bg-b2-dark p-4 transition-colors hover:border-b2-caribbean/50 active:scale-[0.99] sm:p-5"
+              className="group relative flex flex-col gap-3 rounded-[20px] border border-b2-border bg-b2-dark p-4 transition-colors hover:border-b2-caribbean/50 active:scale-[0.99] sm:p-5"
             >
+              {href === "/mistakes" && openMistakes > 0 && (
+                <span className="tabular absolute right-3 top-3 rounded-full bg-[#FF6B6B] px-2.5 py-0.5 text-xs font-semibold text-white">
+                  {openMistakes}
+                </span>
+              )}
               <span className={`grid size-14 place-items-center rounded-2xl ${tone}`}>
                 <Icon3D name={icon} />
               </span>
