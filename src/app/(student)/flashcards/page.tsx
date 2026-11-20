@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight, Lock } from "lucide-react";
 import { requireUser } from "@/lib/access";
+import { getSettings } from "@/lib/settings";
 import { BackLink } from "@/components/app/BackLink";
+import { EnrollButton } from "@/components/enroll/Enroll";
+import { btn } from "@/components/ui/Button";
 import { EmptyState, PageHeader } from "@/components/ui/primitives";
 
 export const metadata: Metadata = { title: "Flashcards" };
@@ -10,7 +13,7 @@ export const metadata: Metadata = { title: "Flashcards" };
 type Deck = { chapter_id: string; chapter: string; slug: string; subject: string; total: number; open: number };
 
 export default async function FlashcardsPage() {
-  const { supabase, full } = await requireUser();
+  const { supabase, profile, full } = await requireUser();
   const { data } = await supabase.rpc("get_topic_decks");
   const decks = (data ?? []) as Deck[];
   const groups = new Map<string, Deck[]>();
@@ -24,6 +27,15 @@ export default async function FlashcardsPage() {
         title="Flashcards"
         sub={`${totalCards.toLocaleString()} quick-revision cards built from every BMDC question. See a topic, recall the points, flip to check.`}
       />
+      {!full && (
+        <div className="mb-6 flex flex-col gap-3 rounded-[20px] border border-[#7C9CFF]/40 bg-[#7C9CFF]/10 p-4 sm:flex-row sm:items-center sm:p-5">
+          <Lock size={22} className="flex-none text-[#5B7BE0]" />
+          <p className="flex-1 text-[15px]">
+            Flashcards unlock with the April 2027 batch. Enrol to revise every topic.
+          </p>
+          <EnrollButton s={await getSettings()} email={profile.email ?? ""} className={btn("primary", "sm")} />
+        </div>
+      )}
       {decks.length === 0 ? (
         <EmptyState title="No decks yet." sub="Flashcards appear as MCQs are added." />
       ) : (
@@ -48,11 +60,11 @@ export default async function FlashcardsPage() {
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-semibold">{d.chapter}</span>
                         <span className="block text-[13px] text-b2-pistachio">
-                          {full || d.open === d.total ? (
+                          {full ? (
                             `${d.total} cards`
                           ) : (
                             <span className="inline-flex items-center gap-1">
-                              {d.open} of {d.total} free <Lock size={12} />
+                              <Lock size={12} /> {d.total} cards · locked
                             </span>
                           )}
                         </span>

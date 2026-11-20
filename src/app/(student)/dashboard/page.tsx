@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lock } from "lucide-react";
 import { cookies, headers } from "next/headers";
 import { after } from "next/server";
 import { requireUser } from "@/lib/access";
@@ -114,6 +114,11 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
               href={href}
               className="group relative flex flex-col gap-3 rounded-[20px] border border-b2-border bg-b2-dark p-4 transition-colors hover:border-b2-caribbean/50 active:scale-[0.99] sm:p-5"
             >
+              {href === "/flashcards" && !full && (
+                <span className="absolute right-3 top-3 grid size-7 place-items-center rounded-full bg-b2-pine text-b2-pistachio" aria-label="Locked">
+                  <Lock size={14} />
+                </span>
+              )}
               {href === "/mistakes" && openMistakes > 0 && (
                 <span className="tabular absolute right-3 top-3 rounded-full bg-[#FF6B6B] px-2.5 py-0.5 text-xs font-semibold text-white">
                   {openMistakes}
