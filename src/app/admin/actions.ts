@@ -166,7 +166,7 @@ export async function saveRecording(fd: FormData) {
   const { supabase } = await requireAdmin();
   const id = str(fd, "id");
   const row = {
-    chapter_id: str(fd, "chapter_id"),
+    chapter_id: str(fd, "chapter_id") === "none" ? null : str(fd, "chapter_id"),
     title: str(fd, "title"),
     class_code: str(fd, "class_code").toUpperCase() || null,
     duration_sec: Math.round(Number(str(fd, "duration_min") || 0) * 60),

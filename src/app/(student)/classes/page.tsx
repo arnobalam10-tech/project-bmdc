@@ -11,7 +11,7 @@ import { Card, EmptyState, PageHeader, Pill } from "@/components/ui/primitives";
 
 export const metadata: Metadata = { title: "Classes" };
 
-type Rec = { id: string; title: string; duration_sec: number; class_code: string | null; is_free_sample: boolean; sort: number; chapter_id: string };
+type Rec = { id: string; title: string; duration_sec: number; class_code: string | null; is_free_sample: boolean; sort: number; chapter_id: string | null };
 type Chapter = { id: string; name: string; sort: number; subjects: { name: string; sort: number } | null };
 
 export default async function ClassesPage({ searchParams }: { searchParams: Promise<{ tab?: string }> }) {
@@ -125,6 +125,38 @@ export default async function ClassesPage({ searchParams }: { searchParams: Prom
     bySubject.set(k, [...(bySubject.get(k) ?? []), c]);
   }
 
+  const intro = recs.filter((r) => !r.chapter_id);
+  const item = (r: Rec) => {
+    const open = full || r.is_free_sample;
+    const p = progress.get(r.id);
+    return (
+      <li key={r.id}>
+        <Link
+          href={`/classes/${r.id}`}
+          className="flex min-h-16 items-center gap-4 px-5 py-3 hover:bg-white/[.03]"
+        >
+          {open ? (
+            p?.completed ? (
+              <CheckCircle2 className="flex-none text-b2-caribbean" size={24} />
+            ) : (
+              <PlayCircle className="flex-none text-b2-meadow" size={24} />
+            )
+          ) : (
+            <Lock className="flex-none text-b2-stone" size={22} />
+          )}
+          <span className="min-w-0 flex-1">
+            <span className="block truncate">{r.title}</span>
+            <span className="text-xs text-b2-pistachio">
+              {r.class_code ? `${r.class_code.replace("W", "Week ").replace("C", " · Class ")} · ` : ""}
+              {r.duration_sec ? `${Math.round(r.duration_sec / 60)} min` : ""}
+            </span>
+          </span>
+          {r.is_free_sample && !full && <Pill>Free</Pill>}
+        </Link>
+      </li>
+    );
+  };
+
   return (
     <>
       <PageHeader title="Recorded classes" sub="Every class, chapter by chapter. Rewatch any time." />
@@ -133,6 +165,14 @@ export default async function ClassesPage({ searchParams }: { searchParams: Prom
         <EmptyState title="Recordings will appear here after each class." sub={`The batch starts on 1 December. Your first class recording lands right after the first live class.`} />
       ) : (
         <div className="space-y-8">
+          {intro.length > 0 && (
+            <section>
+              <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-b2-caribbean">Start here</h2>
+              <ul className="divide-y divide-b2-divider overflow-hidden rounded-[20px] border border-b2-border bg-b2-dark">
+                {intro.map(item)}
+              </ul>
+            </section>
+          )}
           {[...bySubject.entries()].map(([subject, chs]) => (
             <section key={subject}>
               <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-b2-caribbean">{subject}</h2>
@@ -146,36 +186,7 @@ export default async function ClassesPage({ searchParams }: { searchParams: Prom
                     <ul className="divide-y divide-b2-divider border-t border-b2-divider">
                       {recs
                         .filter((r) => r.chapter_id === c.id)
-                        .map((r) => {
-                          const open = full || r.is_free_sample;
-                          const p = progress.get(r.id);
-                          return (
-                            <li key={r.id}>
-                              <Link
-                                href={`/classes/${r.id}`}
-                                className="flex min-h-16 items-center gap-4 px-5 py-3 hover:bg-white/[.03]"
-                              >
-                                {open ? (
-                                  p?.completed ? (
-                                    <CheckCircle2 className="flex-none text-b2-caribbean" size={24} />
-                                  ) : (
-                                    <PlayCircle className="flex-none text-b2-meadow" size={24} />
-                                  )
-                                ) : (
-                                  <Lock className="flex-none text-b2-stone" size={22} />
-                                )}
-                                <span className="min-w-0 flex-1">
-                                  <span className="block truncate">{r.title}</span>
-                                  <span className="text-xs text-b2-pistachio">
-                                    {r.class_code ? `${r.class_code.replace("W", "Week ").replace("C", " · Class ")} · ` : ""}
-                                    {r.duration_sec ? `${Math.round(r.duration_sec / 60)} min` : ""}
-                                  </span>
-                                </span>
-                                {r.is_free_sample && !full && <Pill>Free</Pill>}
-                              </Link>
-                            </li>
-                          );
-                        })}
+                        .map(item)}
                     </ul>
                   </details>
                 ))}

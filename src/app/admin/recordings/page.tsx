@@ -8,7 +8,7 @@ import { deleteRecording, saveRecording, toggleFlag } from "../actions";
 
 export const metadata: Metadata = { title: "Recordings" };
 
-type R = { id: string; title: string; chapter_id: string; class_code: string | null; duration_sec: number; bunny_video_id: string | null; sort: number; is_free_sample: boolean; published: boolean };
+type R = { id: string; title: string; chapter_id: string | null; class_code: string | null; duration_sec: number; bunny_video_id: string | null; sort: number; is_free_sample: boolean; published: boolean };
 type Ch = { id: string; name: string; sort: number; class_codes: string[]; subjects: { name: string } | null };
 
 function RecordingForm({ r, chapters }: { r?: R; chapters: Ch[] }) {
@@ -21,7 +21,7 @@ function RecordingForm({ r, chapters }: { r?: R; chapters: Ch[] }) {
       </div>
       <div>
         <label className="b2-label">Chapter</label>
-        <ChapterSelect chapters={chapters} defaultValue={r?.chapter_id} />
+        <ChapterSelect chapters={chapters} defaultValue={r ? r.chapter_id : undefined} noneLabel="Start here (orientation / intro, no chapter)" />
       </div>
       <div>
         <label className="b2-label">Class code (e.g. W1C1)</label>
@@ -91,7 +91,7 @@ export default async function RecordingsAdmin() {
                   <span className="min-w-0 flex-1">
                     <span className="block font-medium">{r.title}</span>
                     <span className="block text-xs text-b2-pistachio">
-                      {chName.get(r.chapter_id)} {r.class_code ? `· ${r.class_code}` : ""} {r.bunny_video_id ? "" : "· no video ID"}
+                      {r.chapter_id ? chName.get(r.chapter_id) : "Start here"} {r.class_code ? `· ${r.class_code}` : ""} {r.bunny_video_id ? "" : "· no video ID"}
                     </span>
                   </span>
                   <form action={toggleFlag}>

@@ -25,7 +25,9 @@ export default async function RecordingPage({ params }: { params: Promise<{ id: 
 
   const chapter = rec.chapters as unknown as { name: string; subjects: { name: string } | null } | null;
   const [{ data: siblings }, { data: prog }] = await Promise.all([
-    supabase.from("recordings").select("id,title,sort").eq("chapter_id", rec.chapter_id).order("sort"),
+    rec.chapter_id
+      ? supabase.from("recordings").select("id,title,sort").eq("chapter_id", rec.chapter_id).order("sort")
+      : supabase.from("recordings").select("id,title,sort").is("chapter_id", null).order("sort"),
     supabase.from("watch_progress").select("last_position").eq("recording_id", id).maybeSingle(),
   ]);
   const idx = (siblings ?? []).findIndex((r) => r.id === id);
@@ -64,7 +66,7 @@ export default async function RecordingPage({ params }: { params: Promise<{ id: 
 
       <div className="mt-5">
         <p className="text-sm text-b2-caribbean">
-          {chapter?.subjects?.name} · {chapter?.name}
+          {chapter ? `${chapter.subjects?.name} · ${chapter.name}` : "Start here"}
           {rec.class_code ? ` · ${rec.class_code}` : ""}
         </p>
         <h1 className="mt-1 text-2xl font-semibold tracking-tight">{rec.title}</h1>
