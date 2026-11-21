@@ -35,7 +35,17 @@ export type AttemptData = {
     server_now: string;
     free_limit: number | null;
   };
-  set: { id: string; title: string; kind: "pyq" | "model" | "topic"; duration_min: number; total_questions: number };
+  set: {
+    id: string;
+    title: string;
+    kind: "pyq" | "model" | "topic";
+    duration_min: number;
+    total_questions: number;
+    hide_results?: boolean;
+    results_published_at?: string | null;
+  };
+  /** submitted, but this mock's results are not published yet */
+  results_hidden?: boolean;
   locked_count: number;
   flags: string[];
   questions: Question[];

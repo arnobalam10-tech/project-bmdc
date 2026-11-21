@@ -4,6 +4,7 @@ import { Alert, EmptyState, PageHeader } from "@/components/ui/primitives";
 import { FlagToggle } from "@/components/admin/ConfirmButton";
 import { setFreeCount, toggleFlag } from "../actions";
 import { SubmitButton } from "@/components/ui/client";
+import { btn } from "@/components/ui/Button";
 
 export const metadata: Metadata = { title: "MCQ sets" };
 
@@ -13,7 +14,7 @@ export default async function McqAdmin() {
   const { supabase } = await requireAdmin();
   const { data } = await supabase
     .from("question_sets")
-    .select("id,title,kind,duration_min,is_free_sample,free_count,published,sort,question_set_items(count)")
+    .select("id,title,kind,duration_min,is_free_sample,free_count,published,sort,hide_results,question_set_items(count)")
     .order("kind")
     .order("sort")
     .order("title");
@@ -45,6 +46,11 @@ export default async function McqAdmin() {
                         {s.count} questions · {s.duration_min} min exam
                       </span>
                     </span>
+                    {s.hide_results && (
+                      <a href={`/admin/mock/${s.id}`} className={btn("primary", "sm")}>
+                        Results
+                      </a>
+                    )}
                     <form action={setFreeCount} className="flex items-center gap-1.5">
                       <input type="hidden" name="id" value={s.id} />
                       <label className="text-xs text-b2-pistachio" htmlFor={`fc-${s.id}`}>

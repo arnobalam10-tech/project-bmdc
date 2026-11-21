@@ -18,7 +18,7 @@ export default async function McqHub({ searchParams }: { searchParams: Promise<{
     : await Promise.all([
         getSettings(),
         freeQuestionCount(supabase, sets),
-        supabase.from("questions").select("id", { count: "exact", head: true }),
+        supabase.from("questions").select("id", { count: "exact", head: true }).not("ext_id", "like", "mock-%"),
       ]);
   const count = (k: string) => sets.filter((s) => s.kind === k);
   const qCount = (k: string) => count(k).reduce((n, s) => n + s.count, 0);

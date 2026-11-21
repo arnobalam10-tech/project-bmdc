@@ -29,7 +29,8 @@ def get_all(path):
 
 d = {
     "chapters": get_all("chapters?select=id,slug,name,subject_id,sort"),
-    "questions": get_all("questions?select=id,ext_id,stem,pearl,chapter_id,pyq_year,pyq_session"),
+    # mock-test questions stay out: their answers must not leak before the results are published
+    "questions": get_all("questions?select=id,ext_id,stem,pearl,chapter_id,pyq_year,pyq_session&ext_id=not.like.mock-*"),
     "options": get_all("question_options?select=question_id,label,text,is_true,explanation"),
 }
 opts = collections.defaultdict(list)

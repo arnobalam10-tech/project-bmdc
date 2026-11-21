@@ -254,3 +254,14 @@ export async function saveSettings(fd: FormData) {
   revalidatePath("/", "layout");
   redirect("/admin/settings?saved=1");
 }
+
+/* ───────── scheduled mocks ───────── */
+
+/** Scores every attempt of a hidden-result mock and shows results, analysis and the leaderboard to students. */
+export async function publishMockResults(fd: FormData) {
+  const { supabase } = await requireAdmin();
+  const id = str(fd, "set_id");
+  const { error } = await supabase.rpc("publish_mock_results", { p_set_id: id });
+  if (error) throw new Error(error.message);
+  revalidatePath(`/admin/mock/${id}`);
+}

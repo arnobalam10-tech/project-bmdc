@@ -30,8 +30,42 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
     return d.attempt.mode === "exam" ? <ExamRunner data={d} locked={locked} /> : <PracticeRunner data={d} locked={locked} />;
   }
 
+  // ───── mock with results not yet published ─────
+  if (d.results_hidden) {
+    return (
+      <div className="space-y-6">
+        <BackLink href="/dashboard" label="Home" />
+        <div className="b2-film spring rounded-[32px] p-6 text-center sm:p-10">
+          <B2Mark className="is-heartbeat mx-auto" size={64} decorative />
+          <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em]">Submitted · {d.set.title}</p>
+          <p className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">Your answers are in ✓</p>
+          <p className="mx-auto mt-3 max-w-md text-b2-flash/85">
+            Results, your rank among everyone who sat it, and a full subject-wise analysis will be published here soon. We&apos;ll
+            let you know.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/dashboard" className={btn("primary", "md")}>
+              Back to Home
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // ───── result ─────
   const a = d.attempt;
+  const board = d.set.hide_results
+    ? (((await supabase.rpc("get_set_leaderboard", { p_set_id: d.set.id, p_limit: 20 })).data ?? []) as {
+        rank: number;
+        display_name: string;
+        score: number;
+        pct: number;
+        is_me: boolean;
+        total: number;
+      }[])
+    : [];
+  const me = board.find((r) => r.is_me);
   const max = a.n_questions;
   const score = Number(a.score ?? 0);
   const pct = max ? Math.round((1000 * score) / max) / 10 : 0;
@@ -66,6 +100,30 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
           {a.mode === "exam" && <span className="rounded-full bg-b2-black/50 px-3 py-1.5">{used} min used</span>}
         </div>
       </div>
+
+      {board.length > 0 && (
+        <div className="rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
+          {me && (
+            <p className="mb-4 text-center">
+              <span className="block text-sm text-b2-pistachio">Your rank</span>
+              <span className="tabular text-4xl font-semibold">
+                #{me.rank} <span className="text-lg font-normal text-b2-pistachio">of {me.total}</span>
+              </span>
+            </p>
+          )}
+          <p className="mb-3 font-semibold">Leaderboard · {d.set.title}</p>
+          <ol className="divide-y divide-b2-border">
+            {board.map((r) => (
+              <li key={`${r.rank}-${r.display_name}-${r.is_me}`} className={`flex items-center gap-3 py-2 text-sm ${r.is_me ? "font-semibold text-b2-caribbean" : ""}`}>
+                <span className="tabular w-8 text-b2-pistachio">#{r.rank}</span>
+                <span className="flex-1 truncate">{r.is_me ? `${r.display_name} (you)` : r.display_name}</span>
+                <span className="tabular">{Number(r.score).toFixed(2)}</span>
+                <span className="tabular w-14 text-right text-b2-pistachio">{r.pct}%</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
 
       {d.locked_count > 0 && (
         <LockedQuestions
@@ -103,12 +161,14 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
         <Link href={`/mcq/attempt/${a.id}/review`} className={btn("primary", "lg", "flex-1")}>
           Review answers & explanations
         </Link>
-        <form action={startAttempt} className="flex-1">
-          <input type="hidden" name="set_id" value={d.set.id} />
-          <SubmitButton name="mode" value={a.mode} variant="secondary" size="lg" className="w-full" pending="Starting">
-            Try again
-          </SubmitButton>
-        </form>
+        {!d.set.hide_results && (
+          <form action={startAttempt} className="flex-1">
+            <input type="hidden" name="set_id" value={d.set.id} />
+            <SubmitButton name="mode" value={a.mode} variant="secondary" size="lg" className="w-full" pending="Starting">
+              Try again
+            </SubmitButton>
+          </form>
+        )}
         <Link href={`/mcq/${d.set.kind}`} className={btn("ghost", "lg", "flex-1")}>
           Back to {sectionLabel}
         </Link>

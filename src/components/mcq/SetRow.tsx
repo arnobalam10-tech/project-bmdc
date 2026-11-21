@@ -12,7 +12,23 @@ export type SetSummary = {
   free_count: number;
   count: number;
   best: number | null; // best exam %
+  opens_at?: string | null; // scheduled mock: not open before this
+  hide_results?: boolean; // one exam attempt, results published later
+  results_published?: boolean;
+  submitted?: boolean; // this student has submitted it
 };
+
+export function fmtOpens(iso: string) {
+  return new Date(iso).toLocaleString("en-GB", {
+    timeZone: "Asia/Dhaka",
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+}
 
 /** How a set looks to this student: fully open, a free preview of the first N questions, or locked. */
 export function setAccess(set: Pick<SetSummary, "is_free_sample" | "free_count" | "count">, full: boolean) {
@@ -52,7 +68,18 @@ export function SetRow({ set, full, enroll }: { set: SetSummary; full: boolean; 
           {set.best !== null && <span className="ml-2 text-b2-caribbean">Best {set.best}%</span>}
         </p>
       </div>
-      {access.mode === "locked" ? (
+      {set.opens_at && new Date(set.opens_at).getTime() > Date.now() ? (
+        <span className="rounded-full border border-b2-border px-3.5 py-2 text-center text-sm font-medium text-b2-pistachio">
+          Opens {fmtOpens(set.opens_at)}
+        </span>
+      ) : set.hide_results ? (
+        <form action={startAttempt}>
+          <input type="hidden" name="set_id" value={set.id} />
+          <SubmitButton name="mode" value="exam" size="sm" className="w-full sm:w-auto" pending="Opening">
+            {set.submitted ? (set.results_published ? "See result" : "Submitted ✓") : "Start mock"}
+          </SubmitButton>
+        </form>
+      ) : access.mode === "locked" ? (
         enroll
       ) : (
         <form action={startAttempt} className="flex gap-2">

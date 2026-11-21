@@ -7,7 +7,9 @@ type Sb = Awaited<ReturnType<typeof createClient>>;
 export async function loadSets(supabase: Sb, kind?: "pyq" | "model" | "topic") {
   let q = supabase
     .from("question_sets")
-    .select("id,title,kind,duration_min,is_free_sample,free_count,sort,pyq_year,subject_id,chapter_id,question_set_items(count)")
+    .select(
+      "id,title,kind,duration_min,is_free_sample,free_count,sort,pyq_year,subject_id,chapter_id,opens_at,hide_results,results_published_at,question_set_items(count)"
+    )
     .order("sort")
     .order("title");
   if (kind) q = q.eq("kind", kind);
@@ -16,7 +18,9 @@ export async function loadSets(supabase: Sb, kind?: "pyq" | "model" | "topic") {
     supabase.from("attempts").select("set_id,score,n_questions").eq("mode", "exam").not("submitted_at", "is", null),
   ]);
   const best = new Map<string, number>();
+  const submitted = new Set((attempts ?? []).map((a) => a.set_id));
   for (const a of attempts ?? []) {
+    if (a.score === null) continue; // mock with unpublished results
     const pct = a.n_questions ? Math.round((1000 * Number(a.score)) / a.n_questions) / 10 : 0;
     best.set(a.set_id, Math.max(best.get(a.set_id) ?? -Infinity, pct));
   }
@@ -29,6 +33,10 @@ export async function loadSets(supabase: Sb, kind?: "pyq" | "model" | "topic") {
     free_count: (s.free_count as number) ?? 0,
     count: (s.question_set_items as unknown as { count: number }[])[0]?.count ?? 0,
     best: best.get(s.id) ?? null,
+    opens_at: (s.opens_at as string | null) ?? null,
+    hide_results: !!s.hide_results,
+    results_published: !!s.results_published_at,
+    submitted: submitted.has(s.id),
     subject_id: s.subject_id as string | null,
     chapter_id: s.chapter_id as string | null,
     sort: s.sort as number,
@@ -38,8 +46,9 @@ export async function loadSets(supabase: Sb, kind?: "pyq" | "model" | "topic") {
 /** Distinct questions a free account can open across all sets (sets overlap: papers vs chapters). */
 export async function freeQuestionCount(
   supabase: Sb,
-  sets: { id: string; free_count: number; is_free_sample: boolean; count: number }[]
+  allSets: { id: string; free_count: number; is_free_sample: boolean; count: number; hide_results?: boolean }[]
 ) {
+  const sets = allSets.filter((s) => !s.hide_results); // scheduled mocks don't count as practice questions
   const maxFree = Math.max(0, ...sets.map((s) => (s.is_free_sample ? s.count : s.free_count)));
   if (!maxFree) return 0;
   const { data } = await supabase.from("question_set_items").select("set_id,question_id,position").lte("position", maxFree);

@@ -27,7 +27,7 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
     loadSets(supabase, kind),
     getSettings(),
     full ? Promise.resolve([]) : loadSets(supabase),
-    full ? Promise.resolve({ count: 0 }) : supabase.from("questions").select("id", { count: "exact", head: true }),
+    full ? Promise.resolve({ count: 0 }) : supabase.from("questions").select("id", { count: "exact", head: true }).not("ext_id", "like", "mock-%"),
   ]);
   const freeQ = full ? 0 : await freeQuestionCount(supabase, allSets);
   const enroll = <EnrollButton s={s} email={profile.email ?? ""} className={btn("primary", "sm")} />;

@@ -10,6 +10,7 @@ import { getSettings } from "@/lib/settings";
 import { firstName, greeting, taka, fmtDate } from "@/lib/format";
 import { StatusBanner } from "@/components/app/StatusBanner";
 import { UpNextRow } from "@/components/app/UpNextRow";
+import { MockAnnouncement, type MockInfo } from "@/components/app/MockAnnouncement";
 import type { LiveSession } from "@/components/app/LiveSessionCard";
 import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 import { EnrollButton } from "@/components/enroll/Enroll";
@@ -56,7 +57,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       })
     );
   }
-  const [s, sessionsRes, lastAttemptRes, lastWatchRes, pendingRes, mistakesRes] = await Promise.all([
+  const [s, sessionsRes, lastAttemptRes, lastWatchRes, pendingRes, mistakesRes, mockRes] = await Promise.all([
     getSettings(),
     supabase.rpc("get_live_sessions", { p_include_past: false }),
     supabase
@@ -75,7 +76,41 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       ? Promise.resolve({ data: null })
       : supabase.from("orders").select("number,bkash_number").eq("status", "pending").limit(1).maybeSingle(),
     supabase.from("mistakes").select("question_id", { count: "exact", head: true }).eq("user_id", user.id).is("resolved_at", null),
+    // the latest scheduled mock (announced on Home)
+    supabase
+      .from("question_sets")
+      .select("id,title,opens_at,duration_min,results_published_at,question_set_items(count),attempts(id,submitted_at,user_id,mode)")
+      .eq("published", true)
+      .eq("hide_results", true)
+      .not("opens_at", "is", null)
+      .eq("attempts.user_id", user.id)
+      .eq("attempts.mode", "exam")
+      .order("opens_at", { ascending: false })
+      .limit(1)
+      .maybeSingle(),
   ]);
+  const m = mockRes.data as {
+    id: string;
+    title: string;
+    opens_at: string;
+    duration_min: number;
+    results_published_at: string | null;
+    question_set_items: { count: number }[];
+    attempts: { id: string; submitted_at: string | null }[];
+  } | null;
+  const mock: MockInfo | null = m
+    ? {
+        id: m.id,
+        title: m.title,
+        opens_at: m.opens_at,
+        duration_min: m.duration_min,
+        count: m.question_set_items[0]?.count ?? 0,
+        published: !!m.results_published_at,
+        attempt: m.attempts[0] ? { id: m.attempts[0].id, submitted: !!m.attempts[0].submitted_at } : null,
+      }
+    : null;
+  // eslint-disable-next-line react-hooks/purity -- server render time, used to sync the countdown
+  const serverNow = Date.now();
   const openMistakes = mistakesRes.count ?? 0;
   const pendingOrder = pendingRes.data as { number: number; bkash_number: string } | null;
   const next = ((sessionsRes.data ?? []) as LiveSession[])[0];
@@ -98,6 +133,8 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
       {welcome === "workshop" && (
         <Alert tone="success">You&apos;re registered for the free workshop. The Google Meet link is under &ldquo;Up next&rdquo; below.</Alert>
       )}
+
+      {mock && <MockAnnouncement mock={mock} serverNow={serverNow} />}
 
       {/* Only shown when something needs attention: a pending order or ended access */}
       {(pendingOrder || status === "expired") && (

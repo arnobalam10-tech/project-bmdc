@@ -13,7 +13,7 @@ export default async function ReviewPage({ params }: { params: Promise<{ id: str
   const { data, error } = await supabase.rpc("get_attempt", { p_attempt_id: id });
   if (error || !data) notFound();
   const d = data as AttemptData;
-  if (!d.attempt.submitted_at) redirect(`/mcq/attempt/${id}`);
+  if (!d.attempt.submitted_at || d.results_hidden) redirect(`/mcq/attempt/${id}`);
 
   return (
     <div>

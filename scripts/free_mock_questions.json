@@ -1,0 +1,1502 @@
+[
+ {
+  "n": 1,
+  "chapter": "hepatology",
+  "stem": "Regarding viral hepatitis:",
+  "options": [
+   "Hepatitis C commonly becomes chronic",
+   "Hepatitis A frequently leads to chronic liver disease",
+   "Hepatitis A is usually transmitted feco-orally",
+   "Hepatitis B can be transmitted vertically and sexually"
+  ],
+  "key": "TFTT",
+  "pearl": "HAV does not cause chronic infection.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 2,
+  "chapter": "eye",
+  "stem": "Refractive media of the eye are",
+  "options": [
+   "Sclera",
+   "Lens",
+   "Retina",
+   "Cornea"
+  ],
+  "key": "FTFT",
+  "pearl": "Others: Aqueous humour, Vitreous humour.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 3,
+  "chapter": "peds-gastro-fluids-pulmonology",
+  "stem": "Features of croup (acute laryngotracheobronchitis) include:",
+  "options": [
+   "High spiking fever from the onset as typical",
+   "Inspiratory stridor",
+   "Barking cough",
+   "Hoarse voice"
+  ],
+  "key": "FTTT",
+  "pearl": "Fever is usually low-grade or absent initially.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 4,
+  "chapter": "perioperative-sutures-onco",
+  "stem": "Advantages of minimal access surgery are",
+  "options": [
+   "Less wound related complications",
+   "Excellent tactile feedback",
+   "Decreased heat loss from body cavities",
+   "Easy retrieval of larger specimens"
+  ],
+  "key": "TFTF",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 5,
+  "chapter": "hematology",
+  "stem": "Vitamin K-dependent clotting factors are:",
+  "options": [
+   "Factor IX",
+   "Factor XI",
+   "Factor II",
+   "Factor VII"
+  ],
+  "key": "TFTT",
+  "pearl": "Factors II, VII, IX, X (and proteins C & S) are vitamin K dependent.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 6,
+  "chapter": "cardiology",
+  "stem": "Major Jones criteria for acute rheumatic fever:",
+  "options": [
+   "Fever",
+   "Erythema marginatum",
+   "Carditis",
+   "Migratory polyarthritis"
+  ],
+  "key": "FTTT",
+  "pearl": "Fever is a minor criterion.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 7,
+  "chapter": "biochemistry",
+  "stem": "Derivative of amino acid tyrosine:",
+  "options": [
+   "Estrogen",
+   "Thyroxin",
+   "Growth hormone",
+   "Epinephrine"
+  ],
+  "key": "FTFT",
+  "pearl": "Tyrosine gives thyroxine, catecholamines (dopamine, noradrenaline, adrenaline) and melanin. Oestrogen is a steroid; GH is a peptide.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 8,
+  "chapter": "preterm-prom-hypertension",
+  "stem": "In eclampsia management:",
+  "options": [
+   "Delivery is the definitive treatment",
+   "Blood pressure control is important",
+   "Ergometrine is first-line for seizure control",
+   "Magnesium sulphate is the anticonvulsant of choice"
+  ],
+  "key": "TTFT",
+  "pearl": "MgSO4 is preferred for seizures; ergometrine is for PPH.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 9,
+  "chapter": "physio-vitamins-forensic-comm-med",
+  "stem": "Vector-borne diseases:",
+  "options": [
+   "Tetanus",
+   "Japanese encephalitis – Culex mosquito",
+   "Malaria – Anopheles mosquito",
+   "Kala-azar – sandfly"
+  ],
+  "key": "FTTT",
+  "pearl": "Tetanus is not vector-borne; it is from environmental spores.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 10,
+  "chapter": "pathology-genetics",
+  "stem": "Autosomal dominant diseases",
+  "options": [
+   "Marfan syndrome",
+   "Cystic fibrosis",
+   "Hereditary spherocytosis",
+   "Hemophilia A"
+  ],
+  "key": "TFTF",
+  "pearl": "Cystic fibrosis: Autosomal recessive; Hemophilia A: X-linked recessive.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 11,
+  "chapter": "respiratory",
+  "stem": "Features of pleural effusion include:",
+  "options": [
+   "Reduced breath sounds on the affected side",
+   "Increased vocal resonance",
+   "Mediastinal shift away from large effusion",
+   "Stony dull percussion note"
+  ],
+  "key": "TFTT",
+  "pearl": "Vocal resonance is decreased.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 12,
+  "chapter": "growth-development-neonatology",
+  "stem": "Signs of proper attachment for breast feeding",
+  "options": [
+   "Whole body supported",
+   "Lower lip turn outwards",
+   "Body close to the mother",
+   "Wide open mouth"
+  ],
+  "key": "FTFT",
+  "pearl": "Whole body supported & body close to mother are proper positioning. Good attachment: baby’s chin touching the breast, mouth open widely, lower lip turned outwards, more areola seen above than below.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 13,
+  "chapter": "physio-vitamins-forensic-comm-med",
+  "stem": "Principles of medical ethics:",
+  "options": [
+   "Justice",
+   "Autonomy",
+   "Non-maleficence",
+   "Beneficence"
+  ],
+  "key": "TTTT",
+  "pearl": "The four classical principles.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 14,
+  "chapter": "hepatobiliary-pancreas-spleen",
+  "stem": "Features of acute cholecystitis include:",
+  "options": [
+   "Painless jaundice is the classic presentation",
+   "Right upper quadrant pain",
+   "Fever may be present",
+   "Murphy’s sign positive"
+  ],
+  "key": "FTTT",
+  "pearl": "Painless jaundice suggests malignancy (e.g., pancreatic head Ca).",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 15,
+  "chapter": "pharmacology",
+  "stem": "First line anti-tubercular drugs include",
+  "options": [
+   "Pyrazinamide",
+   "Isoniazid",
+   "Para aminosalycylic acid (PSA)",
+   "Rifampicin"
+  ],
+  "key": "TTFT",
+  "pearl": "Mnemonic “RIPE”: Rifampicin, Isoniazid, Pyrazinamide, Ethambutol. Others: Streptomycin.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 16,
+  "chapter": "urology-andrology-breast",
+  "stem": "Indications of circumcision are",
+  "options": [
+   "Hypospadias",
+   "Recurrent local foreskin discomfort",
+   "Balanitis",
+   "Recurrent UTI"
+  ],
+  "key": "FTTF",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 17,
+  "chapter": "reproductive-anatomy-physiology",
+  "stem": "Causes of secondary amenorrhoea include:",
+  "options": [
+   "Premature ovarian insufficiency",
+   "Normal regular menstruation",
+   "Polycystic ovary syndrome",
+   "Pregnancy (most common)"
+  ],
+  "key": "TFTT",
+  "pearl": "Amenorrhoea means absence of menstruation.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 18,
+  "chapter": "physio-vitamins-forensic-comm-med",
+  "stem": "Vaccines in Bangladesh EPI schedule include:",
+  "options": [
+   "Oral polio vaccine / IPV",
+   "Measles-Rubella (MR) vaccine",
+   "BCG",
+   "Pentavalent vaccine"
+  ],
+  "key": "TTTT",
+  "pearl": "All are part of the national schedule.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 19,
+  "chapter": "throat",
+  "stem": "White patches in tonsil",
+  "options": [
+   "Vincent angina",
+   "Ludwig’s angina",
+   "Acute follicular tonsillitis",
+   "Diphtheria"
+  ],
+  "key": "TFTT",
+  "pearl": "Others: Glandular fever, Agranulocytosis, Leukemia.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 20,
+  "chapter": "hematology",
+  "stem": "True statements about platelets:",
+  "options": [
+   "Derived from megakaryocytes",
+   "They contain a nucleus like RBCs",
+   "Normal count is 150–400 × 109/L",
+   "They are anucleate cell fragments"
+  ],
+  "key": "TFTT",
+  "pearl": "Platelets are anucleate.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 21,
+  "chapter": "eye",
+  "stem": "The most common ocular manifestation of Graves’ ophthalmopathy is:",
+  "options": [
+   "Cataract",
+   "Glaucoma",
+   "Exophthalmos",
+   "Ptosis"
+  ],
+  "key": "FFTF",
+  "pearl": "Exophthalmos (proptosis) is the commonest sign of Graves' ophthalmopathy; lid retraction and lid lag are also common.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 22,
+  "chapter": "pharmacology",
+  "stem": "Antibiotics that inhibit cell-wall synthesis:",
+  "options": [
+   "Aminoglycosides (gentamicin)",
+   "Vancomycin",
+   "Cephalosporins",
+   "Penicillins"
+  ],
+  "key": "FTTT",
+  "pearl": "Aminoglycosides inhibit protein synthesis (30S subunit).",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 23,
+  "chapter": "growth-development-neonatology",
+  "stem": "Milestone of development:",
+  "options": [
+   "Recognize mother – 1 month",
+   "Primitive reflexes are gone – 3 months",
+   "Straight back – 5 months",
+   "Pincer grip – 9 months"
+  ],
+  "key": "FTFT",
+  "pearl": "Straight back: 8 months; Recognize mother: 3 months.",
+  "key_by": "source",
+  "review": true
+ },
+ {
+  "n": 24,
+  "chapter": "aph-pph-obstructed-operative",
+  "stem": "Causes of postpartum haemorrhage include:",
+  "options": [
+   "Genital tract trauma",
+   "Uterine atony",
+   "Premature rupture of membranes as the direct cause",
+   "Retained placental tissue"
+  ],
+  "key": "TTFT",
+  "pearl": "PROM is a risk factor for infection/other issues, not a direct cause of PPH.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 25,
+  "chapter": "respiratory",
+  "stem": "In COPD:",
+  "options": [
+   "Airflow obstruction is fully reversible",
+   "Long-term oxygen may be indicated in severe hypoxia",
+   "FEV1/FVC ratio is reduced",
+   "Smoking is the major risk factor"
+  ],
+  "key": "FTTT",
+  "pearl": "Obstruction is not fully reversible (unlike asthma).",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 26,
+  "chapter": "immuno-micro",
+  "stem": "Severe Dengue fever:",
+  "options": [
+   "Shock",
+   "Ascites",
+   "A > 2% rise in Hct for age & sex",
+   "Pleural effusion"
+  ],
+  "key": "TFFF",
+  "pearl": "Ascites, pleural effusion, and rise in Hct are Dengue with warning signs.",
+  "key_by": "source",
+  "review": true
+ },
+ {
+  "n": 27,
+  "chapter": "gi-surgery",
+  "stem": "Signs of appendicitis:",
+  "options": [
+   "Obturator sign",
+   "Murphy’s sign",
+   "Rovsing sign",
+   "Psoas sign"
+  ],
+  "key": "TFTT",
+  "pearl": "Appendicitis signs: Rovsing, psoas, obturator, McBurney's point tenderness. Murphy's sign is for acute cholecystitis.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 28,
+  "chapter": "urology-andrology-breast",
+  "stem": "Radio-opaque urinary tract stones are",
+  "options": [
+   "Magnesium ammonium phosphate",
+   "Calcium oxalate",
+   "Cystine",
+   "Calcium phosphate"
+  ],
+  "key": "TTTT",
+  "pearl": null,
+  "key_by": "source",
+  "review": true
+ },
+ {
+  "n": 29,
+  "chapter": "gastroenterology",
+  "stem": "Causes of upper gastrointestinal bleeding include:",
+  "options": [
+   "Diverticular disease of colon",
+   "Mallory-Weiss tear",
+   "Peptic ulcer",
+   "Oesophageal varices"
+  ],
+  "key": "FTTT",
+  "pearl": "Colonic diverticula cause lower GI bleeding.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 30,
+  "chapter": "cardiology",
+  "stem": "Typical features of mitral stenosis:",
+  "options": [
+   "Opening snap",
+   "Laterally displaced apex beat",
+   "Loud first heart sound (S1)",
+   "Mid-diastolic rumbling murmur at the apex"
+  ],
+  "key": "TFTT",
+  "pearl": "Apex is usually not displaced (tapping apex).",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 31,
+  "chapter": "eye",
+  "stem": "Causes of Complicated Cataract",
+  "options": [
+   "Retinal detachment",
+   "Diabetes mellitus",
+   "Anterior segment ischemia",
+   "Degenerative myopia"
+  ],
+  "key": "TFTT",
+  "pearl": "Others: Pathological myopia, Acute Congestive angle closure Glaucoma.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 32,
+  "chapter": "peds-gastro-fluids-pulmonology",
+  "stem": "Severe acute malnutrition criteria:",
+  "options": [
+   "MUAC < 115 mm in children 6–59 months",
+   "Visible severe wasting",
+   "Mild underweight only",
+   "Weight-for-height < −3 SD or bilateral pitting oedema"
+  ],
+  "key": "TTFT",
+  "pearl": "Severe criteria are as listed.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 33,
+  "chapter": "respiratory",
+  "stem": "In acute severe asthma management:",
+  "options": [
+   "Systemic corticosteroids are important",
+   "Sedatives are routinely given to calm the patient",
+   "High-flow oxygen is given",
+   "Nebulised salbutamol is used"
+  ],
+  "key": "TFTT",
+  "pearl": "Sedatives are dangerous and contraindicated.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 34,
+  "chapter": "aph-pph-obstructed-operative",
+  "stem": "Indications for caesarean section include:",
+  "options": [
+   "All cases of breech presentation mandatorily",
+   "Previous classical caesarean section",
+   "Cephalopelvic disproportion",
+   "Fetal distress in labour (selected cases)"
+  ],
+  "key": "FTTT",
+  "pearl": "Not all breech cases require CS; selection is possible.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 35,
+  "chapter": "immuno-micro",
+  "stem": "Staphylococcus aureus:",
+  "options": [
+   "Can produce toxins (TSST-1, enterotoxins)",
+   "Common cause of skin and soft-tissue infections",
+   "Always sensitive to penicillin",
+   "Gram-positive coccus"
+  ],
+  "key": "TTFT",
+  "pearl": "Many strains produce β-lactamase or are MRSA.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 36,
+  "chapter": "hematology",
+  "stem": "Features of DIC include",
+  "options": [
+   "Increased fibrinogen level",
+   "Spontaneous bleeding",
+   "APTT is normal",
+   "Low platelet"
+  ],
+  "key": "FTFT",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 37,
+  "chapter": "urology-andrology-breast",
+  "stem": "Sites of undescended testis are",
+  "options": [
+   "Perineum",
+   "Inguinal canal",
+   "Root of the penis",
+   "Deep inguinal ring"
+  ],
+  "key": "FTFT",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 38,
+  "chapter": "endocrinology",
+  "stem": "Hormones secreted from posterior pituitary gland are:",
+  "options": [
+   "TSH",
+   "FSH",
+   "ADH",
+   "GH"
+  ],
+  "key": "FFTF",
+  "pearl": "Posterior pituitary releases ADH (vasopressin) and oxytocin; TSH, FSH and GH come from the anterior pituitary.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 39,
+  "chapter": "imci-critical-care-emergencies",
+  "stem": "Childhood pneumonia (IMCI approach):",
+  "options": [
+   "Non-severe pneumonia can be treated with oral antibiotics at home",
+   "Every case requires immediate hospital admission",
+   "Fast breathing is a key sign",
+   "Chest indrawing indicates severe pneumonia"
+  ],
+  "key": "TFTT",
+  "pearl": "Non-severe cases can be managed at home.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 40,
+  "chapter": "hematology",
+  "stem": "Causes of pancytopenia include:",
+  "options": [
+   "Iron deficiency alone",
+   "Severe megaloblastic anaemia",
+   "Aplastic anaemia",
+   "Bone marrow infiltration (e.g., leukaemia, malignancy)"
+  ],
+  "key": "FTTT",
+  "pearl": "Iron deficiency causes microcytic anaemia, not pancytopenia.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 41,
+  "chapter": "nephrology-body-fluid",
+  "stem": "Low Specific gravity of urine found in which diseases",
+  "options": [
+   "Pyelonephritis",
+   "Dehydration",
+   "Polydipsia",
+   "Renal failure"
+  ],
+  "key": "TFTF",
+  "pearl": "Low specific gravity: Diabetes insipidus, Acute renal failure. High SG: DM, HF, SIADH. Fixed SG: Chronic renal failure.",
+  "key_by": "source",
+  "review": true
+ },
+ {
+  "n": 42,
+  "chapter": "preterm-prom-hypertension",
+  "stem": "Risk factors for development of pre-eclampsia are",
+  "options": [
+   "Diabetes mellitus",
+   "Hydatidiform mole",
+   "High parity",
+   "Increasing maternal age"
+  ],
+  "key": "TTFT",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 43,
+  "chapter": "hematology",
+  "stem": "Causes of raised ESR include:",
+  "options": [
+   "Pregnancy",
+   "Polycythaemia",
+   "Anaemia",
+   "Acute and chronic inflammation"
+  ],
+  "key": "TFTT",
+  "pearl": "Polycythaemia lowers ESR.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 44,
+  "chapter": "pharmacology",
+  "stem": "Corticosteroid side-effects:",
+  "options": [
+   "Hypoglycaemia as a common effect",
+   "Osteoporosis with long-term use",
+   "Hyperglycaemia",
+   "Weight gain and moon face"
+  ],
+  "key": "FTTT",
+  "pearl": "Steroids cause hyperglycaemia.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 45,
+  "chapter": "cardiology",
+  "stem": "Cyanotic congenital heart disease/s is/are",
+  "options": [
+   "Transpositions of great vessels",
+   "Ventricular septal defect",
+   "Tetralogy of Fallot’s",
+   "Patent ductus arteriosus"
+  ],
+  "key": "TFTF",
+  "pearl": "VSD and PDA are acyanotic (left-to-right shunt).",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 46,
+  "chapter": "respiratory",
+  "stem": "Regarding pulmonary tuberculosis:",
+  "options": [
+   "DOTS strategy is used in control programmes",
+   "Acid-fast bacilli are seen on Ziehl-Neelsen stain",
+   "It is never transmitted by droplet",
+   "Primary complex involves Ghon focus"
+  ],
+  "key": "TTFT",
+  "pearl": "Airborne droplet is the main transmission route.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 47,
+  "chapter": "gastroenterology",
+  "stem": "In peptic ulcer disease:",
+  "options": [
+   "All ulcers require urgent surgery",
+   "Duodenal ulcers are more common than gastric",
+   "NSAIDs are a major risk factor",
+   "Helicobacter pylori is an important cause"
+  ],
+  "key": "FTTT",
+  "pearl": "Most are managed medically.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 48,
+  "chapter": "growth-development-neonatology",
+  "stem": "In neonatal resuscitation:",
+  "options": [
+   "Chest compressions if heart rate <60 after effective ventilation",
+   "Adrenaline is the first step for all babies",
+   "Most babies require only drying and stimulation",
+   "Airway, Breathing, Circulation sequence is followed"
+  ],
+  "key": "TFTT",
+  "pearl": "Most need only basic steps; drugs are later.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 49,
+  "chapter": "orthopedics-neurosurgery",
+  "stem": "Pathological fracture associated with",
+  "options": [
+   "Acromegaly",
+   "Chronic Osteomyelitis",
+   "Multiple myeloma",
+   "Osteoporosis"
+  ],
+  "key": "FTTT",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 50,
+  "chapter": "peds-neuro-hemonc-infections",
+  "stem": "Complication of measles",
+  "options": [
+   "Otitis media",
+   "Subacute sclerosing panencephalitis",
+   "Orchitis",
+   "Pneumonia"
+  ],
+  "key": "TTFT",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 51,
+  "chapter": "physio-vitamins-forensic-comm-med",
+  "stem": "Informed consent requires:",
+  "options": [
+   "Consent is given voluntarily",
+   "It is never required for minor procedures",
+   "Patient understands the nature of the procedure",
+   "Risks, benefits and alternatives are explained"
+  ],
+  "key": "TFTT",
+  "pearl": "Consent is required; implied consent may apply in some emergencies.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 52,
+  "chapter": "preterm-prom-hypertension",
+  "stem": "Antihypertensives relatively safe in pregnancy:",
+  "options": [
+   "Nifedipine",
+   "ACE inhibitors",
+   "Methyldopa",
+   "Labetalol"
+  ],
+  "key": "TFTT",
+  "pearl": "ACE inhibitors are teratogenic and contraindicated.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 53,
+  "chapter": "respiratory",
+  "stem": "Regarding oxygen therapy:",
+  "options": [
+   "Oxygen is a drug and should be prescribed",
+   "High concentration O2 is preferred in COPD with CO2 retention risk",
+   "Nasal cannulae can deliver low-flow oxygen",
+   "Target saturation in most acutely ill patients is 94–98%"
+  ],
+  "key": "TFTT",
+  "pearl": "In COPD at risk of hypercapnia, controlled O2 (target 88–92%) is used.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 54,
+  "chapter": "peds-gastro-fluids-pulmonology",
+  "stem": "Clinical feature of severe dehydration in children",
+  "options": [
+   "Dry mouth",
+   "Not able to drink",
+   "Skin pinch goes back slowly",
+   "Sunken eyes"
+  ],
+  "key": "FTFT",
+  "pearl": "Severe dehydration: Lethargy/unconsciousness, sunken eyes, unable to drink, skin pinch goes back very slowly (>2 sec).",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 55,
+  "chapter": "placenta-diagnosis-anc",
+  "stem": "Antenatal care first visit investigations commonly include:",
+  "options": [
+   "Routine CT scan of abdomen",
+   "Urine routine examination",
+   "Blood group and Rh typing",
+   "Haemoglobin estimation"
+  ],
+  "key": "FTTT",
+  "pearl": "CT is not a routine antenatal investigation.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 56,
+  "chapter": "gi-surgery",
+  "stem": "Acute appendicitis:",
+  "options": [
+   "Rebound tenderness may be present",
+   "Anorexia is common",
+   "Diarrhoea is the most prominent early symptom",
+   "Pain typically starts periumbilically and later shifts to the right iliac fossa"
+  ],
+  "key": "TTFT",
+  "pearl": "Classic features are migratory pain and anorexia.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 57,
+  "chapter": "hematology",
+  "stem": "Thalassemia major",
+  "options": [
+   "Patients rarely survive beyond 5 year without treatment",
+   "Can be diagnosed by hemoglobin electrophoresis",
+   "Is due to anomaly in chromosome 16",
+   "Is a hereditary disease"
+  ],
+  "key": "TTFT",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 58,
+  "chapter": "endocrinology",
+  "stem": "Laboratory finding in primary hypothyroidism is:",
+  "options": [
+   "Normal TSH, low T4",
+   "High TSH, low T4",
+   "Low TSH, high T4",
+   "Low TSH, low T4"
+  ],
+  "key": "FTFF",
+  "pearl": "Primary hypothyroidism: high TSH, low free T4. Low TSH with low T4 suggests secondary (pituitary) hypothyroidism.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 59,
+  "chapter": "eye",
+  "stem": "Treatment of Acute Congestive Glaucoma",
+  "options": [
+   "Pilocarpine",
+   "Prostaglandin analogue",
+   "Timolol",
+   "Steroid"
+  ],
+  "key": "TFTT",
+  "pearl": "Others: Calcium channel blocker, Hyperosmotic agent, Carbonic anhydrase inhibitor.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 60,
+  "chapter": "endometriosis-contraception-gyn-op",
+  "stem": "Regarding contraception:",
+  "options": [
+   "Progestogen-only pill is suitable in breastfeeding",
+   "All methods have zero failure rate",
+   "Combined oral contraceptive pills contain oestrogen and progestogen",
+   "IUCD can be used for emergency contraception (Cu-IUCD)"
+  ],
+  "key": "TFTT",
+  "pearl": "No method is 100% effective.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 61,
+  "chapter": "immuno-micro",
+  "stem": "Mycobacterium tuberculosis:",
+  "options": [
+   "It is a virus",
+   "Slow-growing on culture",
+   "Demonstrated by Ziehl-Neelsen stain",
+   "Acid-fast bacillus"
+  ],
+  "key": "FTTT",
+  "pearl": "It is a bacterium.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 62,
+  "chapter": "nephrology-body-fluid",
+  "stem": "Regarding normal saline (0.9% NaCl):",
+  "options": [
+   "Contains bicarbonate",
+   "Contains chloride",
+   "Contains potassium",
+   "Contains sodium"
+  ],
+  "key": "FTFT",
+  "pearl": "Normal saline contains only Na+ and Cl−.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 63,
+  "chapter": "hemorrhage-shock-trauma",
+  "stem": "Complications of massive blood transfusion include",
+  "options": [
+   "Hyperkalaemia",
+   "Hypercalcaemia",
+   "Coagulopathy",
+   "Hypokalaemia"
+  ],
+  "key": "TFTT",
+  "pearl": "Hypocalcaemia (not hypercalcaemia). Others: Hypothermia.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 64,
+  "chapter": "peds-gastro-fluids-pulmonology",
+  "stem": "Acute watery diarrhoea in children:",
+  "options": [
+   "Antibiotics only for specific indications (dysentery, cholera, etc.)",
+   "Antimotility drugs are routinely used in infants",
+   "Zinc supplementation for 10–14 days is recommended",
+   "ORS is the mainstay of treatment"
+  ],
+  "key": "TFTT",
+  "pearl": "Antimotility agents are avoided in young children.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 65,
+  "chapter": "aph-pph-obstructed-operative",
+  "stem": "Risk factors for postpartum haemorrhage include:",
+  "options": [
+   "Grand multiparity",
+   "Primiparity alone as a major risk",
+   "Prolonged labour",
+   "Multiple pregnancy"
+  ],
+  "key": "TFTT",
+  "pearl": "Grand multiparity is a risk; primiparity less so for atony.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 66,
+  "chapter": "respiratory",
+  "stem": "Causes of community-acquired pneumonia commonly include:",
+  "options": [
+   "Mycobacterium tuberculosis as the most common",
+   "Haemophilus influenzae",
+   "Streptococcus pneumoniae",
+   "Mycoplasma pneumoniae"
+  ],
+  "key": "FTTT",
+  "pearl": "TB is not the most common cause of CAP.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 67,
+  "chapter": "placenta-diagnosis-anc",
+  "stem": "Causes of polyhydramnios:",
+  "options": [
+   "Oesophageal atresia",
+   "Anencephaly",
+   "Polycystic kidney disease",
+   "Diabetes mellitus"
+  ],
+  "key": "TTFT",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 68,
+  "chapter": "peds-neuro-hemonc-infections",
+  "stem": "Measles clinical features:",
+  "options": [
+   "Maculopapular rash starting behind the ears / face",
+   "Koplik’s spots",
+   "It is caused by a bacterium",
+   "Cough, coryza and conjunctivitis"
+  ],
+  "key": "TTFT",
+  "pearl": "Measles is caused by a virus (paramyxovirus).",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 69,
+  "chapter": "gi-surgery",
+  "stem": "Signs of acute peritonitis:",
+  "options": [
+   "Rebound tenderness",
+   "Absent bowel sounds in advanced cases",
+   "Guarding",
+   "Rigidity"
+  ],
+  "key": "TTTT",
+  "pearl": "All are classic features.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 70,
+  "chapter": "preterm-prom-hypertension",
+  "stem": "Features of pre-eclampsia include:",
+  "options": [
+   "It always occurs before 20 weeks",
+   "Oedema may be present",
+   "Hypertension after 20 weeks",
+   "Proteinuria"
+  ],
+  "key": "FTTT",
+  "pearl": "By definition after 20 weeks in a previously normotensive woman.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 71,
+  "chapter": "pharmacology",
+  "stem": "Drugs preferred / safer in pregnancy (selected):",
+  "options": [
+   "Insulin for diabetes",
+   "Methyldopa for hypertension",
+   "ACE inhibitors",
+   "Labetalol for hypertension"
+  ],
+  "key": "TTFT",
+  "pearl": "ACE inhibitors are contraindicated in pregnancy.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 72,
+  "chapter": "respiratory",
+  "stem": "Causes of haemoptysis include:",
+  "options": [
+   "Lung carcinoma",
+   "Uncomplicated viral upper respiratory tract infection",
+   "Pulmonary tuberculosis",
+   "Bronchiectasis"
+  ],
+  "key": "TFTT",
+  "pearl": "Simple URTI does not typically cause haemoptysis.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 73,
+  "chapter": "imci-critical-care-emergencies",
+  "stem": "Clinical feature of Severe Pneumonia in Child",
+  "options": [
+   "Grunting",
+   "Wheeze",
+   "Stridor in calm child",
+   "Fast breathing"
+  ],
+  "key": "TFTF",
+  "pearl": "WHO/IMCI severe pneumonia: any general danger sign, stridor in a calm child, grunting, central cyanosis, SpO2 < 90%. Fast breathing alone = pneumonia.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 74,
+  "chapter": "normal-labour-episiotomy-induction",
+  "stem": "In the third stage of labour:",
+  "options": [
+   "Controlled cord traction is part of active management",
+   "Oxytocin is commonly used",
+   "It lasts more than 2 hours normally",
+   "Active management reduces PPH risk"
+  ],
+  "key": "TTFT",
+  "pearl": "Third stage is usually much shorter.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 75,
+  "chapter": "pharmacology",
+  "stem": "Which anti-TB drug causes hepatitis?",
+  "options": [
+   "Pyrazinamide",
+   "Isoniazid",
+   "Rifampicin",
+   "Streptomycin"
+  ],
+  "key": "TTTF",
+  "pearl": "Hepatotoxic anti-TB drugs: isoniazid, rifampicin, pyrazinamide (most). Streptomycin is ototoxic and nephrotoxic.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 76,
+  "chapter": "growth-development-neonatology",
+  "stem": "Causes of developmental delay:",
+  "options": [
+   "Normal variation in all cases",
+   "Severe malnutrition",
+   "Perinatal asphyxia / HIE",
+   "Congenital infections (TORCH)"
+  ],
+  "key": "FTTT",
+  "pearl": "Not every delay is a normal variation.",
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 77,
+  "chapter": "hepatology",
+  "stem": "Exudative ascites is found in:",
+  "options": [
+   "Malignancy",
+   "Chronic liver disease",
+   "Tuberculous peritonitis",
+   "Congestive cardiac failure"
+  ],
+  "key": "TFTF",
+  "pearl": "Exudative ascites (SAAG < 11 g/L): TB peritonitis, peritoneal malignancy, pancreatitis. Cirrhosis and heart failure give transudates.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 78,
+  "chapter": "eye",
+  "stem": "Steroids cause:",
+  "options": [
+   "Open angle glaucoma",
+   "Cataract",
+   "Acute anterior uveitis",
+   "Corneal ulcer"
+  ],
+  "key": "TTFT",
+  "pearl": "Steroid eye side-effects: open-angle glaucoma, posterior subcapsular cataract, worsening of corneal (fungal/herpetic) ulcers. Steroids treat uveitis.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 79,
+  "chapter": "dermatology-toxicology-psych",
+  "stem": "A snake bite patient comes to you developing ptosis and fang mark:",
+  "options": [
+   "Viper",
+   "Kobra",
+   "Krait",
+   "Sea snake"
+  ],
+  "key": "FTTT",
+  "pearl": "Ptosis means a neurotoxic bite: cobra and krait in Bangladesh; sea snake venom is myotoxic/neurotoxic too. Vipers cause bleeding and local swelling.",
+  "key_by": "claude",
+  "review": true
+ },
+ {
+  "n": 80,
+  "chapter": "reproductive-anatomy-physiology",
+  "stem": "Primary support of uterus:",
+  "options": [
+   "Levator ani",
+   "Round ligament",
+   "Uterosacral",
+   "Mackenrodt"
+  ],
+  "key": "TFTT",
+  "pearl": "Primary supports: pelvic floor (levator ani, perineal body) and the cardinal (Mackenrodt), uterosacral and pubocervical ligaments. Round and broad ligaments are secondary.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 81,
+  "chapter": "preterm-prom-hypertension",
+  "stem": "Treatment for convulsion:",
+  "options": [
+   "MgSO4",
+   "Labetalol",
+   "Diazepam",
+   "Nifedipine"
+  ],
+  "key": "TFTF",
+  "pearl": "Convulsions: MgSO4 in eclampsia, diazepam/lorazepam for other fits. Labetalol and nifedipine control blood pressure.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 82,
+  "chapter": "orthopedics-neurosurgery",
+  "stem": "Common fractures from fall:",
+  "options": [
+   "Scaphoid",
+   "Ulnar",
+   "Supracondylar",
+   "Lunate"
+  ],
+  "key": "TFTF",
+  "pearl": "Fall on outstretched hand: distal radius (Colles'), scaphoid, supracondylar humerus in children, clavicle. Lunate usually dislocates rather than fractures.",
+  "key_by": "claude",
+  "review": true
+ },
+ {
+  "n": 83,
+  "chapter": "immuno-micro",
+  "stem": "Clinical features of anaphylaxis:",
+  "options": [
+   "Laryngeal oedema",
+   "Sweating",
+   "Hypertension",
+   "Bronchoconstriction"
+  ],
+  "key": "TTFT",
+  "pearl": "Anaphylaxis: airway (laryngeal) oedema, bronchospasm, hypotension/shock, urticaria, flushing and sweating. Blood pressure falls, not rises.",
+  "key_by": "claude",
+  "review": true
+ },
+ {
+  "n": 84,
+  "chapter": "nephrology-body-fluid",
+  "stem": "Haemolytic uraemic syndrome (HUS) is characterised by:",
+  "options": [
+   "Azotaemia",
+   "Microangiopathic haemolytic anaemia",
+   "Leukoerythroblastic vasculitis",
+   "Arthritis"
+  ],
+  "key": "TTFF",
+  "pearl": "HUS triad: microangiopathic haemolytic anaemia, thrombocytopenia, acute kidney injury (azotaemia); classically after E. coli O157 diarrhoea.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 85,
+  "chapter": "gi-surgery",
+  "stem": "Clinical features of gastric outlet obstruction:",
+  "options": [
+   "Projectile vomiting",
+   "Early satiety",
+   "Metabolic acidosis",
+   "Hypernatraemia"
+  ],
+  "key": "TTFF",
+  "pearl": "Gastric outlet obstruction: projectile non-bilious vomiting, early satiety, succussion splash; hypochloraemic hypokalaemic metabolic alkalosis.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 86,
+  "chapter": "cardiology",
+  "stem": "Examples of congenital cyanotic heart disease:",
+  "options": [
+   "Pulmonary atresia",
+   "PDA",
+   "Tetralogy of Fallot",
+   "ASD"
+  ],
+  "key": "TFTF",
+  "pearl": "Cyanotic CHD (5 Ts + pulmonary atresia): TOF, TGA, truncus, TAPVC, tricuspid atresia. PDA and ASD are acyanotic left-to-right shunts.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 87,
+  "chapter": "endometriosis-contraception-gyn-op",
+  "stem": "Ovarian tumour markers:",
+  "options": [
+   "CEA",
+   "AFP",
+   "Beta-hCG",
+   "CA-125"
+  ],
+  "key": "FTTT",
+  "pearl": null,
+  "key_by": "source",
+  "review": false
+ },
+ {
+  "n": 88,
+  "chapter": "imci-critical-care-emergencies",
+  "stem": "According to IMCI, general danger signs (severe pneumonia) in a child aged 2 months to 5 years are:",
+  "options": [
+   "Convulsions",
+   "Stridor in a calm child",
+   "Vomits everything",
+   "Severe chest indrawing"
+  ],
+  "key": "TTTF",
+  "pearl": "IMCI general danger signs: not able to drink/breastfeed, vomits everything, convulsions, lethargic/unconscious. Stridor in a calm child also means severe pneumonia; chest indrawing alone = pneumonia (2014 IMCI).",
+  "key_by": "claude",
+  "review": true
+ },
+ {
+  "n": 89,
+  "chapter": "eye",
+  "stem": "Structures that are part of the visual pathway:",
+  "options": [
+   "Occipital cortex",
+   "Trochlear nerve",
+   "Lateral geniculate body",
+   "Midbrain"
+  ],
+  "key": "TFTF",
+  "pearl": "Lateral geniculate body: The thalamic relay where optic tract fibres synapse before the optic radiation. Visual pathway: retina, optic nerve, chiasma, optic tract, lateral geniculate body, optic radiation, occipital (visual) cortex. Trochlear nerve moves the eye.",
+  "key_by": "claude",
+  "review": true
+ },
+ {
+  "n": 90,
+  "chapter": "eye",
+  "stem": "Postoperative complications of cataract surgery:",
+  "options": [
+   "Retinal detachment",
+   "IOL dislocation",
+   "Retained lens material",
+   "Uveitis"
+  ],
+  "key": "TTTT",
+  "pearl": "After cataract surgery: endophthalmitis, uveitis, raised IOP, retained lens matter, IOL dislocation, cystoid macular oedema, retinal detachment, posterior capsule opacification.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 91,
+  "chapter": "endocrinology",
+  "stem": "The pituitary gland secretes:",
+  "options": [
+   "ACTH",
+   "Cortisol",
+   "T4",
+   "TSH"
+  ],
+  "key": "TFFT",
+  "pearl": "Pituitary secretes ACTH, TSH, GH, FSH, LH, prolactin (anterior) and ADH, oxytocin (posterior). Cortisol is adrenal; T4 is thyroid.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 92,
+  "chapter": "gi-surgery",
+  "stem": "Painful rectal bleeding:",
+  "options": [
+   "Haemorrhoids",
+   "Anal fissure",
+   "Carcinoma of the colon",
+   "Rectal polyps"
+  ],
+  "key": "FTFF",
+  "pearl": "Anal fissure: Fissure causes sharp pain. Painful bright red bleeding = anal fissure (also thrombosed piles, perianal abscess). Uncomplicated piles, polyps and colon cancer bleed painlessly.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 93,
+  "chapter": "gi-surgery",
+  "stem": "Biochemical changes in gastric outlet obstruction:",
+  "options": [
+   "Metabolic acidosis",
+   "Hypercalcaemia",
+   "Hyperkalaemia",
+   "Hypernatraemia"
+  ],
+  "key": "FFFF",
+  "pearl": "Gastric outlet obstruction gives hypochloraemic, hypokalaemic metabolic alkalosis with hyponatraemia and paradoxical aciduria.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 94,
+  "chapter": "pharmacology",
+  "stem": "Drugs causing gynaecomastia:",
+  "options": [
+   "Spironolactone",
+   "Propranolol",
+   "Isoniazid",
+   "Digoxin"
+  ],
+  "key": "TFTT",
+  "pearl": "Gynaecomastia drugs: spironolactone, digoxin, cimetidine, ketoconazole, oestrogens, isoniazid, anti-androgens.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 95,
+  "chapter": "pharmacology",
+  "stem": "Heparin:",
+  "options": [
+   "Antagonised by vitamin K",
+   "Unfractionated heparin is better than LMWH",
+   "Can be given sublingually",
+   "Acidic in nature"
+  ],
+  "key": "FFFT",
+  "pearl": "Can be given sublingually: Heparin is a large charged molecule not absorbed orally or sublingually; it is given IV or SC. Heparin is strongly acidic (sulphated); reversed by protamine (vitamin K reverses warfarin). LMWH has more predictable action; never given orally/sublingually.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 96,
+  "chapter": "pharmacology",
+  "stem": "Examples of ACE inhibitors:",
+  "options": [
+   "Losartan",
+   "Ramipril",
+   "Enalapril",
+   "Captopril"
+  ],
+  "key": "FTTT",
+  "pearl": "Captopril: The first ACE inhibitor; contains a sulfhydryl group (rash, taste disturbance). ACE inhibitors end in -pril (captopril, enalapril, ramipril, lisinopril). Losartan is an angiotensin receptor blocker.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 97,
+  "chapter": "pharmacology",
+  "stem": "Insulin secretagogues:",
+  "options": [
+   "Biguanides",
+   "Sulfonylureas",
+   "Acarbose",
+   "Glitazones"
+  ],
+  "key": "FTFF",
+  "pearl": "Sulfonylureas: Close K-ATP channels on beta cells, depolarising them and releasing insulin. Insulin secretagogues: sulfonylureas and meglitinides (also incretin-based drugs). Metformin, acarbose and glitazones do not release insulin.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 98,
+  "chapter": "pharmacology",
+  "stem": "Bioavailability of an orally administered drug:",
+  "options": [
+   "Does not depend on disintegration time",
+   "Depends on particle size",
+   "Depends on solubility",
+   "Is not influenced by the presence of food"
+  ],
+  "key": "FTTF",
+  "pearl": "Oral bioavailability depends on disintegration, dissolution, particle size, solubility, food, first-pass metabolism and gut motility.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 99,
+  "chapter": "placenta-diagnosis-anc",
+  "stem": "Excessive vomiting in early pregnancy is associated with:",
+  "options": [
+   "Twin pregnancy",
+   "Hyperemesis gravidarum",
+   "Pre-eclampsia",
+   "Eclampsia"
+  ],
+  "key": "TTFF",
+  "pearl": "Eclampsia: Occurs after 20 weeks. Hyperemesis is commoner with multiple pregnancy and molar pregnancy (high hCG). Pre-eclampsia and eclampsia occur after 20 weeks.",
+  "key_by": "claude",
+  "review": false
+ },
+ {
+  "n": 100,
+  "chapter": "aub-ectopic-gtd",
+  "stem": "Causes of bleeding in early pregnancy:",
+  "options": [
+   "Placental abruption",
+   "Ectopic pregnancy",
+   "Molar pregnancy",
+   "Fibroid uterus"
+  ],
+  "key": "FTTT",
+  "pearl": "Molar pregnancy: Hydatidiform mole presents with first-trimester bleeding and a large-for-dates uterus. Early pregnancy bleeding: abortion, ectopic, molar pregnancy, implantation bleed, cervical lesions; submucous fibroids can bleed. Abruption is after 20/28 weeks.",
+  "key_by": "claude",
+  "review": true
+ }
+]
