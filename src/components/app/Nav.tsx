@@ -44,6 +44,7 @@ export const ADMIN_NAV: Item[] = [
   { href: "/admin/recordings", label: "Recordings", icon: Video },
   { href: "/admin/notes", label: "Notes", icon: FileText },
   { href: "/admin/mcq", label: "MCQ sets", icon: ClipboardList },
+  { href: "/admin/mock", label: "Model test results", icon: Trophy },
   { href: "/admin/curriculum", label: "Curriculum", icon: BookOpen },
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ];

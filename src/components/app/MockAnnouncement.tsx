@@ -70,9 +70,14 @@ export function MockAnnouncement({ mock, serverNow }: { mock: MockInfo; serverNo
               <CheckCircle2 className="flex-none" /> You&apos;ve sat the free mock
             </h2>
             <p className="mt-1.5 text-b2-flash/85">See your score and where you rank. Correct answers will be revealed later.</p>
-            <Link href={`/mcq/attempt/${mock.attempt!.id}`} className={btn("primary", "lg", "mt-5 w-full sm:w-auto")}>
-              My score &amp; rank <ArrowRight size={18} />
-            </Link>
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+              <Link href={`/mcq/attempt/${mock.attempt!.id}`} className={btn("primary", "lg", "w-full sm:w-auto")}>
+                My score &amp; rank <ArrowRight size={18} />
+              </Link>
+              <Link href="/leaderboard" className={btn("secondary", "lg", "w-full bg-b2-black/30 sm:w-auto")}>
+                <Trophy size={18} /> Leaderboard
+              </Link>
+            </div>
           </>
         ) : open ? (
           <>
@@ -82,12 +87,17 @@ export function MockAnnouncement({ mock, serverNow }: { mock: MockInfo; serverNo
             <p className="mt-1.5 text-b2-flash/85">
               {mock.count} BMDC-style questions · {mock.duration_min} minutes · exact RQE marking. Free for every account.
             </p>
-            <form action={startAttempt} className="mt-5">
-              <input type="hidden" name="set_id" value={mock.id} />
-              <SubmitButton name="mode" value="exam" size="lg" className="w-full sm:w-auto" pending="Starting">
-                {mock.attempt ? "Continue" : "Start now"} <ArrowRight size={18} />
-              </SubmitButton>
-            </form>
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+              <form action={startAttempt}>
+                <input type="hidden" name="set_id" value={mock.id} />
+                <SubmitButton name="mode" value="exam" size="lg" className="w-full sm:w-auto" pending="Starting">
+                  {mock.attempt ? "Continue" : "Start now"} <ArrowRight size={18} />
+                </SubmitButton>
+              </form>
+              <Link href="/leaderboard" className={btn("secondary", "lg", "w-full bg-b2-black/30 sm:w-auto")}>
+                <Trophy size={18} /> Live leaderboard
+              </Link>
+            </div>
           </>
         ) : (
           <>
