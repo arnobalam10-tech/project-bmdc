@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 type Data = {
   set: { title: string; questions: number } | null;
   total: number;
-  rows: { rank: number; name: string; score: number; pct: number }[];
+  rows: { rank: number; name: string; score: number; pct: number; dummy?: boolean }[];
 };
 
 /** Public: anyone with the link can see the latest free model test's leaderboard (first name + initial only). */
@@ -56,7 +56,10 @@ export default async function PublicMockLeaderboard() {
               >
                 {r.rank}
               </span>
-              <span className="min-w-0 flex-1 truncate font-medium">{r.name}</span>
+              <span className="min-w-0 flex-1 truncate font-medium">
+                {r.name}
+                {r.dummy && <span className="ml-2 rounded-full border border-b2-warning/60 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-b2-warning">Dummy</span>}
+              </span>
               <span className="text-right">
                 <span className="tabular block text-lg font-semibold">{Number(r.score).toFixed(2)}</span>
                 <span className="tabular text-xs text-b2-pistachio">

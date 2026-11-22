@@ -43,6 +43,7 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
         pct: number;
         is_me: boolean;
         total: number;
+        is_dummy?: boolean;
       }[])
     : [];
   const me = board.find((r) => r.is_me);
@@ -130,7 +131,10 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
             {board.map((r) => (
               <li key={`${r.rank}-${r.display_name}-${r.is_me}`} className={`flex items-center gap-3 py-2 text-sm ${r.is_me ? "font-semibold text-b2-caribbean" : ""}`}>
                 <span className="tabular w-8 text-b2-pistachio">#{r.rank}</span>
-                <span className="flex-1 truncate">{r.is_me ? `${r.display_name} (you)` : r.display_name}</span>
+                <span className="flex-1 truncate">
+                  {r.is_me ? `${r.display_name} (you)` : r.display_name}
+                  {r.is_dummy && <span className="ml-2 rounded-full border border-b2-warning/60 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-b2-warning">Dummy</span>}
+                </span>
                 <span className="tabular">{Number(r.score).toFixed(2)}</span>
                 <span className="tabular w-14 text-right text-b2-pistachio">{r.pct}%</span>
               </li>

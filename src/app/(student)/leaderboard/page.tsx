@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Leaderboard" };
 
 type Row = { rank: number; user_id: string; display_name: string; best_pct: number; exams: number; is_me: boolean };
 
-type MockRow = { rank: number; display_name: string; score: number; pct: number; is_me: boolean; total: number };
+type MockRow = { rank: number; display_name: string; score: number; pct: number; is_me: boolean; total: number; is_dummy?: boolean };
 
 export default async function LeaderboardPage() {
   const { supabase, full } = await requireUser();
@@ -71,6 +71,7 @@ export default async function LeaderboardPage() {
                   </span>
                   <span className="min-w-0 flex-1 truncate font-medium">
                     {r.display_name} {r.is_me && <span className="text-sm text-b2-caribbean">(you)</span>}
+                    {r.is_dummy && <span className="ml-2 rounded-full border border-b2-warning/60 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-b2-warning">Dummy</span>}
                   </span>
                   <span className="text-right">
                     <span className="tabular block text-lg font-semibold">{Number(r.score).toFixed(2)}</span>
