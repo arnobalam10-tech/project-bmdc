@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Lock } from "lucide-react";
 import { requireUser } from "@/lib/access";
 import { PracticeRunner } from "@/components/mcq/PracticeRunner";
 import { ExamRunner } from "@/components/mcq/ExamRunner";
@@ -31,29 +32,8 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
   }
 
   // ───── mock with results not yet published ─────
-  if (d.results_hidden) {
-    return (
-      <div className="space-y-6">
-        <BackLink href="/dashboard" label="Home" />
-        <div className="b2-film spring rounded-[32px] p-6 text-center sm:p-10">
-          <B2Mark className="is-heartbeat mx-auto" size={64} decorative />
-          <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em]">Submitted · {d.set.title}</p>
-          <p className="mt-3 text-3xl font-semibold tracking-[-0.02em] sm:text-4xl">Your answers are in ✓</p>
-          <p className="mx-auto mt-3 max-w-md text-b2-flash/85">
-            Results, your rank among everyone who sat it, and a full subject-wise analysis will be published here soon. We&apos;ll
-            let you know.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link href="/dashboard" className={btn("primary", "md")}>
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // ───── result ─────
+  // ───── result (for a mock whose answers aren't revealed yet: score + leaderboard only) ─────
+  const answersHidden = !!d.results_hidden;
   const a = d.attempt;
   const board = d.set.hide_results
     ? (((await supabase.rpc("get_set_leaderboard", { p_set_id: d.set.id, p_limit: 20 })).data ?? []) as {
@@ -101,6 +81,18 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
         </div>
       </div>
 
+      {answersHidden && (
+        <div className="flex items-start gap-3 rounded-[20px] border border-b2-border bg-b2-dark p-4 sm:p-5">
+          <Lock size={20} className="mt-0.5 flex-none text-b2-caribbean" />
+          <p className="text-[15px]">
+            <span className="font-semibold">Correct answers will be revealed later.</span>{" "}
+            <span className="text-b2-pistachio">
+              The full answer key, explanations and your subject-wise analysis open here once we publish them.
+            </span>
+          </p>
+        </div>
+      )}
+
       {board.length > 0 && (
         <div className="rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
           {me && (
@@ -135,7 +127,7 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
         />
       )}
 
-      {bySubject.size > 0 && (
+      {!answersHidden && bySubject.size > 0 && (
         <div className="rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
           <p className="mb-4 font-semibold">By subject</p>
           <ul className="space-y-3">
@@ -158,9 +150,15 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
       )}
 
       <div className="flex flex-col gap-3 sm:flex-row">
-        <Link href={`/mcq/attempt/${a.id}/review`} className={btn("primary", "lg", "flex-1")}>
-          Review answers & explanations
-        </Link>
+        {answersHidden ? (
+          <Link href="/dashboard" className={btn("primary", "lg", "flex-1")}>
+            Back to Home
+          </Link>
+        ) : (
+          <Link href={`/mcq/attempt/${a.id}/review`} className={btn("primary", "lg", "flex-1")}>
+            Review answers & explanations
+          </Link>
+        )}
         {!d.set.hide_results && (
           <form action={startAttempt} className="flex-1">
             <input type="hidden" name="set_id" value={d.set.id} />

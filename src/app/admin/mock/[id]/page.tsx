@@ -53,13 +53,14 @@ export default async function MockResults({ params }: { params: Promise<{ id: st
 
       {set.results_published_at ? (
         <Alert tone="success">
-          Published {fmtOpens(set.results_published_at)}. Students see their score, rank, analysis and this test&apos;s leaderboard.
-          Publishing again re-scores everyone (use it after fixing the answer key).
+          Answers revealed {fmtOpens(set.results_published_at)}. Students now see the answer key, explanations, their subject-wise
+          analysis, and their wrong answers in My mistakes. Pressing the button again re-scores everyone (use it after fixing the
+          answer key).
         </Alert>
       ) : (
         <Alert tone="info">
-          Results are hidden from students. Scores below are worked out live from their answers. When you&apos;re ready, publish to
-          show everyone their score, rank, analysis and the leaderboard.
+          Students see their score and the leaderboard as soon as they submit. The correct answers stay hidden until you press{" "}
+          <b>Reveal answers</b>. Scores below are worked out live from the current answer key.
         </Alert>
       )}
 
@@ -85,10 +86,10 @@ export default async function MockResults({ params }: { params: Promise<{ id: st
           message={
             set.results_published_at
               ? "Re-score every attempt with the current answer key?"
-              : `Publish results to all ${done.length} students who submitted? They will see their score, rank, analysis and the leaderboard.`
+              : `Reveal the correct answers to all ${done.length} students who submitted? They will see the answer key, explanations and their analysis. This can't be hidden again.`
           }
         >
-          {set.results_published_at ? "Re-score everyone" : "Publish results"}
+          {set.results_published_at ? "Re-score everyone" : "Reveal answers"}
         </ConfirmButton>
       </form>
 

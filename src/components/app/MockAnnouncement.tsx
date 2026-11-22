@@ -58,8 +58,8 @@ export function MockAnnouncement({ mock, serverNow }: { mock: MockInfo; serverNo
 
         {done && mock.published ? (
           <>
-            <h2 className="mt-3 text-[26px] font-semibold leading-tight tracking-[-0.02em] sm:text-[32px]">Results are out!</h2>
-            <p className="mt-1.5 text-b2-flash/85">See your score, your rank and a subject-wise analysis for the {mock.title}.</p>
+            <h2 className="mt-3 text-[26px] font-semibold leading-tight tracking-[-0.02em] sm:text-[32px]">Answers are out!</h2>
+            <p className="mt-1.5 text-b2-flash/85">See the answer key, explanations and your subject-wise analysis for the {mock.title}.</p>
             <Link href={`/mcq/attempt/${mock.attempt!.id}`} className={btn("primary", "lg", "mt-5 w-full sm:w-auto")}>
               See my result <ArrowRight size={18} />
             </Link>
@@ -69,9 +69,10 @@ export function MockAnnouncement({ mock, serverNow }: { mock: MockInfo; serverNo
             <h2 className="mt-3 flex items-center gap-2 text-[24px] font-semibold leading-tight tracking-[-0.02em] sm:text-[30px]">
               <CheckCircle2 className="flex-none" /> You&apos;ve sat the free mock
             </h2>
-            <p className="mt-1.5 text-b2-flash/85">
-              Your answers are in. Results and your rank among everyone will be published soon.
-            </p>
+            <p className="mt-1.5 text-b2-flash/85">See your score and where you rank. Correct answers will be revealed later.</p>
+            <Link href={`/mcq/attempt/${mock.attempt!.id}`} className={btn("primary", "lg", "mt-5 w-full sm:w-auto")}>
+              My score &amp; rank <ArrowRight size={18} />
+            </Link>
           </>
         ) : open ? (
           <>

@@ -76,7 +76,7 @@ export function SetRow({ set, full, enroll }: { set: SetSummary; full: boolean; 
         <form action={startAttempt}>
           <input type="hidden" name="set_id" value={set.id} />
           <SubmitButton name="mode" value="exam" size="sm" className="w-full sm:w-auto" pending="Opening">
-            {set.submitted ? (set.results_published ? "See result" : "Submitted ✓") : "Start mock"}
+            {set.submitted ? "See result" : "Start mock"}
           </SubmitButton>
         </form>
       ) : access.mode === "locked" ? (
