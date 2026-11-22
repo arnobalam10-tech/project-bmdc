@@ -29,7 +29,7 @@ export default async function LeaderboardPage() {
   return (
     <>
       <BackLink href="/profile" label="Profile" />
-      <PageHeader title="Leaderboard" sub="Only first names are shown." />
+      <PageHeader title="Leaderboard" sub="This week: the model test only. Only first names are shown." />
 
       {!mock && <EmptyState title="No model test leaderboard yet." sub="It appears here when the next model test opens." />}
       {mock && (
