@@ -5,6 +5,8 @@ import { accessStatus, requireAdmin, type Profile } from "@/lib/access";
 import { fmtDate } from "@/lib/format";
 import { EmptyState, PageHeader, Pill } from "@/components/ui/primitives";
 import { btn } from "@/components/ui/Button";
+import { ConfirmButton } from "@/components/admin/ConfirmButton";
+import { setDeviceLimitBulk } from "../actions";
 
 export const metadata: Metadata = { title: "Students" };
 
@@ -54,6 +56,23 @@ export default async function StudentsPage({ searchParams }: { searchParams: Pro
           </Link>
         ))}
       </div>
+
+      <form action={setDeviceLimitBulk} className="mb-5 flex flex-wrap items-center gap-2 rounded-[20px] border border-b2-border bg-b2-dark p-3 text-sm sm:px-4">
+        <span className="font-medium">Device limit for</span>
+        <select name="scope" defaultValue="paid" className="b2-input !min-h-9 !w-auto !py-1">
+          <option value="paid">all paid students</option>
+          <option value="all">every student</option>
+        </select>
+        <select name="limit" defaultValue="2" className="b2-input !min-h-9 !w-auto !py-1">
+          <option value="1">1 device</option>
+          <option value="2">2 devices</option>
+          <option value="3">3 devices</option>
+        </select>
+        <ConfirmButton variant="secondary" message="Apply this device limit to everyone in that group?">
+          Apply
+        </ConfirmButton>
+        <span className="text-xs text-b2-stone">Per-student limits and device resets are under Manage.</span>
+      </form>
 
       {rows.length === 0 ? (
         <EmptyState title="No students found." />

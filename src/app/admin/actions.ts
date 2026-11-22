@@ -2,7 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/access";
+import { requireAdmin, VIEW_AS_COOKIE } from "@/lib/access";
+import { cookies } from "next/headers";
 import { after } from "next/server";
 import { endOfDhakaDay } from "@/lib/format";
 import { sendMetaEvent } from "@/lib/meta";
@@ -107,8 +108,36 @@ export async function revokeAccess(fd: FormData) {
 export async function resetDevice(fd: FormData) {
   const { supabase } = await requireAdmin();
   const id = str(fd, "user_id");
-  await supabase.from("devices").delete().eq("user_id", id);
+  const device = str(fd, "device_id");
+  let q = supabase.from("devices").delete().eq("user_id", id);
+  if (device) q = q.eq("device_id", device);
+  await q;
   revalidatePath(`/admin/students/${id}`);
+}
+
+/** "1" | "2" | "unlimited" devices for one student. Lowering the limit unbinds their devices. */
+export async function setDeviceLimit(fd: FormData) {
+  const { supabase } = await requireAdmin();
+  const id = str(fd, "user_id");
+  const v = str(fd, "limit");
+  const unlimited = v === "unlimited";
+  const max = unlimited ? 1 : Math.min(5, Math.max(1, Number(v) || 1));
+  const { data: before } = await supabase.from("profiles").select("max_devices,multi_device").eq("id", id).single();
+  await supabase.from("profiles").update({ multi_device: unlimited, max_devices: max }).eq("id", id);
+  if (unlimited || (before && (before.multi_device || max < before.max_devices))) {
+    await supabase.from("devices").delete().eq("user_id", id);
+  }
+  revalidatePath(`/admin/students/${id}`);
+}
+
+/** Bulk: set the device limit for all paid students, or for every student. */
+export async function setDeviceLimitBulk(fd: FormData) {
+  const { supabase } = await requireAdmin();
+  const max = Math.min(5, Math.max(1, Number(str(fd, "limit")) || 1));
+  let q = supabase.from("profiles").update({ max_devices: max, multi_device: false }).eq("role", "student");
+  if (str(fd, "scope") === "paid") q = q.eq("is_paid", true);
+  await q;
+  revalidatePath("/admin/students");
 }
 
 export async function setMultiDevice(fd: FormData) {
@@ -264,4 +293,14 @@ export async function publishMockResults(fd: FormData) {
   const { error } = await supabase.rpc("publish_mock_results", { p_set_id: id });
   if (error) throw new Error(error.message);
   revalidatePath(`/admin/mock/${id}`);
+}
+
+/** Admins: preview the student side as a paid or free student ("admin" turns the preview off). */
+export async function setViewAs(fd: FormData) {
+  await requireAdmin();
+  const v = str(fd, "view");
+  const jar = await cookies();
+  if (v === "paid" || v === "free") jar.set(VIEW_AS_COOKIE, v, { path: "/", httpOnly: true, sameSite: "lax", maxAge: 60 * 60 * 24 * 30 });
+  else jar.delete(VIEW_AS_COOKIE);
+  revalidatePath("/", "layout");
 }

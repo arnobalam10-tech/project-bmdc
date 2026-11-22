@@ -27,7 +27,7 @@ export default async function ProfilePage() {
   const { supabase, profile, status } = await requireUser();
   const [{ data: statsData }, { data: device }] = await Promise.all([
     supabase.rpc("get_my_stats"),
-    supabase.from("devices").select("user_agent,bound_at").maybeSingle(),
+    supabase.from("devices").select("user_agent,bound_at").order("bound_at").limit(1).maybeSingle(),
   ]);
   const st = (statsData ?? {}) as Partial<Stats>;
   const accuracy = st.options_answered ? Math.round((100 * (st.options_correct ?? 0)) / st.options_answered) : null;

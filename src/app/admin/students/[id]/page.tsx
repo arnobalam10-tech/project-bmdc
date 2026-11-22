@@ -7,19 +7,19 @@ import { getSettings, waLink } from "@/lib/settings";
 import { fmtDate, fmtDateTime, hours, taka } from "@/lib/format";
 import { Card, Pill, StatTile } from "@/components/ui/primitives";
 import { SubmitButton } from "@/components/ui/client";
-import { ConfirmButton, FlagToggle } from "@/components/admin/ConfirmButton";
+import { ConfirmButton } from "@/components/admin/ConfirmButton";
 import { btn } from "@/components/ui/Button";
-import { markPaid, resetDevice, revokeAccess, saveAdminNote, setAccessEnd, setMultiDevice } from "../../actions";
+import { markPaid, resetDevice, revokeAccess, saveAdminNote, setAccessEnd, setDeviceLimit } from "../../actions";
 
 export const metadata: Metadata = { title: "Student" };
 
 export default async function StudentDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const { supabase } = await requireAdmin();
-  const [{ data: p }, s, { data: device }, { data: payments }, { data: attempts }, { data: watch }] = await Promise.all([
+  const [{ data: p }, s, { data: devices }, { data: payments }, { data: attempts }, { data: watch }] = await Promise.all([
     supabase.from("profiles").select("*").eq("id", id).maybeSingle<Profile>(),
     getSettings(),
-    supabase.from("devices").select("*").eq("user_id", id).maybeSingle(),
+    supabase.from("devices").select("*").eq("user_id", id).order("bound_at"),
     supabase.from("payments").select("*").eq("user_id", id).order("created_at", { ascending: false }),
     supabase.from("attempts").select("id,mode,score,n_questions,submitted_at,question_sets(title)").eq("user_id", id).order("started_at", { ascending: false }).limit(10),
     supabase.from("watch_progress").select("seconds_watched").eq("user_id", id),
@@ -115,32 +115,62 @@ export default async function StudentDetail({ params }: { params: Promise<{ id: 
           </Card>
 
           <Card>
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="font-semibold">Device</p>
-              <form action={setMultiDevice}>
-                <input type="hidden" name="user_id" value={p.id} />
-                <input type="hidden" name="value" value={String(!p.multi_device)} />
-                <FlagToggle on={p.multi_device} label="Allow multiple devices" />
-              </form>
+            <p className="font-semibold">Devices</p>
+            <p className="mt-1 text-sm text-b2-pistachio">How many phones/computers this account can log in on.</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {(
+                [
+                  ["1", "1 device", !p.multi_device && p.max_devices === 1],
+                  ["2", "2 devices", !p.multi_device && p.max_devices === 2],
+                  ["unlimited", "Unlimited", p.multi_device],
+                ] as const
+              ).map(([v, label, on]) => (
+                <form key={v} action={setDeviceLimit}>
+                  <input type="hidden" name="user_id" value={p.id} />
+                  <input type="hidden" name="limit" value={v} />
+                  <button
+                    type="submit"
+                    disabled={on}
+                    className={`pressable rounded-full border px-4 py-2 text-sm font-medium ${
+                      on ? "border-b2-caribbean bg-b2-caribbean text-b2-ink" : "border-b2-border text-b2-pistachio hover:text-b2-flash"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                </form>
+              ))}
             </div>
             {p.multi_device ? (
-              <p className="mt-2 text-sm text-b2-warning">
-                One-device lock is off for this account. It can log in on any number of devices.
-              </p>
-            ) : device ? (
-              <>
-                <p className="mt-2 break-words text-sm text-b2-pistachio">{device.user_agent || "Unknown browser"}</p>
-                <p className="mt-1 text-sm text-b2-stone">Bound {fmtDateTime(device.bound_at)} · last seen {fmtDateTime(device.last_seen_at)}</p>
-                <form action={resetDevice} className="mt-4">
-                  <input type="hidden" name="user_id" value={p.id} />
-                  <ConfirmButton message="Reset device? The next device this student logs in on becomes their device." variant="secondary">
-                    Reset device
-                  </ConfirmButton>
-                </form>
-              </>
+              <p className="mt-3 text-sm text-b2-warning">Device lock is off. This account can log in on any number of devices.</p>
+            ) : (devices ?? []).length ? (
+              <ul className="mt-3 space-y-3">
+                {(devices ?? []).map((d, k) => (
+                  <li key={d.device_id} className="rounded-2xl border border-b2-border p-3">
+                    <p className="text-sm font-medium">Device {k + 1}</p>
+                    <p className="break-words text-sm text-b2-pistachio">{d.user_agent || "Unknown browser"}</p>
+                    <p className="mt-1 text-xs text-b2-stone">
+                      Bound {fmtDateTime(d.bound_at)} · last seen {fmtDateTime(d.last_seen_at)}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             ) : (
-              <p className="mt-2 text-sm text-b2-pistachio">No device bound yet. The next login binds one.</p>
+              <p className="mt-3 text-sm text-b2-pistachio">No device bound yet. The next login binds one.</p>
             )}
+            {!p.multi_device && (devices ?? []).length > 0 && (
+              <form action={resetDevice} className="mt-4">
+                <input type="hidden" name="user_id" value={p.id} />
+                <ConfirmButton
+                  message="Reset devices? The next device(s) this student logs in on become their devices."
+                  variant="secondary"
+                >
+                  Reset devices
+                </ConfirmButton>
+              </form>
+            )}
+            <p className="mt-3 text-xs text-b2-stone">
+              {p.multi_device ? "Unlimited" : `${(devices ?? []).length} of ${p.max_devices} used`}
+            </p>
           </Card>
         </div>
       </div>
