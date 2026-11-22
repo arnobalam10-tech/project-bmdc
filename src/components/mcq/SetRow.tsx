@@ -52,6 +52,7 @@ export function SetRow({ set, full, enroll }: { set: SetSummary; full: boolean; 
             </Pill>
           )}
           {!full && set.is_free_sample && <Pill>Free</Pill>}
+          {set.hide_results && set.results_published && <Pill tone="caribbean">Answers out</Pill>}
           {access.mode === "locked" && <Lock size={16} className="text-b2-stone" />}
         </div>
         <p className="mt-1 text-sm text-b2-pistachio">
@@ -76,7 +77,7 @@ export function SetRow({ set, full, enroll }: { set: SetSummary; full: boolean; 
         <form action={startAttempt}>
           <input type="hidden" name="set_id" value={set.id} />
           <SubmitButton name="mode" value="exam" size="sm" className="w-full sm:w-auto" pending="Opening">
-            {set.submitted ? "See result" : "Start mock"}
+            {set.submitted ? (set.results_published ? "Result & answers" : "See result") : "Start mock"}
           </SubmitButton>
         </form>
       ) : access.mode === "locked" ? (

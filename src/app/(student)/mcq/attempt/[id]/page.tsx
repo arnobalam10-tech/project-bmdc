@@ -49,13 +49,35 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
   const max = a.n_questions;
   const score = Number(a.score ?? 0);
   const pct = max ? Math.round((1000 * score) / max) / 10 : 0;
-  const bySubject = new Map<string, { c: number; t: number }>();
+  // per-statement accuracy by subject and by system (chapter)
+  type Agg = { c: number; w: number; t: number };
+  const bySubject = new Map<string, Agg>();
+  const bySystem = new Map<string, Agg & { subject: string }>();
   for (const q of d.questions) {
-    const k = q.subject ?? "Other";
-    const cur = bySubject.get(k) ?? { c: 0, t: 0 };
-    for (const o of q.options) if (o.is_correct !== null) { cur.t++; if (o.is_correct) cur.c++; }
-    bySubject.set(k, cur);
+    const sk = q.subject ?? "Other";
+    const ck = q.chapter ?? sk;
+    const sub = bySubject.get(sk) ?? { c: 0, w: 0, t: 0 };
+    const sys = bySystem.get(ck) ?? { c: 0, w: 0, t: 0, subject: sk };
+    for (const o of q.options) {
+      if (o.is_true === null) continue;
+      sub.t++;
+      sys.t++;
+      if (o.is_correct) {
+        sub.c++;
+        sys.c++;
+      } else if (o.answer !== null) {
+        sub.w++;
+        sys.w++;
+      }
+    }
+    bySubject.set(sk, sub);
+    bySystem.set(ck, sys);
   }
+  const pctOf = (v: Agg) => (v.t ? Math.round((100 * v.c) / v.t) : 0);
+  const subjects = [...bySubject.entries()].filter(([, v]) => v.t).sort((x, y) => pctOf(x[1]) - pctOf(y[1]));
+  const systems = [...bySystem.entries()].filter(([, v]) => v.t).sort((x, y) => pctOf(x[1]) - pctOf(y[1]) || y[1].t - x[1].t);
+  const weakest = systems.filter(([, v]) => pctOf(v) < 70).slice(0, 3);
+  const mistakeQs = d.questions.filter((q) => q.options.some((o) => o.is_true !== null && !o.is_correct)).length;
   const started = new Date(a.started_at).getTime();
   const used = Math.max(0, Math.round((new Date(a.submitted_at!).getTime() - started) / 60000));
 
@@ -127,26 +149,41 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
         />
       )}
 
-      {!answersHidden && bySubject.size > 0 && (
-        <div className="rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
-          <p className="mb-4 font-semibold">By subject</p>
-          <ul className="space-y-3">
-            {[...bySubject.entries()].map(([k, v]) => {
-              const p = v.t ? Math.round((100 * v.c) / v.t) : 0;
-              return (
-                <li key={k}>
-                  <div className="mb-1 flex justify-between text-sm">
-                    <span>{k}</span>
-                    <span className="tabular text-b2-pistachio">{v.t ? `${p}%` : "—"}</span>
-                  </div>
-                  <div className="h-2 overflow-hidden rounded-full bg-b2-pine">
-                    <div className={`h-full ${p < 50 ? "bg-b2-warning" : "bg-b2-caribbean"}`} style={{ width: `${p}%` }} />
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+      {!answersHidden && subjects.length > 0 && (
+        <>
+          {weakest.length > 0 && (
+            <div className="rounded-[20px] border border-b2-warning/40 bg-b2-dark p-5 sm:p-6">
+              <p className="font-semibold">Where you are weakest</p>
+              <p className="mt-1 text-sm text-b2-pistachio">Revise these systems first. Accuracy is counted per true/false statement.</p>
+              <ol className="mt-4 grid gap-3 sm:grid-cols-3">
+                {weakest.map(([k, v], i) => (
+                  <li key={k} className="rounded-2xl border border-b2-border bg-b2-black/40 p-4">
+                    <p className="text-xs uppercase tracking-[0.12em] text-b2-stone">
+                      #{i + 1} · {v.subject}
+                    </p>
+                    <p className="mt-1 font-medium leading-snug">{k}</p>
+                    <p className="tabular mt-2 text-2xl font-semibold text-b2-warning">{pctOf(v)}%</p>
+                    <p className="tabular text-xs text-b2-pistachio">
+                      {v.c} of {v.t} right · {v.w} wrong
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+          <div className="grid gap-4 lg:grid-cols-2">
+            <AnalysisCard title="By subject" rows={subjects.map(([k, v]) => ({ k, v, p: pctOf(v) }))} />
+            <AnalysisCard title="By system" rows={systems.map(([k, v]) => ({ k, sub: v.subject, v, p: pctOf(v) }))} />
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <Link href={`/mcq/attempt/${a.id}/review?show=mistakes`} className={btn("secondary", "lg")}>
+              Only my mistakes ({mistakeQs} questions)
+            </Link>
+            <Link href="/mistakes" className={btn("ghost", "lg")}>
+              Practise them in My mistakes
+            </Link>
+          </div>
+        </>
       )}
 
       <div className="flex flex-col gap-3 sm:flex-row">
@@ -171,6 +208,40 @@ export default async function AttemptPage({ params }: { params: Promise<{ id: st
           Back to {sectionLabel}
         </Link>
       </div>
+    </div>
+  );
+}
+
+function AnalysisCard({
+  title,
+  rows,
+}: {
+  title: string;
+  rows: { k: string; sub?: string; v: { c: number; w: number; t: number }; p: number }[];
+}) {
+  return (
+    <div className="rounded-[20px] border border-b2-border bg-b2-dark p-5 sm:p-6">
+      <p className="font-semibold">{title}</p>
+      <p className="mb-4 text-xs text-b2-pistachio">Weakest first · statements right / total</p>
+      <ul className="space-y-3">
+        {rows.map(({ k, sub, v, p }) => (
+          <li key={k}>
+            <div className="mb-1 flex justify-between gap-3 text-sm">
+              <span className="min-w-0 truncate">
+                {k}
+                {sub && <span className="text-b2-stone"> · {sub}</span>}
+              </span>
+              <span className="tabular flex-none text-b2-pistachio">
+                {v.c}/{v.t} ·{" "}
+                <span className={p < 50 ? "text-b2-warning" : p < 70 ? "text-b2-flash" : "text-b2-caribbean"}>{p}%</span>
+              </span>
+            </div>
+            <div className="h-2 overflow-hidden rounded-full bg-b2-pine">
+              <div className={`h-full ${p < 50 ? "bg-b2-warning" : p < 70 ? "bg-b2-meadow" : "bg-b2-caribbean"}`} style={{ width: `${p}%` }} />
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
